@@ -1,4 +1,4 @@
 IAP
 ===
 
-IBM I2 Open source repository for IAP related artefacts
+An open source repository for IBM i2 Intelligence Analysis Platform development
