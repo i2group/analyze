@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main"/>
+	<classpathentry kind="src" path="src/resources"/>
+	<classpathentry kind="src" path="src/example-common"/>
+	<classpathentry kind="src" path="src/example-data"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="client-libraries/bin/apollo-client-1.0.1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.1-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="schema-mapping-jar/law-enforcement-schema.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/shared"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

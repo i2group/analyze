@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+<Data>
+    <Actors>
+        <Actor id="p1">
+            <FirstName>Harry</FirstName>
+            <LastName>Windsor</LastName>
+            <DOB>1972-11-01</DOB>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Actor>
+
+        <Actor id="p2">
+            <FirstName>James</FirstName>
+            <LastName>Noel</LastName>
+            <DOB>1975-10-05</DOB>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Actor>
+
+        <Actor id="p3">
+            <FirstName>Mark</FirstName>
+            <LastName>Davies</LastName>
+            <DOB>1973-01-21</DOB>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Actor>
+
+        <Actor id="p4">
+            <FirstName>Steve</FirstName>
+            <LastName>McLovin</LastName>
+            <DOB>1987-10-07</DOB>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Actor>
+    </Actors>
+
+    <Associations>
+        <Association id="ass1">
+            <Actor1>p1</Actor1>
+            <Actor2>p2</Actor2>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Association>
+
+        <Association id="ass2">
+            <Actor1>p1</Actor1>
+            <Actor2>p3</Actor2>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Association>
+
+        <Association id="ass3">
+            <Actor1>p4</Actor1>
+            <Actor2>p2</Actor2>
+            <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
+            <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
+        </Association>
+    </Associations>
+</Data>

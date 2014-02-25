@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>da-elpsload-filesystem-example</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>client-libraries</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/application/client</locationURI>
+		</link>
+		<link>
+			<name>mq-java-drivers</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/configuration/environment/common/mq-java-drivers</locationURI>
+		</link>
+		<link>
+			<name>src/example-common</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/SDK/sdk-projects/da-example-common/src/main</locationURI>
+		</link>
+		<link>
+			<name>src/example-data</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/SDK/sdk-projects/da-example-common/src/resources</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
