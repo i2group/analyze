@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensed Materials - Property of IBM
+5725-G22
+(C) Copyright IBM Corp. 2012, 2014 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<settings>
+
+  <!-- URI of help system base file -->
+  <!-- Replace [host] and or [port] with the desired help location -->
+  <!-- If [host] and or [port] are not defined, the help location will fall back to the host and port that the xap is located on -->
+  <OnlineHelpLocation>http://localhost:99999/apollo-web-help/</OnlineHelpLocation>
+
+
+  <!--                  -->
+  <!--  Access Control  -->
+  <!--                  -->
+
+  <!-- Default item security model, SecurityPermissions or SecurityTags -->
+  <SecurityModel>SecurityTags</SecurityModel>
+
+  <!-- Access permissions set on an item by default. Format: [DimensionId];[Value];[AccessLevel] -->
+  <DefaultAccessPermissions>
+    03dee165-c232-47d7-a369-935c011bc3e4;Unclassified;Update
+    f873ad24-8940-458a-9a6f-fc2ad36314ed;Human Informants;Update
+	f873ad24-8940-458a-9a6f-fc2ad36314ed;Open Source Intelligence;Update
+  </DefaultAccessPermissions>
+
+  <!-- Grant permissions set on an item by default. Format: [DimensionId];[Value];[AccessLevel] -->
+  <DefaultGrantPermissions>
+    67d2c8fc-0e67-4ba3-b658-a4ed2d3c0a0d;Security Controller;Update
+    67d2c8fc-0e67-4ba3-b658-a4ed2d3c0a0d;Other;Update
+  </DefaultGrantPermissions>
+  
+  <!-- Security tags set on an item by default. Format: [Security tag id 1];[Security tag id 2];[Security tag id n] -->
+  <DefaultItemSecurityTags>
+    6f0a69d4-6edd-40ec-a372-c6db33262a58;d3cdf9a0-1164-11e3-8ffd-0800200c9a66
+  </DefaultItemSecurityTags>
+
+  <!--                     -->
+  <!--  Data Restrictions  -->
+  <!--                     -->
+
+  <!--Maximum number of expand results to bring to the client at one time -->
+  <MaxExpandResultsOnClient>100</MaxExpandResultsOnClient>
+  <MaxPagedExpandResultsOnClient>100</MaxPagedExpandResultsOnClient>
+  <MaxExternalDataExpandResultsOnClient>100</MaxExternalDataExpandResultsOnClient>
+  
+  <!-- Maximum number of search results to bring to the client at one time -->
+  <MaxSearchResultsOnClient>50</MaxSearchResultsOnClient>
+
+  <!-- Maximum number of search results whilst searching for sets -->
+  <MaxSearchResultsOnClientSearchingForSets>100</MaxSearchResultsOnClientSearchingForSets>
+
+  <!-- Maximum number of search results to bring to the client at one time when searching within a set -->
+  <MaxSearchResultsOnClientWithinSets>50</MaxSearchResultsOnClientWithinSets>
+
+
+  <!--                              -->
+  <!--  Retry intervals + timeouts  -->
+  <!--                              -->
+
+  <!-- Time, in milliseconds, between retrying 'atomic set manipulations' -->
+  <AtomicSetManipulationRetryInterval>250</AtomicSetManipulationRetryInterval>
+
+  <!-- Maximum time, in milliseconds, to retry 'atomic set manipulations' -->
+  <AtomicSetManipulationRetryTimeout>10000</AtomicSetManipulationRetryTimeout>
+
+  <!-- Maximum time, in milliseconds, to retry item retrieval when manipulating that item, e.g. applying permissions changes to an item -->
+  <ItemModificationRetrievalRetryTimeout>60000</ItemModificationRetrievalRetryTimeout>
+
+  <!-- Time, in milliseconds, between retrying item retrieval when manipulating that item -->
+  <ItemModificationRetryInterval>250</ItemModificationRetryInterval>
+
+  <!-- Maximum time, in milliseconds, to retry retrievals of the newest version of an item when -->
+  <!-- we have acquired an edit lock on an item only to discover we need to fetch a newer version -->
+  <LeaseLatestRetrievalRetryTimeout>10000</LeaseLatestRetrievalRetryTimeout>
+
+  <!-- The interval, in milliseconds, for renewing a lease on the server -->
+  <!-- This time should be less than the lease timeout on the server -->
+  <LeaseRenewalInterval>60000</LeaseRenewalInterval>
+
+  <!-- Time, in milliseconds, between retrying 'set retrievals', e.g. fetching the contents of activity folders -->
+  <RetryingItemRetrieverRetryInterval>500</RetryingItemRetrieverRetryInterval>
+
+  <!-- System assigned gradings to use for system generated types -->
+  <SystemAssignedGrading>G1,A;G2,1;G3,1</SystemAssignedGrading>
+
+  
+  <!--                    -->
+  <!--  General Settings  -->
+  <!--                    -->
+
+  <!-- The default time zone -->
+  <DefaultTimeZonePreference>UTC</DefaultTimeZonePreference>
+
+  <!-- Whether to enable comments on the client for item manipulation. e.g. Create, Edit, Add/Remove from set -->
+  <EnableComments>true</EnableComments>
+
+  <!-- The number of decimal places to display for latitude and longitude
+       (rounds the stored value for read-only display only).  
+       Minimum value is 0, maximum value is 15. 
+	   Values out of range will be ignored, which will turn off rounding.-->
+  <GeospatialDisplayPrecision>-1</GeospatialDisplayPrecision>
+
+  <!-- Whether to show or hide GIS properties. Default if unspecified is False -->
+  <HideGeospatialProperties>True</HideGeospatialProperties>
+  
+  <!-- The maximum number of alert feeds in a feed search result (not per page) -->
+  <MaxAlertFeedSearchResults>1000</MaxAlertFeedSearchResults>
+
+  <!-- The maximum number of alert notifications -->
+  <MaxAlerts>250</MaxAlerts>
+
+  <!-- The maximum number of tabs that can be open at one time -->
+  <MaximumOpenTabs>15</MaximumOpenTabs>
+
+  <!-- The maximum number of characters that can be entered into a signpost -->
+  <MaxSignpostLength>140</MaxSignpostLength>
+
+  <!-- The maximum number of recently used items to display -->
+  <ToolboxMaxRecentlyUsedItems>12</ToolboxMaxRecentlyUsedItems>
+
+  <!-- The maximum number of characters that can be entered as a search term that uses 'starts with' or 'equal' filters -->
+  <MaxStartsWithOrEqual>256</MaxStartsWithOrEqual>
+
+  <SubsettingExampleGenerationUILocation>http://localhost:20032/da-dubset-rest-example-id/SubsettingHtml.html</SubsettingExampleGenerationUILocation>
+  <SubsettingExampleDisplayRecordUrl>http://localhost:20032/da-dubset-rest-example-id/ItemDetails.jsp?id={0}&amp;source={1}</SubsettingExampleDisplayRecordUrl>
+  
+
+</settings>

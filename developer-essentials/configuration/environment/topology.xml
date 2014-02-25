@@ -1,0 +1,113 @@
+<ns1:topology xmlns:ns1="http://www.i2group.com/Schemas/2013-11-18/Topology">
+	<iap-data-sources>
+		<iap-data-source id="ar-id" ar="true">
+			<!-- DataSource Id is deliberately blank and should be left so -->
+			<DataSource Id="" Version="0">
+				<Shape>Repository</Shape>
+				<Name>Ar</Name>
+			</DataSource>
+		</iap-data-source>
+		<!-- This section is required to configure IAP for the da-elpsload-filesystem-example -->
+		<!--
+		<iap-data-source id="delps-ds-id" ar="false">
+			<DataSource EdrsPresent="false" ScsPresent="false"
+				SesPresent="false" ScsBrowseSupported="false" ScsSearchSupported="false"
+				ScsNetworkSearchSupported="false" ScsDumbbellSearchSupported="false"
+				ScsFilteredSearchSupported="false" EdrsGetContextSupported="false"
+				EdrsGetLatestItemsSupported="false" Id="" Version="0">
+				<Shape>Repository</Shape>
+				<Name>DELPS Example</Name>
+			</DataSource>
+		</iap-data-source>
+		-->
+	</iap-data-sources>
+	<databases>
+		<database dialect="db2" instance-name="DB2" xa="true" database-name="Document" database-type="DocumentStore" id="doc1" host-name="localhost" port-number="50000" max-pool-size="5"/>
+		<database dialect="db2" instance-name="DB2" xa="true" database-name="WriteSto" database-type="WriteStore" id="write1" host-name="localhost" port-number="50000" max-pool-size="5"/>
+		<database dialect="db2" instance-name="DB2" xa="false" database-name="ItemRetr" database-type="ItemRetrievalStore" id="item1" host-name="localhost" port-number="50000" max-pool-size="5"/>
+		<!-- This section is required to configure IAP for the da-elpsload-filesystem-example -->
+		<!--
+		<database dialect="db2" instance-name="DB2" xa="false" database-name="ItemRet2" database-type="ItemRetrievalStore" id="item2" host-name="localhost" port-number="50000" max-pool-size="5" />
+		-->
+	</databases>
+	<jms-server application-name="write" host-name="localhost" port="1414">
+		<jms-topics>
+			<jms-topic id="ar"/>
+			<!-- This section is required to configure IAP for the da-elpsload-filesystem-example -->
+			<!--
+			<jms-topic id="delps" />
+			-->
+		</jms-topics>
+	</jms-server>
+	<applications>
+		<application name="write" host-name="localhost">
+			<lucene-indexes>
+			</lucene-indexes>
+			<wars>
+				<war target="write" name="write" iap-datasource-id="ar-id">
+					<data-sources>
+						<data-source database-id="doc1" create-database="true"/>
+						<data-source database-id="write1" create-database="true"/>
+					</data-sources>
+					<jms-topic-ids>
+						<jms-topic-id value="ar"/>
+					</jms-topic-ids>
+					<lucene-index-ids>
+					</lucene-index-ids>
+					<fragments>
+						<fragment name="common"/>
+						<fragment name="principal-provider"/>
+						<fragment name="write"/>
+					</fragments>
+				</war>
+			</wars>
+		</application>
+		<application name="read" host-name="localhost">
+			<lucene-indexes>
+				<lucene-index id="ar" main-index-location="c:\iap-data\ar\main_index" alternatives-location="c:\iap-data\ar\alternatives"/>
+				<!-- This section is required to configure IAP for the da-elpsload-filesystem-example -->
+				<!-- 
+				<lucene-index id="delps" main-index-location="c:\iap-data\delps\main_index" alternatives-location="c:\iap-data\delps\alternatives"/> 
+				-->
+			</lucene-indexes>
+			<wars>
+				<war target="read" name="read" iap-datasource-id="ar-id">
+					<data-sources>
+						<data-source database-id="doc1" create-database="false"/>
+						<data-source database-id="item1" create-database="true"/>
+					</data-sources>
+					<jms-topic-ids>
+						<jms-topic-id value="ar"/>
+					</jms-topic-ids>
+					<lucene-index-ids>
+						<lucene-index-id value="ar"/>
+					</lucene-index-ids>
+					<fragments>
+						<fragment name="common"/>
+						<fragment name="principal-provider"/>
+						<fragment name="read"/>
+					</fragments>
+				</war>
+				<!-- This section is required to configure IAP for the da-elpsload-filesystem-example -->
+				<!-- 
+				<war target="delps" name="delps" iap-datasource-id="delps-ds-id">
+					<data-sources>
+						<data-source database-id="doc1" create-database="false"/>
+						<data-source database-id="item2" create-database="true"/>
+					</data-sources>
+					<jms-topic-ids>
+						<jms-topic-id value="delps" />
+					</jms-topic-ids>
+					<lucene-index-ids>
+						<lucene-index-id value="delps" />
+					</lucene-index-ids>
+					<fragments>
+						<fragment name="common" />
+						<fragment name="principal-provider" />
+					</fragments>
+				</war>
+				-->
+			</wars>
+		</application>
+	</applications>
+</ns1:topology>
