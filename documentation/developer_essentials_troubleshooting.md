@@ -3,6 +3,16 @@ Troubleshooting the example projects
 
 The example projects in Intelligence Analysis Platform Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
 
+-   [Eclipse reports compilation errors after it imports an example project](#reference_svl_yfs_mn__compilation)
+-   [Server starts without error, but in only a few seconds](#reference_svl_yfs_mn__too_quick)
+-   [Eclipse reports a java.lang.NullpointerException on "Clean" or "Publish"](#reference_svl_yfs_mn__null_pointer)
+-   [Application fails to start and reports an error to the console](#reference_svl_yfs_mn__start_error)
+-   [Navigation to http://localhost/apollo reports an Internal Server Error](#reference_svl_yfs_mn__server_error)
+-   [Navigation to http://localhost/apollo reports HTTP error 404](#reference_svl_yfs_mn__404_error)
+-   [User login fails and generates a console error](#reference_svl_yfs_mn__login_error)
+-   [User login fails with no obvious console error](#reference_svl_yfs_mn__login_no_error)
+-   [Browse and search operations generate Server Not Found errors](#reference_svl_yfs_mn__server_not_found)
+
 Eclipse reports compilation errors after it imports an example project
 ----------------------------------------------------------------------
 
@@ -87,7 +97,7 @@ HTTP error 404 can occur when one of the Intelligence Analysis Platform applicat
 
 -   If the error is a plain web page with a generic "Not Found" message, then the problem is with the HTTP server.
 
-    To resolve the problem, see the detailed procedure at the end of the next section.
+    To resolve the problem, see the detailed procedure for checking the HTTP server configuration at the end of the final section.
 
 User login fails and generates a console error
 ----------------------------------------------
