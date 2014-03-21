@@ -28,8 +28,13 @@ If one or both of the application servers start in an unusually short time, it i
 
 Important: This setting can cause various other problems. For the Intelligence Analysis Platform to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
 
-Application fails to start and reports an error
------------------------------------------------
+Eclipse reports a java.lang.NullpointerException on "Clean" or "Publish"
+------------------------------------------------------------------------
+
+Occasionally, the representation of the project files in Eclipse can lose synchronization with the file system. When this problem happens, cleaning or publishing a project can generate an exception. To fix the project, repeat the failed operation.
+
+Application fails to start and reports an error to the console
+--------------------------------------------------------------
 
 There are several reasons why an Intelligence Analysis Platform application can fail to start. You can use the error message to diagnose the problem and choose a solution.
 
@@ -66,36 +71,10 @@ The solution to both problems is to re-create the `server.xml` file. Solving the
 
 3.  Refresh all the projects and all the servers in the Eclipse IDE.
 
-Eclipse reports a java.lang.NullpointerException on "Clean" or "Publish"
-------------------------------------------------------------------------
-
-Occasionally, the representation of the project files in Eclipse can lose synchronization with the file system. When this problem happens, cleaning or publishing a project can generate an exception. To fix the project, repeat the failed operation.
-
-User login fails and generates a console error
-----------------------------------------------
-
-If users cannot log in to your deployment of the Intelligence Analysis Platform, a missing user repository is often the cause. The platform generates the following error:
-
-> `WebTrustAssociationFailedException: No UserRegistry found to authenticate with`
-
-To resolve this problem, ensure that you configured example users according to the Developer Essentials deployment instructions.
-
-User login fails with no obvious console error
-----------------------------------------------
-
-If users cannot log in to your deployment of the Intelligence Analysis Platform, and all they see is a "failed login" message, then any error is in the log.
-
-To understand the problem, refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
-
-Note: Intelligence Analysis Platform error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
-
--   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
--   Check the bottom-level exception, which contains most detail about the cause of the problem.
-
 Navigation to http://localhost/apollo reports an Internal Server Error
 ----------------------------------------------------------------------
 
-If the platform reports an internal server error, then the write-side server did not start. Start the server and try the operation again.
+If the HTTP server reports an internal server error, then the write-side server did not start. Start the server and try the operation again.
 
 Navigation to http://localhost/apollo reports HTTP error 404
 ------------------------------------------------------------
@@ -109,6 +88,33 @@ HTTP error 404 can occur when one of the Intelligence Analysis Platform applicat
 -   If the error is a plain web page with a generic "Not Found" message, then the problem is with the HTTP server.
 
     To resolve the problem, see the detailed procedure at the end of the next section.
+
+User login fails and generates a console error
+----------------------------------------------
+
+If users cannot log in to your deployment of the Intelligence Analysis Platform, a missing user repository is often the cause. The platform generates the following error:
+
+> `WebTrustAssociationFailedException: No UserRegistry found to authenticate with`
+
+To resolve this problem, ensure that you configured example users according to the Developer Essentials deployment instructions.
+
+User login fails with no obvious console error
+----------------------------------------------
+
+If users cannot log in to your deployment of the Intelligence Analysis Platform, and all they see is a "failed login" message, then there are several possible causes.
+
+First, make sure that users are providing credentials accurately. In the Intelligence Analysis Platform, user names and passwords are all case-sensitive.
+
+Second, ensure that you have the correct edition of WebSphere Application Server Liberty Profile. If you obtained it from the project website at https://www.ibmdw.net/wasdev/downloads/websphere-application-server-liberty-profile, then you must download both the runtime and the extended content.
+
+Third, it is possible that event replay is still in progress. In the console for the write server, check for a `Replay complete` message. If the message is not present, then the write side is waiting for the read side to respond. Start or restart the read server.
+
+To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
+
+Note: Intelligence Analysis Platform error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+
+-   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
+-   Check the bottom-level exception, which contains most detail about the cause of the problem.
 
 Browse and search operations generate Server Not Found errors
 -------------------------------------------------------------
