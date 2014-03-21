@@ -20,6 +20,8 @@ IBM i2 Intelligence Analysis Platform Developer Essentials has a longer and more
 -   Python 2.7
 -   Eclipse Kepler
 
+Note: If you obtain WebSphere Application Server Liberty Profile from the project website at https://www.ibmdw.net/wasdev/downloads/websphere-application-server-liberty-profile, then you must download both the runtime and the extended content.
+
 About this task
 ---------------
 
@@ -30,7 +32,7 @@ Procedure
 
 In the first part of the procedure, you use Developer Essentials to customize the Deployment Toolkit. The libraries and settings that you add enable development for the Intelligence Analysis Platform on a single computer.
 
-1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 1 according to the instructions in the product readme. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.1`.
+1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 1 according to the instructions in the product readme file. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.1`.
 2.  Navigate to the `C:\IBM\iap-3.0.5.1\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
 3.  Install all the other prerequisite software and accept all of the default settings, apart from the target directories. As suggested by Chapter 5 of the Deployment Guide, change the following installation paths:
 

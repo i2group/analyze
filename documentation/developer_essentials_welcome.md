@@ -17,6 +17,9 @@ Developer Essentials includes API documentation that integrates with the Eclipse
 -   [Configuring the "data access on-demand" example project](developer_essentials_example_daod.md)
 
      The "data access on-demand" approach to data acquisition in the Intelligence Analysis Platform involves querying external data through a new service on the read side of the platform. In Developer Essentials, IBM provides the `da-subset-filesystem-example` example, in which the external data source is an XML file.
+-   [Troubleshooting the example projects](developer_essentials_troubleshooting.md)
+
+     The example projects in Intelligence Analysis Platform Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
 
 * * * * *
 
