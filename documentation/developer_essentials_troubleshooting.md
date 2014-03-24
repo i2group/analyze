@@ -3,15 +3,15 @@ Troubleshooting the example projects
 
 The example projects in Intelligence Analysis Platform Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
 
--   [Eclipse reports compilation errors after it imports an example project](#reference_svl_yfs_mn__compilation)
--   [Server starts without error, but in only a few seconds](#reference_svl_yfs_mn__too_quick)
--   [Eclipse reports a java.lang.NullpointerException on "Clean" or "Publish"](#reference_svl_yfs_mn__null_pointer)
--   [Application fails to start and reports an error to the console](#reference_svl_yfs_mn__start_error)
--   [Navigation to http://localhost/apollo reports an Internal Server Error](#reference_svl_yfs_mn__server_error)
--   [Navigation to http://localhost/apollo reports HTTP error 404](#reference_svl_yfs_mn__404_error)
--   [User login fails and generates a console error](#reference_svl_yfs_mn__login_error)
--   [User login fails with no obvious console error](#reference_svl_yfs_mn__login_no_error)
--   [Browse and search operations generate Server Not Found errors](#reference_svl_yfs_mn__server_not_found)
+-   [Eclipse reports compilation errors after it imports an example project](#eclipse-reports-compilation-errors-after-it-imports-an-example-project)
+-   [Server starts without error but in only a few seconds](#server-starts-without-error-but-in-only-a-few-seconds)
+-   [Eclipse reports a java.lang.NullpointerException on Clean or Publish](#eclipse-reports-a-javalangnullpointerexception-on-clean-or-publish)
+-   [Application fails to start and reports an error to the console](#application-fails-to-start-and-reports-an-error-to-the-console)
+-   [Navigation to http://localhost/apollo reports an Internal Server Error](#navigation-to-httplocalhostapollo-reports-an-internal-server-error)
+-   [Navigation to http://localhost/apollo reports HTTP error 404](#navigation-to-httplocalhostapollo-reports-http-error-404)
+-   [User login fails and generates a console error](#user-login-fails-and-generates-a-console-error)
+-   [User login fails with no obvious console error](#user-login-fails-with-no-obvious-console-error)
+-   [Browse and search operations generate Server Not Found errors](#browse-and-search-operations-generate-server-not-found-errors)
 
 Eclipse reports compilation errors after it imports an example project
 ----------------------------------------------------------------------
@@ -28,8 +28,8 @@ If you have a project with broken links, there are two things to check:
 1.  Verify that you extracted Developer Essentials into the same location as the Deployment Toolkit.
 2.  Verify that your `TOOLKIT_ROOT` variable is set to the path of Deployment Toolkit directory.
 
-Server starts without error, but in only a few seconds
-------------------------------------------------------
+Server starts without error but in only a few seconds
+-----------------------------------------------------
 
 If one or both of the application servers start in an unusually short time, it is likely that an Intelligence Analysis Platform application is not deployed correctly.
 
@@ -38,8 +38,8 @@ If one or both of the application servers start in an unusually short time, it i
 
 Important: This setting can cause various other problems. For the Intelligence Analysis Platform to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
 
-Eclipse reports a java.lang.NullpointerException on "Clean" or "Publish"
-------------------------------------------------------------------------
+Eclipse reports a java.lang.NullpointerException on Clean or Publish
+--------------------------------------------------------------------
 
 Occasionally, the representation of the project files in Eclipse can lose synchronization with the file system. When this problem happens, cleaning or publishing a project can generate an exception. To fix the project, repeat the failed operation.
 
@@ -117,7 +117,26 @@ First, make sure that users are providing credentials accurately. In the Intelli
 
 Second, ensure that you have the correct edition of WebSphere Application Server Liberty Profile. If you obtained it from the project website at https://www.ibmdw.net/wasdev/downloads/websphere-application-server-liberty-profile, then you must download both the runtime and the extended content.
 
-Third, it is possible that event replay is still in progress. In the console for the write server, check for a `Replay complete` message. If the message is not present, then the write side is waiting for the read side to respond. Start or restart the read server.
+Note: If you do not have the extended content, the console contains error messages, but they are not obvious. You are looking for these lines:
+
+``` {.pre .codeblock}
+[ERROR   ] CWWKF0001E: A feature definition could not be found for wasjmsserver-1.0
+[ERROR   ] CWWKF0001E: A feature definition could not be found for jaxws-2.2
+```
+
+Third, it is possible that event replay is still in progress. In the console for the write server, check for a `Replay complete` message:
+
+``` {.pre .codeblock}
+2014-03-19 17:31:50,100 - Replayed 3 of approximately 3 events (100%).
+2014-03-19 17:31:50,101 - Waiting for read services to acknowledge remaining events (expecting progress within 60 seconds)
+2014-03-19 17:31:50,103 - Event queue not empty (1 events in queue), waiting until all are received.
+2014-03-19 17:31:50,355 - Event queue not empty (4 events in queue), waiting until all are received.
+2014-03-19 17:32:29,971 - Read services should now be up to date.
+2014-03-19 17:32:30,039 - Updated EventBusConfigurationJPA.JMS_QUEUE_CAPACITY=2100 (was 2100)
+2014-03-19 17:32:30,041 - Replay complete.
+```
+
+If the message is not present, then the write side is waiting for the read side to respond. Start or restart the read server.
 
 To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
 
