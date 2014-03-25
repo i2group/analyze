@@ -20,6 +20,9 @@ Developer Essentials includes API documentation that integrates with the Eclipse
 -   [Troubleshooting the example projects](developer_essentials_troubleshooting.md)
 
      The example projects in Intelligence Analysis Platform Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
+-   [Publishing a custom application to a live deployment](developer_essentials_going_live.md)
+
+     After you develop and test an extension for the Intelligence Analysis Platform, the next stage is to publish it to a live deployment. The procedure varies a little depending on the type of extension that you created.
 
 * * * * *
 
