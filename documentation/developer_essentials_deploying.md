@@ -158,7 +158,12 @@ Now, the development version of the Intelligence Analysis Platform is ready for 
 8.  Repeat the previous step, but replace "write" with "read" wherever it appears.
 9.  Start the development version of the Intelligence Analysis Platform.
     1.  Inside the **Servers** tab, double-click the **read** and **write** servers in turn. New **read** and **write** tabs open in the top part of the Eclipse application window.
-    2.  In both new tabs, clear the **Run applications directly from the workspace** check box, and then press Ctrl+s to save the settings.
+    2.  Modify the settings in both new tabs:
+        -   Clear the **Run applications directly from the workspace** check box
+        -   Click **Publishing** \> **Never publish automatically**
+        -   Press Ctrl+s to save the settings
+
+        Note: These settings mean that in order for any changes that you make to become apparent, you must manually publish your new code to the servers.
     3.  Back inside the **Servers** tab, start the write server, followed by the read server. When the startup process completes, you have a running instance of the Intelligence Analysis Platform that you can control through Eclipse.
 
 10. To test the platform, open a web browser and navigate to http://localhost/apollo. You can log in to the Intelligence Portal with any of the user names and passwords that were specified in the `liberty-example-users.xml` file.
