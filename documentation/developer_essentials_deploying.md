@@ -18,7 +18,7 @@ IBM i2 Intelligence Analysis Platform Developer Essentials has a longer and more
 -   IBM HTTP Server 8.5
 -   Apache Derby
 -   Python 2.7
--   Eclipse Kepler
+-   Eclipse Kepler (Eclipse IDE for Java EE Developers)
 
 Note: If you obtain WebSphere Application Server Liberty Profile from the project website at https://www.ibmdw.net/wasdev/downloads/websphere-application-server-liberty-profile, then you must download both the runtime and the extended content.
 
