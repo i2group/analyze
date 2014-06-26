@@ -86,7 +86,7 @@ The commands so far added an incomplete application to the read-side server. (Th
 
 1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
 2.  In your Eclipse workspace, open the `WebSphere Application Server V8.5 Liberty Profile/servers/read/apps` folder, and delete the `da-subset-filesystem-example.war` application.
-3.  Repeat the instructions that you followed in Step 1 to add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-subset-filesystem-example` directory to Eclipse.
+3.  Repeat the instructions that you followed when you added the `shared` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-subset-filesystem-example` directory to Eclipse.
 4.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **read** server and select **Add and Remove**.
 5.  In the Add and Remove window, move **da-subset-filesystem-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
 
