@@ -9,16 +9,16 @@ Before you begin
 IBM i2 Intelligence Analysis Platform Developer Essentials has a longer and more specific set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 
 -   IBM Installation Manager 1.6
--   IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 1
+-   IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 2
 -   IBM DB2 9.7 Express Edition
--   IBM WebSphere MQ 7.5 with SupportPac ME01
+-   IBM WebSphere MQ 7.5
 -   IBM WebSphere Application Server 8.5.5
 -   IBM WebSphere Application Server 8.5.5 Liberty Profile
 -   Web Server Plug-ins for IBM WebSphere Application Server 8.5.5
 -   IBM HTTP Server 8.5
--   Apache Derby
+-   Apache Derby 10.8
 -   Python 2.7
--   Eclipse Kepler (Eclipse IDE for Java EE Developers)
+-   Eclipse Kepler SR2 (Eclipse IDE for Java EE Developers)
 
 Note: If you obtain WebSphere Application Server Liberty Profile from the project website at https://www.ibmdw.net/wasdev/downloads/websphere-application-server-liberty-profile, then you must download both the runtime and the extended content.
 
@@ -32,8 +32,8 @@ Procedure
 
 In the first part of the procedure, you use Developer Essentials to customize the Deployment Toolkit. The libraries and settings that you add enable development for the Intelligence Analysis Platform on a single computer.
 
-1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 1 according to the instructions in the product readme file. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.1`.
-2.  Navigate to the `C:\IBM\iap-3.0.5.1\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
+1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 2 according to the instructions in the product readme file. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.2`.
+2.  Navigate to the `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
 3.  Install all the other prerequisite software and accept all of the default settings, apart from the target directories. As suggested by Chapter 5 of the Deployment Guide, change the following installation paths:
 
     |Product|Install path|
@@ -44,9 +44,11 @@ In the first part of the procedure, you use Developer Essentials to customize th
     |IBM WebSphere MQ|`C:\IBM\WebSphereMQ`|
     |IBM HTTP Server|`C:\IBM\HTTPServer`|
 
+    Note: When you install IBM WebSphere Application Server Liberty Profile, do not create servers or profiles at the same time. The Deployment Toolkit manages that part of the process. Also, check the installation path before you continue. Some installers put Liberty Profile in a `wlp` subdirectory of the directory that you specify, which can affect the instructions later in this procedure.
+
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
-4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the resulting structure into the `iap-3.0.5.1\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
+4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the resulting structure into the `iap-3.0.5.2\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
 
     The new files contain presets that enable the Deployment Toolkit to deploy the platform onto a single computer, and to configure the platform to use WebSphere Application Server Liberty Profile.
 
@@ -113,13 +115,13 @@ In the first part of the procedure, you use Developer Essentials to customize th
 
 At this stage, configuration of the development version of the Intelligence Analysis Platform is complete. You can now deploy the platform into WebSphere Application Server Liberty Profile.
 
-1.  Open a command prompt as administrator, navigate to `C:\IBM\iap-3.0.5.1\IAP-Deployment-Toolkit\scripts`, and then run the following commands in sequence:
+1.  Open a command prompt as administrator, navigate to `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit\scripts`, and then run the following commands in sequence:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t delete-queue-manager
-    deploy.py -s write -t deploy-liberty
-    deploy.py -s read -t deploy-liberty
-    deploy.py -s write -t start-queue-manager
+    python deploy.py -s write -t delete-queue-manager
+    python deploy.py -s write -t deploy-liberty
+    python deploy.py -s read -t deploy-liberty
+    python deploy.py -s write -t start-queue-manager
     ```
 
     Note: The first command in the list is not strictly necessary when you deploy the platform for the first time, but it is necessary on future occasions.
@@ -149,10 +151,12 @@ Now, the development version of the Intelligence Analysis Platform is ready for 
 6.  Click **OK** to close the Preferences window.
 7.  Create a server in Eclipse that represents the write side of an Intelligence Analysis Platform deployment.
     1.  In the Eclipse application window, click the **Servers** tab.
+
         Note: If the **Servers** tab is not visible, click **Window** \> **Show View** \> **Servers** to open it.
+
     2.  Right-click inside the tab, and then click **New** \> **Server** to open the New Server window.
     3.  In the New Server window, click **IBM** \> **WebSphere Application Server V8.5 Liberty Profile** to select the server type.
-    4.  Change the **Server name** to write, and then click **Next**.
+    4.  Change the **Server name** to `write`, and then click **Next**.
     5.  From the **Liberty profile server** list, select **write**, and then click **Finish**.
 
 8.  Repeat the previous step, but replace "write" with "read" wherever it appears.

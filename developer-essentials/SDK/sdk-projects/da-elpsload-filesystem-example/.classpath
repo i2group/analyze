@@ -5,9 +5,9 @@
 	<classpathentry kind="src" path="src/example-common"/>
 	<classpathentry kind="src" path="src/example-data"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="client-libraries/bin/apollo-client-1.0.1.1.jar">
+	<classpathentry kind="lib" path="client-libraries/bin/apollo-client-1.0.1.2.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.1-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.2-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="mq-java-drivers/CL3Export.jar"/>

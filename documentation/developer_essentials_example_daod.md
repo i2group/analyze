@@ -6,7 +6,7 @@ The "data access on-demand" approach to data acquisition in the Intelligence Ana
 Before you begin
 ----------------
 
-The data access on-demand example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the installation guide. However, the example has no additional requirements.
+The data access on-demand example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
 
 Note: All the data acquisition example projects in Developer Essentials use the same XML data file, and the same code for transforming and converting that data into Intelligence Analysis Platform items. These artifacts are in the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-example-common` directory, to which all of the examples have access.
 
@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.1\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -42,9 +42,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 3.  Run the following command:
 
     ``` {.pre .codeblock}
-    da-setup.py -t add-data-source
-                -a read
-                -d da-subset-filesystem-example
+    python da-setup.py -t add-data-source -a read -d da-subset-filesystem-example
     ```
 
     Important: For successful integration with Eclipse, the value that you provide to the `-d` option must match the name of the example project.
@@ -74,10 +72,10 @@ By its nature, the data access on-demand example requires you to modify your dep
 6.  Redeploy the Intelligence Analysis Platform by running the same commands that you used to deploy the platform originally:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t delete-queue-manager
-    deploy.py -s write -t deploy-liberty
-    deploy.py -s read -t deploy-liberty
-    deploy.py -s write -t start-queue-manager
+    python deploy.py -s write -t delete-queue-manager
+    python deploy.py -s write -t deploy-liberty
+    python deploy.py -s read -t deploy-liberty
+    python deploy.py -s write -t start-queue-manager
     ```
 
 7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server. Do not attempt to start the application server or the web applications yet.

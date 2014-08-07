@@ -29,11 +29,11 @@ Procedure
 5.  Run the following commands on the write-side server:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t delete-queue-manager
-    deploy.py -s write -t provision-storage-and-messaging
-    deploy.py -s write -t start-was-server
-    deploy.py -s write -t update-application
-    deploy.py -s write -t install-http-server-config
+    python deploy.py -s write -t delete-queue-manager
+    python deploy.py -s write -t provision-storage-and-messaging
+    python deploy.py -s write -t start-was-server
+    python deploy.py -s write -t update-application
+    python deploy.py -s write -t install-http-server-config
     ```
 
 6.  Restart the HTTP server.
@@ -41,15 +41,16 @@ Procedure
 8.  Run the following commands on the read-side server:
 
     ``` {.pre .codeblock}
-    deploy.py -s read -t provision-storage-and-messaging
-    deploy.py -s read -t start-was-server
-    deploy.py -s read -t update-application
+    python deploy.py -s read -t provision-storage-and-messaging
+    python deploy.py -s read -t start-was-server
+    python deploy.py -s read -t recreate-was-data-sources-and-jms-topics
+    python deploy.py -s read -t update-application
     ```
 
 9.  Run the following command on the write-side server:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t start-all-applications
+    python deploy.py -s write -t start-all-applications
     ```
 
 * * * * *

@@ -47,9 +47,9 @@ After you create the fragment and add it to the Deployment Toolkit for the produ
 2.  Run `da-setup.py` on the write-side server of the production deployment:
 
     ``` {.pre .codeblock}
-    da-setup.py -t add-data-source
-                -a read
-                -d data-source-name
+    python da-setup.py -t add-data-source
+                       -a read
+                       -d data-source-name
     ```
 
     Note: In the production deployment, *data-source-name* does not have to match the name of an Eclipse project. You can give it any name, except the name of one of the fragment directories.
@@ -63,8 +63,8 @@ After you update the configuration files, you can run the scripts to redeploy yo
 1.  On the write side, run the following commands:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t update-application
-    deploy.py -s write -t install-http-server-config
+    python deploy.py -s write -t update-application
+    python deploy.py -s write -t install-http-server-config
     ```
 
 2.  Stay on the write side, and restart the HTTP server.
@@ -72,14 +72,14 @@ After you update the configuration files, you can run the scripts to redeploy yo
 4.  On the read side, run the following commands:
 
     ``` {.pre .codeblock}
-    deploy.py -s read -t update-application
-    deploy.py -s read -t provision-storage-and-messaging
+    python deploy.py -s read -t update-application
+    python deploy.py -s read -t provision-storage-and-messaging
     ```
 
 5.  Back on the write side, run the following command to start all the Intelligence Analysis Platform applications:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t start-all-applications
+    python deploy.py -s write -t start-all-applications
     ```
 
 * * * * *

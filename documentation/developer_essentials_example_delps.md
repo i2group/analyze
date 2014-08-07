@@ -6,7 +6,7 @@ The "data load ELP stage" approach to data acquisition in the Intelligence Analy
 Before you begin
 ----------------
 
-The data load ELP stage example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the installation guide. However, the example has no additional requirements.
+The data load ELP stage example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
 
 Note: All the data acquisition example projects in Developer Essentials use the same XML data file, and the same code for transforming and converting that data into Intelligence Analysis Platform items. These artifacts are in the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-example-common` directory, to which all of the examples have access.
 
@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.1\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -59,10 +59,10 @@ By its nature, the data load ELP stage example requires you to modify your deplo
 6.  Redeploy the Intelligence Analysis Platform by running the same commands that you used to deploy the platform originally:
 
     ``` {.pre .codeblock}
-    deploy.py -s write -t delete-queue-manager
-    deploy.py -s write -t deploy-liberty
-    deploy.py -s read -t deploy-liberty
-    deploy.py -s write -t start-queue-manager
+    python deploy.py -s write -t delete-queue-manager
+    python deploy.py -s write -t deploy-liberty
+    python deploy.py -s read -t deploy-liberty
+    python deploy.py -s write -t start-queue-manager
     ```
 
 7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
@@ -76,18 +76,18 @@ All data acquisition projects that you create with Developer Essentials require 
 2.  Run the following command:
 
     ``` {.pre .codeblock}
-    da-setup.py -t generate-mapping-jar
-                -x ..\configuration\examples\schemas\
-                                 en_US\law-enforcement-schema.xml
-                -o ..\SDK\sdk-projects\da-elpsload-filesystem-example\
-                                 schema-mapping-jar\law-enforcement-schema.jar
+    python da-setup.py -t generate-mapping-jar
+                       -x ..\configuration\examples\schemas\
+                                   en_US\law-enforcement-schema.xml
+                       -o ..\SDK\sdk-projects\da-elpsload-filesystem-example\
+                                   schema-mapping-jar\law-enforcement-schema.jar
     ```
 
     Note: This command assumes that your target deployment of the Intelligence Analysis Platform uses the law enforcement schema, which is the default setting for the development version. If the target uses a different schema, then you must change the command and the project configuration to match.
 
     When the command runs successfully, it creates the library in the `schema-mapping-jar` directory, which is on the build path for this project. To see the library in your workspace, you might need to refresh the Eclipse user interface.
 
-3.  Repeat the instructions that you followed in Step 1 to add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-elpsload-filesystem-example` directory to Eclipse.
+3.  Repeat the instructions that you followed when you added the `shared` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-elpsload-filesystem-example` directory to Eclipse.
 
 The final part of configuration is to provide the example with the identifier of the ELP stage data source. The items that the client creates must contain the identifier of the data source in which they are stored.
 
@@ -110,9 +110,11 @@ You can now run the example to add items from the supplied XML file to the new E
 
 2.  Click **Run** \> **Run Configurations** to open the Run Configurations window.
 3.  In the left pane of the window, select **Java Application** \> **ExampleDelpsLoaderMain**.
-4.  In the right pane of the window, select the **Arguments** tab, and then type -load in the "**Program arguments**" box.
+4.  In the right pane of the window, select the **Arguments** tab, and then type `-load` in the "**Program arguments**" box.
 5.  Click **Run** to close the window and run the example application. The example adds a handful of items from the supplied XML file to the ELP stage.
+
     Note: Running the example with the `-load` argument for a second time does not fail, but also does not add duplicate items to the ELP stage. The ELP stage ignores the events that attempt to create the same items again.
+
 6.  In a web browser, load or refresh your view of the Intelligence Portal, and browse the "DELPS Example" data source to see that the example project added new items.
 
 * * * * *

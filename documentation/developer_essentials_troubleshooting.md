@@ -128,11 +128,15 @@ Third, it is possible that event replay is still in progress. In the console for
 
 ``` {.pre .codeblock}
 2014-03-19 17:31:50,100 - Replayed 3 of approximately 3 events (100%).
-2014-03-19 17:31:50,101 - Waiting for read services to acknowledge remaining events (expecting progress within 60 seconds)
-2014-03-19 17:31:50,103 - Event queue not empty (1 events in queue), waiting until all are received.
-2014-03-19 17:31:50,355 - Event queue not empty (4 events in queue), waiting until all are received.
+2014-03-19 17:31:50,101 - Waiting for read services to acknowledge remaining events
+                          (expecting progress within 60 seconds)
+2014-03-19 17:31:50,103 - Event queue not empty (1 events in queue),
+                          waiting until all are received.
+2014-03-19 17:31:50,355 - Event queue not empty (4 events in queue),
+                          waiting until all are received.
 2014-03-19 17:32:29,971 - Read services should now be up to date.
-2014-03-19 17:32:30,039 - Updated EventBusConfigurationJPA.JMS_QUEUE_CAPACITY=2100 (was 2100)
+2014-03-19 17:32:30,039 - Updated EventBusConfigurationJPA.JMS_QUEUE_CAPACITY=2100
+                          (was 2100)
 2014-03-19 17:32:30,041 - Replay complete.
 ```
 
@@ -165,15 +169,15 @@ Note: In all cases, you can obtain *datasource-guid* by opening `server.xml`. In
 If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. For a data access on-demand project, you might have to intervene more forcefully:
 
 1.  In Eclipse, refresh the project that represents WebSphere Application Server Liberty Profile.
-2.  In that project, expand the `servers/read/apps` folder.
+2.  In that project, expand the `servers/read/apps` directory.
 
-    If the folder contains `project-name.war.xml` file instead of a `project-name.war` subfolder, then the application is not deployed.
+    If the directory contains a `project-name.war.xml` file instead of a `project-name.war` subdirectory, then the application is not deployed.
 
 3.  In the **Servers** tab, double-click the **read** server to open the **read** tab in the top part of the Eclipse application window.
 4.  Make certain of the **Run applications directly from the workspace** setting:
     1.  If the check box is cleared, select it, and then save the settings.
     2.  Clear the check box, and then save the settings again.
-    3.  Clean the server. The folder, rather than the file, is added to the project.
+    3.  Clean the server. The directory, rather than the file, is added to the project.
 
 If you see a basic HTML page, then the application is deployed but you have an HTTP server problem. When a simple restart does not work, you must check the server configuration:
 
@@ -181,32 +185,49 @@ If you see a basic HTML page, then the application is deployed but you have an H
 2.  Find the `<UriGroup Name="read_Cluster_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
     ``` {.pre .codeblock}
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/IndexAdminService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/ItemRetrievalService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/NetworkSearchService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/SearchService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/IndexAdminService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/ItemRetrievalService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/NetworkSearchService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/SearchService/*"/>
 
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetCreationService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetExplorationService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataRetrievalService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetCreationService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetExplorationService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataRetrievalService/*"/>
 
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AlertFeedRetrievalService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AlertRetrievalService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AuditService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/IndexAdminService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/ItemHistoryService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/ItemRetrievalService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/NetworkSearchService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/SearchService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/download/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/upload/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AlertFeedRetrievalService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AlertRetrievalService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/AuditService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/IndexAdminService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/ItemHistoryService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/ItemRetrievalService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/NetworkSearchService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/SearchService/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/download/*"/>
+    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
+         Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/upload/*"/>
     ```
 
     Here, the first block defines a data load ELP stage. The second block defines a data access on-demand server, and the third block defines the Intelligence Analysis Platform read server. The GUIDs in the `Name` attributes must match the GUIDs in the URLs to which Eclipse deployed the applications.
 
 If the `Name` attributes do not contain the correct GUIDs, or the block for one of your servers is missing:
 
-1.  Run `deploy.py -s write -t install-http-server-config`
+1.  Run `python deploy.py -s write -t install-http-server-config`
 2.  Check that the `plugin-cfg.xml` file now contains the correct GUIDs.
 3.  Restart the HTTP server.
 
@@ -216,8 +237,8 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 2.  Run the following commands on all the servers:
 
     ``` {.pre .codeblock}
-    deploy.py -s <server> -t clear-data
-    deploy.py -s <server> -t update-liberty
+    python deploy.py -s <server> -t clear-data
+    python deploy.py -s <server> -t update-liberty
     ```
 
 3.  Restart the HTTP server.
