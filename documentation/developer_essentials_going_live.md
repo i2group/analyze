@@ -47,16 +47,22 @@ After you create the fragment and add it to the Deployment Toolkit for the produ
 2.  Run `da-setup.py` on the write-side server of the production deployment:
 
     ``` {.pre .codeblock}
-    python da-setup.py -t add-data-source
-                       -a read
-                       -d data-source-name
+    python da-setup.py -t add-data-source -a read -d data-source-name
     ```
 
-    Note: In the production deployment, *data-source-name* does not have to match the name of an Eclipse project. You can give it any name, except the name of one of the fragment directories.
+    Note: In the production deployment, *data-source-name* does not have to match the name of an Eclipse project. The setting controls the name that users see in the Intelligence Portal. You can supply any *data-source-name*, but do not use the name of one of the fragment directories.
 
 3.  Open `topology.xml` and add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration/fragments`.
 
-    Important: Fragments are processed in order from top to bottom. Later fragments override earlier fragments. Therefore, add your fragment to the foot of the list.
+    Important: Fragments are processed in order from top to bottom, and later fragments override earlier ones. The previous step added a fragment named after the data source, and you should add your fragment to the foot of the list:
+
+    ``` {.pre .codeblock}
+    <fragments>
+       ...
+       <fragment name="data-source-name"
+       <fragment name="fragment-name"
+    </fragments>
+    ```
 
 After you update the configuration files, you can run the scripts to redeploy your new version of the Intelligence Analysis Platform.
 

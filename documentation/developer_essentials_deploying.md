@@ -48,7 +48,7 @@ In the first part of the procedure, you use Developer Essentials to customize th
 
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
-4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the resulting structure into the `iap-3.0.5.2\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
+4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the contents of the `developer-essentials` directory into the `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
 
     The new files contain presets that enable the Deployment Toolkit to deploy the platform onto a single computer, and to configure the platform to use WebSphere Application Server Liberty Profile.
 
