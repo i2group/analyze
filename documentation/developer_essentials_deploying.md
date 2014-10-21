@@ -9,8 +9,8 @@ Before you begin
 IBM i2 Intelligence Analysis Platform Developer Essentials has a longer and more specific set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 
 -   IBM Installation Manager 1.6
--   IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 2
--   IBM DB2 9.7 Express Edition
+-   IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 3
+-   IBM DB2 9.7 Express Edition (or Express-C Edition)
 -   IBM WebSphere MQ 7.5
 -   IBM WebSphere Application Server 8.5.5
 -   IBM WebSphere Application Server 8.5.5 Liberty Profile
@@ -32,9 +32,9 @@ Procedure
 
 In the first part of the procedure, you use Developer Essentials to customize the Deployment Toolkit. The libraries and settings that you add enable development for the Intelligence Analysis Platform on a single computer.
 
-1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 2 according to the instructions in the product readme file. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.2`.
-2.  Navigate to the `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
-3.  Install all the other prerequisite software and accept all of the default settings, apart from the target directories. As suggested by Chapter 5 of the Deployment Guide, change the following installation paths:
+1.  Install IBM i2 Intelligence Analysis Platform 3.0.5 Fix Pack 3 according to the instructions in the product readme file. If you accept all of the default settings, the Deployment Toolkit with the fix pack applied is installed to `C:\IBM\iap-3.0.5.3`.
+2.  Navigate to the `C:\IBM\iap-3.0.5.3\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
+3.  Install all the other prerequisite software and accept all of the default settings, apart from the target directories. As suggested by Chapter 6 of the Deployment Guide, change the following installation paths:
 
     |Product|Install path|
     |:------|:-----------|
@@ -48,7 +48,7 @@ In the first part of the procedure, you use Developer Essentials to customize th
 
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
-4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the contents of the `developer-essentials` directory into the `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
+4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the contents of the `developer-essentials` directory into the `C:\IBM\iap-3.0.5.3\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
 
     The new files contain presets that enable the Deployment Toolkit to deploy the platform onto a single computer, and to configure the platform to use WebSphere Application Server Liberty Profile.
 
@@ -115,13 +115,12 @@ In the first part of the procedure, you use Developer Essentials to customize th
 
 At this stage, configuration of the development version of the Intelligence Analysis Platform is complete. You can now deploy the platform into WebSphere Application Server Liberty Profile.
 
-1.  Open a command prompt as administrator, navigate to `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit\scripts`, and then run the following commands in sequence:
+1.  Open a command prompt as administrator, navigate to `C:\IBM\iap-3.0.5.3\IAP-Deployment-Toolkit\scripts`, and then run the following commands in sequence:
 
     ``` {.pre .codeblock}
     python deploy.py -s write -t delete-queue-manager
     python deploy.py -s write -t deploy-liberty
     python deploy.py -s read -t deploy-liberty
-    python deploy.py -s write -t start-queue-manager
     ```
 
     Note: The first command in the list is not strictly necessary when you deploy the platform for the first time, but it is necessary on future occasions.
@@ -136,7 +135,7 @@ The development version of the Intelligence Analysis Platform uses a file-based 
 Now, the development version of the Intelligence Analysis Platform is ready for use. The remaining steps configure the Eclipse development environment to interact with the platform.
 
 1.  Start Eclipse Kepler, and then open a web browser and navigate to https://www.ibmdw.net/wasdev. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
-2.  Click **Downloads**. Then, from the **WebSphere Developer Tools for Eclipse** section, click **Download (for Juno & Kepler)** to open the tools download page. Follow the instructions on the page to install the tools for **WAS V8.5.5 Liberty Profile**.
+2.  Click **Downloads** and then **Download in Eclipse**to open the tools download page. Follow the instructions on the page to install the tools for **WAS V8.5.5 Liberty Profile**.
 3.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
 4.  Optional: If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
     1.  In the Preferences window, click **Java** \> **Installed JREs** \> **Add** to open the Add JRE window.

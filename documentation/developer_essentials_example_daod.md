@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.2\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.5.3\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -75,8 +75,9 @@ By its nature, the data access on-demand example requires you to modify your dep
     python deploy.py -s write -t delete-queue-manager
     python deploy.py -s write -t deploy-liberty
     python deploy.py -s read -t deploy-liberty
-    python deploy.py -s write -t start-queue-manager
     ```
+
+    Note: Sometimes, the `delete-queue-manager` command reports success, but does not delete the queue manager. This error causes the subsequent command to fail. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the command that failed.
 
 7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server. Do not attempt to start the application server or the web applications yet.
 

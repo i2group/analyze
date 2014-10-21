@@ -36,6 +36,8 @@ Procedure
     python deploy.py -s write -t install-http-server-config
     ```
 
+    Note: Sometimes, the `delete-queue-manager` command reports success, but does not delete the queue manager. This error causes the subsequent command to fail. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the command that failed.
+
 6.  Restart the HTTP server.
 7.  Copy the Deployment Toolkit to the read side.
 8.  Run the following commands on the read-side server:
@@ -47,11 +49,10 @@ Procedure
     python deploy.py -s read -t update-application
     ```
 
-9.  Run the following command on the write-side server:
+Results
+-------
 
-    ``` {.pre .codeblock}
-    python deploy.py -s write -t start-all-applications
-    ```
+After you run the final sequence of commands, the ELP stage is available to users of your Intelligence Analysis Platform deployment.
 
 * * * * *
 

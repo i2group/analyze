@@ -54,13 +54,13 @@ After you create the fragment and add it to the Deployment Toolkit for the produ
 
 3.  Open `topology.xml` and add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration/fragments`.
 
-    Important: Fragments are processed in order from top to bottom, and later fragments override earlier ones. The previous step added a fragment named after the data source, and you should add your fragment to the foot of the list:
+    Important: Fragments are processed in order from top to bottom, and later fragments override earlier ones. The previous step added a fragment that is named after the data source. Add your fragment to the foot of the list:
 
     ``` {.pre .codeblock}
     <fragments>
        ...
-       <fragment name="data-source-name"
-       <fragment name="fragment-name"
+       <fragment name="data-source-name" />
+       <fragment name="fragment-name" />
     </fragments>
     ```
 
@@ -78,15 +78,14 @@ After you update the configuration files, you can run the scripts to redeploy yo
 4.  On the read side, run the following commands:
 
     ``` {.pre .codeblock}
-    python deploy.py -s read -t update-application
     python deploy.py -s read -t provision-storage-and-messaging
+    python deploy.py -s read -t update-application
     ```
 
-5.  Back on the write side, run the following command to start all the Intelligence Analysis Platform applications:
+Results
+-------
 
-    ``` {.pre .codeblock}
-    python deploy.py -s write -t start-all-applications
-    ```
+After you run the final sequence of commands, the new data source is available to users of your Intelligence Analysis Platform deployment.
 
 * * * * *
 
