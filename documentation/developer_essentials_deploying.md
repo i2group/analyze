@@ -135,7 +135,7 @@ The development version of the Intelligence Analysis Platform uses a file-based 
 Now, the development version of the Intelligence Analysis Platform is ready for use. The remaining steps configure the Eclipse development environment to interact with the platform.
 
 1.  Start Eclipse Kepler, and then open a web browser and navigate to https://www.ibmdw.net/wasdev. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
-2.  Click **Downloads** and then **Download in Eclipse**to open the tools download page. Follow the instructions on the page to install the tools for **WAS V8.5.5 Liberty Profile**.
+2.  Click **Downloads** and then **Download in Eclipse** to open the tools download page. Follow the instructions on the page to install the tools for **WAS V8.5.5 Liberty Profile**.
 3.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
 4.  Optional: If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
     1.  In the Preferences window, click **Java** \> **Installed JREs** \> **Add** to open the Add JRE window.
