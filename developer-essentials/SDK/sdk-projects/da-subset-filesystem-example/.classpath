@@ -2,427 +2,427 @@
 <classpath>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-alert-feed-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-batch-info-populator-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-card-provenance-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-command-service-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-command-service-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-command-service-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-common-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-common-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-common-exceptions-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-common-service-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-common-service-jaxws-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-container-security-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-cqrs-framework-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-cqrs-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-datasourcestore-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-docstore-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-events-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-historical-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-infrastructure-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-infrastructure-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-item-retrieval-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-item-store-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-item-store-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-item-subscriber-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-item-subscriber-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-lar-persistence-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-lar-persistence-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-lob-store-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-lob-store-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-mandatory-properties-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-mandatory-properties-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-merge-store-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-merge-store-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-data-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-data-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-data-marshaler-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-schema-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-schema-jaxb-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-model-schema-marshaler-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-orm-infrastructure-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-orm-infrastructure-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-persistence-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-principal-provider-websphere-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-schema-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-schemastore-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-security-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-security-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-securityapi-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-servlet-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-servlet-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-test-user-activity-logger-example-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-tools-database-upgrade-toolkit-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-tools-database-upgrade-toolkit-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-user-activity-logger-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-user-retrieval-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-utils-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-core-utils-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-adapter-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-common-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-connector-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-exceptions-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-loader-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-retrieval-service-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-retrieval-service-jaxws-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-retrieval-service-jaxws-autogen-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-retrieval-service-sdk-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-service-jaxb-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-services-common-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-services-web-services-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-source-initializer-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-creation-service-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-creation-service-jaxws-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-creation-service-jaxws-autogen-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-exploration-service-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-exploration-service-jaxws-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-exploration-service-jaxws-autogen-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-exploration-service-sdk-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-subset-locator-1.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-data-acquisition-external-data-type-conversion-1.1.1.3.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-all-web-services-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-document-store-service-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-item-retrieval-service-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-item-retrieval-service-jaxws-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-item-retrieval-service-jaxws-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-item-subscriber-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-item-subscriber-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-read-common-service-sdk-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-all-web-services-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-core-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-core-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-core-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-index-admin-service-jaxws-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-index-admin-service-jaxws-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-network-search-service-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-network-search-service-jaxws-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-network-search-service-jaxws-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-service-3.1.1.3.jar">
+	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-service-3.1.1.4.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-service-jaxws-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-service-jaxws-autogen-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="daod-target/WEB-INF/lib/apollo-search-service-sdk-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="principal-provider-fragment/WEB-INF/lib/apollo-core-principal-provider-websphere-3.1.1.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.3-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.4-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src/main"/>

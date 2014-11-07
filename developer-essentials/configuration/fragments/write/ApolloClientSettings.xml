@@ -125,9 +125,4 @@ disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 
   <!-- The maximum number of characters that can be entered as a search term that uses 'starts with' or 'equal' filters -->
   <MaxStartsWithOrEqual>256</MaxStartsWithOrEqual>
-
-  <SubsettingExampleGenerationUILocation>http://localhost:20032/da-dubset-rest-example-id/SubsettingHtml.html</SubsettingExampleGenerationUILocation>
-  <SubsettingExampleDisplayRecordUrl>http://localhost:20032/da-dubset-rest-example-id/ItemDetails.jsp?id={0}&amp;source={1}</SubsettingExampleDisplayRecordUrl>
-  
-
 </settings>

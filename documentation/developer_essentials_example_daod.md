@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.3\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.5.4\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -49,7 +49,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 
     When the command runs successfully, it modifies `topology.xml` to add information about a new data source. By default, the data source gets the same name as the value that you provide to the `-d` option.
 
-    The command also creates a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. Unlike in "data load direct" and "data load ELP stage" projects, the `add-data-source` target of the `da-setup.py` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
+    The command also creates a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. Unlike in the "data load direct" and "data load ELP stage" projects, the `add-data-source` target of the `da-setup.py` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
 
 4.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. By default, this file is at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`.
 5.  Edit the `<iap-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:
@@ -72,12 +72,15 @@ By its nature, the data access on-demand example requires you to modify your dep
 6.  Redeploy the Intelligence Analysis Platform by running the same commands that you used to deploy the platform originally:
 
     ``` {.pre .codeblock}
-    python deploy.py -s write -t delete-queue-manager
     python deploy.py -s write -t deploy-liberty
     python deploy.py -s read -t deploy-liberty
     ```
 
-    Note: Sometimes, the `delete-queue-manager` command reports success, but does not delete the queue manager. This error causes the subsequent command to fail. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the command that failed.
+    Note: Sometimes, the `deploy-liberty` command can fail. It displays the following error message:
+
+    `AMQ6004: An error occurred during WebSphere MQ initialization or ending.`
+
+    The failure occurs when the command attempts to delete and re-create the WebSphere MQ queue manager. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the `deploy-liberty` command.
 
 7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server. Do not attempt to start the application server or the web applications yet.
 

@@ -29,14 +29,17 @@ Procedure
 5.  Run the following commands on the write-side server:
 
     ``` {.pre .codeblock}
-    python deploy.py -s write -t delete-queue-manager
     python deploy.py -s write -t provision-storage-and-messaging
     python deploy.py -s write -t start-was-server
     python deploy.py -s write -t update-application
     python deploy.py -s write -t install-http-server-config
     ```
 
-    Note: Sometimes, the `delete-queue-manager` command reports success, but does not delete the queue manager. This error causes the subsequent command to fail. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the command that failed.
+    Note: Sometimes, the `provision-storage-and-messaging` command can fail. It displays the following error message:
+
+    `AMQ6004: An error occurred during WebSphere MQ initialization or ending.`
+
+    The failure occurs when the command attempts to delete and re-create the WebSphere MQ queue manager. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the `provision-storage-and-messaging` command.
 
 6.  Restart the HTTP server.
 7.  Copy the Deployment Toolkit to the read side.
