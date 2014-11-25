@@ -8,7 +8,7 @@ Before you begin
 
 The data access on-demand example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data file, and the same code for transforming and converting that data into Intelligence Analysis Platform items. These artifacts are in the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-example-common` directory, to which all of the examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into Intelligence Analysis Platform items. These artifacts are in the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-example-common` directory, to which all of the examples have access.
 
 About this task
 ---------------
@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.4\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.5.5\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
