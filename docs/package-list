@@ -25,8 +25,10 @@ com.i2group.apollo.externaldata.connector
 com.i2group.apollo.externaldata.edrs
 com.i2group.apollo.externaldata.loader
 com.i2group.apollo.externaldata.retrievalservice
+com.i2group.apollo.externaldata.retrievalservice.sdk
 com.i2group.apollo.externaldata.subsetcreationservice
 com.i2group.apollo.externaldata.subsetexplorationservice
+com.i2group.apollo.externaldata.subsetexplorationservice.sdk
 com.i2group.apollo.externaldata.transport
 com.i2group.apollo.externaldata.typeconversion
 com.i2group.apollo.indexadminservice
@@ -47,6 +49,7 @@ com.i2group.apollo.model.security.transport
 com.i2group.apollo.networksearchservice
 com.i2group.apollo.networksearchservice.transport
 com.i2group.apollo.purgeservice
+com.i2group.apollo.rest
 com.i2group.apollo.searchservice
 com.i2group.apollo.searchservice.transport
 com.i2group.apollo.security
