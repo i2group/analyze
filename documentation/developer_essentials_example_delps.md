@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.5\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.7\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -37,26 +37,34 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
 
 By its nature, the data load ELP stage example requires you to modify your deployment of the platform. Adding an ELP stage to the read side means adding a data store, a web application, and all their accompanying infrastructure. You must modify the `topology.xml` file to add the new information, and then redeploy the platform to update it to the new configuration.
 
-1.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. By default, this file is at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`.
-2.  Edit the supplied version of the topology file to remove the comment markers that disable the ELP stage. You must remove comment markers from five elements:
-    -   The `<iap-data-source>` element with `id="delps-ds-id"`
-    -   The `<database>` element with `id="item2"`
-    -   The `<jms-topic>` element with `id="delps"`
-    -   The `<lucene-index>` element with `id="delps"`
-    -   The `<war>` element with `iap-datasource-id="delps-ds-id"`
-
-3.  From the same directory as the topology file, open the `credentials.properties` file in a text editor.
-4.  Edit the file to add credential information for the new "`item2`" database:
+1.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse.
+2.  Open a command prompt as Administrator, and navigate to `IAP-Deployment-Toolkit\scripts`.
+3.  Run the following command:
 
     ``` {.pre .codeblock}
-    db.item2.user-name=username
-    db.item2.password=password
+    python da-setup.py -t add-delps-data-source -a read -d da-elpsload-filesystem-example
+    ```
+
+    Important: For successful integration with Eclipse, the value that you provide to the `-d` option must match the name of the example project.
+
+    When the command runs successfully, it modifies `topology.xml` to add information about a new data source. By default, the data source gets the same name as the value that you provide to the `-d` option.
+
+    The command also creates a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. Unlike in the "data load direct" project, the `add-delps-data-source` target of the `da-setup.py` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
+
+4.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. By default, this file is at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`.
+5.  In the `<iap-data-sources>` element, find the `<iap-data-source>` element with `id="delps1"`. Set the contents of the `<Name>` element to "`DELPS Example`".
+6.  In the `<databases>` element, find the `<database>` element with `database-name="delps1"`. Set the value of the `host-name` attribute to `"localhost"`. Save and close the topology file.
+7.  In the same directory as the topology file, open the `credentials.properties` file in a text editor.
+8.  Edit the file to add credential information for the new "`delps1`" database:
+
+    ``` {.pre .codeblock}
+    db.delps1.user-name=username
+    db.delps1.password=password
     ```
 
     The credentials that you provide here must match the other "`db`" properties in the file.
 
-5.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse. Stop the read-side server, followed by the write-side server.
-6.  Redeploy the Intelligence Analysis Platform by running the same commands that you used to deploy the platform originally:
+9.  Redeploy the Intelligence Analysis Platform by running the same commands that you used to deploy the platform originally:
 
     ``` {.pre .codeblock}
     python deploy.py -s write -t deploy-liberty
@@ -69,29 +77,9 @@ By its nature, the data load ELP stage example requires you to modify your deplo
 
     The failure occurs when the command attempts to delete and re-create the WebSphere MQ queue manager. To resolve the problem, use WebSphere MQ Explorer to delete the queue manager, and then rerun the `deploy-liberty` command.
 
-7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
-8.  In Eclipse, refresh the user interface and then start the write-side server, followed by the read-side server.
-
-After you redeploy the Intelligence Analysis Platform with an ELP stage, you can add the "data load ELP stage" example project to your Eclipse workspace.
-
-All data acquisition projects that you create with Developer Essentials require a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. The library is specific to a particular Intelligence Analysis Platform schema. You generate the library by running a command against the schema in question.
-
-1.  Open a command prompt, and navigate to the `IAP-Deployment-Toolkit\scripts` directory.
-2.  Run the following command:
-
-    ``` {.pre .codeblock}
-    python da-setup.py -t generate-mapping-jar
-                       -x ..\configuration\examples\schemas\
-                                   en_US\law-enforcement-schema.xml
-                       -o ..\SDK\sdk-projects\da-elpsload-filesystem-example\
-                                   schema-mapping-jar\law-enforcement-schema.jar
-    ```
-
-    Note: This command assumes that your target deployment of the Intelligence Analysis Platform uses the law enforcement schema, which is the default setting for the development version. If the target uses a different schema, then you must change the command and the project configuration to match.
-
-    When the command runs successfully, it creates the library in the `schema-mapping-jar` directory, which is on the build path for this project. To see the library in your workspace, you might need to refresh the Eclipse user interface.
-
-3.  Repeat the instructions that you followed when you added the `shared` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-elpsload-filesystem-example` directory to Eclipse.
+10. Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
+11. Repeat the instructions that you followed when you added the `shared` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-elpsload-filesystem-example` directory to Eclipse.
+12. In Eclipse, refresh the user interface and then start the write server, followed by the read server.
 
 The final part of configuration is to provide the example with the identifier of the ELP stage data source. The items that the client creates must contain the identifier of the data source in which they are stored.
 
@@ -99,9 +87,9 @@ The final part of configuration is to provide the example with the identifier of
 
     The `dsid` directory is populated and maintained by the deployment scripts. This directory contains settings files for each of the data sources that are defined in `topology.xml`.
 
-2.  Open the `dsid.delps-ds-id.properties` file in a text editor, and copy the value of the `DataSourceId` property.
+2.  Open the `dsid.delps1.properties` file in a text editor, and copy the value of the `DataSourceId` property.
 3.  In Eclipse, open the `da-elpsload-filesytem-example/src/resources/loader.properties` file.
-4.  Remove the comment marker from the line that defines the `DataLoaderDataSourceId` property, and set the property to the value that you copied.
+4.  Set the `DataLoaderDataSourceId` property to the value that you copied.
 
 You can now run the example to add items from the supplied XML file to the new ELP stage.
 

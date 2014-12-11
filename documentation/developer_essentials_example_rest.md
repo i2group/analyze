@@ -31,7 +31,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.5\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.7\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -42,8 +42,8 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
 
 Because it involves a new read server, the two-phase data retrieval example requires significant changes to your deployment of the platform. The scripts in the Deployment Toolkit can modify some settings automatically, but you must also make some manual alterations, and then redeploy the platform by hand.
 
-1.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse. Stop the read-side server, followed by the write-side server.
-2.  The configuration file for the new read server is in deployment toolkit, at `configuration\environment\newread\environment.properties`. Complete the file with the same values that you specified when you configured the standard read server.
+1.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse. Stop the read server, followed by the write server.
+2.  The configuration file for the new read server is in the Deployment Toolkit, at `configuration\environment\newread\environment.properties`. Complete the file with the same values that you specified when you configured the standard read server.
 3.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. By default, this file is at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`.
 4.  Edit the topology file to add the following `<application>` element immediately before the closing tag of the `<applications>` element:
 
@@ -62,7 +62,7 @@ Because it involves a new read server, the two-phase data retrieval example requ
 6.  Run the following command:
 
     ``` {.pre .codeblock}
-    python da-setup.py -t add-data-source -a newread -d da-subset-rest-example
+    python da-setup.py -t add-daod-data-source -a newread -d da-subset-rest-example
     ```
 
     Important: For successful integration with Eclipse, the value that you provide to the `-d` option must match the name of the example project.
@@ -93,9 +93,7 @@ Because it involves a new read server, the two-phase data retrieval example requ
     ``` {.pre .codeblock}
     <application name="newread" host-name="localhost">
        <lucene-indexes>
-          <lucene-index id="daod-subset-rest-example"
-                        main-index-location="C:/iap-data/db/daod-subset-rest-example-main"
-                        alternatives-location="C:/iap-data/db/daod-subset-rest-example-alternative"/>
+          <lucene-index id="daod-subset-rest-example" ... />
        </lucene-indexes>
        <wars>
           <war target="daod" name="da-subset-rest-example"
@@ -109,7 +107,7 @@ Because it involves a new read server, the two-phase data retrieval example requ
 9.  Run the following command to register the new data source with other parts of the Intelligence Analysis Platform deployment:
 
     ``` {.pre .codeblock}
-    python deploy.py -s write -t register-datasources
+    python deploy.py -s write -t register-data-sources
     ```
 
     Registering the data source also generates a GUID that is used to refer to it from elsewhere in the deployment, including in its URL.
@@ -161,7 +159,7 @@ The commands so far added an incomplete application to your Intelligence Analysi
         -   Clear the **Run applications directly from the workspace** check box
         -   Click **Publishing** \> **Never publish automatically**
 
-    8.  Press Ctrl+s to save the settings
+    8.  Press Ctrl+s to save the settings.
 
 2.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
 3.  In your Eclipse workspace, open the `WebSphere Application Server V8.5 Liberty Profile/servers/newread/apps` folder, and delete the `da-subset-rest-example.war` application.
@@ -173,7 +171,7 @@ The commands so far added an incomplete application to your Intelligence Analysi
 
 At this stage, deployment of the two-phase data retrieval example is complete. You can start the Intelligence Analysis Platform, and connect to it through the Intelligence Portal.
 
-1.  In Eclipse, start the write-side server, followed by the read-side server, and finally the "newread" server.
+1.  In Eclipse, start the write server, followed by the read server, and finally the "newread" server.
 2.  In a web browser, load or refresh your view of the Intelligence Portal. In the menu bar, click **Subsetting** \> **Launch Subsetting Tab** to display the custom user interface.
 3.  Follow the on-screen instructions to request data from the new data source and present it in the user interface in different permutations.
 

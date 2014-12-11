@@ -44,16 +44,17 @@ The procedure that you follow depends on the complexity of the project in Eclips
 After you create the fragment and add it to the Deployment Toolkit for the production deployment, you must update the configuration of the live platform.
 
 1.  If you changed the platform schema in the development version, copy the modified schema to the `configuration\fragments\common\WEB-INF\classes` directory in the Deployment Toolkit on the write side of the production deployment.
-2.  Run `da-setup.py` on the write-side server of the production deployment:
+2.  Copy the `configuration\environment\daod` directory from the Deployment Toolkit for the development deployment to the same location on the write side of the production deployment.
+3.  Run `da-setup.py` on the write server of the production deployment:
 
     ``` {.pre .codeblock}
-    python da-setup.py -t add-data-source -a read -d data-source-name
+    python da-setup.py -t add-daod-data-source -a read -d data-source-name
     ```
 
     Note: In the production deployment, *data-source-name* does not have to match the name of an Eclipse project. The setting controls the name that users see in the Intelligence Portal. You can supply any *data-source-name*, but do not use the name of one of the fragment directories.
 
-3.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. Modify the new `<DataSource>` element so that its attributes have values that match the equivalent element in the development version of the platform.
-4.  Also in `topology.xml`, add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration\fragments`.
+4.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. Modify the new `<DataSource>` element so that its attributes have values that match the equivalent element in the development version of the platform.
+5.  Also in `topology.xml`, add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration\fragments`.
 
     Important: Fragments are processed in order from top to bottom, and later fragments override earlier ones. The previous step added a fragment that is named after the data source. Add your fragment to the foot of the list:
 

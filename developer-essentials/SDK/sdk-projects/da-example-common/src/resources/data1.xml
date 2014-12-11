@@ -14,7 +14,7 @@ Contributors:
         <Actor id="p1">
             <FirstName>Harry</FirstName>
             <LastName>Windsor</LastName>
-            <DOB>1972-11-01</DOB>
+            <DOB>1972-11-01T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -22,7 +22,7 @@ Contributors:
         <Actor id="p2">
             <FirstName>James</FirstName>
             <LastName>Noel</LastName>
-            <DOB>1975-10-05</DOB>
+            <DOB>1975-10-05T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -30,7 +30,7 @@ Contributors:
         <Actor id="p3">
             <FirstName>Mark</FirstName>
             <LastName>Davies</LastName>
-            <DOB>1973-01-21</DOB>
+            <DOB>1973-01-21T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -38,7 +38,7 @@ Contributors:
         <Actor id="p4">
             <FirstName>Steve</FirstName>
             <LastName>McLovin</LastName>
-            <DOB>1987-10-07</DOB>
+            <DOB>1987-10-07T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>

@@ -21,11 +21,6 @@
 			<locationURI>TOOLKIT_ROOT/application/client</locationURI>
 		</link>
 		<link>
-			<name>mq-java-drivers</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/environment/common/mq-java-drivers</locationURI>
-		</link>
-		<link>
 			<name>src/example-common</name>
 			<type>2</type>
 			<locationURI>TOOLKIT_ROOT/SDK/sdk-projects/da-example-common/src/main</locationURI>

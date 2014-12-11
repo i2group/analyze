@@ -10,12 +10,13 @@ Contributors:
    IBM Corp - initial API and implementation and initial documentation
 -->
 <xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:tns="http://www.i2group.com/Schemas/2013-10-03/ModelData/Provenance">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" />
     <xsl:param name="filename" />
 
     <xsl:template match="Data">
-        <QueryResult>
+        <QueryResult xmlns:tns="http://www.i2group.com/Schemas/2013-10-03/ModelData/Provenance">
             <xsl:apply-templates select="Actors"/>
             <xsl:apply-templates select="Associations"/>
         </QueryResult>
@@ -29,15 +30,18 @@ Contributors:
 
     <xsl:template match="Actor">
         <Person>
-            <_1_ItemId>
-                <xsl:value-of select="@id" />
-            </_1_ItemId>
-            <Person_FullName>
-                <xsl:apply-templates select="FirstName" />
-                <xsl:apply-templates select="LastName" />
-            </Person_FullName>
-            <xsl:apply-templates select="DOB" />
             <xsl:call-template name="itemTemplate" />
+            <Cards>
+                <Card>
+                    <xsl:call-template name="cardProvenanceTemplate" />
+                    <xsl:apply-templates select="DOB" />
+                    <Person_FullName>
+                        <xsl:apply-templates select="LastName" />
+                        <xsl:apply-templates select="FirstName" />
+                    </Person_FullName>
+
+                </Card>
+            </Cards>
         </Person>
     </xsl:template>
 
@@ -49,19 +53,41 @@ Contributors:
 
     <xsl:template match="Association ">
         <Associate>
-            <_1_ItemId>
-                <xsl:value-of select="@id" />
-            </_1_ItemId>
+            <xsl:call-template name="itemTemplate" />
             <xsl:apply-templates select="Actor1" />
             <xsl:apply-templates select="Actor2" />
-            <_4_LinkDirection>NONE</_4_LinkDirection>
-            <_5_LinkStrength>Confirmed</_5_LinkStrength>
-            <xsl:call-template name="itemTemplate" />
+            <LinkDirection>NONE</LinkDirection>
+            <LinkStrength>Confirmed</LinkStrength>
+            <Cards>
+                <Card>
+                    <xsl:call-template name="cardProvenanceTemplate" />
+                </Card>
+            </Cards>
         </Associate>
     </xsl:template>
 
     <xsl:template name="itemTemplate">
-        <_6_Provenance>
+        <ItemId>
+            <xsl:value-of select="@id" />
+        </ItemId>
+        <ItemVersion>0</ItemVersion>
+        <SecurityTagIds>
+            <SecurityTagId>d3cdf9a0-1164-11e3-8ffd-0800200c9a66</SecurityTagId>
+            <SecurityTagId>6f0a69d4-6edd-40ec-a372-c6db33262a58</SecurityTagId>
+        </SecurityTagIds>
+        <PropertyBags>
+            <PropertyBag>
+                <DateTimes>
+                    <xsl:apply-templates select="RecordCreated" />
+                    <xsl:apply-templates select="RecordModified" />
+                </DateTimes>
+            </PropertyBag>
+        </PropertyBags>
+    </xsl:template>
+
+    <xsl:template name="cardProvenanceTemplate">
+        <tns:CardProvenance>
+            <RetrievalBlocks/>
             <OriginId>
                 <xsl:attribute name="Type">IAP.SDK.Example</xsl:attribute>
                 <xsl:attribute name="Version">1</xsl:attribute>
@@ -74,20 +100,7 @@ Contributors:
                     </String>
                 </Key>
             </OriginId>
-            <RetrievalBlocks/>
-        </_6_Provenance>
-        <_7_SecurityTagIds>
-            <SecurityTagId>d3cdf9a0-1164-11e3-8ffd-0800200c9a66</SecurityTagId>
-            <SecurityTagId>6f0a69d4-6edd-40ec-a372-c6db33262a58</SecurityTagId>
-        </_7_SecurityTagIds>
-        <_8_PropertyBags>
-            <PropertyBag>
-                <DateTimes>
-                    <xsl:apply-templates select="RecordCreated" />
-                    <xsl:apply-templates select="RecordModified" />
-                </DateTimes>
-            </PropertyBag>
-        </_8_PropertyBags>
+        </tns:CardProvenance>
     </xsl:template>
 
     <xsl:template match="FirstName">
@@ -109,21 +122,15 @@ Contributors:
     </xsl:template>
 
     <xsl:template match="Actor1">
-        <_2_FromEndId>
+        <LinkFromEndId>
             <xsl:value-of select="."></xsl:value-of>
-        </_2_FromEndId>
+        </LinkFromEndId>
     </xsl:template>
 
     <xsl:template match="Actor2">
-        <_3_ToEndId>
+        <LinkToEndId>
             <xsl:value-of select="."></xsl:value-of>
-        </_3_ToEndId>
-    </xsl:template>
-
-    <xsl:template match="SecurityTag">
-        <SecurityTagId>
-            <xsl:value-of select="."></xsl:value-of>
-        </SecurityTagId>
+        </LinkToEndId>
     </xsl:template>
 
     <xsl:template match="RecordCreated">

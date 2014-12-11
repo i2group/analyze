@@ -130,13 +130,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtensibilityHelper\ExtensibilityHelper.csproj">
-      <Project>{c344ee8d-311a-4d17-a30d-ba9f83c685bf}</Project>
-      <Name>ExtensibilityHelper</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="SubsettingExampleStringResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SubsettingExampleStringResources.Designer.cs</LastGenOutput>

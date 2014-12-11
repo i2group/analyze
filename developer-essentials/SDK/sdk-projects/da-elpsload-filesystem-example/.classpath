@@ -5,36 +5,11 @@
 	<classpathentry kind="src" path="src/example-common"/>
 	<classpathentry kind="src" path="src/example-data"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="client-libraries/bin/apollo-client-1.0.1.3.jar">
+	<classpathentry kind="lib" path="client-libraries/bin/apollo-client-1.2.0.0.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.1.5-docs-sdk.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/shared/javadoc/apollo-3.1.2.0-docs-sdk.zip!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="mq-java-drivers/CL3Export.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/CL3Nonexport.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.axis2.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.commonservices.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.defaultconfig.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.headers.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.jmqi.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.jms.Nojndi.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.pcf.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.postcard.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.soap.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mq.tools.ras.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/com.ibm.mqjms.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/connector.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/dhbcore.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/fscontext.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/jms.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/jndi.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/jta.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/ldap.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/mqcontext.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/providerutil.jar"/>
-	<classpathentry kind="lib" path="mq-java-drivers/rmm.jar"/>
-	<classpathentry kind="lib" path="schema-mapping-jar/law-enforcement-schema.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/shared"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

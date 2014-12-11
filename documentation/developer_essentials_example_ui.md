@@ -51,10 +51,9 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 
     This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the example project.
 
-3.  In Visual Studio, open the solution file at `IAP-Deployment-Toolkit\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains three projects:
-    -   `ExtensibilityHelper` adds a button to the header bar in the Intelligence Portal.
+3.  In Visual Studio, open the solution file at `IAP-Deployment-Toolkit\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
     -   `SubsettingExample` demonstrates how to add a custom HTML page and display it inside a custom tab.
-    -   `CommandExtensibilityExample` demonstrates how to add and modify commands in the pop-up menus for items, and the actions toolbar.
+    -   `CommandExtensibilityExample` demonstrates how to add and modify commands in the pop-up menus for items, and in the actions toolbar.
 
 4.  Build the solution in debug mode. Visual Studio puts the DLL files that it generates in the `IAP-Deployment-Toolkit\SDK\sdk-projects\ui-subset-example\build` directory.
 5.  Return to the command prompt, and run the following command to copy the built DLL files to the `IAP-Deployment-Toolkit\configuration\fragments\xap-supplement` directory.
@@ -67,7 +66,7 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 
     Note: If you remove custom components after you deployed them, you must also delete the recompiled XAP file from the `fragments\write` directory, and then redo the next three steps.
 
-6.  In Eclipse, ensure that both read and write servers are stopped. In the **Servers** tab, stop the read server, followed by the write server.
+6.  In Eclipse, ensure that the read and write servers are stopped. In the **Servers** tab, stop the read server, followed by the write server.
 7.  At the command prompt, run the following command to redeploy the write server:
 
     ``` {.pre .codeblock}

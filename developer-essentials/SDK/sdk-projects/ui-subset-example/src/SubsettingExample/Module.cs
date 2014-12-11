@@ -9,7 +9,6 @@
  *    IBM Corp - initial API and implementation and/or initial documentation
  *******************************************************************************/
 using System.Windows.Browser;
-using ExtensibilityHelper;
 using i2.Apollo.Common;
 using i2.Apollo.Common.DependencyInjection;
 using i2.Apollo.Common.Notifications;
@@ -44,7 +43,7 @@ namespace SubsettingExample
 
         private readonly IDependencyInjectionContainer mContainer;
         private readonly IApplicationPhases mApplicationPhases;
-        private readonly PortalExtensibilityHelper mExtensibilityHelper;
+        private readonly IExtensibilityHelper mExtensibilityHelper;
         private readonly IExpandableHeaderViewModel mExpandableHeaderViewModel;
         private readonly IExpandableRegionViewModel mExpandableRegionViewModel;
 
@@ -54,7 +53,7 @@ namespace SubsettingExample
         public Module(
             IDependencyInjectionContainer container, 
             IApplicationPhases applicationPhases,
-            PortalExtensibilityHelper extensibilityHelper,
+            IExtensibilityHelper extensibilityHelper,
             IExpandableHeaderViewModel expandableHeaderViewModel,
             IExpandableRegionViewModel expandableRegionViewModel)
         {
@@ -174,7 +173,8 @@ namespace SubsettingExample
             mExtensibilityHelper.RegisterHeaderCommand(
                 headerButtonCaption: SubsettingExampleStringResources.HeaderBarSubsettingButtonText,
                 headerButtonTooltip: SubsettingExampleStringResources.HeaderBarSubsettingButtonTooltipText, 
-                buttonCommand: command);
+                buttonCommand: command,
+                automationSuffix: "SubsettingExample");
         }        
     }
 }

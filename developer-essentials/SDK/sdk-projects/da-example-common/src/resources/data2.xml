@@ -14,7 +14,7 @@ Contributors:
         <Actor id="p5">
             <FirstName>Barry</FirstName>
             <LastName>Norman</LastName>
-            <DOB>1962-09-05</DOB>
+            <DOB>1962-09-05T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -22,7 +22,7 @@ Contributors:
         <Actor id="p6">
             <FirstName>James</FirstName>
             <LastName>Ryan</LastName>
-            <DOB>1967-10-04</DOB>
+            <DOB>1967-10-04T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -30,7 +30,7 @@ Contributors:
         <Actor id="p7">
             <FirstName>Trevor</FirstName>
             <LastName>Evans</LastName>
-            <DOB>1983-02-26</DOB>
+            <DOB>1983-02-26T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>
@@ -38,7 +38,7 @@ Contributors:
         <Actor id="p8">
             <FirstName>Brian</FirstName>
             <LastName>Burgundy</LastName>
-            <DOB>1971-01-07</DOB>
+            <DOB>1971-01-07T00:00:00+00:00</DOB>
             <RecordCreated>2014-01-01T12:00:00+00:00</RecordCreated>
             <RecordModified>2014-01-21T12:00:00+00:00</RecordModified>
         </Actor>

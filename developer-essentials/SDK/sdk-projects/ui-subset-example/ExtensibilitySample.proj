@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-       <ProjectReferences Include="src\ExtensibilityHelper\*.csproj" />
        <ProjectReferences Include="src\CommandExtensibilityExample\*.csproj" />
        <ProjectReferences Include="src\SubsettingExample\*.csproj" />
     </ItemGroup>

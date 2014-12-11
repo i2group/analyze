@@ -69,16 +69,17 @@ After you add all the pieces of the solution to the Deployment Toolkit for the p
 
     Important: *hostname* must be the fully qualified name of the new server that hosts the REST-enabled data access on-demand solution.
 
-3.  Run `da-setup.py` on the write server of the production deployment:
+3.  Copy the `configuration\environment\daod` directory from the Deployment Toolkit for the development deployment to the same location on the write side of the production deployment.
+4.  Run `da-setup.py` on the write server of the production deployment:
 
     ``` {.pre .codeblock}
-    python da-setup.py -t add-data-source -a newread -d data-source-name
+    python da-setup.py -t add-daod-data-source -a newread -d data-source-name
     ```
 
     Note: In the production deployment, *data-source-name* does not have to match the name of an Eclipse project. The setting controls the name that users see in the Intelligence Portal. You can supply any *data-source-name*, but do not use the name of one of the fragment directories.
 
-4.  Back in `topology.xml`, modify the `<DataSource>` element that the `add-data-source` command created so that its attributes have values that match the equivalent element in the development version of the platform.
-5.  Still in the topology file, add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration\fragments`.
+5.  Back in `topology.xml`, modify the `<DataSource>` element that the `add-daod-data-source` command created so that its attributes have values that match the equivalent element in the development version of the platform.
+6.  Still in the topology file, add information about your new fragment to the `<fragments>` child of the new `<war>` element that references it. The name of the fragment must match the name of the directory in `configuration\fragments`.
 
     Important: Fragments are processed in order from top to bottom, and later fragments override earlier ones. The previous step added a fragment that is named after the data source. Add your fragment to the foot of the list:
 
@@ -90,15 +91,15 @@ After you add all the pieces of the solution to the Deployment Toolkit for the p
     </fragments>
     ```
 
-6.  On the write side of the production deployment, run the following command:
+7.  On the write side of the production deployment, run the following command:
 
     ``` {.pre .codeblock}
-    python deploy.py -s write -t register-datasources
+    python deploy.py -s write -t register-data-sources
     ```
 
     This command generates a GUID for the data source in `environment\dsid\dsid.data-source-name-id.properties`.
 
-7.  In the Deployment Toolkit for the production deployment, update the `<SubsettingExample...>` elements at the bottom of `ApolloClientSettings.xml` to reference the generated DSID. Also, change the host name to reference the server that runs the HTTP proxy.
+8.  In the Deployment Toolkit for the production deployment, update the `<SubsettingExample...>` elements at the bottom of `ApolloClientSettings.xml` to reference the generated DSID. Also, change the host name to reference the server that runs the HTTP proxy.
 
     ``` {.pre .codeblock}
     <SubsettingExampleGenerationUILocation>
@@ -107,7 +108,7 @@ After you add all the pieces of the solution to the Deployment Toolkit for the p
     http://proxy-server/data-source-id/ItemDetails.jsp?id={0}&amp;source={1}</SubsettingExampleDisplayRecordUrl>
     ```
 
-8.  Add entries for `websphere.newread.user-name` and `websphere.newread.password` to `credentials.properties`. These entries enable the deployment scripts to interact with the instance of WebSphere Application Server on the new server.
+9.  Add entries for `websphere.newread.user-name` and `websphere.newread.password` to `credentials.properties`. These entries enable the deployment scripts to interact with the instance of WebSphere Application Server on the new server.
 
 After you update the configuration files, you can run the scripts to deploy your updated version of the Intelligence Analysis Platform.
 

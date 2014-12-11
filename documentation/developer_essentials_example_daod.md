@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.5.5\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.7\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -37,19 +37,19 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
 
 By its nature, the data access on-demand example requires you to modify your deployment of the platform. The scripts in the Deployment Toolkit can change `topology.xml` automatically. You must then redeploy the platform by hand.
 
-1.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse. Stop the read-side server, followed by the write-side server.
+1.  Optional: If the development version of the Intelligence Analysis Platform is running, stop the servers from Eclipse.
 2.  Open a command prompt as Administrator, and navigate to the `IAP-Deployment-Toolkit\scripts` directory.
 3.  Run the following command:
 
     ``` {.pre .codeblock}
-    python da-setup.py -t add-data-source -a read -d da-subset-filesystem-example
+    python da-setup.py -t add-daod-data-source -a read -d da-subset-filesystem-example
     ```
 
     Important: For successful integration with Eclipse, the value that you provide to the `-d` option must match the name of the example project.
 
     When the command runs successfully, it modifies `topology.xml` to add information about a new data source. By default, the data source gets the same name as the value that you provide to the `-d` option.
 
-    The command also creates a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. Unlike in the "data load direct" and "data load ELP stage" projects, the `add-data-source` target of the `da-setup.py` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
+    The command also creates a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. Unlike in the "data load direct" project, the `add-daod-data-source` target of the `da-setup.py` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
 
 4.  Open the topology file that represents your deployment of the Intelligence Analysis Platform in an XML editor. By default, this file is at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`.
 5.  Edit the `<iap-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:
@@ -94,7 +94,7 @@ The commands so far added an incomplete application to the read-side server. (Th
 
 At this stage, deployment of the data access on-demand example is complete. You can start the Intelligence Analysis Platform, and connect to it through the Intelligence Portal.
 
-1.  In Eclipse, start the write-side server, followed by the read-side server.
+1.  In Eclipse, start the write server, followed by the read server.
 2.  In a web browser, load or refresh your view of the Intelligence Portal. Browse the "DAOD Example" data source to see that the items to which it provides access are available to the user.
 
 * * * * *
