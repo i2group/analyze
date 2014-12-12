@@ -33,7 +33,7 @@ public final class ExampleDelpsLoaderMain
     private static final String DATA_LOADER_USER_NAME_PROPERTY_NAME = "DataLoaderUserName";
     private static final String DATA_LOADER_DATA_SOURCE_ID_PROPERTY_NAME = "DataLoaderDataSourceId";
     private static final String DATA_LOADER_USER_PASSWORD_PROPERTY_NAME = "DataLoaderUserPassword";
-    private static final String THE_PROPERTY_HAS_NOT_BEEN_SET_MESSAGE = "The property, ''{0}'', has not been set.";
+    private static final String THE_PROPERTY_HAS_NOT_BEEN_SET_MESSAGE = "The ''{0}'' property has not been set.";
 
     private static String sDataLoaderURL;
     private static String sDataLoaderUserName;
@@ -55,14 +55,16 @@ public final class ExampleDelpsLoaderMain
      *            {@link String}s containing the command-line arguments for the
      *            example loader.
      * @throws ValidationException
-     *             In the case of {@link ExampleDelpsLoader} throwing.
+     *            If a method in {@link ExampleDelpsLoader} throws a
+     *            {@link ValidationException}.
      * @throws ElpStageUnavailableException
-     *             In the case of {@link ExampleDelpsLoader} throwing.
+     *            If a method in {@link ExampleDelpsLoader} throws an
+     *            {@link ElpStageUnavailableException}.
      * @throws ItemNotFoundException
-     *             In the case of {@link ExampleDelpsLoader} throwing.
+     *            If a method in {@link ExampleDelpsLoader} throws an
+     *            {@link ItemNotFoundException}.
      * @throws IOException
-     *             In the case there is a problem loading the loader properties file.
-
+     *            If there is a problem loading the loader.properties file.
      */
     public static void main(final String[] args) throws ElpStageUnavailableException,
         ValidationException, ItemNotFoundException, IOException
@@ -118,11 +120,11 @@ public final class ExampleDelpsLoaderMain
     }
 
     /**
-     * Loads from loader.properties, the connection parameters required by
-     * {@link ExampleDelpsLoader}.
+     * Loads the connection parameters that {@link ExampleDelpsLoader} requires
+     * from the loader.properties file.
      * 
      * @throws IOException
-     *             If the loader.propertirs file is not on the classpath.
+     *            If there is a problem loading the loader.properties file.
      */
     private static void loadProperties() throws IOException
     {
@@ -143,17 +145,21 @@ public final class ExampleDelpsLoaderMain
     }
 
     /**
-     * Checks that a given property has been set and throws an
-     * {@link IllegalArgumentException} if not.
+     * Tests that a specified property has been set through the
+     * loader.properties file, and throws an {@link IllegalArgumentException}
+     * if it has not.
      * 
-     * @param property
-     *            The value to which the property has been set, if any.
+     * @param propertyValue
+     *            A {@link String} that contains the current value of the
+     *            property to be tested. If the property has not been set,
+     *            then the {@link String} will be empty.
      * @param propertyName
-     *            The name of the property.
+     *            A {@link String} that contains the name of the property
+     *            to be tested.
      */
-    private static void throwIfPropertyMissing(final String property, final String propertyName)
+    private static void throwIfPropertyMissing(final String propertyValue, final String propertyName)
     {
-        if (EMPTY_STRING.equals(property))
+        if (EMPTY_STRING.equals(propertyValue))
         {
             final String errorMessage = MessageFormat.format(
             THE_PROPERTY_HAS_NOT_BEEN_SET_MESSAGE, propertyName);

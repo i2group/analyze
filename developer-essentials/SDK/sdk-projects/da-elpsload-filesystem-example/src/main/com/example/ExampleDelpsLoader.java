@@ -27,8 +27,9 @@ import com.i2group.apollo.service.common.ValidationException;
 import com.i2group.utils.ResourceHelper;
 
 /**
- * A data loader that converts XML from an external file to platform-compatible format, and uses an
- * {@link ElpStageLoader2} to manipulate items in an ELP stage.
+ * A data loader that converts XML from an external file to platform-compatible
+ * format, and uses the Intelligence Analysis Platform DELPS service to
+ * manipulate items in an ELP stage.
  */
 public final class ExampleDelpsLoader
 {
@@ -47,14 +48,18 @@ public final class ExampleDelpsLoader
      * Constructs a new {@link ExampleDelpsLoader}.
      * 
      * @param serverURL
-     *            The URL of the Apollo Server. Usually:
-     *            http://localhost/apollo/
+     *            A {@link String} that contains the URL of the Intelligence
+     *            Analysis Platform deployment. Often, this is
+     *            "http://localhost/apollo".
      * @param username
-     *            The username to connect as. e.g. Demo
+     *            A {@link String} that contains the name of Intelligence
+     *            Analysis Platform user that the example connects as.
      * @param password
-     *            The users password. e.g. password
+     *            A {@link String} that contains the password of the
+     *            Intelligence Analysis Platform user.
      * @param datasourceId
-     *            The DELPS data source id.
+     *            A {@link String} that contains the unique identifier of the
+     *            ELP stage to which the example connects.
      */
     public ExampleDelpsLoader(final String serverURL, final String username, final String password,
             final String datasourceId)
@@ -68,18 +73,16 @@ public final class ExampleDelpsLoader
      * platform-compatible format, and then loads all the items in that data
      * into an ELP stage.
      * <p>
-     * This example makes a single call to createItems(), passing all the XML at
-     * the same time. This approach is reasonable for small data volumes, but
-     * you should employ batching when you have large volumes of data.
+     * This example makes a single call to createOrReplaceItems(), passing all
+     * the XML at the same time. This approach is reasonable for small data
+     * volumes, but you should employ batching when you have large volumes of
+     * data.
      * 
      * @throws ElpStageUnavailableException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ElpStageUnavailableException} so
-     *             it is rethrown.
+     *             If the specified ELP stage does not exist or is otherwise
+     *             unavailable.
      * @throws ValidationException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ValidationException} so it is
-     *             rethrown.
+     *             If the data in the specified location is not valid.
      */
     public void load() throws ElpStageUnavailableException, ValidationException
     {
@@ -101,17 +104,12 @@ public final class ExampleDelpsLoader
      * <p>
      * 
      * @throws ElpStageUnavailableException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ElpStageUnavailableException} so
-     *             it is rethrown.
+     *             If the specified ELP stage does not exist or is otherwise
+     *             unavailable.
      * @throws ItemNotFoundException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ItemNotFoundException} so it is
-     *             rethrown.
+     *             If an item to be modified does not exist in the ELP stage.
      * @throws ValidationException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ValidationException} so it is
-     *             rethrown.
+     *             If the data in the specified location is not valid.
      */
     public void synchronize() throws ElpStageUnavailableException, ItemNotFoundException,
         ValidationException
@@ -129,20 +127,16 @@ public final class ExampleDelpsLoader
     }
 
     /**
-     * Purges the items in the file identified in ITEMS_TO_PURGE_FILE_NAME from the ELP stage.
+     * Purges the items in the file identified in ITEMS_TO_PURGE_FILE_NAME from
+     * the ELP stage.
      * 
-     @throws ElpStageUnavailableException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ElpStageUnavailableException} so
-     *             it is rethrown.
+     * @throws ElpStageUnavailableException
+     *             If the specified ELP stage does not exist or is otherwise
+     *             unavailable.
      * @throws ValidationException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link InvalidArgumentException} so it
-     *             is rethrown.
+     *             If the data in the specified location is not valid.
      * @throws ItemNotFoundException
-     *             In this example there is nothing that can be productively
-     *             done in the case of a {@link ItemNotFoundException} so it is
-     *             rethrown.
+     *             If an item to be purged does not exist in the ELP stage.
      */
     public void purge() throws ElpStageUnavailableException, ValidationException, ItemNotFoundException
     {
@@ -153,11 +147,12 @@ public final class ExampleDelpsLoader
     }
 
     /**
-     * Transforms the XML in the specified file to platform-compatible format, returning a {@link Source} that contains
-     * the result.
+     * Transforms the XML in the specified file to platform-compatible format,
+     * returning a {@link Source} that contains the result.
      * 
      * @param xmlFileName
-     *            A {@link String} that contains the path of the file that contains the XML data to be transformed.
+     *            A {@link String} that contains the path of the file that
+     *            contains the XML data to be transformed.
      * @return See above.
      */
     private Source createTransformedXmlSource(final String xmlFileName)
@@ -169,12 +164,13 @@ public final class ExampleDelpsLoader
     }
 
     /**
-     * Converts the record identifiers in the specified file to a collection that you can pass to the deleteItems() or
-     * purgeItems() methods of {@link ElpStageLoader2}, returning the result.
+     * Converts the record identifiers in the specified file to a collection
+     * that you can pass to the deleteItems() or purgeItems() methods of the
+     * Intelligence Analysis Platform DELPS service, returning the result.
      * 
      * @param sourceRecordIdsFileName
-     *            A {@link String} that contains the path of the file that contains the record identifiers to be
-     *            converted.
+     *            A {@link String} that contains the path of the file that
+     *            contains the record identifiers to be converted.
      * @return See above.
      */
     private List<String> getItemIdsFromSourceRecordIds(final String sourceRecordIdsFileName)
@@ -195,11 +191,12 @@ public final class ExampleDelpsLoader
     }
 
     /**
-     * Transforms the XML in the specified file to platform-compatible format, returning a {@link String} that contains
-     * the result.
+     * Transforms the XML in the specified file to platform-compatible format,
+     * returning a {@link String} that contains the result.
      * 
      * @param xmlFileName
-     *            A {@link String} that contains the path of the file that contains the XML data to be transformed.
+     *            A {@link String} that contains the path of the file that
+     *            contains the XML data to be transformed.
      * @return See above.
      */
     private static String transformSourceSystemXml(final String xmlFileName)
