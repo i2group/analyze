@@ -79,7 +79,7 @@ By its nature, the data load ELP stage example requires you to modify your deplo
 
 10. Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 11. Repeat the instructions that you followed when you added the `shared` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-elpsload-filesystem-example` directory to Eclipse.
-12. In Eclipse, refresh the user interface and then start the write server, followed by the read server.
+12. In Eclipse, refresh the user interface and republish the Read server, then start the write server, followed by the read server.
 
 The final part of configuration is to provide the example with the identifier of the ELP stage data source. The items that the client creates must contain the identifier of the data source in which they are stored.
 
