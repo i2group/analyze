@@ -95,7 +95,7 @@ You can now run the example to add items from the supplied XML file to the new E
 
 1.  Attempt to run the example.
 
-    1.  In the Eclipse workspace, select `ExampleDelpsLoaderMain.java`.
+    1.  In the Eclipse workspace, select `ExampleDelpsLoaderMain.java` (which is in src/main/com.example).
     2.  Click **Run** \> **Run As** \> **Java Application**.
 
     If you have not run the example before, this step fails because the application requires a command-line argument. However, attempting to run the example initializes the configuration setting that you must make to run the example successfully.
