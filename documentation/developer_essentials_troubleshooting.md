@@ -21,12 +21,12 @@ For an unmodified example project, compilation errors usually occur in Eclipse w
 To determine whether there is a problem with `TOOLKIT_ROOT`, expand one of the example project directories. Some of the directory icons inside the project have glyphs:
 
 -   An arrow on the lower-right corner of a directory icon indicates a link to an external directory. If you see the arrow, then the variable is set correctly.
--   An exclamation point on the lower-right corner of a directory icon indicates a broken link. You are not able to expand an icon that is in this state. In this case, the variable is not set correctly.
+-   An exclamation point on the lower-right corner of a directory icon indicates a broken link. You are not able to expand an icon that is in this state.
 
-If you have a project with broken links, there are two things to check:
+If you have a project with broken links, there are two possibilities:
 
-1.  Verify that you extracted Developer Essentials into the same location as the Deployment Toolkit.
-2.  Verify that your `TOOLKIT_ROOT` variable is set to the path of Deployment Toolkit directory.
+1.  If only some of the links are broken, then your `TOOLKIT_ROOT` variable is set correctly, but Developer Essentials was not extracted into the same location as the Deployment Toolkit.
+2.  If all of the links are broken, then your `TOOLKIT_ROOT` variable is set incorrectly. Ensure that the variable is set to the path of Deployment Toolkit directory.
 
 Server starts without error but in only a few seconds
 -----------------------------------------------------
@@ -246,6 +246,6 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 
 * * * * *
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2015.
 
 

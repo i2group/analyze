@@ -38,6 +38,6 @@ Developer Essentials includes API documentation that integrates with the Eclipse
 
 * * * * *
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2015.
 
 

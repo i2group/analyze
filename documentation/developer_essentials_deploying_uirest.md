@@ -164,6 +164,6 @@ After you run the final sequence of commands, the new data source is available t
 
 * * * * *
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2015.
 
 

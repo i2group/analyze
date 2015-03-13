@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 IBM Corp.
+Copyright (c) 2014, 2015 IBM Corp.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -39,7 +39,12 @@ Contributors:
                         <xsl:apply-templates select="LastName" />
                         <xsl:apply-templates select="FirstName" />
                     </Person_FullName>
-
+                  <Person_Imagery>
+                            <Person_Image>
+                                     <xsl:apply-templates select="DocumentUrl" />
+                                     <xsl:apply-templates select="DocumentName" />
+                            </Person_Image>
+                  </Person_Imagery>
                 </Card>
             </Cards>
         </Person>
@@ -144,4 +149,18 @@ Contributors:
             <xsl:value-of select="."></xsl:value-of>
         </DateTime>
     </xsl:template>
+
+    <xsl:template match="DocumentUrl">
+         <DocumentId>
+             <xsl:value-of select="."></xsl:value-of>
+         </DocumentId>
+    </xsl:template>
+
+    <xsl:template match="DocumentName">
+        <Name>
+              <xsl:value-of select="."></xsl:value-of>
+        </Name>
+    </xsl:template>
+
+
 </xsl:stylesheet>

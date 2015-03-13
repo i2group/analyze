@@ -40,7 +40,7 @@ h1 {
 	
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Subsetting Example</title>
 </head>
 <body>
 <%

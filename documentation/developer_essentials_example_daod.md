@@ -26,7 +26,7 @@ The examples in Developer Essentials require links to the Intelligence Analysis 
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap-3.0.7\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\iap-3.0.9\IAP-Deployment-Toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
@@ -99,6 +99,6 @@ At this stage, deployment of the data access on-demand example is complete. You 
 
 * * * * *
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2015.
 
 

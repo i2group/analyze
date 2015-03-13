@@ -73,6 +73,10 @@
       <HintPath>..\..\extractedxap\i2.Apollo.Controls.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="i2.Apollo.Services.Silverlight">
+      <HintPath>..\..\extractedxap\i2.Apollo.Services.Silverlight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="i2.Apollo.SilverlightCommon">
       <HintPath>..\..\extractedxap\i2.Apollo.SilverlightCommon.dll</HintPath>
       <Private>False</Private>
@@ -89,6 +93,7 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowserStackLoginHelper.cs" />
     <Compile Include="ItemDetailsTabIntent.cs" />
     <Compile Include="ItemDetailsTabView.xaml.cs">
       <DependentUpon>ItemDetailsTabView.xaml</DependentUpon>
@@ -133,6 +138,7 @@
     <EmbeddedResource Include="SubsettingExampleStringResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SubsettingExampleStringResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

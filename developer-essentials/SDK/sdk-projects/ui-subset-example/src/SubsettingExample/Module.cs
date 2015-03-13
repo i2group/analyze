@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 IBM Corp.
+ * Copyright (c) 2015 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ using System.Windows.Browser;
 using i2.Apollo.Common;
 using i2.Apollo.Common.DependencyInjection;
 using i2.Apollo.Common.Notifications;
+using i2.Apollo.Common.ServiceCommunication;
 using i2.Apollo.CommonControls;
 using i2.Apollo.Controls;
 using i2.Apollo.Controls.Intent;
@@ -46,6 +47,8 @@ namespace SubsettingExample
         private readonly IExtensibilityHelper mExtensibilityHelper;
         private readonly IExpandableHeaderViewModel mExpandableHeaderViewModel;
         private readonly IExpandableRegionViewModel mExpandableRegionViewModel;
+        private readonly IAsyncActionsFactory mAsyncActionsFactory;
+        private readonly INotificationService mNotificationService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Module"/> class.
@@ -55,13 +58,17 @@ namespace SubsettingExample
             IApplicationPhases applicationPhases,
             IExtensibilityHelper extensibilityHelper,
             IExpandableHeaderViewModel expandableHeaderViewModel,
-            IExpandableRegionViewModel expandableRegionViewModel)
+            IExpandableRegionViewModel expandableRegionViewModel,
+            IAsyncActionsFactory asyncActionsFactory,
+            INotificationService notificationService)
         {
             mContainer = container;
             mApplicationPhases = applicationPhases;
             mExtensibilityHelper = extensibilityHelper;
             mExpandableHeaderViewModel = expandableHeaderViewModel;
             mExpandableRegionViewModel = expandableRegionViewModel;
+            mAsyncActionsFactory = asyncActionsFactory;
+            mNotificationService = notificationService;
         }
 
         /// <summary>
@@ -103,6 +110,13 @@ namespace SubsettingExample
                 phase: ApplicationPhase.AfterUIPresented,
                 action: InjectPostMessageToIntentHandlerToHostPage,
                 exceptionMapper: x => NotificationMessages.GetErrorMessage(x, NotificationMessageKeys.ApplicationInitialization));
+
+            // LoginViaBrowserStack uses the IUserCredentials, which is only
+            // available after login. Queue this login for the
+            // RegisterSpokes phase.
+            mApplicationPhases.QueueAsynchronousWork(
+                phase: ApplicationPhase.RegisterSpokes,
+                action: LoginViaBrowserStack);
         }
 
         private void RegisterContextCommands()
@@ -175,6 +189,11 @@ namespace SubsettingExample
                 headerButtonTooltip: SubsettingExampleStringResources.HeaderBarSubsettingButtonTooltipText, 
                 buttonCommand: command,
                 automationSuffix: "SubsettingExample");
-        }        
+        }
+
+        private void LoginViaBrowserStack(Action<Notification> callback)
+        {
+            mContainer.Resolve<IBrowserStackLoginHelper>().Login(callback);
+        }
     }
 }

@@ -65,6 +65,6 @@ After you run the final sequence of commands, the ELP stage is available to user
 
 * * * * *
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2015.
 
 
