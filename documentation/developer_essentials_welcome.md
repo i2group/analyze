@@ -23,6 +23,12 @@ Developer Essentials includes API documentation that integrates with the Eclipse
 -   [Publishing a data access on-demand solution to a live deployment](developer_essentials_going_live.md)
 
      After you develop and test a data access on-demand solution for the Intelligence Analysis Platform, the next step is to publish it to a live deployment.
+-   [Configuring the "binary documents access" example project](developer_essentials_example_documents.md)
+
+     The "data access on-demand" approach to data acquisition in the Intelligence Analysis Platform involves querying external data through a new service on the read side of the platform. In Developer Essentials, the `da-subset-documents-example` example extends the `da-subset-filesystem-example` example to include images or other binary documents in the returned data.
+-   [Publishing a binary documents access solution to a live deployment](developer_essentials_documents_going_live.md)
+
+     After you develop and test a binary documents access solution for the Intelligence Analysis Platform, the next step is to publish it to a live deployment.
 -   [Configuring the "user interface extension" example project](developer_essentials_example_ui.md)
 
      The Intelligence Analysis Platform supports extensions that enable users to interact with external data sources through enhancements to the Intelligence Portal. In Developer Essentials, IBM provides the `ui-subset-example` example, which includes a demonstration of how to integrate custom elements into the standard portal user interface.
