@@ -106,6 +106,32 @@ You can now run the example to add items from the supplied XML file to the new E
 5.  Click **Run** to close the window and run the example application. The example adds a handful of items from the supplied XML file to the ELP stage.
 
     Note: Running the example with the `-load` argument for a second time does not fail, but also does not add duplicate items to the ELP stage. The ELP stage ignores the events that attempt to create the same items again.
+    
+    Note: you may have the following error message :
+    Invoking 'load'...
+Exception in thread "main" java.lang.RuntimeException: com.i2group.apollo.service.common.ValidationException: Items with IDs '[p1, p2, p3, p4, ass1, ass2, ass3]' already exist.
+	at com.i2group.apollo.externaldata.bulkdataloader.internal.BulkDataLoaderImplementation.executeCommandServiceCommands(BulkDataLoaderImplementation.java:304)
+	at com.i2group.apollo.externaldata.bulkdataloader.internal.BulkDataLoaderImplementation.createOrUpdateItems(BulkDataLoaderImplementation.java:245)
+	at com.i2group.apollo.externaldata.bulkdataloader.internal.BulkDataLoaderImplementation.createItems(BulkDataLoaderImplementation.java:117)
+	at com.i2group.apollo.externaldata.loader.AnalysisRepositoryLoader.createItems(AnalysisRepositoryLoader.java:84)
+	at com.example.ExampleDataLoader.load(ExampleDataLoader.java:68)
+	at com.example.ExampleDataLoaderMain.main(ExampleDataLoaderMain.java:62)
+Caused by: com.i2group.apollo.service.common.ValidationException: Items with IDs '[p1, p2, p3, p4, ass1, ass2, ass3]' already exist.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:56)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:39)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:527)
+	at com.sun.xml.internal.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:142)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:120)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:90)
+	at com.sun.xml.internal.ws.client.sei.SEIStub.invoke(SEIStub.java:119)
+	at com.sun.proxy.$Proxy51.executeCommands(Unknown Source)
+	at com.i2group.apollo.externaldata.bulkdataloader.serviceproxy.CommandServiceProxy.executeCommands(CommandServiceProxy.java:83)
+	at com.i2group.apollo.externaldata.bulkdataloader.internal.BulkDataLoaderImplementation.executeCommandServiceCommands(BulkDataLoaderImplementation.java:252)
+	... 5 more
+	
+	This is because the data is already in the Database.
+	QUESTION : How do I purge the data ?
 
 6.  In a web browser, load or refresh your view of the Intelligence Portal, and browse the "DELPS Example" data source to see that the example project added new items.
 
