@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2015 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+
+<ns1:topology xmlns:ns1="http://www.i2group.com/Schemas/2013-11-18/Topology">
+	<iap-data-sources>
+		<iap-data-source id="ar-id" ar="true" default="true">
+			<!-- DataSource Id is deliberately blank and should be left so -->
+			<DataSource Id="" Version="0">
+				<Shape>Repository</Shape>
+				<Name>Ar</Name>
+			</DataSource>
+		</iap-data-source>
+	</iap-data-sources>
+	<databases>
+		<!-- The instance-name must be set according to your DB2 configuration.
+		For example, this defaults to DB2 on Windows and db2inst1 on Linux. -->
+		<database dialect="db2" xa="true" instance-name="DB2"
+			database-name="WriteSto" database-type="WriteStore" id="write1"
+			host-name="localhost" port-number="50000" max-pool-size="5" />
+	</databases>
+	<applications>
+		<application name="iap" host-name="localhost" http-server-host="true">
+			<lucene-indexes>
+				<lucene-index id="ar" main-index-location="C:/IBM/iap/data-dev/ar/main_index"
+					alternatives-location="C:/IBM/iap/data-dev/ar/alternatives" />
+			</lucene-indexes>
+			<wars>
+				<war target="core" name="core" iap-datasource-id="ar-id" context-root="apollo">
+					<data-sources>
+						<data-source database-id="write1" create-database="true" />
+					</data-sources>
+					<lucene-index-ids>
+						<lucene-index-id value="ar" />
+					</lucene-index-ids>
+					<fragments>
+						<fragment name="common" />
+						<fragment name="core" />
+					</fragments>
+				</war>
+			</wars>
+		</application>
+	</applications>
+</ns1:topology>

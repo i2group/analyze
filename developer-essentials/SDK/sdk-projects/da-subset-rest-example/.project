@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2015 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+
 <projectDescription>
 	<name>da-subset-rest-example</name>
 	<comment></comment>
@@ -43,17 +54,12 @@
 		<link>
 			<name>autogen</name>
 			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/autogen/da-subset-rest-example</locationURI>
+			<locationURI>TOOLKIT_ROOT/scripts/gradle/build/autogenFragments/da-subset-rest-example</locationURI>
 		</link>
 		<link>
 			<name>common-fragment</name>
 			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/common</locationURI>
-		</link>
-		<link>
-			<name>daod-fragment</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/da-subset-rest-example</locationURI>
+			<locationURI>TOOLKIT_ROOT/configuration/fragments/common/WEB-INF</locationURI>
 		</link>
 		<link>
 			<name>daod-target</name>
@@ -61,24 +67,9 @@
 			<locationURI>TOOLKIT_ROOT/application/targets/daod</locationURI>
 		</link>
 		<link>
-			<name>principal-provider-fragment</name>
+			<name>schema</name>
 			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/fragments/principal-provider</locationURI>
-		</link>
-		<link>
-			<name>sdk-fragment</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/sdk-da-subset-rest-example</locationURI>
-		</link>
-		<link>
-			<name>src/example-common</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/SDK/sdk-projects/da-example-common/src/main</locationURI>
-		</link>
-		<link>
-			<name>src/example-data</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/SDK/sdk-projects/da-example-common/src/resources</locationURI>
+			<locationURI>TOOLKIT_ROOT/configuration/fragments/da-subset-rest-example/WEB-INF/lib</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

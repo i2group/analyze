@@ -34,18 +34,24 @@ namespace SubsettingExample
 
     public class SubsettingExampleLocations : ISubsettingExampleLocations
     {
-        // To override these preferences without recompiling the example,
-        // you can add elements named SubsettingExampleDisplayRecordUrl and
-        // SubsettingExampleGenerationUILocation to ApolloClientSettings.xml.
+        /*
+         * To override these preferences without recompiling the example,
+         * you can add elements named SubsettingExampleDisplayRecordUrl and
+         * SubsettingExampleGenerationUILocation to ApolloClientSettings.xml.
+         * 
+         * Note: The default values will not work without alteration.
+         * [da-subset-rest-example-data-source-id] should be replaced with
+         * the appropriate value.  As described in the deployment documentation.
+         */
         private static readonly ApplicationPreference<string> SubsettingExampleDisplayRecordUrlPreference =
             ApplicationPreference.Register("SubsettingExampleDisplayRecordUrl",
                                            ApplicationPreference.DefaultStringParser,
-                                           "http://localhost:20032/ItemDetails.jsp?id={0}&amp;source={1}");
+                                           "http://localhost:9081/[da-subset-rest-example-data-source-id]/ItemDetails.jsp?id={0}&amp;source={1}");
 
         private static readonly ApplicationPreference<string> SubsettingExampleGenerationUILocationPreference =
             ApplicationPreference.Register("SubsettingExampleGenerationUILocation",
                                            ApplicationPreference.DefaultStringParser,
-                                           "http://localhost:20032/SubsettingHtml.html");
+                                           "http://localhost:9081/[da-subset-rest-example-data-source-id]/SubsettingHtml.html");
 
         private readonly string mSubsettingExampleUriFormat;
 

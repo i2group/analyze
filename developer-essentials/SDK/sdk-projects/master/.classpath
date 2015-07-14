@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2015 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/aopalliance.jar"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/client/bin/apollo-client-3.0.9.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-Core-3.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-adapter-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-common-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-connector-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-document-service-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-subset-exploration-service-jaxws-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-data-acquisition-external-data-subset-exploration-service-sdk-1.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-Read_Common-3.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/apollo-Search-3.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/guava.jar"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/guice-assistedinject.jar"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/guice.jar"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/i2-java-utils-1.1.6.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/master/javadoc/apollo-3.1.7.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/icu4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="build/IAP-Deployment-Toolkit/application/shared/lib/javax.inject.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -7,19 +7,12 @@ Before you begin
 ----------------
 
 IBM i2 Intelligence Analysis Platform Developer Essentials has a longer and more specific set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
-
 -   IBM Installation Manager 1.8
--   IBM i2 Intelligence Analysis Platform 3.0.9
--   IBM DB2 9.7 Express Edition (or Express-C Edition)
--   IBM WebSphere MQ 7.5 Fix Pack 4
--   IBM WebSphere Application Server 8.5.5 Liberty Profile Fix Pack 4
+-   IBM i2 Intelligence Analysis Platform 3.0.11
+-   IBM DB2 10.5 Express Edition (or Express-C Edition)
 -   Web Server Plug-ins for IBM WebSphere Application Server 8.5.5
 -   IBM HTTP Server 8.5
--   IBM Java 6.0 JDK (64-bit)
--   Python 2.7
--   Eclipse Kepler SR2 (Eclipse IDE for Java EE Developers)
-
-Note: If you obtain WebSphere Application Server Liberty Profile from the project website at https://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments, then you must download both the runtime and the extended content.
+-   Eclipse Luna (Eclipse IDE for Java EE Developers)
 
 About this task
 ---------------
@@ -29,141 +22,79 @@ The deployment process for Intelligence Analysis Platform Developer Essentials f
 Procedure
 ---------
 
-In the first part of the procedure, you use Developer Essentials to customize the Deployment Toolkit. The libraries and settings that you add enable development for the Intelligence Analysis Platform on a single computer.
+In the first part of the procedure, you use Developer Essentials to create a custom version of the Deployment Toolkit. The libraries and settings that you add enable development for the Intelligence Analysis Platform on a single computer.
 
-1.  Install IBM i2 Intelligence Analysis Platform 3.0.9 according to the instructions in the release notes. If you accept all of the default settings, the Deployment Toolkit is installed to `C:\IBM\iap-3.0.9`.
-2.  Navigate to the `C:\IBM\iap-3.0.9\IAP-Deployment-Toolkit` directory, make a copy of the `configuration-example` directory, and name it `configuration`.
-3.  Install all the other prerequisite software and accept all of the default settings, apart from the target directories. As suggested by Chapter 6 of the Deployment Guide, change the following installation paths:
+1.  <span class="ph cmd">Install IBM i2 Intelligence Analysis Platform 3.0.11 according to the instructions in the release notes.</span> If you accept all of the default settings, the Deployment Toolkit is installed to `C:\IBM\iap`.
+2.  <span class="ph cmd">Install all the other prerequisite software and accept all of the default settings, apart from the target directory for IBM HTTP Server that should be set to `C:\IBM\HTTPServer`, and the Web Server Plug-ins for IBM WebSphere Application Server that should be set to `C:\IBM\WebSphere\Plugins`.</span>
+    <span class="notetitle">Note:</span> Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
-    |Product|Install path|
-    |:------|:-----------|
-    |IBM WebSphere Application Server Liberty Profile|`C:\IBM\WebSphere\Liberty`|
-    |Web Server Plug-ins for IBM WebSphere Application Server|`C:\IBM\WebSphere\Plugins`|
-    |IBM WebSphere MQ|`C:\IBM\WebSphereMQ`|
-    |IBM HTTP Server|`C:\IBM\HTTPServer`|
+3.  <span class="ph cmd">Extract Intelligence Analysis Platform Developer Essentials, and copy the `SDK` directory into the `C:\IBM\iap\` directory.</span>
+4.  <span class="ph cmd">Check the following files to ensure that the default settings match your environment:</span>
+    -   `SDK\sdk-projects\master\toolkit-overides\configuration\environment\iap\environment.properties`
+    -   `SDK\sdk-projects\master\toolkit-overides\configuration\environment\http-server.properties`
+    -   `SDK\sdk-projects\master\toolkit-overides\configuration\environment\topology.xml`
 
-    Note: When you install IBM WebSphere Application Server Liberty Profile, do not create servers or profiles at the same time. The Deployment Toolkit manages that part of the process. Also, check the installation path before you continue. Some installers put Liberty Profile in a `wlp` subdirectory of the directory that you specify, which can affect the instructions later in this procedure.
+5.  <span class="ph cmd">Open the file at `SDK\sdk-projects\master\toolkit-overrides\configuration\environment\credentials.properties` in a text editor, and add the user name and password for DB2.</span>
 
-    Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
+At this stage, configuration of the development version of the Intelligence Analysis Platform is complete. You can now deploy the platform.
 
-4.  Extract Intelligence Analysis Platform Developer Essentials, and copy the contents of the `developer-essentials` directory into the `C:\IBM\iap-3.0.9\IAP-Deployment-Toolkit` directory. Confirm any requests to replace existing files with new files from Developer Essentials.
+1.  <span class="ph cmd"> Open a command prompt as Administrator, and navigate to the `SDK\sdk-projects\master` directory.</span>
+2.  <span class="ph cmd">Run the following command:</span>
 
-    The new files contain presets that enable the Deployment Toolkit to deploy the platform onto a single computer, and to configure the platform to use WebSphere Application Server Liberty Profile.
-
-5.  Copy the JDBC driver for DB2 from `C:\Program Files\IBM\SQLLIB\java\db2jcc4.jar` to the `IAP-Deployment-Toolkit\configuration\environment\common\jdbc-drivers` directory.
-6.  Set the write-side environment properties by completing the `environment.properties` file in `IAP-Deployment-Toolkit\configuration\environment\write`.
-
-    If you use the comments in the file as a guide, and you followed the instructions in step 3, the values look like this example:
-
-    ``` {.pre .codeblock}
-    db.installation.dir.db2=C:/Program Files/IBM/SQLLIB
-    db.database.location.dir.db2=C:
-
-    was.home.dir=
-    wlp.home.dir=C:/IBM/WebSphere/Liberty
-    java.home.dir=C:/Program Files/IBM/Java60
-
-    mq.home.dir=C:/IBM/WebSphereMQ
-    mq.var.dir=C:/IBM/WebSphereMQ
-
-    http.server.home.dir=C:/IBM/HTTPServer
-    http.was.module.dir=C:/IBM/WebSphere/Plugins/bin/32bits
-    http.server.ssl.enabled=false
-    http.server.host.name=
-    http.server.keystore.dir=
-
-    help.port.number=7000
-    help.content.dir=${wlp.home.dir}/usr/WebHelp
-
-    apollo.data=C:/iap-data
+    ``` pre
+    build -t deployExample
     ```
 
-7.  Set the read-side environment properties by completing the `environment.properties` file in `IAP-Deployment-Toolkit\configuration\environment\read`.
+    <span class="notetitle">Note:</span> The development version of the Intelligence Analysis Platform uses a file-based registry of users and groups. Developer Essentials includes definitions of users and groups that correspond to the example security schema. The default users are:
+    -   Analyst
+    -   Manager
+    -   Demo
 
-    If you use the comments in the file as a guide, and you followed the instructions in step 3, the values look like this example:
-
-    ``` {.pre .codeblock}
-    db.upgrade.security.schema.file.name=
-    db.installation.dir.db2=C:/Program Files/IBM/SQLLIB
-    db.database.location.dir.db2=C:
-
-    was.home.dir=
-    wlp.home.dir=C:/IBM/WebSphere/Liberty
-    java.home.dir=C:/Program Files/IBM/Java60
-
-    apollo.data=C:/iap-data
-    ```
-
-8.  Do not modify the file at `IAP-Deployment-Toolkit\configuration\environment\topology.xml`. The version of `topology.xml` in Developer Essentials contains all the information necessary to run the development version of the Intelligence Analysis Platform on a single computer.
-9.  Open the file at `IAP-Deployment-Toolkit\configuration\environment\credentials.properties` in a text editor, and add user names and passwords for DB2.
-
-    You must set all of the "`db`" properties to the name and password of the user that was created when you installed DB2. You do not need to provide "`websphere`" user names and passwords for a deployment to WebSphere Liberty Profile.
-
-10. Copy the example security schema file (`example-security-schema.xml`) from `IAP-Deployment-Toolkit\configuration\examples\security-schema` to `IAP-Deployment-Toolkit\configuration\fragments\common\WEB-INF\classes`.
-
-    The example security schema contains security dimensions, values, and tags that match the default permissions that are configured in `IAP-Deployment-Toolkit\configuration\fragments\write\ApolloClientSettings.xml`.
-
-11. Copy all the schema and charting scheme files from `IAP-Deployment-Toolkit\configuration\examples\schemas\en_US` to `IAP-Deployment-Toolkit\configuration\fragments\common\WEB-INF\classes`.
-
-    The configuration file at `IAP-Deployment-Toolkit\configuration\fragments\common\WEB-INF\classes\ApolloServerSettingsMandatory.properties` specifies the law enforcement schema and a handful of other standard settings.
-
-At this stage, configuration of the development version of the Intelligence Analysis Platform is complete. You can now deploy the platform into WebSphere Application Server Liberty Profile.
-
-1.  Open a command prompt as administrator, navigate to `C:\IBM\iap-3.0.9\IAP-Deployment-Toolkit\scripts`, and then run the following commands in sequence:
-
-    ``` {.pre .codeblock}
-    python deploy.py -s write -t deploy-liberty
-    python deploy.py -s read -t deploy-liberty
-    ```
-
-2.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server. Do not attempt to start the application server or the web applications yet.
-
-The development version of the Intelligence Analysis Platform uses a file-based registry of users and groups. Developer Essentials includes definitions of users and groups that correspond to the security schema file that you specified earlier. To complete this aspect of the installation process, you must add the users and groups to the application server.
-
-1.  In an XML editor, open `C:\IBM\WebSphere\Liberty\usr\shared\config\server.security.xml` and `IAP-Deployment-Toolkit\configuration\examples\example-user-repository\liberty-example-users.xml`.
-2.  Copy the contents of `liberty-example-users.xml` into `server.security.xml` as the first child of the `<server>` element.
+    For each of these users, the password is password.
 
 Now, the development version of the Intelligence Analysis Platform is ready for use. The remaining steps configure the Eclipse development environment to interact with the platform.
 
-1.  Start Eclipse Kepler, and then open a web browser and navigate to https://developer.ibm.com/wasdev/. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
-2.  Click **Downloads** and then **Download in Eclipse** to open the tools download page. Follow the instructions on the page to install the tools for **WAS V8.5.5 Liberty Profile**.
-3.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
-4.  Optional: If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
-    1.  In the Preferences window, click **Java** \> **Installed JREs** \> **Add** to open the Add JRE window.
-    2.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The default home directory for this JRE is `C:/Program Files/IBM/Java60`.
-    3.  Select the check box that makes IBM Java the default JRE in Eclipse.
+1.  <span class="ph cmd">Start Eclipse Luna, and then open a web browser and navigate to https://developer.ibm.com/wasdev/.</span> This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
+2.  <span class="ph cmd">Click **Downloads** and then **Download in Eclipse** to open the tools download page. Follow the instructions on the page to install the tools for **WAS Liberty Profile**.</span>
+3.  <span class="ph cmd">In Eclipse, click <span class="ph menucascade">**Window** \> **Preferences**</span> to open the <span class="keyword wintitle">Preferences</span> window.</span>
+4.  Optional: <span class="ph cmd">If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.</span>
+    1.  <span class="ph cmd">In the <span class="keyword wintitle">Preferences</span> window, click <span class="ph menucascade">**Java** \> **Installed JREs** \> **Add**</span> to open the <span class="keyword wintitle">Add JRE</span> window.</span>
+    2.  <span class="ph cmd">Use the <span class="keyword wintitle">Add JRE</span> window to add a **Standard VM** named **IBM Java**. The default home directory for this JRE is `C:\IBM\iap\deploy-dev\java`.</span>
+    3.  <span class="ph cmd">Select the check box that makes IBM Java the default JRE in Eclipse.</span>
 
-5.  Create a server runtime environment in which the Intelligence Analysis Platform write-side and read-side applications will both run.
-    1.  In the Preferences window, click **Server** \> **Runtime Environments** \> **Add** to open the New Server Runtime Environment window.
-    2.  In the New Server Runtime Environment window, click **IBM** \> **WebSphere Application Server V8.5 Liberty Profile**, and then click **Next**.
-    3.  Set the **Path** of the new server runtime environment to `C:\IBM\WebSphere\Liberty`, instruct it to use the default JRE, and then click **Finish**.
+5.  <span class="ph cmd">Create a server runtime environment in which the Intelligence Analysis Platform application will run.</span>
+    1.  <span class="ph cmd">In the <span class="keyword wintitle">Preferences</span> window, click <span class="ph menucascade">**Server** \> **Runtime Environments** \> **Add**</span> to open the <span class="keyword wintitle">New Server Runtime Environment</span> window.</span>
+    2.  <span class="ph cmd">In the <span class="keyword wintitle">New Server Runtime Environment</span> window, click <span class="ph menucascade">**IBM** \> **WebSphere Application Server Liberty Profile**</span>, and then click **Next**.</span>
+    3.  <span class="ph cmd">Set the **Path** of the new server runtime environment to `C:\IBM\iap\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.</span>
 
-6.  Click **OK** to close the Preferences window.
-7.  Create a server in Eclipse that represents the write side of an Intelligence Analysis Platform deployment.
-    1.  In the Eclipse application window, click the **Servers** tab.
+6.  <span class="ph cmd">Click **OK** to close the <span class="keyword wintitle">Preferences</span> window.</span>
+7.  <span class="ph cmd">Create a server in Eclipse that represents the Intelligence Analysis Platform deployment.</span>
+    1.  <span class="ph cmd">In the Eclipse application window, click the **Servers** tab.</span>
 
-        Note: If the **Servers** tab is not visible, click **Window** \> **Show View** \> **Servers** to open it.
+        <span class="notetitle">Note:</span> If the **Servers** tab is not visible, click <span class="ph menucascade">**Window** \> **Show View** \> **Servers**</span> to open it.
 
-    2.  Right-click inside the tab, and then click **New** \> **Server** to open the New Server window.
-    3.  In the New Server window, click **IBM** \> **WebSphere Application Server V8.5 Liberty Profile** to select the server type.
-    4.  Change the **Server name** to `write`, and then click **Next**.
-    5.  From the **Liberty profile server** list, select **write**, and then click **Finish**.
+    2.  <span class="ph cmd">Right-click inside the tab, and then click <span class="ph menucascade">**New** \> **Server**</span> to open the <span class="keyword wintitle">New Server</span> window.</span>
+    3.  <span class="ph cmd">In the <span class="keyword wintitle">New Server</span> window, click <span class="ph menucascade">**IBM** \> **WebSphere Application Server Liberty Profile**</span> to select the server type.</span>
+    4.  <span class="ph cmd">Change the **Server name** to `iap`, and then click **Next**.</span>
+    5.  <span class="ph cmd">From the **Liberty profile server** list, select **iap**, and then click **Finish**.</span>
 
-8.  Repeat the previous step, but replace "write" with "read" wherever it appears.
-9.  Start the development version of the Intelligence Analysis Platform.
-    1.  Inside the **Servers** tab, double-click the **read** and **write** servers in turn. New **read** and **write** tabs open in the top part of the Eclipse application window.
-    2.  Modify the settings in both new tabs:
+8.  <span class="ph cmd">Start the development version of the Intelligence Analysis Platform.</span>
+    1.  <span class="ph cmd">Inside the **Servers** tab, double-click the **iap** server.</span> A new **iap** tab opens in the top part of the Eclipse application window.
+    2.  <span class="ph cmd">Modify the settings in the iap tab:</span>
         -   Clear the **Run applications directly from the workspace** check box
-        -   Click **Publishing** \> **Never publish automatically**
-        -   Press Ctrl+s to save the settings
+        -   Click <span class="ph menucascade">**Publishing** \> **Never publish automatically**</span>
+        -   Press Ctrl+S to save the settings
 
-        Note: These settings mean that in order for any changes that you make to become apparent, you must manually publish your new code to the servers.
-    3.  Back inside the **Servers** tab, start the write server, followed by the read server. When the startup process completes, you have a running instance of the Intelligence Analysis Platform that you can control through Eclipse.
+        <span class="notetitle">Note:</span> These settings mean that in order for any changes that you make to become apparent, you must manually publish your new code to the server.
 
-10. To test the platform, open a web browser and navigate to http://localhost/apollo. You can log in to the Intelligence Portal with any of the user names and passwords that were specified in the `liberty-example-users.xml` file.
+    3.  <span class="ph cmd">Back inside the **Servers** tab, start the server.</span> When the startup process completes, you have a running instance of the Intelligence Analysis Platform that you can control through Eclipse.
 
-* * * * *
+9.  <span class="ph cmd">To test the platform, open a web browser and navigate to http://localhost/apollo. You can log in to the Intelligence Portal with any of the default users.</span>
 
-© Copyright IBM Corporation 2015.
+**Parent topic:** [IBM i2 Intelligence Analysis Platform Developer Essentials](developer_essentials_welcome.html "IBM i2 Intelligence Analysis Platform Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to the Intelligence Analysis Platform.")
+
+------------------------------------------------------------------------
+
+© Copyright IBM Corporation 2014, 2015.
 
 
