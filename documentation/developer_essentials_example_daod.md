@@ -54,7 +54,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 5.  <span class="ph cmd">Edit the `<iap-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:</span>
 
     ``` pre
-    <iap-data-source id="da-subset-filesystem-example-id" ar="false">
+    <iap-data-source id="daod1" ar="false">
        <DataSource EdrsPresent="false" ScsPresent="true" SesPresent="true"
                    ScsBrowseSupported="true" ScsSearchSupported="true"
                    ScsNetworkSearchSupported="false"

@@ -1,4 +1,4 @@
-Configuring the "binary documents access" example project
+﻿Configuring the "binary documents access" example project
 =========================================================
 
 The "data access on-demand" approach to data acquisition in the Intelligence Analysis Platform involves querying external data through a new service. In Developer Essentials, the `da-subset-documents-example` example extends the `da-subset-filesystem-example` example to include images or other binary documents in the returned data.
@@ -97,7 +97,7 @@ At this stage, the data access on-demand aspect of the example is complete. The 
 
 1.  <span class="ph cmd">Move the example image files to the HTTP server.</span>
     1.  <span class="ph cmd">In Windows Explorer, navigate to the `IBM\HTTPServer\htdocs\` directory and create a directory called `ImageStore`.</span>
-    2.  <span class="ph cmd">Navigate to the `SDK\sdk-projects\da-subset-documents-example\fragments\documents` directory and copy the four `.jpg` files to the `IBM\HTTPServer\htdocs\ImageStore` directory. </span>
+    2.  <span class="ph cmd">Navigate to the `SDK\sdk-projects\da-subset-documents-example\fragment\documents` directory and copy the four `.jpg` files to the `IBM\HTTPServer\htdocs\ImageStore` directory. </span>
 
 2.  <span class="ph cmd">In Windows Explorer, navigate to the `\master\build\IAP-Deployment-Toolkit\configuration\environment\dsid` directory.</span>
 
