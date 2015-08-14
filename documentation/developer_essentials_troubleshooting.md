@@ -34,9 +34,9 @@ Server starts without error but in only a few seconds
 If the application server starts in an unusually short time, it is likely that an Intelligence Analysis Platform application is not deployed correctly.
 
 1.  In Eclipse, inside the **Servers** tab, double-click the **iap** server. A new **iap** tab opens in the top part of the Eclipse application window.
-2.  In the new tab, ensure that the <span class="ph uicontrol">Run applications directly from the workspace</span> check box is cleared, and then press Ctrl+S to save the settings.
+2.  In the new tab, ensure that the Run applications directly from the workspace check box is cleared, and then press Ctrl+S to save the settings.
 
-<span class="importanttitle">Important:</span> This setting can cause various other problems. For the Intelligence Analysis Platform to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
+Important: This setting can cause various other problems. For the Intelligence Analysis Platform to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
 
 Eclipse reports a java.lang.NullpointerException on Clean or Publish
 --------------------------------------------------------------------
@@ -75,7 +75,7 @@ The solution to both problems is to re-create the `server.xml` file. Solving the
 1.  If you have the name mismatch problem, edit `topology.xml` for your deployment so that the web application name matches the Eclipse project name.
 2.  Use `build` to re-create `server.xml` from `topology.xml`:
 
-    ``` pre
+    ``` {.pre .codeblock}
     build -t deploy
     ```
 
@@ -84,7 +84,7 @@ The solution to both problems is to re-create the `server.xml` file. Solving the
 Navigation to http://localhost/apollo reports an Internal Server Error
 ----------------------------------------------------------------------
 
-If the HTTP server reports an internal server error, then the iap server did not start. Start the server and try the operation again.
+If the HTTP server reports an internal server error, then the **iap** server did not start. Start the server and try the operation again.
 
 Navigation to http://localhost/apollo reports HTTP error 404
 ------------------------------------------------------------
@@ -116,7 +116,8 @@ If users cannot log in to your deployment of the Intelligence Analysis Platform,
 First, make sure that users are providing credentials accurately. In the Intelligence Analysis Platform, user names and passwords are all case-sensitive.
 
 Second, it is possible that event replay is still in progress. In the console, check for a `Replay complete` message:
-``` pre
+
+``` {.pre .codeblock}
 2014-03-19 17:31:50,100 - Replayed 3 of approximately 3 events (100%).
 2014-03-19 17:31:50,101 - Waiting for read services to acknowledge remaining events
                           (expecting progress within 60 seconds)
@@ -132,7 +133,8 @@ Second, it is possible that event replay is still in progress. In the console, c
 
 To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
 
-<span class="notetitle">Note:</span> Intelligence Analysis Platform error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+Note: Intelligence Analysis Platform error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+
 -   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
 -   Check the bottom-level exception, which contains most detail about the cause of the problem.
 
@@ -145,14 +147,11 @@ If a restart does not fix the problem, "Server Not Found" errors have three poss
 
 To determine whether an application failed, check the console log for the server, and the application log for the application that you were trying to use. If there is an exception, you must resolve the problem that caused it.
 
-To determine whether there is a problem with HTTP server configuration or application deployment, attempt to view the application directly in your web browser:
+To determine whether there is a problem with HTTP server configuration or application deployment, attempt to view the application directly in your web browser. For example, navigate to http://localhost:9082/*datasource-guid*. A correct deployment displays a basic HTML page.
 
--   For a data access on-demand solution, navigate to http://localhost:9082/*daod-datasource-guid*. A correct deployment displays a basic HTML page.
--   For a data load ELP stage, navigate to http://localhost:9082/*delps-datasource-guid*. A correct deployment displays a basic HTML page.
+Note: You can obtain *datasource-guid* by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
 
-<span class="notetitle">Note:</span> In all cases, you can obtain *datasource-guid* by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
-
-If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. For a data access on-demand project, you might have to intervene more forcefully:
+If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. However, you might have to intervene more forcefully:
 
 1.  In Eclipse, refresh the project that represents WebSphere Application Server Liberty Profile.
 2.  In that project, expand the `servers/iap/apps` directory.
@@ -170,16 +169,7 @@ If you see a basic HTML page, then the application is deployed but you have an H
 1.  In a text editor, open the file at `http-server-dir/Plugins/iap/config/plugin-cfg.xml`.
 2.  Find the `<UriGroup Name="read_Cluster_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
-    ``` pre
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
-         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/IndexAdminService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
-         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/ItemRetrievalService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
-         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/NetworkSearchService/*"/>
-    <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
-         Name="/6bab453d-101d-4984-b6ec-888d7f7f2814/services/SearchService/*"/>
-
+    ``` {.pre .codeblock}
     <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
          Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetCreationService/*"/>
     <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
@@ -209,7 +199,7 @@ If you see a basic HTML page, then the application is deployed but you have an H
          Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/upload/*"/>
     ```
 
-    Here, the first block defines a data load ELP stage. The second block defines a data access on-demand server, and the third block defines the Intelligence Analysis Platform server. The GUIDs in the `Name` attributes must match the GUIDs in the URLs to which Eclipse deployed the applications.
+    Here, the first block defines a data access on-demand server, and the second block defines the Intelligence Analysis Platform server. The GUIDs in the `Name` attributes must match the GUIDs in the URLs to which Eclipse deployed the applications.
 
 If the `Name` attributes do not contain the correct GUIDs, or the block for one of your servers is missing:
 
@@ -222,7 +212,7 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 1.  Stop all the application servers.
 2.  Run the following commands on all the servers:
 
-    ``` pre
+    ``` {.pre .codeblock}
     build -t clearData
     build -t deploy
     ```
@@ -230,9 +220,7 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 3.  Restart the HTTP server.
 4.  Start all the application servers.
 
-**Parent topic:** [IBM i2 Intelligence Analysis Platform Developer Essentials](developer_essentials_welcome.html "IBM i2 Intelligence Analysis Platform Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to the Intelligence Analysis Platform.")
-
-------------------------------------------------------------------------
+* * * * *
 
 © Copyright IBM Corporation 2014, 2015.
 
