@@ -10,7 +10,7 @@
  */
 package com.example;
 
-import java.io.ByteArrayInputStream;
+import java.io.StringReader;
 import java.util.List;
 
 import javax.xml.transform.Source;
@@ -124,8 +124,10 @@ public final class ExampleDataAdapterSubset implements IExternalDataAdapter
         final String transformSourceSystemXml = ExampleXmlTransformer
                 .transformSourceSystemXml(XSLT_FILE_NAME, externalDataFilename);
 
-        // return source version of transformed xml.
-        return new StreamSource(new ByteArrayInputStream(
-                transformSourceSystemXml.getBytes()));
+        final StringReader stringReader = new StringReader(transformSourceSystemXml);
+        final StreamSource streamSource = new StreamSource(stringReader);
+
+        // Return source version of transformed XML.
+        return streamSource;
     }
 }

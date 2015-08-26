@@ -11,8 +11,10 @@
 package com.example.rest;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -201,28 +203,21 @@ public class ExternalDataSubsetResource implements IExternalDataSubsetResource
         final String subsetXml = ExampleXmlTransformer
                 .transformSourceSystemXml(XSLT_FILE_NAME, externalDataFileName);
 
-        FileOutputStream fileOutputStream = null;
+        PrintWriter printWriter = null;
         try
         {
-            fileOutputStream = new FileOutputStream(outputFile);
-            fileOutputStream.write(subsetXml.getBytes());
+            printWriter = new PrintWriter(outputFile, StandardCharsets.UTF_8.name());
+            printWriter.println(subsetXml);
         }
-        catch (IOException ex)
+        catch (FileNotFoundException | UnsupportedEncodingException ex)
         {
             throw new WrappedCheckedException(ex);
         }
         finally
         {
-            if (fileOutputStream != null)
+            if (printWriter != null)
             {
-                try
-                {
-                    fileOutputStream.close();
-                }
-                catch (IOException ex)
-                {
-                    throw new WrappedCheckedException(ex);
-                }
+                printWriter.close();
             }
         }
 
