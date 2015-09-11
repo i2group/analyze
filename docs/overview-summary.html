@@ -76,7 +76,7 @@
 <div role="main" title ="overview_Summary" aria-label ="Gives summary of packages"/>
 <div class="header">
 <div class="subTitle">
-<div class="block">Welcome to the IBM(R) i2 Intelligence Analysis Platform API documentation&#46;<br/><br/>This documentation is aimed at developers who are customizing and extending the Intelligence Analysis Platform&#46; It also describes the API of the Java client.</div>
+<div class="block">Welcome to the IBM(R) i2(R) Analyze API documentation&#46;<br/><br/>This documentation is aimed at developers who are customizing and extending i2 Analyze&#46; It also describes the API of the Java client.</div>
 </div>
 <p>See: <a href="#overview.description">Description</a></p>
 </div>
@@ -823,16 +823,16 @@
 <div class="contentContainer"><a name="overview.description">
 <!--   -->
 </a>
-<div class="block"><p>Welcome to the IBM(R) i2 Intelligence Analysis Platform API documentation&#46;<br/><br/>This documentation is aimed at developers who are customizing and extending the Intelligence Analysis Platform&#46; It also describes the API of the Java client.</p>
-<p>The Intelligence Analysis Platform demonstrates command and query responsibility segregation (CQRS). An Intelligence Analysis Platform web service can modify (write) data or query (read) it, but never both. The design has a number of consequences for the Intelligence Analysis Platform:</p>
+<div class="block"><p>Welcome to the IBM(R) i2(R) Analyze API documentation&#46;<br/><br/>This documentation is aimed at developers who are customizing and extending i2 Analyze&#46; It also describes the API of the Java client.</p>
+<p>i2 Analyze demonstrates command and query responsibility segregation (CQRS). An i2 Analyze web service can modify (write) data or query (read) it, but never both. The design has a number of consequences for i2 Analyze:</p>
 <p>&bull;&nbsp;Responsibility for creating, updating, and deleting data is separated into data-writing services that are independent from the services that read data. The data-writing services communicate changes to the read services using events.</p>
 <p>&bull;&nbsp;The command service, which is a data-writing service, has the following responsibilities:</p>
-<p>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Validating commands according to Intelligence Analysis Platform rules</p>
-<p>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Converting valid commands to Intelligence Analysis Platform events</p>
+<p>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Validating commands according to i2 Analyze rules</p>
+<p>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Converting valid commands to i2 Analyze events</p>
 <p>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Placing events in the event store</p>
-<p>&bull;&nbsp;The event store is an audit trail that contains information about every command and purge request (successfully) issued to the Intelligence Analysis Platform. Each event also records which user issued the request, when they issued it, and where (that is, what IP address) they issued it from.</p>
+<p>&bull;&nbsp;The event store is an audit trail that contains information about every command and purge request (successfully) issued to i2 Analyze. Each event also records which user issued the request, when they issued it, and where (that is, what IP address) they issued it from.</p>
 <p>&bull;&nbsp;Any read service, new or old, can be started or brought back up to date by replaying the event store.</p>
-<p>&bull;&nbsp;The Intelligence Analysis Platform does not use a single store for all data. Instead, data-reading services maintain their own data stores that provide optimum performance for their particular needs. Data-reading services populate these data stores in response to the events they receive. They are free to act upon or ignore events as their function requires.</p></div>
+<p>&bull;&nbsp;i2 Analyze does not use a single store for all data. Instead, data-reading services maintain their own data stores that provide optimum performance for their particular needs. Data-reading services populate these data stores in response to the events they receive. They are free to act upon or ignore events as their function requires.</p></div>
 </div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div role="navigation" title ="Bottom_NAVIGATION" aria-label ="Bottom Navigation Bar"/>
