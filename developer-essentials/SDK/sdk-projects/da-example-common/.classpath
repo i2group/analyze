@@ -14,6 +14,7 @@ Contributors:
 	<classpathentry kind="src" path="fragment/WEB-INF/classes"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" combineaccessrules="false" path="/master"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/master"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

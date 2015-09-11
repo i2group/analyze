@@ -42,7 +42,7 @@ import com.i2group.utils.exception.WrappedCheckedException;
 @Path("/daodSubsets")
 public class ExternalDataSubsetResource implements IExternalDataSubsetResource
 {
-    private static final String XSLT_FILE_NAME = "dataToIAP.xslt";
+    private static final String XSLT_FILE_NAME = "dataToI2analyze.xslt";
     private static final String DATA_FILE_1_NAME = "data1.xml";
     private static final String DATA_1_SEARCH_TERM = "data1";
     private static final String DATA_FILE_2_NAME = "data2.xml";

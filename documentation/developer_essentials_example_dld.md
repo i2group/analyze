@@ -1,19 +1,19 @@
 Configuring the "data load direct" example project
 ==================================================
 
-The "data load direct" approach to data acquisition in the Intelligence Analysis Platform involves importing external data into the Analysis Repository. In Developer Essentials, IBM provides the `da-arload-filesystem-example` example, in which the external data source is an XML file.
+The "data load direct" approach to data acquisition in i2 Analyze involves importing external data into the Analysis Repository. In Developer Essentials, IBM provides the `da-arload-filesystem-example` example, in which the external data source is an XML file.
 
 Before you begin
 ----------------
 
-The data load direct example project requires the development version of the Intelligence Analysis Platform, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
+The data load direct example project requires the development version of i2 Analyze, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into Intelligence Analysis Platform items. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
 
 About this task
 ---------------
 
-The data load direct example is a Java application that behaves like a client of the Intelligence Analysis Platform. As a result, this example does not require you to modify your existing deployment of the platform. Importing and testing the example mostly involves standard operations in Eclipse.
+The data load direct example is a Java application that behaves like a client of i2 Analyze. As a result, this example does not require you to modify your existing deployment of the platform. Importing and testing the example mostly involves standard operations in Eclipse.
 
 Procedure
 ---------
@@ -24,35 +24,35 @@ Procedure
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
-        -   Location: `C:\IBM\iap\SDK\sdk-projects\master\build\IAP-Deployment-Toolkit`
+        -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
     4.  In Eclipse, click **File** \> **Import** to open the Import window.
     5.  In the Import window, click **General** \> **Existing Projects into Workspace**, and then click **Next**.
-    6.  Click **Browse** at the top of the window, and then select the `C:\IBM\iap\SDK\sdk-projects\master` directory.
+    6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
-    8.  Repeat the import process to import `C:\IBM\iap\SDK\sdk-projects\da-example-common`
+    8.  Repeat the import process to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common`
 
-Next, all data acquisition projects that you create with Developer Essentials require a Java library that maps from platform-compatible XML to Intelligence Analysis Platform items. The library is specific to a particular Intelligence Analysis Platform schema. You can generate the library by running a command against the schema in question.
+Next, all data acquisition projects that you create with Developer Essentials require a Java library that maps from platform-compatible XML to i2 Analyze items. The library is specific to a particular i2 Analyze schema. You can generate the library by running a command against the schema in question.
 
-1.  Open a command prompt, and navigate to the `C:\IBM\iap\SDK\sdk-projects\master` directory.
+1.  Open a command prompt, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
 
     ``` {.pre .codeblock}
     build -t generateMappingJar 
-    -x C:\IBM\iap\SDK\sdk-projects\master\build\IAP-Deployment-Toolkit\configuration\examples\schemas\en_US\law-enforcement-schema.xml
-    -o C:\IBM\iap\SDK\sdk-projects\da-arload-filesystem-example\schema-mapping-jar\schema.jar
+    -x C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\examples\schemas\en_US\law-enforcement-schema.xml
+    -o C:\IBM\i2analyze\SDK\sdk-projects\da-arload-filesystem-example\schema-mapping-jar\schema.jar
     ```
 
-    Note: This command assumes that your target deployment of the Intelligence Analysis Platform uses the law enforcement schema, which is the default setting for the development version. If the target uses a different schema, then you must change the command and the project configuration to match.
+    Note: This command assumes that your target deployment of i2 Analyze uses the law enforcement schema, which is the default setting for the development version. If the target uses a different schema, then you must change the command and the project configuration to match.
 
     When the command runs successfully, it creates the library in the `schema-mapping-jar` directory, which is on the build path for the `da-arload-filesystem-example` project.
 
 The Java library is the only change that you must make to the example project. You can now import the example project to Eclipse, and run it to add items from the supplied XML file to the Analysis Repository.
 
-1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `IAP-Deployment-Toolkit\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
-2.  If the development version of the Intelligence Analysis Platform is not already running, then start it from within Eclipse.
+1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `toolkit\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
+2.  If the development version of i2 Analyze is not already running, then start it from within Eclipse.
 3.  Attempt to run the example.
     1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`.
     2.  Click **Run** \> **Run As** \> **Java Application**.

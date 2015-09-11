@@ -13,12 +13,12 @@
 set JAVA_HOME_OLD=%JAVA_HOME%
 
 :: Sets JAVA_HOME without .. shortcuts in the path, which doesn't work on Windows.
-for %%i in ("%~dp0..\..\..\IAP-Deployment-Toolkit") do SET JAVA_HOME=%%~fi\tools\java
+for %%i in ("%~dp0..\..\..\toolkit") do SET JAVA_HOME=%%~fi\tools\java
 
 :: Changes working directory to ensure that Groovy imports work when running this script from any directory.
 pushd %~dp0
 
-call %~dp0..\..\..\IAP-Deployment-Toolkit\tools\groovy\bin\groovy.bat %~dp0\build.groovy %*
+call %~dp0..\..\..\toolkit\tools\groovy\bin\groovy.bat %~dp0\build.groovy %*
 
 :: Sets JAVA_HOME to its initial value.
 set JAVA_HOME=%JAVA_HOME_OLD%

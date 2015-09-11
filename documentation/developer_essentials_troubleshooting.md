@@ -1,7 +1,7 @@
 Troubleshooting the example projects
 ====================================
 
-The example projects in Intelligence Analysis Platform Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
+The example projects in i2 Analyze Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
 
 -   [Eclipse reports compilation errors after it imports an example project](#eclipse-reports-compilation-errors-after-it-imports-an-example-project)
 -   [Server starts without error but in only a few seconds](#server-starts-without-error-but-in-only-a-few-seconds)
@@ -31,12 +31,12 @@ If you have a project with broken links, there are two possibilities:
 Server starts without error but in only a few seconds
 -----------------------------------------------------
 
-If the application server starts in an unusually short time, it is likely that an Intelligence Analysis Platform application is not deployed correctly.
+If the application server starts in an unusually short time, it is likely that an i2 Analyze application is not deployed correctly.
 
-1.  In Eclipse, inside the **Servers** tab, double-click the **iap** server. A new **iap** tab opens in the top part of the Eclipse application window.
+1.  In Eclipse, inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
 2.  In the new tab, ensure that the Run applications directly from the workspace check box is cleared, and then press Ctrl+S to save the settings.
 
-Important: This setting can cause various other problems. For the Intelligence Analysis Platform to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
+Important: This setting can cause various other problems. For i2 Analyze to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
 
 Eclipse reports a java.lang.NullpointerException on Clean or Publish
 --------------------------------------------------------------------
@@ -46,7 +46,7 @@ Occasionally, the representation of the project files in Eclipse can lose synchr
 Application fails to start and reports an error to the console
 --------------------------------------------------------------
 
-There are several reasons why an Intelligence Analysis Platform application can fail to start. You can use the error message to diagnose the problem and choose a solution.
+There are several reasons why an i2 Analyze application can fail to start. You can use the error message to diagnose the problem and choose a solution.
 
 > `java.lang.NoClassDefFoundError: com.i2group.tracing.TracingManager`
 
@@ -55,7 +55,7 @@ This error implies that the application cannot access the shared Java libraries.
 1.  In a text editor, open the `topology.xml` file.
 2.  If the file contains multiple entries for the same Data Acquisition endpoint:
     1.  Remove the duplicate entries, leaving only the original entry in place.
-    2.  Run `build` again for your Intelligence Analysis Platform deployment.
+    2.  Run `build` again for your i2 Analyze deployment.
 
 If multiple endpoint definitions are not the issue, then references to the shared libraries are faulty, which is a symptom of two slightly different problems:
 
@@ -84,12 +84,12 @@ The solution to both problems is to re-create the `server.xml` file. Solving the
 Navigation to http://localhost/apollo reports an Internal Server Error
 ----------------------------------------------------------------------
 
-If the HTTP server reports an internal server error, then the **iap** server did not start. Start the server and try the operation again.
+If the HTTP server reports an internal server error, then the **i2analyze** server did not start. Start the server and try the operation again.
 
 Navigation to http://localhost/apollo reports HTTP error 404
 ------------------------------------------------------------
 
-HTTP error 404 can occur when one of the Intelligence Analysis Platform applications is not correctly deployed, or when the HTTP server is misconfigured.
+HTTP error 404 can occur when one of the i2 Analyze applications is not correctly deployed, or when the HTTP server is misconfigured.
 
 -   If the error is "Context Root Not Found", with obvious "IBM" and "IBM WebSphere Application Server" branding, then the HTTP server redirect is working and the problem is with the application.
 
@@ -102,7 +102,7 @@ HTTP error 404 can occur when one of the Intelligence Analysis Platform applicat
 User login fails and generates a console error
 ----------------------------------------------
 
-If users cannot log in to your deployment of the Intelligence Analysis Platform, a missing user repository is often the cause. The platform generates the following error:
+If users cannot log in to your deployment of i2 Analyze, a missing user repository is often the cause. The platform generates the following error:
 
 > `WebTrustAssociationFailedException: No UserRegistry found to authenticate with`
 
@@ -111,9 +111,9 @@ To resolve this problem, ensure that you configured example users according to t
 User login fails with no obvious console error
 ----------------------------------------------
 
-If users cannot log in to your deployment of the Intelligence Analysis Platform, and all they see is a "failed login" message, then there are several possible causes.
+If users cannot log in to your deployment of i2 Analyze, and all they see is a "failed login" message, then there are several possible causes.
 
-First, make sure that users are providing credentials accurately. In the Intelligence Analysis Platform, user names and passwords are all case-sensitive.
+First, make sure that users are providing credentials accurately. In i2 Analyze, user names and passwords are all case-sensitive.
 
 Second, it is possible that event replay is still in progress. In the console, check for a `Replay complete` message:
 
@@ -133,7 +133,7 @@ Second, it is possible that event replay is still in progress. In the console, c
 
 To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
 
-Note: Intelligence Analysis Platform error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+Note: i2 Analyze error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
 
 -   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
 -   Check the bottom-level exception, which contains most detail about the cause of the problem.
@@ -143,7 +143,7 @@ Browse and search operations generate Server Not Found errors
 
 Often, you can resolve a "Server Not Found" error by restarting the HTTP server. The procedure takes only a few seconds, so it makes sense to try this approach first.
 
-If a restart does not fix the problem, "Server Not Found" errors have three possible causes. Either one of the Intelligence Analysis Platform applications failed, or it is not correctly deployed, or the HTTP server is misconfigured.
+If a restart does not fix the problem, "Server Not Found" errors have three possible causes. Either one of the i2 Analyze applications failed, or it is not correctly deployed, or the HTTP server is misconfigured.
 
 To determine whether an application failed, check the console log for the server, and the application log for the application that you were trying to use. If there is an exception, you must resolve the problem that caused it.
 
@@ -154,11 +154,11 @@ Note: You can obtain *datasource-guid* by opening `server.xml`. In the `<webAppl
 If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. However, you might have to intervene more forcefully:
 
 1.  In Eclipse, refresh the project that represents WebSphere Application Server Liberty Profile.
-2.  In that project, expand the `servers/iap/apps` directory.
+2.  In that project, expand the `servers/i2analyze/apps` directory.
 
     If the directory contains a `project-name.war.xml` file instead of a `project-name.war` subdirectory, then the application is not deployed.
 
-3.  In the **Servers** tab, double-click the **iap** server to open the **iap** tab in the top part of the Eclipse application window.
+3.  In the **Servers** tab, double-click the **i2analyze** server to open the **i2analyze** tab in the top part of the Eclipse application window.
 4.  Make certain of the **Run applications directly from the workspace** setting:
     1.  If the check box is cleared, select it, and then save the settings.
     2.  Clear the check box, and then save the settings again.
@@ -166,7 +166,7 @@ If you see HTTP error 404 instead of a basic HTML page, then the application is 
 
 If you see a basic HTML page, then the application is deployed but you have an HTTP server problem. When a simple restart does not work, you must check the server configuration:
 
-1.  In a text editor, open the file at `http-server-dir/Plugins/iap/config/plugin-cfg.xml`.
+1.  In a text editor, open the file at `http-server-dir/Plugins/i2analyze/config/plugin-cfg.xml`.
 2.  Find the `<UriGroup Name="read_Cluster_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
     ``` {.pre .codeblock}
@@ -199,7 +199,7 @@ If you see a basic HTML page, then the application is deployed but you have an H
          Name="/5fa4d7fb-0487-49a8-a16f-4293771b0e6d/services/upload/*"/>
     ```
 
-    Here, the first block defines a data access on-demand server, and the second block defines the Intelligence Analysis Platform server. The GUIDs in the `Name` attributes must match the GUIDs in the URLs to which Eclipse deployed the applications.
+    Here, the first block defines a data access on-demand server, and the second block defines the i2 Analyze server. The GUIDs in the `Name` attributes must match the GUIDs in the URLs to which Eclipse deployed the applications.
 
 If the `Name` attributes do not contain the correct GUIDs, or the block for one of your servers is missing:
 

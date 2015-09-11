@@ -1,12 +1,12 @@
 Configuring the "user interface extension" example project
 ==========================================================
 
-The Intelligence Analysis Platform supports extensions that enable users to interact with external data sources through enhancements to the Intelligence Portal. In Developer Essentials, IBM provides the `ui-subset-example` example, which includes a demonstration of how to integrate custom elements into the standard portal user interface.
+i2 Analyze supports extensions that enable users to interact with external data sources through enhancements to the Intelligence Portal. In Developer Essentials, IBM provides the `ui-subset-example` example, which includes a demonstration of how to integrate custom elements into the standard portal user interface.
 
 Before you begin
 ----------------
 
-The user interface extension example project requires the development version of the Intelligence Analysis Platform, prepared according to the deployment instructions in Developer Essentials. The example also has some additional prerequisites:
+The user interface extension example project requires the development version of i2 Analyze, prepared according to the deployment instructions in Developer Essentials. The example also has some additional prerequisites:
 
 -   Microsoft Visual Studio Express 2013 for Web
 -   Microsoft Silverlight 5 SDK
@@ -30,44 +30,44 @@ Procedure
 
 The two-part project is structured so that the `da-subset-rest-example` project, which implements the custom functionality, refers to the `ui-subset-example` project. To demonstrate the custom user interface in isolation, you need to configure both projects.
 
-1.  Open the configuration file for user interface extensions for the `da-subset-rest-example` project in a text editor: `C:\IBM\iap\SDK\sdk-projects\da-subset-rest-example\ui-project.properties`.
+1.  Open the configuration file for user interface extensions for the `da-subset-rest-example` project in a text editor: `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-rest-example\ui-project.properties`.
 2.  Ensure that the properties are set appropriately for your environment. If you followed the deployment instructions for Developer Essentials, the correct values look like this example:
 
     ``` {.pre .codeblock}
-    ui.project.dir=C:/IBM/iap/SDK/sdk-projects/ui-subset-example
+    ui.project.dir=C:/IBM/i2analyze/SDK/sdk-projects/ui-subset-example
     msbuild.exe.path=C:/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
     ```
 
 The procedure for extending the Intelligence Portal starts with extracting the files from the standard web application, which is the `Apollo.xap` file. Then, you add your custom functionality to the standard content before you recompile and redeploy a new version of the XAP file.
 
-1.  Open a command prompt as Administrator, and navigate to the `C:\IBM\iap\SDK\sdk-projects\master` directory.
+1.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
 
     ``` {.pre .codeblock}
     build -pr da-subset-rest-example -t unpackXap
     ```
 
-    This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the `C:\IBM\iap\SDK\sdk-projects\ui-subset-example` project.
+    This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example` project.
 
-3.  In Visual Studio, open the solution file at `C:\IBM\iap\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
+3.  In Visual Studio, open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
     -   `SubsettingExample` demonstrates how to add a custom HTML page and display it inside a custom tab.
     -   `CommandExtensibilityExample` demonstrates how to add and modify commands in the pop-up menus for items, and in the actions toolbar.
 
-4.  Build the solution. Visual Studio puts the DLL files that it generates in the `C:\IBM\iap\SDK\sdk-projects\ui-subset-example\build` directory.
+4.  Build the solution. Visual Studio puts the DLL files that it generates in the `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example\build` directory.
 5.  Return to the command prompt, and run the following command to compile the new XAP file.
 
     ``` {.pre .codeblock}
     build -pr da-subset-rest-example -t packXap
     ```
 
-6.  In Eclipse, ensure that the **iap** server is stopped.
+6.  In Eclipse, ensure that the **i2analyze** server is stopped.
 7.  At the command prompt, run the following command to redeploy the server:
 
     ``` {.pre .codeblock}
     build -t deploy
     ```
 
-8.  Back in Eclipse, in the **Servers** tab, start the **iap** server.
+8.  Back in Eclipse, in the **Servers** tab, start the **i2analyze** server.
 9.  To test the platform, open a web browser and navigate to http://localhost/apollo. You can log in to the Intelligence Portal with any of the default users.
 
 Results

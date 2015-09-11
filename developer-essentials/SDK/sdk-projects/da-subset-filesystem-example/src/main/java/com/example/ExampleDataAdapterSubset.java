@@ -29,7 +29,7 @@ import com.i2group.apollo.searchservice.transport.SetInfo;
  */
 public final class ExampleDataAdapterSubset implements IExternalDataAdapter
 {
-    private static final String XSLT_FILE_NAME = "dataToIAP.xslt";
+    private static final String XSLT_FILE_NAME = "dataToI2analyze.xslt";
     private static final String DATA_FILE_NAME = "data1.xml";
     private static final String NOT_SUPPORTED = "This operation is not supported";
 
@@ -40,10 +40,10 @@ public final class ExampleDataAdapterSubset implements IExternalDataAdapter
         // In this case simplified case just returning the filename of the
         // resultant data file.
         final String dataFromExternalDataProvider = getDataFromExternalDataProvider(searchString);
-        // convert external data results into IAP compatible source required.
-        final Source iapFormatSource = transformToPlatformCompatibleXML(dataFromExternalDataProvider);
+        // convert external data results into i2 Analyze compatible source required.
+        final Source i2analyzeFormatSource = transformToPlatformCompatibleXML(dataFromExternalDataProvider);
 
-        return iapFormatSource;
+        return i2analyzeFormatSource;
     }
 
     /*
@@ -86,10 +86,10 @@ public final class ExampleDataAdapterSubset implements IExternalDataAdapter
         // In this case simplified case just returning the filename of the
         // resultant data file.
         final String dataFromExternalDataProvider = getDataFromExternalDataProvider(searchString);
-        // convert external data results into IAP compatible source required.
-        final Source iapFormatSource = transformToPlatformCompatibleXML(dataFromExternalDataProvider);
+        // convert external data results into i2 Analyze compatible source required.
+        final Source i2analyzeFormatSource = transformToPlatformCompatibleXML(dataFromExternalDataProvider);
 
-        return iapFormatSource;
+        return i2analyzeFormatSource;
     }
 
     /**
@@ -123,11 +123,10 @@ public final class ExampleDataAdapterSubset implements IExternalDataAdapter
     {
         final String transformSourceSystemXml = ExampleXmlTransformer
                 .transformSourceSystemXml(XSLT_FILE_NAME, externalDataFilename);
-
         final StringReader stringReader = new StringReader(transformSourceSystemXml);
         final StreamSource streamSource = new StreamSource(stringReader);
 
-        // Return source version of transformed XML.
+        // return source version of transformed xml.
         return streamSource;
     }
 }

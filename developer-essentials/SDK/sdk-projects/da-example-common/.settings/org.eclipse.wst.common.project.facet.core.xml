@@ -10,19 +10,9 @@ Contributors:
    IBM Corp - initial API and implementation and initial documentation
 -->
 
-<projectDescription>
-	<name>da-arload-filesystem-example</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-</projectDescription>
+<faceted-project>
+  <fixed facet="java"/>
+  <fixed facet="jst.utility"/>
+  <installed facet="java" version="1.8"/>
+  <installed facet="jst.utility" version="1.0"/>
+</faceted-project>

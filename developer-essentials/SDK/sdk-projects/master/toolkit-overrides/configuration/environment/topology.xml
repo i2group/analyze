@@ -11,15 +11,15 @@ Contributors:
 -->
 
 <ns1:topology xmlns:ns1="http://www.i2group.com/Schemas/2013-11-18/Topology">
-	<iap-data-sources>
-		<iap-data-source id="ar-id" ar="true" default="true">
+	<i2-data-sources>
+		<i2-data-source id="ar-id" ar="true" default="true">
 			<!-- DataSource Id is deliberately blank and should be left so -->
 			<DataSource Id="" Version="0">
 				<Shape>Repository</Shape>
 				<Name>Ar</Name>
 			</DataSource>
-		</iap-data-source>
-	</iap-data-sources>
+		</i2-data-source>
+	</i2-data-sources>
 	<databases>
 		<!-- The instance-name must be set according to your DB2 configuration.
 		For example, this defaults to DB2 on Windows and db2inst1 on Linux. -->
@@ -28,13 +28,13 @@ Contributors:
 			host-name="localhost" port-number="50000" max-pool-size="5" />
 	</databases>
 	<applications>
-		<application name="iap" host-name="localhost" http-server-host="true">
+		<application name="i2analyze" host-name="localhost" http-server-host="true">
 			<lucene-indexes>
-				<lucene-index id="ar" main-index-location="C:/IBM/iap/data-dev/ar/main_index"
-					alternatives-location="C:/IBM/iap/data-dev/ar/alternatives" />
+				<lucene-index id="ar" main-index-location="C:/IBM/i2analyze/data-dev/ar/main_index"
+					alternatives-location="C:/IBM/i2analyze/data-dev/ar/alternatives" />
 			</lucene-indexes>
 			<wars>
-				<war target="core" name="core" iap-datasource-id="ar-id" context-root="apollo">
+				<war target="core" name="core" i2-data-source-id="ar-id" context-root="apollo">
 					<data-sources>
 						<data-source database-id="write1" create-database="true" />
 					</data-sources>

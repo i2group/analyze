@@ -13,7 +13,6 @@ Contributors:
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="src" path="da-example-common-classes"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="schema-mapping-jar/schema.jar"/>
 	<classpathentry kind="src" combineaccessrules="false" path="/da-example-common"/>

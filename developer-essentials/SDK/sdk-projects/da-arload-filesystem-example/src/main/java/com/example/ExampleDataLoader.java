@@ -30,7 +30,7 @@ import com.i2group.utils.ResourceHelper;
  */
 public final class ExampleDataLoader
 {
-    private static final String LAW_ENFORCEMENT_XSLT_FILE_NAME = "dataToIAP.xslt";
+    private static final String LAW_ENFORCEMENT_XSLT_FILE_NAME = "dataToI2analyze.xslt";
 
     private static final String LOAD_ITEMS_XML_FILE_NAME = "data1.xml";
     private static final String ADDED_ITEMS_XML_FILE_NAME = "data2.xml";
