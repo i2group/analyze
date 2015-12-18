@@ -48,6 +48,7 @@ com.i2group.apollo.model.provenance.transport
 com.i2group.apollo.model.schema
 com.i2group.apollo.model.schema.transport
 com.i2group.apollo.model.schema.transport.unchecked
+com.i2group.apollo.model.security.dynamic.transport
 com.i2group.apollo.model.security.transport
 com.i2group.apollo.networksearchservice
 com.i2group.apollo.networksearchservice.transport
