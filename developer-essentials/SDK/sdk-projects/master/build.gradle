@@ -10,11 +10,18 @@
  */
 
 import groovy.io.FileType
-import groovy.xml.*
+import groovy.util.slurpersupport.GPathResult
+import groovy.xml.StreamingMarkupBuilder
+import groovy.xml.XmlUtil
 
 ext {
+    // Example project names
+    daExampleCommon             = 'da-example-common'
+    daArloadFilesystemExample   = 'da-arload-filesystem-example'
+    daSubsetRestExample         = 'da-subset-rest-example'
+
     // Client projects that do not need to be deployed on the server
-    clientProjects              = ['da-arload-filesystem-example']
+    clientProjects              = [daArloadFilesystemExample]
 
     server                      = 'i2analyze'
     sdkProjectsDir              = "$rootDir/.."
@@ -93,7 +100,6 @@ subprojects {
             copy {
                 from "$i2analyzeDir/toolkit"
                 exclude '**/application/targets/daod/WEB-INF/classes/DataSourceDaod.properties',
-                    '**/application/targets/daod/WEB-INF/classes/ApolloServerSettingsMandatory.properties',
                     '**/configuration'
                 into stagedToolkitDir
             }
@@ -108,26 +114,17 @@ subprojects {
         }
     }
 
-    task stageBuiltProjects() << {
-        getProjectDependenciesTree(project.name).each { requiredProject ->
-            copy {
-                from "$sdkProjectsDir/$requiredProject/build/libs"
-                into "$stagedToolkitDir/configuration/fragments/$requiredProject/WEB-INF/lib"
-            }
-            copy {
-                from "$sdkProjectsDir/$requiredProject/fragment"
-                into "$stagedToolkitDir/configuration/fragments/$requiredProject"
-            }
-        }
-
+    task stageBuiltProjects << {
         if (!clientProjects.contains(project.name)) {
-            copy {
-                from "$project.buildDir/libs"
-                into "$stagedToolkitDir/configuration/fragments/$project.name/WEB-INF/lib"
-            }
-            copy {
-                from "$project.projectDir/fragment"
-                into "$stagedToolkitDir/configuration/fragments/$project.name"
+            (getProjectDependenciesTree(project.name) + project.name).each { requiredProject ->
+                copy {
+                    from "$sdkProjectsDir/$requiredProject/build/libs"
+                    into "$stagedToolkitDir/configuration/fragments/$requiredProject/WEB-INF/lib"
+                }
+                copy {
+                    from "$sdkProjectsDir/$requiredProject/fragment"
+                    into "$stagedToolkitDir/configuration/fragments/$requiredProject"
+                }
             }
         }
     }
@@ -136,15 +133,15 @@ subprojects {
     stageBuiltProjects.mustRunAfter jar
 
     task addDaodDataSource(type: Exec) {
-        def topologyFile = file("$stagedToolkitDir/configuration/environment/topology.xml")
+        File topologyFile = file("$stagedToolkitDir/configuration/environment/topology.xml")
 
         doFirst {
             // Remove data source if it already exists
             file("$stagedToolkitDir/configuration/environment/dsid").eachFile(FileType.FILES) {
-                def dsidProperties = getProperties(new Properties(), it)
+                Properties dsidProperties = getProperties(new Properties(), it)
                 if (dsidProperties.'DataSourceName' == project.name) {
-                    def topology = new XmlSlurper().parse(topologyFile)
-                    def application = topology.applications.application.find { it.@name == server }
+                    GPathResult topology = new XmlSlurper().parse(topologyFile)
+                    GPathResult application = topology.applications.application.find { it.@name == server }
                     deleteNodeIfPresent(topology.'i2-data-sources'.'i2-data-source'.find { it.@id == dsidProperties.'TopologyId' })
                     deleteNodeIfPresent(application.'lucene-indexes'.'lucene-index'.find { it.@id == dsidProperties.'TopologyId' })
                     deleteNodeIfPresent(application.wars.war.find { it.@'i2-data-source-id' == dsidProperties.'TopologyId' })
@@ -165,9 +162,9 @@ subprojects {
 
         doLast {
             // Add required projects as fragments to DAOD WAR in topology.xml now, before deployment
-            def topology = new XmlSlurper().parse(topologyFile)
-            def application = topology.applications.application.find { it.@name == server }
-            def daodWar = application.wars.war.find { it.@target == 'daod' && it.@name == project.name }
+            GPathResult topology = new XmlSlurper().parse(topologyFile)
+            GPathResult application = topology.applications.application.find { it.@name == server }
+            GPathResult daodWar = application.wars.war.find { it.@target == 'daod' && it.@name == project.name }
             deleteNodeIfPresent(daodWar.fragments.fragment.find { it.@name == project.name })
             String fragmentsXml = ''
 
@@ -181,12 +178,7 @@ subprojects {
 
             fragmentsXml += "\n            <fragment name=\"$project.name\" />\n          "
             daodWar.fragments.appendNode(fragmentsXml)
-
             writeXmlFile(topologyFile, topology)
-            updateTextFile(topologyFile) {
-                it = it.replaceAll('&lt;', '<')
-                it.replaceAll('&gt;', '>')
-            }
 
             copy {
                 from "$project.projectDir/fragment"
@@ -204,8 +196,8 @@ subprojects {
         }
 
         doLast {
-            def uiProjectExtractedxapDir = "${uiEnvironmentProperties.'ui.project.dir'}/extractedxap"
-            def extractedxapDir = file(uiProjectExtractedxapDir)
+            String uiProjectExtractedxapDir = "${uiEnvironmentProperties.'ui.project.dir'}/extractedxap"
+            File extractedxapDir = file(uiProjectExtractedxapDir)
             extractedxapDir.deleteDir()
             extractedxapDir.mkdirs()
 
@@ -242,27 +234,27 @@ subprojects {
     }
 }
 
-project(':da-arload-filesystem-example') {
+project(":$daArloadFilesystemExample") {
     dependencies {
-        compile project(':da-example-common'), fileTree(dir: "$stagedToolkitDir/application/client/bin", includes: ['**/*.jar'])
+        compile project(":$daExampleCommon"), fileTree(dir: "$stagedToolkitDir/application/client/bin", includes: ['**/*.jar'])
     }
 }
 
 project(':da-subset-documents-example') {
     dependencies {
-        compile project(':da-example-common')
+        compile project(":$daExampleCommon")
     }
 }
 
 project(':da-subset-filesystem-example') {
     dependencies {
-        compile project(':da-example-common')
+        compile project(":$daExampleCommon")
     }
 }
 
-project(':da-subset-rest-example') {
+project(":$daSubsetRestExample") {
     dependencies {
-        compile project(':da-example-common')
+        compile project(":$daExampleCommon")
     }
 }
 
@@ -274,8 +266,8 @@ boolean isFinalSubProject(String projectName) {
 
 void applyLibertyOverrides() {
     // Add Eclipse settings files to Liberty to suppress redundant warnings regarding the grammar of fragments of XML
-    def i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/i2analyze/environment.properties"))
-    def wlpHomeDir = i2analyzeEnvironmentProperties.'wlp.home.dir'
+    Properties i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/i2analyze/environment.properties"))
+    String wlpHomeDir = i2analyzeEnvironmentProperties.'wlp.home.dir'
 
     if (wlpHomeDir) {
         copy {
@@ -287,11 +279,11 @@ void applyLibertyOverrides() {
 
 void copyAutogeneratedFiles() {
     file(sdkProjectsDir).eachDir {
-        if (it.name != 'master' && it.name != 'da-example-common' && !clientProjects.contains(it.name)) {
-            def i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/i2analyze/environment.properties"))
-            def wlpHomeDir = i2analyzeEnvironmentProperties.'wlp.home.dir'
-            def projectWebInfDir = "$wlpHomeDir/usr/servers/$server/apps/${it.name}.war/WEB-INF"
-            def autogenFragmentsWebInfDir = "$stagedToolkitDir/scripts/gradle/build/autogenFragments/$it.name/WEB-INF"
+        if (it.name != 'master' && it.name != daExampleCommon && !clientProjects.contains(it.name)) {
+            Properties i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/i2analyze/environment.properties"))
+            String wlpHomeDir = i2analyzeEnvironmentProperties.'wlp.home.dir'
+            String projectWebInfDir = "$wlpHomeDir/usr/servers/$server/apps/${it.name}.war/WEB-INF"
+            String autogenFragmentsWebInfDir = "$stagedToolkitDir/scripts/gradle/build/autogenFragments/$it.name/WEB-INF"
 
             copy {
                 from projectWebInfDir
@@ -310,12 +302,12 @@ void copyAutogeneratedFiles() {
     }
 }
 
-def calculateProjectDependencies(String projectName) {
+List<String> calculateProjectDependencies(String projectName) {
     project(":$projectName").configurations.compile.allDependencies.findAll { it.name != 'unspecified' }*.name
 }
 
 void generateProjectDependencyTree(String projectName) {
-    def subProjectDependencies = calculateProjectDependencies(projectName)
+    List<String> subProjectDependencies = calculateProjectDependencies(projectName)
 
     subProjectDependencies.reverseEach {
         projectDependencies.add(0, it)
@@ -323,9 +315,9 @@ void generateProjectDependencyTree(String projectName) {
     }
 }
 
-def getProjectDependenciesTree(String projectName) {
+List<String> getProjectDependenciesTree(String projectName) {
     generateProjectDependencyTree(projectName)
-    def projectDependenciesTree = projectDependencies.unique(false)
+    List<String> projectDependenciesTree = projectDependencies.unique(false)
     projectDependencies = []
     projectDependenciesTree
 }
@@ -337,21 +329,25 @@ Properties getProperties(Properties properties, File file) {
     properties
 }
 
-boolean deleteNodeIfPresent(def node) {
+boolean deleteNodeIfPresent(GPathResult node) {
     if (node.size() > 0) {
         node.replaceNode { }
         return true
     }
 }
 
-void writeXmlFile(File file, def rootNode) {
+// Convenient function for altering a text file's contents with replace rules, regular expressions, or basic String manipulation.
+void updateTextFile(def textFile, Closure updateText) {
+    File file = file(textFile)
+    file.write(updateText(file.text))
+}
+
+void writeXmlFile(File file, GPathResult rootNode) {
     file.withWriter('UTF-8') { out ->
         XmlUtil.serialize(new StreamingMarkupBuilder().bind { mkp.yield rootNode }, out)
     }
-}
-
-// Convenient function for altering a text file's contents with replace rules, regular expressions, or basic String manipulation.
-void updateTextFile(def file, Closure updateText) {
-    File fileToUpdate = file instanceof File ? file : file(file)
-    fileToUpdate.write(updateText(fileToUpdate.text))
+    updateTextFile(file) {
+        it = it.replaceAll('&lt;', '<')
+        it.replaceAll('&gt;', '>')
+    }
 }

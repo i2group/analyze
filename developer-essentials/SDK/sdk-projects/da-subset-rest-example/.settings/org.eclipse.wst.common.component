@@ -13,9 +13,9 @@ Contributors:
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="da-subset-rest-example">
         <wb-resource deploy-path="/" source-path="/autogen"/>
-        <wb-resource deploy-path="/" source-path="/fragment" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/daod-target" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/fragment"/>
         <wb-resource deploy-path="/WEB-INF" source-path="/common-fragment"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/daod-target/WEB-INF/classes"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/lib" source-path="/schema"/>
         <dependent-module archiveName="da-example-common.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/da-example-common/da-example-common">

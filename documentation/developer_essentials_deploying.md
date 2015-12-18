@@ -9,11 +9,11 @@ Before you begin
 IBM i2 Analyze Developer Essentials has a longer and more specific set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 
 -   IBM Installation Manager 1.8
--   IBM i2 Analyze 4.0.0
+-   IBM i2 Analyze 4.1.0
 -   IBM DB2® 10.5 Express® Edition (or Express-C Edition)
 -   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5
 -   IBM HTTP Server 8.5
--   Eclipse Luna (Eclipse IDE for Java™ EE Developers)
+-   Eclipse Mars (Eclipse IDE for Java™ EE Developers)
 
 About this task
 ---------------
@@ -25,7 +25,7 @@ Procedure
 
 In the first part of the procedure, you use Developer Essentials to create a custom version of the Deployment Toolkit. The libraries and settings that you add enable development for i2 Analyze on a single computer.
 
-1.  Install IBM i2 Analyze 4.0.0 according to the instructions in the release notes. If you accept all of the default settings, the Deployment Toolkit is installed to `C:\IBM\i2analyze`.
+1.  Install IBM i2 Analyze 4.1.0 according to the instructions in the release notes. If you accept all of the default settings, the Deployment Toolkit is installed to `C:\IBM\i2analyze`.
 2.  Install all the other prerequisite software and accept all of the default settings, apart from the target directory for IBM HTTP Server that should be set to `C:\IBM\HTTPServer`, and the Web Server Plug-ins for IBM WebSphere Application Server that should be set to `C:\IBM\WebSphere\Plugins`.
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 3.  Extract i2 Analyze Developer Essentials, and copy the `SDK` directory into the `C:\IBM\i2analyze\` directory.
@@ -56,9 +56,9 @@ At this stage, configuration of the development version of i2 Analyze is complet
 
 Now, the development version of i2 Analyze is ready for use. The remaining steps configure the Eclipse development environment to interact with the platform.
 
-1.  Start Eclipse Luna, and then open a web browser and navigate to https://developer.ibm.com/wasdev/. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
+1.  Start Eclipse, and then open a web browser and navigate to https://developer.ibm.com/wasdev/. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
 2.  Click **Downloads** and then **Download in Eclipse** to open the tools download page. Follow the instructions on the page to install the tools for **WAS Liberty Profile**.
-    Note: The download page refers to Eclipse Mars rather than Eclipse Luna, but the procedure works for the older software as well. Do not follow the instructions to create a WAS Liberty server at this time.
+    Note: Do not follow the instructions to create a WAS Liberty server at this time.
 3.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
 4.  Optional: If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
     1.  In the Preferences window, click **Java** \> **Installed JREs** \> **Add** to open the Add JRE window.

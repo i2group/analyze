@@ -31,7 +31,7 @@ Procedure
 The two-part project is structured so that the `da-subset-rest-example` project, which implements the custom functionality, refers to the `ui-subset-example` project. To demonstrate the custom user interface in isolation, you need to configure both projects.
 
 1.  Open the configuration file for user interface extensions for the `da-subset-rest-example` project in a text editor: `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-rest-example\ui-project.properties`.
-2.  Ensure that the properties are set appropriately for your environment. If you followed the deployment instructions for Developer Essentials, the correct values look like this example:
+2.  Ensure that the properties are set for your environment. If you followed the deployment instructions for Developer Essentials, the correct values look like this example:
 
     ``` {.pre .codeblock}
     ui.project.dir=C:/IBM/i2analyze/SDK/sdk-projects/ui-subset-example
@@ -49,7 +49,7 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 
     This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example` project.
 
-3.  In Visual Studio, open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
+3.  In Visual Studio, click **Open Project** and open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
     -   `SubsettingExample` demonstrates how to add a custom HTML page and display it inside a custom tab.
     -   `CommandExtensibilityExample` demonstrates how to add and modify commands in the pop-up menus for items, and in the actions toolbar.
 
@@ -73,7 +73,7 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 Results
 -------
 
-The user interface extension example adds a **Subsetting** menu to the top of the Intelligence Portal user interface. When you click the menu, the portal displays a submenu that contains a **Launch Subsetting Tab** command. When you run the command, a **Subsetting Example** tab opens. However, the tab itself displays an error until you also deploy the server-side part of this example.
+The user interface extension example adds a **Subsetting** menu to the top of the Intelligence Portal user interface. When you click the menu, the portal displays a submenu that contains a **Launch Subsetting Tab** command. When you run the command, a **Subsetting Example** tab opens. However, the tab itself displays an error until you also deploy the server-side part of this example. To deploy the server-side part of the example, see [Configuring the "two-phase data retrieval" example project](https://github.com/IBM-i2/Analyze/blob/master/documentation/developer_essentials_example_rest.md "(Opens in a new tab or window)").
 
 Elsewhere in the user interface, the example adds commands that are named **Example command 1**, **Example command 2**, and **Example inserted command**. Depending on the current state of the application, the Intelligence Portal displays or hides these commands in different locations.
 

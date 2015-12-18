@@ -8,7 +8,7 @@ Before you begin
 
 The binary documents access example project requires the development version of i2 Analyze, prepared according to the instructions in the deployment guide. However, the example has no additional requirements. You do not need to configure the `da-subset-filesystem-example` example project before you configure this project.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
 
 About this task
 ---------------
@@ -19,7 +19,7 @@ The example demonstrates two different mechanisms for including binary documents
 
 In the example, the HTTP Server configuration file `httpd.conf` is used to manipulate the `<DocumentId>` element of a transformed item into the URL of a static file or a servlet. The file contains rewrite conditions that identify references to documents, and rewrite rules that convert those references into URLs. Depending on the contents of the references, the URLs target a directory that contains image files, or a servlet method.
 
-Note: The binary documents access example includes the source code for a suitable servlet in the file at `da-subset-documents-example\src\main\java\com\example\ExampleExternalDataDocumentSource.java`.
+Note: The binary documents access example includes the source code for a suitable servlet in the file at `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example\src\main\java\com\example\ExampleExternalDataDocumentSource.java`.
 
 Procedure
 ---------
@@ -75,7 +75,9 @@ By its nature, the binary documents access example requires you to modify your d
     </i2-data-source>
     ```
 
-6.  Make a note of the value of the `id` attribute of the `<i2-data-source>` element. If this is the first data source that you added, the value is `daod1`.
+    Note: If this is the first data source that you added, the value is `daod1`.
+
+6.  Make a note of the value of the `id` attribute of the `<i2-data-source>` element.
 7.  To redeploy i2 Analyze, run the following command:
 
     ``` {.pre .codeblock}
@@ -99,7 +101,7 @@ At this stage, the data access on-demand aspect of the example is complete. The 
 
 1.  Copy the example image files to the HTTP server.
     1.  In Windows Explorer, navigate to the `C:\IBM\HTTPServer\htdocs` directory and create a directory called `ImageStore`.
-    2.  Navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example\fragments\documents` directory and copy the four `.jpg` files to the `C:\IBM\HTTPServer\htdocs\ImageStore` directory.
+    2.  Navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example\fragment\documents` directory and copy the four `.jpg` files to the `C:\IBM\HTTPServer\htdocs\ImageStore` directory.
 
 2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\dsid` directory.
 
@@ -107,22 +109,28 @@ At this stage, the data access on-demand aspect of the example is complete. The 
 
 3.  Open the `dsid.<id>.properties` file for your data source in a text editor, where `<id>` is the value of the `id` attribute in the `<i2-data-source>` element for this data source in the topology file. Record the value of the `DataSourceId` property, which was generated when you redeployed i2 Analyze.
 4.  Open the `httpd.conf` file for the HTTP Server. By default, the file is at `C:\IBM\HTTPServer\conf\httpd.conf`.
-5.  Add the following code before the `Begin#IBM#IAP#Generated#Configuration#RewriteRules` line.
+    1.  Add the following code before the `Begin#IBM#IAP#Generated#Configuration#RewriteRules` line.
 
-    ``` {.pre .codeblock}
-    RewriteCond %{QUERY_STRING} ^documentId=DA-documents/([^&]+)
-    RewriteRule ^/apollo/services/download /ImageStore/%1? [P]
-    RewriteCond %{QUERY_STRING} ^documentId=DA-servlet/([^&]+)
-    RewriteRule ^/apollo/services/download /<DataSourceId>/services/dadownload?documentId=%1 [P]
-    ```
+        ``` {.pre .codeblock}
+        RewriteCond %{QUERY_STRING} ^documentId=DA-documents/([^&]+)
+        RewriteRule ^/apollo/services/download /ImageStore/%1? [PT]
+        RewriteCond %{QUERY_STRING} ^documentId=DA-servlet/([^&]+)
+        RewriteRule ^/apollo/services/download /<DataSourceId>/services/dadownload?documentId=%1 [PT]
+        ```
 
-    Here, `<DataSourceId>` is the property value from the `dsid.<id>.properties` file.
+        Here, `<DataSourceId>` is the property value from the `dsid.<id>.properties` file.
 
-    In these lines, the `RewriteCond` statements match items with document identifiers that begin with `DA-`. (That prefix is added to the item data during the transformation process, so that i2 Analyze can identify binary documents that are not in its own document store.)
+        In these lines, the `RewriteCond` statements match items with document identifiers that begin with `DA-`. (That prefix is added to the item data during the transformation process, so that i2 Analyze can identify binary documents that are not in its own document store.)
 
-    For items that refer to a static image, the first `RewriteRule` generates the URL of an image file. For items that refer to an image that the servlet creates, the second `RewriteRule` generates the URL of a call to a servlet method.
+        For items that refer to a static image, the first `RewriteRule` generates the URL of an image file. For items that refer to an image that the servlet creates, the second `RewriteRule` generates the URL of a call to a servlet method.
 
-6.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
+    2.  Comment out any lines that begin with `Win32DisableAcceptEx`. For example:
+
+        ``` {.pre .codeblock}
+        # Win32DisableAcceptEx
+        ```
+
+5.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 
 At this stage, deployment of the binary documents access example is complete. You can start i2 Analyze, and connect to it through the Intelligence Portal.
 
@@ -150,6 +158,8 @@ These instructions assume that you have access to two instances of i2 Analyze:
     ``` {.pre .codeblock}
     setup -t deploy
     ```
+
+6.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 
 * * * * *
 

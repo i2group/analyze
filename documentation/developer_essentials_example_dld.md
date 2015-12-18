@@ -8,7 +8,7 @@ Before you begin
 
 The data load direct example project requires the development version of i2 Analyze, prepared according to the instructions in the deployment guide. However, the example has no additional requirements.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
 
 About this task
 ---------------
@@ -51,10 +51,10 @@ Next, all data acquisition projects that you create with Developer Essentials re
 
 The Java library is the only change that you must make to the example project. You can now import the example project to Eclipse, and run it to add items from the supplied XML file to the Analysis Repository.
 
-1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `toolkit\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
-2.  If the development version of i2 Analyze is not already running, then start it from within Eclipse.
+1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2Analyze\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
+2.  If the server for development version of i2 Analyze is not already running, then start it from within Eclipse.
 3.  Attempt to run the example.
-    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`.
+    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **da-arload-filesystem-example** \> **src** \> **main** \> **java** \> **com** \> **example**.
     2.  Click **Run** \> **Run As** \> **Java Application**.
 
     If you have not run the example before, this step fails because the application requires a command-line argument. However, attempting to run the example initializes the configuration setting that you must make to run the example successfully.

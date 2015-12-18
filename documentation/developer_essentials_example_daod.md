@@ -67,6 +67,8 @@ By its nature, the data access on-demand example requires you to modify your dep
     </i2-data-source>
     ```
 
+    Note: If this is the first data source that you added, the value is `daod1`.
+
 6.  To redeploy i2 Analyze, run the following command:
 
     ``` {.pre .codeblock}
@@ -77,7 +79,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 
 The commands so far deployed the example project application from the toolkit. To enable easy debugging of your code, the next steps are all about replacing the application that you deployed from the toolkit with code from Eclipse.
 
-1.  Refresh the Eclipse project to ensure that it reflects the current state.
+1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
 2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty Profile/servers/i2analyze/apps` folder, and delete the `da-subset-filesystem-example.war` application.
 3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-filesystem-example` directory to Eclipse.
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-filesystem-example` project:
@@ -113,6 +115,8 @@ These instructions assume that you have access to two instances of i2 Analyze:
     ``` {.pre .codeblock}
     setup -t deploy
     ```
+
+5.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 
 * * * * *
 

@@ -5,10 +5,10 @@ The example projects in i2 Analyze Developer Essentials are sensitive to changes
 
 -   [Eclipse reports compilation errors after it imports an example project](#eclipse-reports-compilation-errors-after-it-imports-an-example-project)
 -   [Server starts without error but in only a few seconds](#server-starts-without-error-but-in-only-a-few-seconds)
+-   [Navigation to http://localhost/apollo reports HTTP error 404](#navigation-to-httplocalhostapollo-reports-http-error-404)
 -   [Eclipse reports a java.lang.NullpointerException on Clean or Publish](#eclipse-reports-a-javalangnullpointerexception-on-clean-or-publish)
 -   [Application fails to start and reports an error to the console](#application-fails-to-start-and-reports-an-error-to-the-console)
 -   [Navigation to http://localhost/apollo reports an Internal Server Error](#navigation-to-httplocalhostapollo-reports-an-internal-server-error)
--   [Navigation to http://localhost/apollo reports HTTP error 404](#navigation-to-httplocalhostapollo-reports-http-error-404)
 -   [User login fails and generates a console error](#user-login-fails-and-generates-a-console-error)
 -   [User login fails with no obvious console error](#user-login-fails-with-no-obvious-console-error)
 -   [Browse and search operations generate Server Not Found errors](#browse-and-search-operations-generate-server-not-found-errors)
@@ -37,6 +37,19 @@ If the application server starts in an unusually short time, it is likely that a
 2.  In the new tab, ensure that the Run applications directly from the workspace check box is cleared, and then press Ctrl+S to save the settings.
 
 Important: This setting can cause various other problems. For i2 Analyze to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
+
+Navigation to http://localhost/apollo reports HTTP error 404
+------------------------------------------------------------
+
+HTTP error 404 can occur when one of the i2 Analyze applications is not correctly deployed, or when the HTTP server is misconfigured.
+
+-   If the error is "Context Root Not Found", with obvious "IBM" and "IBM WebSphere Application Server" branding, then the HTTP server redirect is working and the problem is with the application.
+
+    To resolve the problem, follow the previous procedure for clearing the Run applications directly from the workspace check box.
+
+-   If the error is a plain web page with a generic "Not Found" message, then the problem is with the HTTP server.
+
+    To resolve the problem, see the detailed procedure for checking the HTTP server configuration at the end of the final section.
 
 Eclipse reports a java.lang.NullpointerException on Clean or Publish
 --------------------------------------------------------------------
@@ -85,19 +98,6 @@ Navigation to http://localhost/apollo reports an Internal Server Error
 ----------------------------------------------------------------------
 
 If the HTTP server reports an internal server error, then the **i2analyze** server did not start. Start the server and try the operation again.
-
-Navigation to http://localhost/apollo reports HTTP error 404
-------------------------------------------------------------
-
-HTTP error 404 can occur when one of the i2 Analyze applications is not correctly deployed, or when the HTTP server is misconfigured.
-
--   If the error is "Context Root Not Found", with obvious "IBM" and "IBM WebSphere Application Server" branding, then the HTTP server redirect is working and the problem is with the application.
-
-    To resolve the problem, follow the previous procedure for clearing the **Run applications directly from the workspace** check box.
-
--   If the error is a plain web page with a generic "Not Found" message, then the problem is with the HTTP server.
-
-    To resolve the problem, see the detailed procedure for checking the HTTP server configuration at the end of the final section.
 
 User login fails and generates a console error
 ----------------------------------------------

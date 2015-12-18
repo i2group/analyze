@@ -78,8 +78,8 @@ Contributors:
         </ItemId>
         <ItemVersion>0</ItemVersion>
         <SecurityTagIds>
-            <SecurityTagId>d3cdf9a0-1164-11e3-8ffd-0800200c9a66</SecurityTagId>
-            <SecurityTagId>6f0a69d4-6edd-40ec-a372-c6db33262a58</SecurityTagId>
+            <SecurityTagId>UC</SecurityTagId>
+            <SecurityTagId>OSI</SecurityTagId>
         </SecurityTagIds>
         <PropertyBags>
             <PropertyBag>
