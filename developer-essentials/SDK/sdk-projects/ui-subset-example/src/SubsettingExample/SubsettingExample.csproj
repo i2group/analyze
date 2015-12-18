@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - Copyright (c) 2014 IBM Corp.
+ - All rights reserved. This program and the accompanying materials
+ - are made available under the terms of the Eclipse Public License v1.0
+ - which accompanies this distribution, and is available at
+ - http://www.eclipse.org/legal/epl-v10.html
+ - 
+ - Contributors:
+ -    IBM Corp - initial API and implementation and/or initial documentation
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2A9C36D-FCED-4794-9662-98B05AA530CA}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SubsettingExample</RootNamespace>
+    <AssemblyName>SubsettingExample</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="i2.Apollo.Common">
+      <HintPath>..\..\extractedxap\i2.Apollo.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="i2.Apollo.Common.DependencyInjection">
+      <HintPath>..\..\extractedxap\i2.Apollo.Common.DependencyInjection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="i2.Apollo.CommonControls, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\extractedxap\i2.Apollo.CommonControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="i2.Apollo.Controls">
+      <HintPath>..\..\extractedxap\i2.Apollo.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="i2.Apollo.Services.Silverlight">
+      <HintPath>..\..\extractedxap\i2.Apollo.Services.Silverlight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="i2.Apollo.SilverlightCommon">
+      <HintPath>..\..\extractedxap\i2.Apollo.SilverlightCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrowserStackLoginHelper.cs" />
+    <Compile Include="ItemDetailsTabIntent.cs" />
+    <Compile Include="ItemDetailsTabView.xaml.cs">
+      <DependentUpon>ItemDetailsTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetailsTabViewModel.cs" />
+    <Compile Include="ExpandableRegionView.xaml.cs">
+      <DependentUpon>ExpandableRegionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpandableRegionViewModel.cs" />
+    <Compile Include="SubsetExampleOriginHelper.cs" />
+    <Compile Include="SubsettingExampleLocations.cs" />
+    <Compile Include="ItemDetailsCommandProvider.cs" />
+    <Compile Include="ItemDetailsTabFactory.cs" />
+    <Compile Include="SubsettingExampleOriginIdentifier.cs" />
+    <Compile Include="SubsettingExampleStringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubsettingExampleStringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="JsonIntent\JsonSubsetIntentHandler.cs" />
+    <Compile Include="JsonIntent\JsonSubsetIntent.cs" />
+    <Compile Include="SubsettingTabIntent.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="ItemDetailsTabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="SubsettingTabFactory.cs" />
+    <Compile Include="SubsettingTabView.xaml.cs">
+      <DependentUpon>SubsettingTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubsettingTabViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SubsettingTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SubsettingExampleStringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubsettingExampleStringResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ExpandableRegionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

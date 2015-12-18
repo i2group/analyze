@@ -1,0 +1,23 @@
+<i2mvvm:ViewBase x:Class="SubsettingExample.ItemDetailsTabView" 
+           xmlns:i2mvvm="http://www.i2group.com/i2/SilverlightMVVM" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:SilverlightCommon="clr-namespace:i2.Apollo.SilverlightCommon;assembly=i2.Apollo.SilverlightCommon"
+           mc:Ignorable="d"        
+           d:DesignWidth="640" d:DesignHeight="480">
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - Copyright (c) 2015 IBM Corp.
+ - All rights reserved. This program and the accompanying materials
+ - are made available under the terms of the Eclipse Public License v1.0
+ - which accompanies this distribution, and is available at
+ - http://www.eclipse.org/legal/epl-v10.html
+ - 
+ - Contributors:
+ -    IBM Corp - initial API and implementation and/or initial documentation
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <Grid x:Name="LayoutRoot">
+        <SilverlightCommon:HtmlControl x:Name="HtmlContent" HtmlSource="{Binding ItemUrl}" ForwardLocaleInfo="True" />
+    </Grid>
+</i2mvvm:ViewBase>

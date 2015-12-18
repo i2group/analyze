@@ -1,0 +1,24 @@
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+      <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    </PropertyGroup>
+
+    <ItemGroup>
+       <ProjectReferences Include="src\CommandExtensibilityExample\*.csproj" />
+       <ProjectReferences Include="src\SubsettingExample\*.csproj" />
+    </ItemGroup>
+
+    <Target Name="Build">
+        <MSBuild Projects="@(ProjectReferences)" Targets="Build" />
+    </Target>
+  
+    <Target Name="Clean">
+        <MSBuild Projects="@(ProjectReferences)" Targets="Clean" />
+    </Target>
+  
+    <Target Name="Rebuild">
+        <MSBuild Projects="@(ProjectReferences)" Targets="Rebuild" />
+    </Target>
+
+</Project>
