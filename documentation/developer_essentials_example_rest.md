@@ -101,7 +101,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     3.  The web application contains a child `<classLoader>` element. Within the `<classLoader>` element is a `<fileset>` element. Add the `excludes` attribute to the `<fileset>` element so that it matches the following example:
 
         ``` {.pre .codeblock}
-        <fileset dir="${shared.resource.dir}/i2-common/lib" id="SharedLibrary" excludes="wink-*.jar"/>
+        <fileset id="SharedLibrary" dir="${shared.resource.dir}/i2-common/lib" excludes="wink-*.jar"/>
         ```
 
     4.  Add the `jaxrs-1.1` feature to the server. In the `server.xml`, add the following child `<feature>` element to the `<featureManager>` element:
