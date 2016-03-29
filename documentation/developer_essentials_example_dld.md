@@ -19,8 +19,8 @@ Procedure
 ---------
 
 1.  If you did not already add the `master` directory and the related artifacts to your Eclipse workspace while you worked with one of the other examples, add it now.
-    1.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
-    2.  In the Preferences window, select **General** \> **Workspace** \> **Linked Resources**.
+    1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
+    2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
@@ -28,8 +28,8 @@ Procedure
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
-    4.  In Eclipse, click **File** \> **Import** to open the Import window.
-    5.  In the Import window, click **General** \> **Existing Projects into Workspace**, and then click **Next**.
+    4.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+    5.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
     8.  Repeat the import process to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common`
@@ -39,7 +39,7 @@ Next, all data acquisition projects that you create with Developer Essentials re
 1.  Open a command prompt, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -t generateMappingJar 
     -x C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\examples\schemas\en_US\law-enforcement-schema.xml
     -o C:\IBM\i2analyze\SDK\sdk-projects\da-arload-filesystem-example\schema-mapping-jar\schema.jar
@@ -52,14 +52,14 @@ Next, all data acquisition projects that you create with Developer Essentials re
 The Java library is the only change that you must make to the example project. You can now import the example project to Eclipse, and run it to add items from the supplied XML file to the Analysis Repository.
 
 1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2Analyze\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
-2.  If the server for development version of i2 Analyze is not already running, then start it from within Eclipse.
+2.  If the server for development version of i2 Analyze is not already running, then start it from within Eclipse. 
 3.  Attempt to run the example.
-    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **da-arload-filesystem-example** \> **src** \> **main** \> **java** \> **com** \> **example**.
-    2.  Click **Run** \> **Run As** \> **Java Application**.
+    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **da-arload-filesystem-example** &gt; **src** &gt; **main** &gt; **java** &gt; **com** &gt; **example**.
+    2.  Click **Run** &gt; **Run As** &gt; **Java Application**.
 
     If you have not run the example before, this step fails because the application requires a command-line argument. However, attempting to run the example initializes the configuration setting that you must make to run the example successfully.
-4.  Click **Run** \> **Run Configurations** to open the Run Configurations window.
-5.  In the left pane of the window, select **Java Application** \> **ExampleDataLoaderMain**.
+4.  Click **Run** &gt; **Run Configurations** to open the Run Configurations window.
+5.  In the left pane of the window, select **Java Application** &gt; **ExampleDataLoaderMain**.
 6.  In the right pane of the window, select the **Arguments** tab, and then type `-load` in the "**Program arguments**" box.
 7.  Click **Run** to close the window and run the example application. The example adds a handful of items from the supplied XML file to the Analysis Repository.
 
@@ -67,7 +67,7 @@ The Java library is the only change that you must make to the example project. Y
 
 8.  In a web browser, load or refresh your view of the Intelligence Portal, and browse the Analysis Repository to see that the example project added new items.
 
-* * * * *
+------------------------------------------------------------------------
 
 © Copyright IBM Corporation 2014, 2016.
 

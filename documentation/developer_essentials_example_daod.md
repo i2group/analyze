@@ -19,8 +19,8 @@ Procedure
 ---------
 
 1.  If you did not already add the `master` directory and the related artifacts to your Eclipse workspace while you worked with one of the other examples, add it now.
-    1.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
-    2.  In the Preferences window, select **General** \> **Workspace** \> **Linked Resources**.
+    1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
+    2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
@@ -28,8 +28,8 @@ Procedure
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
-    4.  In Eclipse, click **File** \> **Import** to open the Import window.
-    5.  In the Import window, click **General** \> **Existing Projects into Workspace**, and then click **Next**.
+    4.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+    5.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
     8.  Repeat the import process to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common`
@@ -40,7 +40,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 2.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 3.  Run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -pr da-subset-filesystem-example -t addDaodDataSource
     ```
 
@@ -53,7 +53,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 4.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
 5.  Edit the `<i2-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:
 
-    ``` {.pre .codeblock}
+    ``` pre
     <i2-data-source id="daod1" ar="false">
        <DataSource ScsSearchSupported="true" EdrsGetContextSupported="false" 
                    ScsNetworkSearchSupported="false" EdrsGetLatestItemsSupported="false"  
@@ -71,7 +71,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 
 6.  To redeploy i2 Analyze, run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -t deploy
     ```
 
@@ -85,9 +85,9 @@ The commands so far deployed the example project application from the toolkit. T
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-filesystem-example` project:
     1.  In Package Explorer, right-click **da-subset-filesystem-example**, and select **Properties** to display the Properties window.
     2.  Click **Deployment Assembly**, and look for any error messages about `da-example-common`.
-    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** \> **Project** to add it again.
+    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
 
-5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select Add and Remove.
+5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select **Add and Remove**.
 6.  In the Add and Remove window, move **da-subset-filesystem-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
 
 At this stage, deployment of the data access on-demand example is complete. You can start i2 Analyze, and connect to it through the Intelligence Portal.
@@ -112,13 +112,13 @@ These instructions assume that you have access to two instances of i2 Analyze:
 3.  Open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 4.  To redeploy the platform, run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     setup -t deploy
     ```
 
 5.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 
-* * * * *
+------------------------------------------------------------------------
 
 © Copyright IBM Corporation 2014, 2016.
 

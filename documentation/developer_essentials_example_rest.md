@@ -8,7 +8,7 @@ Before you begin
 
 The two-phase data retrieval example project requires the development version of i2 Analyze, prepared according to the deployment instructions in Developer Essentials.
 
-To test the functionality of the example, you must also configure the user interface extension example project by following the instructions in [Configuring the "user interface extension" example project](https://github.com/IBM-i2/Analyze/blob/master/documentation/developer_essentials_example_ui.md "(Opens in a new tab or window)").
+To test the functionality of the example, you must also configure the user interface extension example project by following the instructions in <a href="https://github.com/IBM-i2/Analyze/blob/master/documentation/developer_essentials_example_ui.md" class="xref" title="(Opens in a new tab or window)">Configuring the &quot;user interface extension&quot; example project</a>.
 
 Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into i2 Analyze items. These artifacts are in the `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
 
@@ -27,8 +27,8 @@ Procedure
 The examples in Developer Essentials require links to the i2 Analyze libraries, and to the API documentation. These links are configured in a separate project directory that you must import into Eclipse before you can build any of the example projects.
 
 1.  If you did not already add the `master` directory and the related artifacts to your Eclipse workspace while you worked with one of the other examples, add it now.
-    1.  In Eclipse, click **Window** \> **Preferences** to open the Preferences window.
-    2.  In the Preferences window, select **General** \> **Workspace** \> **Linked Resources**.
+    1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
+    2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
@@ -36,8 +36,8 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
-    4.  In Eclipse, click **File** \> **Import** to open the Import window.
-    5.  In the Import window, click **General** \> **Existing Projects into Workspace**, and then click **Next**.
+    4.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+    5.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
     8.  Repeat the import process to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common`
@@ -46,7 +46,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 3.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 4.  Run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -pr da-subset-rest-example -t addDaodDataSource
     ```
 
@@ -56,7 +56,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 
 5.  Reopen the SDK `topology.xml` file, and edit the `<i2-data-source>` element that defines the new data access on-demand data source so that its attributes reflect the functionality of the example:
 
-    ``` {.pre .codeblock}
+    ``` pre
     <i2-data-source id="daod3" ar="false">
        <DataSource ScsSearchSupported="false" EdrsGetContextSupported="false"  
                    ScsNetworkSearchSupported="false" EdrsGetLatestItemsSupported="false" Version="0" 
@@ -79,7 +79,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 7.  Open the `dsid.<id>.properties` file for your data source in a text editor, where `<id>` is the value of the `id` attribute in the `<i2-data-source>` element for this data source in the topology file. Record the value of the `DataSourceId` property, which was generated when you redeployed i2 Analyze.
 8.  Open `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\fragments\core\ApolloClientSettings.xml` in a text editor. Add these lines to the end of the file, just before the `</settings>` closing tag:
 
-    ``` {.pre .codeblock}
+    ``` pre
     <SubsettingExampleGenerationUILocation>
     http://localhost:9081/<DataSourceId>/SubsettingHtml.html</SubsettingExampleGenerationUILocation>
     <SubsettingExampleDisplayRecordUrl>
@@ -91,7 +91,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 9.  Replace `<DataSourceId>` in both values with the identifier that you copied from the `dsid.<id>.properties` file. Save and close `ApolloClientSettings.xml`.
 10. Redeploy i2 Analyze by running the command that you used to deploy the platform originally:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -t deploy
     ```
 
@@ -100,13 +100,13 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     2.  Locate the `<webApplication>` element with the `id` attribute value of `da-subset-rest-example`.
     3.  The web application contains a child `<classLoader>` element. Within the `<classLoader>` element is a `<fileset>` element. Add the `excludes` attribute to the `<fileset>` element so that it matches the following example:
 
-        ``` {.pre .codeblock}
+        ``` pre
         <fileset id="SharedLibrary" dir="${shared.resource.dir}/i2-common/lib" excludes="wink-*.jar"/>
         ```
 
     4.  Add the `jaxrs-1.1` feature to the server. In the `server.xml`, add the following child `<feature>` element to the `<featureManager>` element:
 
-        ``` {.pre .codeblock}
+        ``` pre
         <feature>jaxrs-1.1</feature>
         ```
 
@@ -117,20 +117,20 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 The commands so far deployed the example project application from the toolkit. To enable easy debugging of your code, the next steps are all about replacing the application that you deployed from the toolkit with code from Eclipse.
 
 1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
-2.  In your Eclipse workspace, open the WebSphere Application Server Liberty Profile/servers/i2analyze/apps folder, and delete the `da-subset-rest-example.war` application.
+2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty Profile/servers/i2analyze/apps` folder, and delete the `da-subset-rest-example.war` application.
 3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-rest-example` directory to Eclipse.
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-rest-example` project:
     1.  In Package Explorer, right-click **da-subset-rest-example**, and select **Properties** to display the Properties window.
     2.  Click **Deployment Assembly**, and look for any error messages about `da-example-common`.
-    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** \> **Project** to add it again.
+    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
 
-5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select Add and Remove.
+5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select **Add and Remove**.
 6.  In the Add and Remove window, move **da-subset-rest-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
 
 At this stage, deployment of the two-phase data retrieval example is complete. You can start i2 Analyze, and connect to it through the Intelligence Portal.
 
 1.  In Eclipse, start the server.
-2.  In a web browser, load or refresh your view of the Intelligence Portal. In the menu bar, click **Subsetting** \> **Launch Subsetting Tab** to display the custom user interface.
+2.  In a web browser, load or refresh your view of the Intelligence Portal. In the menu bar, click **Subsetting** &gt; **Launch Subsetting Tab** to display the custom user interface.
 3.  Follow the on-screen instructions to request data from the new data source and present it in the user interface in different permutations.
 
 After you develop and test a data access on-demand solution for i2 Analyze, the next step is to publish it to a live deployment.
@@ -150,14 +150,14 @@ These instructions assume that you have access to two instances of i2 Analyze:
 3.  Open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 4.  To redeploy the platform, run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     setup -t deploy
     ```
 
 5.  For this solution you must complete the same modifications to `server.xml` file that were completed in the development version of the platform, in the `server.xml` for the i2 Analyze Liberty profile server that is used in the live deployment. Any applications that use these `.jar` files or `jaxrs-2.0` will no longer work.
 6.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 
-* * * * *
+------------------------------------------------------------------------
 
 © Copyright IBM Corporation 2014, 2016.
 

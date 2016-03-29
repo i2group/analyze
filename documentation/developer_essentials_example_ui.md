@@ -7,7 +7,6 @@ Before you begin
 ----------------
 
 The user interface extension example project requires the development version of i2 Analyze, prepared according to the deployment instructions in Developer Essentials. The example also has some additional prerequisites:
-
 -   Microsoft Visual Studio Express 2013 for Web
 -   Microsoft Silverlight 5 SDK
 -   Microsoft Silverlight 5 Developer Runtime
@@ -33,7 +32,7 @@ The two-part project is structured so that the `da-subset-rest-example` project,
 1.  Open the configuration file for user interface extensions for the `da-subset-rest-example` project in a text editor: `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-rest-example\ui-project.properties`.
 2.  Ensure that the properties are set for your environment. If you followed the deployment instructions for Developer Essentials, the correct values look like this example:
 
-    ``` {.pre .codeblock}
+    ``` pre
     ui.project.dir=C:/IBM/i2analyze/SDK/sdk-projects/ui-subset-example
     msbuild.exe.path=C:/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
     ```
@@ -43,7 +42,7 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 1.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -pr da-subset-rest-example -t unpackXap
     ```
 
@@ -56,14 +55,14 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 4.  Build the solution. Visual Studio puts the DLL files that it generates in the `C:\IBM\i2analyze\SDK\sdk-projects\ui-subset-example\build` directory.
 5.  Return to the command prompt, and run the following command to compile the new XAP file.
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -pr da-subset-rest-example -t packXap
     ```
 
 6.  In Eclipse, ensure that the **i2analyze** server is stopped.
 7.  At the command prompt, run the following command to redeploy the server:
 
-    ``` {.pre .codeblock}
+    ``` pre
     build -t deploy
     ```
 
@@ -73,11 +72,11 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 Results
 -------
 
-The user interface extension example adds a **Subsetting** menu to the top of the Intelligence Portal user interface. When you click the menu, the portal displays a submenu that contains a **Launch Subsetting Tab** command. When you run the command, a **Subsetting Example** tab opens. However, the tab itself displays an error until you also deploy the server-side part of this example. To deploy the server-side part of the example, see [Configuring the "two-phase data retrieval" example project](https://github.com/IBM-i2/Analyze/blob/master/documentation/developer_essentials_example_rest.md "(Opens in a new tab or window)").
+The user interface extension example adds a **Subsetting** menu to the top of the Intelligence Portal user interface. When you click the menu, the portal displays a submenu that contains a **Launch Subsetting Tab** command. When you run the command, a **Subsetting Example** tab opens. However, the tab itself displays an error until you also deploy the server-side part of this example. To deploy the server-side part of the example, see <a href="https://github.com/IBM-i2/Analyze/blob/master/documentation/developer_essentials_example_rest.md" class="xref" title="(Opens in a new tab or window)">Configuring the &quot;two-phase data retrieval&quot; example project</a>.
 
 Elsewhere in the user interface, the example adds commands that are named **Example command 1**, **Example command 2**, and **Example inserted command**. Depending on the current state of the application, the Intelligence Portal displays or hides these commands in different locations.
 
-* * * * *
+------------------------------------------------------------------------
 
 © Copyright IBM Corporation 2014, 2016.
 
