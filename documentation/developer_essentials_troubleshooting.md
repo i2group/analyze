@@ -1,4 +1,4 @@
-﻿Troubleshooting the example projects
+Troubleshooting the example projects
 ====================================
 
 The example projects in i2 Analyze Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
@@ -34,9 +34,9 @@ Server starts without error but in only a few seconds
 If the application server starts in an unusually short time, it is likely that an i2 Analyze application is not deployed correctly.
 
 1.  In Eclipse, inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
-2.  In the new tab, ensure that the <span class="ph uicontrol">Run applications directly from the workspace</span> check box is cleared, and then press Ctrl+S to save the settings.
+2.  In the new tab, ensure that the Run applications directly from the workspace check box is cleared, and then press Ctrl+S to save the settings.
 
-<span class="importanttitle">Important:</span> This setting can cause various other problems. For i2 Analyze to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
+Important: This setting can cause various other problems. For i2 Analyze to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
 
 Navigation to http://localhost/apollo reports HTTP error 404
 ------------------------------------------------------------
@@ -45,7 +45,7 @@ HTTP error 404 can occur when one of the i2 Analyze applications is not correctl
 
 -   If the error is "Context Root Not Found", with obvious "IBM" and "IBM WebSphere Application Server" branding, then the HTTP server redirect is working and the problem is with the application.
 
-    To resolve the problem, follow the previous procedure for clearing the <span class="ph uicontrol">Run applications directly from the workspace</span> check box.
+    To resolve the problem, follow the previous procedure for clearing the Run applications directly from the workspace check box.
 
 -   If the error is a plain web page with a generic "Not Found" message, then the problem is with the HTTP server.
 
@@ -88,7 +88,7 @@ The solution to both problems is to re-create the `server.xml` file. Solving the
 1.  If you have the name mismatch problem, edit `topology.xml` for your deployment so that the web application name matches the Eclipse project name.
 2.  Use `build` to re-create `server.xml` from `topology.xml`:
 
-    ``` pre
+    ``` {.pre .codeblock}
     build -t deploy
     ```
 
@@ -116,7 +116,8 @@ If users cannot log in to your deployment of i2 Analyze, and all they see is a "
 First, make sure that users are providing credentials accurately. In i2 Analyze, user names and passwords are all case-sensitive.
 
 Second, it is possible that event replay is still in progress. In the console, check for a `Replay complete` message:
-``` pre
+
+``` {.pre .codeblock}
 2014-03-19 17:31:50,100 - Replayed 3 of approximately 3 events (100%).
 2014-03-19 17:31:50,101 - Waiting for read services to acknowledge remaining events
                           (expecting progress within 60 seconds)
@@ -132,7 +133,8 @@ Second, it is possible that event replay is still in progress. In the console, c
 
 To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
 
-<span class="notetitle">Note:</span> i2 Analyze error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+Note: i2 Analyze error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
+
 -   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
 -   Check the bottom-level exception, which contains most detail about the cause of the problem.
 
@@ -147,7 +149,7 @@ To determine whether an application failed, check the console log for the server
 
 To determine whether there is a problem with HTTP server configuration or application deployment, attempt to view the application directly in your web browser. For example, navigate to http://localhost:9082/*datasource-guid*. A correct deployment displays a basic HTML page.
 
-<span class="notetitle">Note:</span> You can obtain *datasource-guid* by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
+Note: You can obtain *datasource-guid* by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
 
 If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. However, you might have to intervene more forcefully:
 
@@ -167,7 +169,7 @@ If you see a basic HTML page, then the application is deployed but you have an H
 1.  In a text editor, open the file at `http-server-dir/Plugins/i2analyze/config/plugin-cfg.xml`.
 2.  Find the `<UriGroup Name="read_Cluster_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
-    ``` pre
+    ``` {.pre .codeblock}
     <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
          Name="/d1f28093-143d-4ebe-a9d4-e1202f755e6e/services/ExternalDataSubsetCreationService/*"/>
     <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
@@ -210,7 +212,7 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 1.  Stop all the application servers.
 2.  Run the following commands on all the servers:
 
-    ``` pre
+    ``` {.pre .codeblock}
     build -t clearData
     build -t deploy
     ```
@@ -218,9 +220,7 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 3.  Restart the HTTP server.
 4.  Start all the application servers.
 
-**Parent topic:** [IBM i2 Analyze Developer Essentials](developer_essentials_welcome.html "IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.")
-
-------------------------------------------------------------------------
+* * * * *
 
 © Copyright IBM Corporation 2014, 2016.
 
