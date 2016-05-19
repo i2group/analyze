@@ -103,6 +103,8 @@
       <DependentUpon>ExpandableRegionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpandableRegionViewModel.cs" />
+    <Compile Include="JsonMessage\JsonSubsetMessage.cs" />
+    <Compile Include="JsonMessage\JsonSubsetMessageHandler.cs" />
     <Compile Include="SubsetExampleOriginHelper.cs" />
     <Compile Include="SubsettingExampleLocations.cs" />
     <Compile Include="ItemDetailsCommandProvider.cs" />
@@ -113,8 +115,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SubsettingExampleStringResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="JsonIntent\JsonSubsetIntentHandler.cs" />
-    <Compile Include="JsonIntent\JsonSubsetIntent.cs" />
     <Compile Include="SubsettingTabIntent.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

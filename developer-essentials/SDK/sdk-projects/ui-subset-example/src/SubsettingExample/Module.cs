@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 IBM Corp.
+ * Copyright (c) 2016 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ using i2.Apollo.Controls.ViewModels;
 using i2.Apollo.SilverlightCommon;
 using System;
 using System.Collections.Generic;
-using SubsettingExample.JsonIntent;
+using SubsettingExample.JsonMessage;
 
 namespace SubsettingExample
 {
@@ -105,10 +105,10 @@ namespace SubsettingExample
                 exceptionMapper: x => NotificationMessages.GetErrorMessage(x, NotificationMessageKeys.ApplicationInitialization));
 
             // Add an event listener to the hosting web page that uses the
-            // IJsonSubsetIntentHandler to process JSON messages sent to it.
+            // IJsonSubsetMessageHandler to process JSON messages sent to it.
             mApplicationPhases.QueueSynchronousWork(
                 phase: ApplicationPhase.AfterUIPresented,
-                action: InjectPostMessageToIntentHandlerToHostPage,
+                action: InjectPostMessageToHandlerToHostPage,
                 exceptionMapper: x => NotificationMessages.GetErrorMessage(x, NotificationMessageKeys.ApplicationInitialization));
 
             // LoginViaBrowserStack uses the IUserCredentials, which is only
@@ -141,9 +141,9 @@ namespace SubsettingExample
             intentManager.Register(itemDetailsTabFactory);
         }
 
-        private void InjectPostMessageToIntentHandlerToHostPage()
+        private void InjectPostMessageToHandlerToHostPage()
         {
-            var jsonHandler = mContainer.Resolve<IJsonSubsetIntentHandler>();
+            var jsonHandler = mContainer.Resolve<IJsonSubsetMessageHandler>();
             var htmlPage = mContainer.Resolve<IHtmlPage>();
             var locations = mContainer.Resolve<ISubsettingExampleLocations>();
 
@@ -160,14 +160,14 @@ namespace SubsettingExample
             // Use GetJavascriptContent to get our scriptable .NET object for
             // handling JSON intents, and then call handleIntent().
             //
-            // Note: addEventListener only workd in IE9 and above. If you need
+            // Note: addEventListener only works in IE9 and above. If you need
             // to support IE8, use attachEvent instead.
             var theFunction = "window.addEventListener(\"message\",function(e){" +
                   "    if(e.origin !== \"" + expectedDomain + "\"){" +
                   "        return;" +
                   "    }" +
-                  "    var jsonIntentHandler = GetJavascriptContent()[\"" + jsonHandler.ScriptKey + "\"];" +
-                  "    jsonIntentHandler.handleIntent(e.data);" +
+                  "    var messageHandler = GetJavascriptContent()[\"" + jsonHandler.ScriptKey + "\"];" +
+                  "    messageHandler.handlePush(e.data);" +
                   "" +
                   "}, false);";
 

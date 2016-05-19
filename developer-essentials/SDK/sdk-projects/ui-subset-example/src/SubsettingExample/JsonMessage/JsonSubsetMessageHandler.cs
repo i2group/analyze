@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 IBM Corp.
+ * Copyright (c) 2016 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,16 +22,16 @@ using i2.Apollo.CommonControls;
 using i2.Apollo.Controls.Intent;
 using i2.Apollo.Controls.TabFramework;
 
-namespace SubsettingExample.JsonIntent
+namespace SubsettingExample.JsonMessage
 {
     /// <summary>
-    /// A handler for JSON subset intents.
+    /// A handler for JSON subset messages.
     /// </summary>
-    [ImplementedBy(typeof(JsonSubsetSubsetIntentHandler), singleton:true)]
-    public interface IJsonSubsetIntentHandler
+    [ImplementedBy(typeof(JsonSubsetSubsetMessageHandler), singleton:true)]
+    public interface IJsonSubsetMessageHandler
     {
         /// <summary>
-        /// Gets the name of the JSON intent handler, which is registered through <see cref="IHtmlPage.RegisterScriptableObject"/>.
+        /// Gets the name of the JSON message handler, which is registered through <see cref="IHtmlPage.RegisterScriptableObject"/>.
         /// </summary>
         string ScriptKey { get; }
     }
@@ -40,7 +40,7 @@ namespace SubsettingExample.JsonIntent
     /// An <see cref="IJsonSubsetIntentHandler"/> for the JSON intents that are
     /// sent by the HTML page in the subsetting example.
     /// </summary>
-    public class JsonSubsetSubsetIntentHandler : IJsonSubsetIntentHandler
+    public class JsonSubsetSubsetMessageHandler : IJsonSubsetMessageHandler
     {
         private const string VisualQueryIntentType = "VisualQuery";
         private const string BrowseIntentType = "Browse";
@@ -55,7 +55,7 @@ namespace SubsettingExample.JsonIntent
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonSubsetSubsetIntentHandler"/> class.
         /// </summary>
-        public JsonSubsetSubsetIntentHandler(IIntentManager intentManager, 
+        public JsonSubsetSubsetMessageHandler(IIntentManager intentManager, 
             IJsonSerializerWrapper jsonSerializerWrapper,
             INetworkSearchConfigBuilder networkSearchConfigBuilder,
             IDataSourcesAndSchema dataSourcesAndSchema,
@@ -74,50 +74,56 @@ namespace SubsettingExample.JsonIntent
 
         /// <summary>
         /// Handles Windows events from JavaScript code. See the method named
-        /// InjectPostMessageToIntentHandlerToHostPage in Module.cs.
+        /// InjectPostMessageToHandlerToHostPage in Module.cs.
         /// </summary>
-        [ScriptableMember(ScriptAlias = "handleIntent")]
-        public void HandleIntent(string data)
+        [ScriptableMember(ScriptAlias = "handlePush")]
+        public void HandlePush(string data)
         {
             // Ensure any errors in the execution are handled in Silverlight.
-            mJavaScriptHostedCallRunner.RunJavaScriptHostedCall(() => ProcessJsonIntent(data));
+            mJavaScriptHostedCallRunner.RunJavaScriptHostedCall(() => ProcessDataFromPush(data));
         }
 
         /// <inheritdoc />
         public string ScriptKey
         {
-            get { return "SubsettingExampleJsonIntentHandler"; }
+            get { return "SubsettingExampleJsonHandler"; }
         }
 
-        private void ProcessJsonIntent(string data)
+        private void ProcessDataFromPush(string data)
         {
             // We are expecting to receive strings that represent serialized
-            // JsonSubsetIntent classes.
-            var jsonIntent = mJsonSerializerWrapper.Deserialize<JsonSubsetIntent>(data);
+            // JsonSubsetMesssage classes.
+            var jsonMessage = mJsonSerializerWrapper.Deserialize<JsonSubsetMesssage>(data);
 
-            // Determine which data source the intent refers to.
-            var dataSource = mDataSourcesAndSchema.DataSources.SingleOrDefault(x => x.Id.Equals(jsonIntent.DataSourceId));
+            if (jsonMessage == null || jsonMessage.Target != "subsettingExample")
+            {
+                // Not something for us to handle but do not throw exception
+                return;
+            }
+
+            // Determine which data source the message refers to.
+            var dataSource = mDataSourcesAndSchema.DataSources.SingleOrDefault(x => x.Id.Equals(jsonMessage.DataSourceId));
 
             if (dataSource == null)
             {
-                // No data source matched the intent, so throw an exception.
+                // No data source matched the message, so throw an exception.
                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
                                                           "Unable to find data source with ID '{0}'",
-                                                          jsonIntent.DataSourceId));
+                                                          jsonMessage.DataSourceId));
             }
 
             // Generate a subset identifier from the token and the name in the
-            // intent. The identifier ensures that any Browse or Visual Query
+            // message. The identifier ensures that any Browse or Visual Query
             // operation runs over the subset that the token defines. The name
             // is displayed to the user to identify which subset they are
             // working with.
-            var externalDataSubsetIdentifier = new ExternalDataSubsetIdentifier(jsonIntent.Token, jsonIntent.SubsetName);
+            var externalDataSubsetIdentifier = new ExternalDataSubsetIdentifier(jsonMessage.Token, jsonMessage.SubsetName);
 
             IIntent intent;
 
             // Generate an appropriate intent, according to the analytic
             // operation that the user selected in SubsettingHtml.html.
-            switch (jsonIntent.PortalIntentToLaunch)
+            switch (jsonMessage.PortalIntentToLaunch)
             {
                 case VisualQueryIntentType:
                     var networkSearchConfig = mNetworkSearchConfigBuilder
@@ -139,7 +145,7 @@ namespace SubsettingExample.JsonIntent
                     intent = mExplorationIntentFactory.CreateExploreIntent(exploreConfig);
                     break;
                 default:
-                    throw new ArgumentException("Unknown Portal intent: " + jsonIntent.PortalIntentToLaunch);
+                    throw new ArgumentException("Unknown Portal intent type: " + jsonMessage.PortalIntentToLaunch);
             }
 
             // Open the tab for the results, next to the current tab.
