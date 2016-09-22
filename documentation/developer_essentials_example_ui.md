@@ -76,6 +76,8 @@ The user interface extension example adds a **Subsetting** menu to the top of th
 
 Elsewhere in the user interface, the example adds commands that are named **Example command 1**, **Example command 2**, and **Example inserted command**. Depending on the current state of the application, the Intelligence Portal displays or hides these commands in different locations.
 
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
+
 ------------------------------------------------------------------------
 
 © Copyright IBM Corporation 2014, 2016.

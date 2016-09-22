@@ -28,7 +28,6 @@ ext {
     sdkDir                      = "$sdkProjectsDir/.."
     i2analyzeDir                = "$sdkDir/.."
     masterBuildDir              = "$rootDir/build"
-    stagedBinDir                = "$masterBuildDir/bin"
     stagedToolkitDir            = "$masterBuildDir/toolkit"
     projectDependencies         = []
     uiEnvironmentProperties     = null
@@ -84,27 +83,21 @@ allprojects {
 subprojects {
     dependencies {
         compile fileTree(dir: "$stagedToolkitDir/application/shared/lib", includes: ['**/*.jar']),
-                zipTree("$i2analyzeDir/bin/wlp/wlp.zip").matching { it.include(['wlp/dev/api/**/*.jar']) }
+                zipTree("$stagedToolkitDir/bin/wlp/wlp.zip").matching { it.include(['wlp/dev/api/**/*.jar']) }
     }
 
     task stageToolkitAndCommonOverrides {
         // Intentionally running in configuration phase to ensure the toolkit is in place before the dependencies within are required
-        if (!file(stagedBinDir).exists()) {
-            copy {
-                from "$i2analyzeDir/bin"
-                into stagedBinDir
-            }
-        }
         if (!file(stagedToolkitDir).exists()) {
             // Excluding DataSourceDaod.properties to avoid conflict with the generated version of the same file
             copy {
                 from "$i2analyzeDir/toolkit"
                 exclude '**/application/targets/daod/WEB-INF/classes/DataSourceDaod.properties',
-                    '**/configuration'
+                    '/configuration/**'
                 into stagedToolkitDir
             }
             copy {
-                from "$i2analyzeDir/toolkit/configuration-example"
+                from "$i2analyzeDir/toolkit/examples/analysis-repository/configuration"
                 into "$stagedToolkitDir/configuration"
             }
             copy {

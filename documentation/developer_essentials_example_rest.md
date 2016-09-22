@@ -117,7 +117,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 The commands so far deployed the example project application from the toolkit. To enable easy debugging of your code, the next steps are all about replacing the application that you deployed from the toolkit with code from Eclipse.
 
 1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
-2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty Profile/servers/i2analyze/apps` folder, and delete the `da-subset-rest-example.war` application.
+2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty/servers/i2analyze/apps` folder, and delete the `da-subset-rest-example.war` application.
 3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-rest-example` directory to Eclipse.
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-rest-example` project:
     1.  In Package Explorer, right-click **da-subset-rest-example**, and select **Properties** to display the Properties window.
@@ -156,6 +156,8 @@ These instructions assume that you have access to two instances of i2 Analyze:
 
 5.  For this solution you must complete the same modifications to `server.xml` file that were completed in the development version of the platform, in the `server.xml` for the i2 Analyze Liberty profile server that is used in the live deployment. Any applications that use these `.jar` files or `jaxrs-2.0` will no longer work.
 6.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
+
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 

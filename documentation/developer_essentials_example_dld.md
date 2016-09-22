@@ -52,7 +52,7 @@ Next, all data acquisition projects that you create with Developer Essentials re
 The Java library is the only change that you must make to the example project. You can now import the example project to Eclipse, and run it to add items from the supplied XML file to the Analysis Repository.
 
 1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2Analyze\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
-2.  If the server for development version of i2 Analyze is not already running, then start it from within Eclipse. 
+2.  If the server for development version of i2 Analyze is not already running, then start it from within Eclipse.
 3.  Attempt to run the example.
     1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **da-arload-filesystem-example** &gt; **src** &gt; **main** &gt; **java** &gt; **com** &gt; **example**.
     2.  Click **Run** &gt; **Run As** &gt; **Java Application**.
@@ -66,6 +66,8 @@ The Java library is the only change that you must make to the example project. Y
     Note: Running the example with the `-load` argument for a second time fails. The example uses a simple mechanism to create identifiers for generated items, and the command service rejects requests to create an item with the same identifier as an existing item. The `-sync` and `-purge` arguments remain available.
 
 8.  In a web browser, load or refresh your view of the Intelligence Portal, and browse the Analysis Repository to see that the example project added new items.
+
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 

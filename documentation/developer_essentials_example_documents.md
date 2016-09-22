@@ -86,7 +86,7 @@ By its nature, the binary documents access example requires you to modify your d
 The commands so far deployed the example project application from the toolkit. To enable easy debugging of your code, the next steps are all about replacing the application that you deployed from the toolkit with code from Eclipse.
 
 1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
-2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty Profile/servers/i2analyze/apps` folder, and delete the `da-subset-documents-example.war` application.
+2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty/servers/i2analyze/apps` folder, and delete the `da-subset-documents-example.war` application.
 3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example` directory to Eclipse.
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-documents-example` project:
     1.  In Package Explorer, right-click **da-subset-documents-example**, and select **Properties** to display the Properties window.
@@ -100,7 +100,7 @@ At this stage, the data access on-demand aspect of the example is complete. The 
 
 1.  Copy the example image files to the HTTP server.
     1.  In Windows Explorer, navigate to the `C:\IBM\HTTPServer\htdocs` directory and create a directory called `ImageStore`.
-    2.  Navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example\fragment\documents` directory and copy the four `.jpg` files to the `C:\IBM\HTTPServer\htdocs\ImageStore` directory. 
+    2.  Navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-documents-example\fragment\documents` directory and copy the four `.jpg` files to the `C:\IBM\HTTPServer\htdocs\ImageStore` directory.
 
 2.  Open the `httpd.conf` file, by default the file is at `C:\IBM\HTTPServer\conf\httpd.conf`, and comment out any lines that begin with `Win32DisableAcceptEx`. For example:
 
@@ -159,6 +159,8 @@ These instructions assume that you have access to two instances of i2 Analyze:
     ```
 
 5.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
+
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 

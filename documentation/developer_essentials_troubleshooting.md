@@ -3,15 +3,15 @@ Troubleshooting the example projects
 
 The example projects in i2 Analyze Developer Essentials are sensitive to changes or inconsistencies in the configuration of the Eclipse IDE. The errors that you see can be cryptic, but there are standard approaches to resolving the problems that they identify.
 
--   <a href="#eclipse-reports-compilation-errors-after-it-imports-an-example-project" class="xref">Eclipse reports compilation errors after it imports an example project</a>
--   <a href="#server-starts-without-error-but-in-only-a-few-seconds" class="xref">Server starts without error but in only a few seconds</a>
--   <a href="#navigation-to-httplocalhostapollo-reports-http-error-404" class="xref">Navigation to http://localhost/apollo reports HTTP error 404</a>
--   <a href="#eclipse-reports-a-javalangnullpointerexception-on-clean-or-publish" class="xref">Eclipse reports a java.lang.NullpointerException on Clean or Publish</a>
--   <a href="#application-fails-to-start-and-reports-an-error-to-the-console" class="xref">Application fails to start and reports an error to the console</a>
--   <a href="#navigation-to-httplocalhostapollo-reports-an-internal-server-error" class="xref">Navigation to http://localhost/apollo reports an Internal Server Error</a>
--   <a href="#user-login-fails-and-generates-a-console-error" class="xref">User login fails and generates a console error</a>
--   <a href="#user-login-fails-with-no-obvious-console-error" class="xref">User login fails with no obvious console error</a>
--   <a href="#browse-and-search-operations-generate-server-not-found-errors" class="xref">Browse and search operations generate Server Not Found errors</a>
+-   <a href="#reference_svl_yfs_mn__eclipse-reports-compilation-errors-after-it-imports-an-example-project" class="xref">Eclipse reports compilation errors after it imports an example project</a>
+-   <a href="#reference_svl_yfs_mn__server-starts-without-error-but-in-only-a-few-seconds" class="xref">Server starts without error but in only a few seconds</a>
+-   <a href="#reference_svl_yfs_mn__navigation-to-httplocalhostapollo-reports-http-error-404" class="xref">Navigation to http://localhost/apollo reports HTTP error 404</a>
+-   <a href="#reference_svl_yfs_mn__eclipse-reports-a-javalangnullpointerexception-on-clean-or-publish" class="xref">Eclipse reports a java.lang.NullpointerException on Clean or Publish</a>
+-   <a href="#reference_svl_yfs_mn__application-fails-to-start-and-reports-an-error-to-the-console" class="xref">Application fails to start and reports an error to the console</a>
+-   <a href="#reference_svl_yfs_mn__navigation-to-httplocalhostapollo-reports-an-internal-server-error" class="xref">Navigation to http://localhost/apollo reports an Internal Server Error</a>
+-   <a href="#reference_svl_yfs_mn__user-login-fails-and-generates-a-console-error" class="xref">User login fails and generates a console error</a>
+-   <a href="#reference_svl_yfs_mn__user-login-fails-with-no-obvious-console-error" class="xref">User login fails with no obvious console error</a>
+-   <a href="#reference_svl_yfs_mn__browse-and-search-operations-generate-server-not-found-errors" class="xref">Browse and search operations generate Server Not Found errors</a>
 
 Eclipse reports compilation errors after it imports an example project
 ----------------------------------------------------------------------
@@ -165,7 +165,7 @@ If you see HTTP error 404 instead of a basic HTML page, then the application is 
 If you see a basic HTML page, then the application is deployed but you have an HTTP server problem. When a simple restart does not work, you must check the server configuration:
 
 1.  In a text editor, open the file at `http-server-dir/Plugins/i2analyze/config/plugin-cfg.xml`.
-2.  Find the `<UriGroup Name="read_Cluster_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
+2.  Find the `<UriGroup Name="core_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
     ``` pre
     <Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid"
@@ -217,6 +217,8 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 
 3.  Restart the HTTP server.
 4.  Start all the application servers.
+
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 
