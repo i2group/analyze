@@ -1,12 +1,12 @@
 Configuring the "user interface extension" example project
 ==========================================================
 
-i2 Analyze supports extensions that enable users to interact with external data sources through enhancements to the Intelligence Portal. In Developer Essentials, IBM provides the `ui-subset-example` example, which includes a demonstration of how to integrate custom elements into the standard portal user interface.
+i2 Analyze supports extensions that enable users to interact with external data sources through enhancements to the Intelligence Portal. In Developer Essentials, IBM provides the `ui-subset-example` example, which includes a demonstration of how to integrate custom elements into the standard Intelligence Portal user interface.
 
 Before you begin
 ----------------
 
-The user interface extension example project requires the development version of i2 Analyze, prepared according to the deployment instructions in Developer Essentials. The example also has some additional prerequisites:
+The user interface extension example project requires the development version of i2 Analyze, prepared according to the Developer Essentials deployment instructions. The example also has some additional prerequisites:
 -   Microsoft Visual Studio Express 2013 for Web
 -   Microsoft Silverlight 5 SDK
 -   Microsoft Silverlight 5 Developer Runtime
@@ -59,14 +59,14 @@ The procedure for extending the Intelligence Portal starts with extracting the f
     build -pr da-subset-rest-example -t packXap
     ```
 
-6.  In Eclipse, ensure that the **i2analyze** server is stopped.
+6.  In Eclipse, ensure that the `i2analyze` server is stopped.
 7.  At the command prompt, run the following command to redeploy the server:
 
     ``` pre
     build -t deploy
     ```
 
-8.  Back in Eclipse, in the **Servers** tab, start the **i2analyze** server.
+8.  Back in Eclipse, in the **Servers** tab, start the `i2analyze` server.
 9.  To test the platform, open a web browser and navigate to http://localhost/apollo. You can log in to the Intelligence Portal with any of the default users.
 
 Results

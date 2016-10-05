@@ -9,4 +9,4 @@
  *    IBM Corp - initial API and implementation and initial documentation
  */
 
-includeFlat 'da-example-common', 'da-arload-filesystem-example', 'da-subset-documents-example', 'da-subset-filesystem-example', 'da-subset-rest-example'
+includeFlat 'da-example-common', 'da-arload-filesystem-example', 'da-subset-documents-example', 'da-subset-filesystem-example', 'da-subset-rest-example', 'awc-audit-example-common', 'awc-audit-file-example', 'awc-audit-csv-example', 'awc-audit-database-example'

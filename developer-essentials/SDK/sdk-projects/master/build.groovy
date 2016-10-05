@@ -81,6 +81,9 @@ ${printTask('da-arload-filesystem-example', 'Demonstrates loading data into the 
 ${printTask('da-subset-filesystem-example', 'Demonstrates a data access on-demand subset')}
 ${printTask('da-subset-documents-example', 'Demonstrates a data access on-demand subset - including linked documents')}
 ${printTask('da-subset-rest-example', 'Demonstrates a two-phase data access on-demand subset')}
+${printTask('awc-audit-csv-example', 'Demonstrates infostore auditing in machine-readable form to a CSV file')}
+${printTask('awc-audit-database-example', 'Demonstrates infostore auditing in machine-readable form to a database')}
+${printTask('awc-audit-database-example', 'Demonstrates infostore auditing in human-readable form to a file')}
 
 The following tasks are available:
 ${printTask('generateMappingJar', 'Creates mapping classes and XSD files for the specified schema')}

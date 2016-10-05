@@ -1,0 +1,1 @@
+INSERT INTO Database_Versions VALUES (1);

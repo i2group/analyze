@@ -1,0 +1,13 @@
+create table i2Audit.Quick_Search (
+    ID BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO MAXVALUE NO CYCLE NO CACHE),
+    User VARCHAR(100) NOT NULL,
+    Event_Time TIMESTAMP NOT NULL,
+    User_Security_Groups VARCHAR(1000) NOT NULL,
+    User_Security_Permissions VARCHAR(32672) NOT NULL,
+    Client_User_Agent VARCHAR(1000) NOT NULL,
+    Client_IP_Address VARCHAR(100) NOT NULL,
+    Expression VARCHAR(1000) NOT NULL,
+    Filters VARCHAR(1000) NOT NULL,
+    Datastores VARCHAR(1000) NOT NULL
+  )
+  in Audit_TS;
