@@ -11,7 +11,7 @@ The audit logging to CSV example project requires the development version of i2 
 About this task
 ---------------
 
-When you build the audit logging to CSV example, you create a JAR file that contains an implementation of the `IAuditLogger` interface. To enable audit functionality, you must add the JAR file to an existing i2 Analyze deployment, and then configure the platform to use the class that the JAR file contains.
+When you build the audit logging to CSV example, you create a JAR file that contains an implementation of the `IAuditLogger` interface. To enable audit functionality, you must redeploy i2 Analyze to include the new JAR file, and configure the platform to use the class that the JAR file contains.
 
 Procedure
 ---------
@@ -42,8 +42,14 @@ Developing and testing implementations of `IAuditLogger` requires a development 
     4.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\awc` directory to Eclipse.
     5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **awc** server and select **Add and Remove**.
     6.  In the Add and Remove window, move **awc** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
-    7.  Verify that you can still start both servers without seeing any new errors in the Console tab in Eclipse.
+    7.  Still in the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
+    8.  Verify that you can still start both servers without seeing any new errors in the **Console** tab in Eclipse.
         Note: If you restart the **awc** server while a client is connected to it, you might see an error in the **Console** tab that reports an unavailable server. If the server then initializes normally, you can safely disregard this report.
+        If you see error messages about the Solr indexing service, run the following command at your command prompt to ensure that the service is running:
+
+        ``` pre
+        build -t startSolr -s awc
+        ```
 
 The audit logging examples in Developer Essentials all require the contents of the `awc-audit-example-common` project.
 
@@ -66,7 +72,8 @@ Additionally, the audit logging to CSV example requires the `awc-audit-csv-examp
     2.  Click **Deployment Assembly**, and then **Add**. In the New Assembly Directive window, select **Project**, and then click **Next**.
     3.  Select both **awc-audit-example-common** and **awc-audit-csv-example**, and then click **Finish**.
 
-4.  In the **Servers** tab, right-click the `awc` server, and then click **Start** (or **Restart**).
+4.  In the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
+5.  Still in the **Servers** tab, right-click the **awc** server, and then click **Start** (or **Restart**).
 
     This action starts the server with audit logging to CSV enabled. The logging behavior is governed by the settings file at `awc-audit-csv-example\fragment\WEB-INF\classes\CSVAudit.properties`, which controls where the CSV files are saved, and how large they can be. Typical messages look like this one:
 
@@ -127,8 +134,8 @@ To prepare your development version of i2 Analyze for production, you must edit 
 Before you publish the audit logging functionality to a live deployment of i2 Analyze, test that your changes to the topology file are behaving correctly.
 
 1.  Back in the Servers tab in your Eclipse environment, ensure that the `awc` application is marked as **Synchronized**. Right click and **Publish** if it is not.
-2.  Start the `awc` server, connect to the application through a client, and verify that the audit logging behavior is unchanged from the version that you deployed with Eclipse.
-3.  Stop the `awc` server again.
+2.  Start the **awc** server, connect to the application through a client, and verify that the audit logging behavior is unchanged from the version that you deployed with Eclipse.
+3.  Stop the **awc** server again.
 
 At this stage, you are ready to copy the changes that you made to your development deployment to a production deployment of i2 Analyze.
 

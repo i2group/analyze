@@ -6,12 +6,12 @@ IBM® i2® Analyze Developer Essentials is a set of files and example projects t
 Before you begin
 ----------------
 
-IBM i2 Analyze Developer Essentials has a longer and more specific set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
+IBM i2 Analyze Developer Essentials has a longer set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 -   IBM Installation Manager 1.8
 -   IBM i2 Analyze 4.1.2
 -   IBM DB2® 10.5 Express® Edition (or Express-C Edition) with spatial extender support.
--   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5
--   IBM HTTP Server 8.5
+-   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5.8
+-   IBM HTTP Server 8.5.5.8
 -   Eclipse Neon (Eclipse IDE for Java™ EE Developers)
 
 About this task
@@ -94,8 +94,13 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 
     3.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
 
-10. Repeat step 16 to start the development version of the `awc` application.
+10. Repeat the previous step to start the development version of the `awc` application.
     Note: When you start the `awc` application, the **Console** tab displays error messages about problems with `SLF4J`. These errors are benign, and you can safely ignore them here.
+    If you see error messages about the Solr indexing service, run the following command at your command prompt to ensure that the service is running:
+
+    ``` pre
+    build -t startSolr -s awc
+    ```
 
 11. If you have not done so recently, use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
 12. To test the applications, you must connect to the deployment using one of the supported clients. See <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/connecting_to_clients.md" class="xref">Connecting to clients</a> for more information.

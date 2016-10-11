@@ -22,7 +22,6 @@ ext {
 
     auditExampleCommon          = 'awc-audit-example-common'
     auditCsvExample             = 'awc-audit-csv-example'
-    auditDatabaseExample        = 'awc-audit-database-example'
     auditFileExample            = 'awc-audit-file-example'
 
     // Client projects that do not need to be deployed on the server
@@ -260,12 +259,6 @@ project(":$daSubsetRestExample") {
 }
 
 project(":$auditCsvExample") {
-    dependencies {
-        compile project(":$auditExampleCommon")
-    }
-}
-
-project(":$auditDatabaseExample") {
     dependencies {
         compile project(":$auditExampleCommon")
     }
