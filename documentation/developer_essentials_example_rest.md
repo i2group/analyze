@@ -88,7 +88,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 
     ``` pre
     <SubsettingExampleGenerationUILocation>
-    http://localhost:9081/<DataSourceId>/SubsettingHtml.md</SubsettingExampleGenerationUILocation>
+    http://localhost:9081/<DataSourceId>/SubsettingHtml.html</SubsettingExampleGenerationUILocation>
     <SubsettingExampleDisplayRecordUrl>
     http://localhost:9081/<DataSourceId>/ItemDetails.jsp?id={0}&amp;source={1}</SubsettingExampleDisplayRecordUrl>
     ```

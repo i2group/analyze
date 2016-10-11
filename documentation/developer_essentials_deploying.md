@@ -17,7 +17,7 @@ IBM i2 Analyze Developer Essentials has a longer set of requirements than the pl
 About this task
 ---------------
 
-The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/designing_your_system.md" class="xref">Deploying IBM i2 Analyze</a> documentation open as you read the steps in this document.
+The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/designing_your_system.html" class="xref">Deploying IBM i2 Analyze</a> documentation open as you read the steps in this document.
 
 Procedure
 ---------
@@ -25,7 +25,7 @@ Procedure
 In the first part of the procedure, you use Developer Essentials to create a custom version of the deployment toolkit. The libraries and settings that you add enable development for i2 Analyze on a single computer.
 
 1.  Install IBM i2 Analyze 4.1.2 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
-2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/software_prerequisites.md" class="xref">Software prerequisites</a> to install all the other prerequisite software.
+2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/software_prerequisites.html" class="xref">Software prerequisites</a> to install all the other prerequisite software.
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
 3.  Extract i2 Analyze Developer Essentials, and copy the `SDK` directory into the `C:\IBM\i2analyze\` directory.
@@ -103,7 +103,7 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
     ```
 
 11. If you have not done so recently, use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
-12. To test the applications, you must connect to the deployment using one of the supported clients. See <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/connecting_to_clients.md" class="xref">Connecting to clients</a> for more information.
+12. To test the applications, you must connect to the deployment using one of the supported clients. See <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/connecting_to_clients.html" class="xref">Connecting to clients</a> for more information.
 
 **Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
