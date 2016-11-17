@@ -72,7 +72,7 @@ Additionally, the audit logging to file example requires the `awc-audit-file-exa
     2.  Click **Deployment Assembly**, and then **Add**. In the New Assembly Directive window, select **Project**, and then click **Next**.
     3.  Select both **awc-audit-example-common** and **awc-audit-file-example**, and then click **Finish**.
 
-4.  In the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
+4.  In the **Servers** tab, right-click the **awc** server and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
 5.  Still in the **Servers** tab, right-click the **awc** server, and then click **Start** (or **Restart**).
 
     This action starts the server with audit logging to file enabled. The logging behavior is governed by the settings file at `awc-audit-file-example\fragment\WEB-INF\classes\FileAudit.properties`, which controls where the log files are saved, and how large they can be. Typical messages look like this one:
