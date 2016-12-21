@@ -45,6 +45,11 @@ Contributors:
 			<locationURI>TOOLKIT_ROOT/configuration/fragments/common/WEB-INF</locationURI>
 		</link>
 		<link>
+			<name>modified-fragments</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/application/modified-fragments/da-subset-documents-example</locationURI>
+		</link>
+		<link>
 			<name>daod-target</name>
 			<type>2</type>
 			<locationURI>TOOLKIT_ROOT/application/targets/daod</locationURI>

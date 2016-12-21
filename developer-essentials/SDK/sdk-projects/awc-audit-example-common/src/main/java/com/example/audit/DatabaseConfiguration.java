@@ -29,19 +29,27 @@ final class DatabaseConfiguration
     private static final String PROP_QUICK_SEARCH_TABLE = "quickSearchTable";
     /** Property specifying the table used to store expand events. */
     private static final String PROP_EXPAND_TABLE = "expandTable";
-
+    /** Property specifying the table used to store visual query events. */
+    private static final String PROP_VISUAL_QUERY_TABLE = "visualQueryTable";
+    /** Property specifying the table used to store record retrieval events. */
+    private static final String PROP_RECORD_RETIEVAL_TABLE = "recordRetrievalTable";
+    
     private static final Collection<String> REQUIRED_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
-            PROP_DATA_SOURCE_NAME,
-            PROP_SCHEMA_NAME,
-            PROP_QUICK_SEARCH_TABLE,
-            PROP_EXPAND_TABLE
-            ));
-
+        PROP_DATA_SOURCE_NAME,
+        PROP_SCHEMA_NAME,
+        PROP_QUICK_SEARCH_TABLE,
+        PROP_EXPAND_TABLE,
+        PROP_VISUAL_QUERY_TABLE,
+        PROP_RECORD_RETIEVAL_TABLE
+        ));
+    
     private final String mDataSourceName;
     private final String mSchemaName;
     private final String mQuickSearchTableName;
     private final String mExpandTableName;
-
+    private final String mVisualQueryTableName;
+    private final String mRecordRetrievalTableName;
+    
     /**
      * Constructor. Loads configuration from the specified properties file.
      * @param configFileName properties file name.
@@ -54,12 +62,14 @@ final class DatabaseConfiguration
     public DatabaseConfiguration(final String configFileName)
     {
         final Properties configProps = ConfigurationLoader.loadWithRequiredProperties(configFileName, REQUIRED_PROPERTIES);
-
+        
         // Get property values
         mDataSourceName = configProps.getProperty(PROP_DATA_SOURCE_NAME);
         mSchemaName = configProps.getProperty(PROP_SCHEMA_NAME);
         mQuickSearchTableName = configProps.getProperty(PROP_QUICK_SEARCH_TABLE);
         mExpandTableName = configProps.getProperty(PROP_EXPAND_TABLE);
+        mVisualQueryTableName = configProps.getProperty(PROP_VISUAL_QUERY_TABLE);
+        mRecordRetrievalTableName = configProps.getProperty(PROP_RECORD_RETIEVAL_TABLE);
     }
 
     /**
@@ -70,7 +80,7 @@ final class DatabaseConfiguration
     {
         return mDataSourceName;
     }
-
+    
     /**
      * Get the database schema where are audit tables are written.
      * @return schema name.
@@ -97,4 +107,23 @@ final class DatabaseConfiguration
     {
         return mExpandTableName;
     }
+
+    /**
+     * Get the name of the table used to store Visual Query audit events.
+     * @return table name.
+     */
+    public String getVisualQueryTableName()
+    {
+        return mVisualQueryTableName;
+    }
+
+    /**
+     * Get the name of the table used to store Record Retrieval audit events.
+     * @return table name.
+     */
+    public String getRecordRetrievalTableName()
+    {
+        return mRecordRetrievalTableName;
+    }
+    
 }

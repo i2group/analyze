@@ -19,31 +19,31 @@ Procedure
 The examples in Developer Essentials require links to the i2 Analyze libraries, and to the API documentation. These links are configured in a separate project directory that you must import into Eclipse before you can build any of the example projects.
 
 1.  If you did not already add the `master` directory and the related artifacts to your Eclipse workspace while you worked with one of the other examples, add it now.
-    1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
-    2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
-    3.  Add an entry to the **Defined path variables** list:
+    a.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
+    b.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
+    c.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
-    4.  In Eclipse, click **File** &gt; **Import** to open the Import window.
-    5.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
-    6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
-    7.  Click **Finish** to complete the import process.
+    d.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+    e.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
+    f.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
+    g.  Click **Finish** to complete the import process.
 
 Developing and testing implementations of `IAuditLogger` requires a development version of the `awc` server. Developer Essentials includes a project that you can import into to Eclipse and configure to be that server.
 
 1.  If you did not already add the `awc` directory to your Eclipse workspace while you worked with one of the other audit logging examples, add it now.
-    1.  In your Eclipse workspace, stop any running servers.
-    2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\awc\apps` directory. Delete the `awc.war` subdirectory, which contains the `awc` application.
-    3.  Back in Eclipse, refresh your view of the Enterprise Explorer tab.
-    4.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\awc` directory to Eclipse.
-    5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **awc** server and select **Add and Remove**.
-    6.  In the Add and Remove window, move **awc** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
-    7.  Still in the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
-    8.  Verify that you can still start both servers without seeing any new errors in the **Console** tab in Eclipse.
+    a.  In your Eclipse workspace, stop any running servers.
+    b.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\awc\apps` directory. Delete the `awc.war` subdirectory, which contains the `awc` application.
+    c.  Back in Eclipse, refresh your view of the Enterprise Explorer tab.
+    d.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\awc` directory to Eclipse.
+    e.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **awc** server and select **Add and Remove**.
+    f.  In the Add and Remove window, move **awc** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
+    g.  Still in the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
+    h.  Verify that you can still start both servers without seeing any new errors in the **Console** tab in Eclipse.
         Note: If you restart the **awc** server while a client is connected to it, you might see an error in the **Console** tab that reports an unavailable server. If the server then initializes normally, you can safely disregard this report.
         If you see error messages about the Solr indexing service, run the following command at your command prompt to ensure that the service is running:
 
@@ -68,9 +68,9 @@ Additionally, the audit logging to CSV example requires the `awc-audit-csv-examp
     ```
 
 3.  Add the JAR files that the common and specific projects generate to the deployment assembly for the `awc` project.
-    1.  In Enterprise Explorer, right-click **awc**, and select **Properties** to display the Properties window.
-    2.  Click **Deployment Assembly**, and then **Add**. In the New Assembly Directive window, select **Project**, and then click **Next**.
-    3.  Select both **awc-audit-example-common** and **awc-audit-csv-example**, and then click **Finish**.
+    a.  In Enterprise Explorer, right-click **awc**, and select **Properties** to display the Properties window.
+    b.  Click **Deployment Assembly**, and then **Add**. In the New Assembly Directive window, select **Project**, and then click **Next**.
+    c.  Select both **awc-audit-example-common** and **awc-audit-csv-example**, and then click **Finish**.
 
 4.  In the **Servers** tab, right-click the **awc** server and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
 5.  Still in the **Servers** tab, right-click the **awc** server, and then click **Start** (or **Restart**).

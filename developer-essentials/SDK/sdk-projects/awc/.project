@@ -39,6 +39,11 @@ Contributors:
 			<locationURI>TOOLKIT_ROOT/scripts/gradle/build/autogenFragments/awc</locationURI>
 		</link>
 		<link>
+			<name>modified-fragments</name>
+			<type>2</type>
+			<locationURI>TOOLKIT_ROOT/application/modified-fragments/awc</locationURI>
+		</link>
+		<link>
 			<name>awc-fragment</name>
 			<type>2</type>
 			<locationURI>TOOLKIT_ROOT/configuration/fragments/awc</locationURI>

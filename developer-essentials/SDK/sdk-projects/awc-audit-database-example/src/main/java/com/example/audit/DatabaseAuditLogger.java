@@ -23,8 +23,9 @@ import javax.sql.DataSource;
 import com.i2group.disco.audit.IAuditEvent;
 import com.i2group.disco.audit.IExpandAuditEvent;
 import com.i2group.disco.audit.IQuickSearchAuditEvent;
+import com.i2group.disco.audit.IRecordRetrievalAuditEvent;
+import com.i2group.disco.audit.IVisualQueryAuditEvent;
 import com.i2group.disco.audit.spi.IAuditLogger;
-import com.ibm.icu.text.MessageFormat;
 
 /**
  * Audit Logger implementation that logs each type of audit event to a separate
@@ -33,17 +34,31 @@ import com.ibm.icu.text.MessageFormat;
 public final class DatabaseAuditLogger
     implements IAuditLogger
 {
-    /** Name of the file containing user configuration properties used by this audit logger. */
-    private static final String CONFIG_FILE_NAME = "DatabaseAudit.properties";
-
-    private static final String INSERT_SQL_COMMAND = "insert into {0}.{1} (User, Event_Time, User_Security_Groups, User_Security_Permissions, Client_User_Agent, Client_IP_Address, {2}";
-    private static final String INSERT_SQL_EXPAND_VALUES = "Seeds) values (?, ?, ?, ?, ?, ?, ?)";
-    private static final String INSERT_SQL_QUICK_SEARCH_VALUES = "Expression, Filters, Datastores) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_SQL_TEMPLATE = "insert into %s.%s (%s) values (%s)";
+    private static final String COMMON_COLUMNS =
+        "User_Name, Event_Time, User_Security_Groups, User_Security_Permissions, Client_User_Agent, Client_IP_Address";
+    private static final String COMMON_VALUES = "?, ?, ?, ?, ?, ?";
+    private static final String QUICK_SEARCH_COLUMNS = "Expression, Filters, Datastores";
+    private static final String QUICK_SEARCH_VALUES = "?, ?, ?";
+    private static final String EXPAND_COLUMNS = "Seeds";
+    private static final String EXPAND_VALUES = "?";
+    private static final String VISUAL_QUERY_COLUMNS = "Datastores, Query";
+    private static final String VISUAL_QUERY_VALUES = "?, ?";
+    private static final String RECORD_RETRIEVAL_COLUMNS = "Records";
+    private static final String RECORD_RETRIEVAL_VALUES = "?";
+    
+    /** Configuration properties used by this audit logger. */
+    private final DatabaseConfiguration mConfiguration = new DatabaseConfiguration("DatabaseAudit.properties");
 
     /** SQL for inserting a Quick Search audit event into the database. */
     private final String mQuickSearchSql;
     /** SQL for inserting a Expand audit event into the database. */
     private final String mExpandSql;
+    /** SQL for inserting a Visual Query audit event into the database. */
+    private final String mVisualQuerySql;
+    /** SQL for inserting a Record Retrieval audit event into the database. */
+    private final String mRecordRetrievalSql;
+
     /** Data source for the audit database. */
     private final DataSource mDataSource;
 
@@ -54,16 +69,41 @@ public final class DatabaseAuditLogger
      */
     public DatabaseAuditLogger()
     {
-        final DatabaseConfiguration config = new DatabaseConfiguration(CONFIG_FILE_NAME);    
+        mQuickSearchSql = buildInsertSql(
+                mConfiguration.getQuickSearchTableName(),
+                QUICK_SEARCH_COLUMNS,
+                QUICK_SEARCH_VALUES);
 
-        mExpandSql = MessageFormat.format(INSERT_SQL_COMMAND, config.getSchemaName(), config.getExpandTableName(), INSERT_SQL_EXPAND_VALUES);
-        mQuickSearchSql = MessageFormat.format(INSERT_SQL_COMMAND, config.getSchemaName(), config.getQuickSearchTableName(), INSERT_SQL_QUICK_SEARCH_VALUES);
+        mExpandSql = buildInsertSql(
+                mConfiguration.getExpandTableName(),
+                EXPAND_COLUMNS,
+                EXPAND_VALUES);
+        
+        mVisualQuerySql = buildInsertSql(
+                mConfiguration.getVisualQueryTableName(),
+                VISUAL_QUERY_COLUMNS,
+                VISUAL_QUERY_VALUES);
+        
+        mRecordRetrievalSql = buildInsertSql(
+                mConfiguration.getRecordRetrievalTableName(),
+                RECORD_RETRIEVAL_COLUMNS,
+                RECORD_RETRIEVAL_VALUES);
 
-        mDataSource = getDataSource(config.getDataSourceName());
+        mDataSource = lookupDataSource();
     }
-
-    private static DataSource getDataSource(final String jndiName) 
+    
+    private String buildInsertSql(final String tableName, final String columns, final String values)
     {
+        return String.format(INSERT_SQL_TEMPLATE,
+            mConfiguration.getSchemaName(),
+            tableName,
+            String.join(", ", COMMON_COLUMNS, columns),
+            String.join(", ", COMMON_VALUES, values));
+    }
+    
+    private DataSource lookupDataSource() 
+    {
+        final String jndiName = mConfiguration.getDataSourceName();
         try
         {
             // DataSource must be looked up explicitly. Injection using CDI will
@@ -71,7 +111,7 @@ public final class DatabaseAuditLogger
             final InitialContext context = new InitialContext();
             return (DataSource)context.lookup(jndiName);
         }
-        catch (NamingException ex)
+        catch (final NamingException ex)
         {
             throw new RuntimeException("Failed to lookup data source: " + jndiName, ex);
         }
@@ -82,9 +122,9 @@ public final class DatabaseAuditLogger
     {
         return true;
     }
-
+    
     @Override
-    public void logQuickSearch(final IQuickSearchAuditEvent event) throws RuntimeException
+    public void logQuickSearch(final IQuickSearchAuditEvent event)
     {
         try (final Connection connection = mDataSource.getConnection();
              final PreparedStatement statement = connection.prepareStatement(mQuickSearchSql))
@@ -92,10 +132,12 @@ public final class DatabaseAuditLogger
             setCommonParameters(statement, event);
             statement.setString(7, event.getExpression());
             statement.setString(8, event.getFilters());
-            statement.setString(9, event.getDataStores().stream().collect(Collectors.joining(", ")));
+            final String dataStoresText = event.getDataStores().stream()
+                .collect(Collectors.joining(", "));
+            statement.setString(9, dataStoresText);
             statement.executeUpdate();
         } 
-        catch (SQLException ex) 
+        catch (final SQLException ex) 
         {
             throw new RuntimeException("Failed to log quick search audit event", ex);
         }
@@ -103,23 +145,68 @@ public final class DatabaseAuditLogger
     }
 
     @Override
-    public void logExpand(final IExpandAuditEvent event) throws RuntimeException
+    public void logExpand(final IExpandAuditEvent event)
     {
         try (final Connection connection = mDataSource.getConnection();
              final PreparedStatement statement = connection.prepareStatement(mExpandSql))
         {
             setCommonParameters(statement, event);
-            statement.setString(7, event.getSeeds().entrySet().stream()
-                    .map(entry -> entry.getKey() + ": " + entry.getValue())
-                    .collect(Collectors.joining(", ")));
+            final String seedText = event.getSeedRecords().stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(", "));
+            statement.setString(7, seedText);
             statement.executeUpdate();
         } 
-        catch (SQLException ex) 
+        catch (final SQLException ex) 
         {
             throw new RuntimeException("Failed to log expand audit event", ex);
         }
     }
-
+    
+    @Override
+    public void logVisualQuery(final IVisualQueryAuditEvent event)
+    {
+        try (final Connection connection = mDataSource.getConnection();
+             final PreparedStatement statement = connection.prepareStatement(mVisualQuerySql))
+        {
+            setCommonParameters(statement, event);
+            final String dataStoresText = event.getDataStores().stream()
+                .collect(Collectors.joining(", "));
+            statement.setString(7, dataStoresText);
+            statement.setString(8, event.getQuery());
+            statement.executeUpdate();
+        } 
+        catch (final SQLException ex) 
+        {
+            throw new RuntimeException("Failed to log visual query audit event", ex);
+        }
+    }
+    
+    @Override
+    public boolean isRecordRetrievalAuditEnabled()
+    {
+        return true;
+    }
+    
+    @Override
+    public void logRecordRetrieval(final IRecordRetrievalAuditEvent event)
+    {
+        try (final Connection connection = mDataSource.getConnection();
+             final PreparedStatement statement = connection.prepareStatement(mRecordRetrievalSql))
+        {
+            setCommonParameters(statement, event);
+            final String recordsText = event.getRecords().stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(", "));
+            statement.setString(7, recordsText);
+            statement.executeUpdate();
+        } 
+        catch (final SQLException ex) 
+        {
+            throw new RuntimeException("Failed to log record retrieval audit event", ex);
+        }
+    }
+    
     /**
      * Set parameters on the {@link PreparedStatement} that are common to all audit events.
      * @param statement an insert prepared statement.
@@ -131,9 +218,11 @@ public final class DatabaseAuditLogger
     {
         statement.setString(1, event.getUser());
         statement.setTimestamp(2, Timestamp.from(event.getTimestamp()));
-        statement.setString(3, event.getUserSecurityGroups().stream().collect(Collectors.joining(", ")));
+        statement.setString(3, event.getUserSecurityGroups().stream()
+            .collect(Collectors.joining(", ")));
         statement.setString(4, event.getUserSecurityPermissions().toString());
         statement.setString(5, event.getClientUserAgent());
         statement.setString(6, event.getClientIPAddress());
     }
+        
 }

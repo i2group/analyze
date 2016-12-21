@@ -13,6 +13,7 @@ Contributors:
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="da-subset-documents-example">
         <wb-resource deploy-path="/" source-path="/autogen"/>
+        <wb-resource deploy-path="/" source-path="/modified-fragments"/>
         <wb-resource deploy-path="/" source-path="/daod-target" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/fragment"/>
         <wb-resource deploy-path="/WEB-INF" source-path="/common-fragment"/>

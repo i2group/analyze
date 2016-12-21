@@ -13,6 +13,7 @@ Contributors:
     <wb-module deploy-name="awc">
         <wb-resource deploy-path="/" source-path="/fragment"/>
         <wb-resource deploy-path="/" source-path="/autogen"/>
+        <wb-resource deploy-path="/" source-path="/modified-fragments"/>
         <wb-resource deploy-path="/" source-path="/awc-fragment"/>
         <wb-resource deploy-path="/" source-path="/awc-target" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF" source-path="/common-fragment"/>

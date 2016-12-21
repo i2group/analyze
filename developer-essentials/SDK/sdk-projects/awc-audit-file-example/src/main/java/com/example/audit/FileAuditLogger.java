@@ -29,8 +29,15 @@ public final class FileAuditLogger
     }
 
     @Override
+    public boolean isRecordRetrievalAuditEnabled()
+    {
+        return true;
+    }
+
+    @Override
     public void logDefault(final IAuditEvent event)
     {
         mLogWriter.writeAuditLog(event.toString());
     }
+
 }

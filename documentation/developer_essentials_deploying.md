@@ -8,24 +8,24 @@ Before you begin
 
 IBM i2 Analyze Developer Essentials has a longer set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 -   IBM Installation Manager 1.8
--   IBM i2 Analyze 4.1.2
+-   IBM i2 Analyze 4.1.3
 -   IBM DB2® 10.5 Express® Edition (or Express-C Edition) with spatial extender support.
--   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5.8
--   IBM HTTP Server 8.5.5.8
+-   Web Server Plug-ins for IBM WebSphere® Application Server 9.0
+-   IBM HTTP Server 9.0
 -   Eclipse Neon (Eclipse IDE for Java™ EE Developers)
 
 About this task
 ---------------
 
-The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/designing_your_system.html" class="xref">Deploying IBM i2 Analyze</a> documentation open as you read the steps in this document.
+The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/designing_your_system.html" class="xref">Deploying IBM i2 Analyze</a> documentation open as you read the steps in this document.
 
 Procedure
 ---------
 
 In the first part of the procedure, you use Developer Essentials to create a custom version of the deployment toolkit. The libraries and settings that you add enable development for i2 Analyze on a single computer.
 
-1.  Install IBM i2 Analyze 4.1.2 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
-2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SS3J58/com.ibm.i2.deploy.example.doc/software_prerequisites.html" class="xref">Software prerequisites</a> to install all the other prerequisite software.
+1.  Install IBM i2 Analyze 4.1.3 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
+2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.eia.install.doc/software_prerequisites.html" class="xref">Software prerequisites</a> to install all the other prerequisite software.
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
 3.  Extract i2 Analyze Developer Essentials, and copy the `SDK` directory into the `C:\IBM\i2analyze\` directory.
@@ -62,37 +62,37 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 2.  Click **Downloads** and then **Download Liberty in Eclipse** to open the tools download page. Follow the instructions to install the WebSphere Developer Tools by dragging the **Install** icon. Accept all of the default settings.
 3.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
 4.  If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
-    1.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
-    2.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy-dev\java`.
-    3.  Select the check box that makes IBM Java the default JRE in Eclipse.
+    a.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
+    b.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy-dev\java`.
+    c.  Select the check box that makes IBM Java the default JRE in Eclipse.
 
 5.  Create the server runtime environments in which the i2 Analyze applications will run:
-    1.  In the Preferences window, click **Server** &gt; **Runtime Environments** &gt; **Add** to open the New Server Runtime Environment window.
-    2.  In the New Server Runtime Environment window, click **IBM** &gt; **WebSphere Application Server Liberty**, and then click **Next**.
-    3.  Set the **Path** of the new server runtime environment to `C:\IBM\i2analyze\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.
+    a.  In the Preferences window, click **Server** &gt; **Runtime Environments** &gt; **Add** to open the New Server Runtime Environment window.
+    b.  In the New Server Runtime Environment window, click **IBM** &gt; **WebSphere Application Server Liberty**, and then click **Next**.
+    c.  Set the **Path** of the new server runtime environment to `C:\IBM\i2analyze\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.
 
 6.  Click **OK** to close the Preferences window.
 7.  Create a server in Eclipse that represents the `i2analyze` application:
-    1.  In the Eclipse application window, click the **Servers** tab.
+    a.  In the Eclipse application window, click the **Servers** tab.
 
         Note: If the **Servers** tab is not visible, click **Window** &gt; **Show View** &gt; **Servers** to open it.
 
-    2.  Right-click inside the tab, and then click **New** &gt; **Server** to open the New Server window.
-    3.  In the New Server window, click **IBM** &gt; **WebSphere Application Server Liberty** to select the server type.
-    4.  Change the **Server name** to `i2analyze`, and then click **Next**.
-    5.  From the **Liberty server** list, select **i2analyze**, and then click **Finish**.
+    b.  Right-click inside the tab, and then click **New** &gt; **Server** to open the New Server window.
+    c.  In the New Server window, click **IBM** &gt; **WebSphere Application Server Liberty** to select the server type.
+    d.  Change the **Server name** to `i2analyze`, and then click **Next**.
+    e.  From the **Liberty server** list, select **i2analyze**, and then click **Finish**.
 
 8.  Create a server in Eclipse that represents the `awc` application by repeating the steps above, and creating a server named `awc`.
 9.  Start the development version of the `i2analyze` application:
-    1.  Inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
-    2.  Modify the settings in the **i2analyze** tab:
+    a.  Inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
+    b.  Modify the settings in the **i2analyze** tab:
         -   Clear the **Run applications directly from the workspace** check box
         -   Click **Publishing** &gt; **Never publish automatically**
         -   Press Ctrl+S to save the settings
 
         Note: These settings mean that in order for any changes that you make to become apparent, you must manually publish your changes before you restart the server.
 
-    3.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
+    c.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
 
 10. Repeat the previous step to start the development version of the `awc` application.
     Note: When you start the `awc` application, the **Console** tab displays error messages about problems with `SLF4J`. These errors are benign, and you can safely ignore them here.

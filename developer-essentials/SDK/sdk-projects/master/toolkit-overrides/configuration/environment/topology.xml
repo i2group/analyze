@@ -17,14 +17,14 @@ Contributors:
       <!-- DataSource Id is deliberately blank and should be left so -->
       <DataSource Version="0" Id="">
         <Shape>Repository</Shape>
-        <Name>Ar</Name>
+        <Name>Analysis Repository</Name>
       </DataSource>
     </i2-data-source>
     <i2-data-source ar="false" default="false" id="infostore">
       <!-- DataSource Id is deliberately blank and should be left so -->
       <DataSource Version="0" Id="">
         <Shape>InfoStore</Shape>
-        <Name>InfoStore</Name>
+        <Name>Information Store</Name>
       </DataSource>
     </i2-data-source>
   </i2-data-sources>

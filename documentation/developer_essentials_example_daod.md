@@ -21,19 +21,19 @@ Procedure
 The examples in Developer Essentials require links to the i2 Analyze libraries, and to the API documentation. These links are configured in a separate project directory that you must import into Eclipse before you can build any of the example projects.
 
 1.  If you did not already add the `master` directory and the related artifacts to your Eclipse workspace while you worked with one of the other examples, add it now.
-    1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
-    2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
-    3.  Add an entry to the **Defined path variables** list:
+    a.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
+    b.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
+    c.  Add an entry to the **Defined path variables** list:
 
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
         The shared libraries and several of the example projects rely on the presence of `TOOLKIT_ROOT` in your development environment.
 
-    4.  In Eclipse, click **File** &gt; **Import** to open the Import window.
-    5.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
-    6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
-    7.  Click **Finish** to complete the import process.
+    d.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+    e.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
+    f.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
+    g.  Click **Finish** to complete the import process.
 
 2.  Repeat steps 1d to 1g to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` into Eclipse.
 
@@ -86,9 +86,9 @@ The commands so far deployed the example project application from the deployment
 2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty/servers/i2analyze/apps` folder, and delete the `da-subset-filesystem-example.war` application.
 3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-filesystem-example` directory to Eclipse.
 4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-filesystem-example` project:
-    1.  In Package Explorer, right-click **da-subset-filesystem-example**, and select **Properties** to display the Properties window.
-    2.  Click **Deployment Assembly**, and look for any error messages about `da-example-common`.
-    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
+    a.  In Package Explorer, right-click **da-subset-filesystem-example**, and select **Properties** to display the Properties window.
+    b.  Click **Deployment Assembly**, and look for any error messages about `da-example-common`.
+    c.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
 
 5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select **Add and Remove**.
 6.  In the Add and Remove window, move **da-subset-filesystem-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.

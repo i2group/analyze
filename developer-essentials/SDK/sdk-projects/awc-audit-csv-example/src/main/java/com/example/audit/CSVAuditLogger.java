@@ -17,6 +17,8 @@ import org.apache.commons.csv.CSVFormat;
 import com.i2group.disco.audit.IAuditEvent;
 import com.i2group.disco.audit.IExpandAuditEvent;
 import com.i2group.disco.audit.IQuickSearchAuditEvent;
+import com.i2group.disco.audit.IRecordRetrievalAuditEvent;
+import com.i2group.disco.audit.IVisualQueryAuditEvent;
 import com.i2group.disco.audit.spi.IAuditLogger;
 
 /**
@@ -42,6 +44,10 @@ public final class CSVAuditLogger
     private static final String TYPE_QUICK_SEARCH = "QuickSearch";
     /** Description of Expand audit operations. */
     private static final String TYPE_EXPAND = "Expand";
+    /** Description of Visual Query audit operations. */
+    private static final String TYPE_VISUAL_QUERY = "VisualQuery";
+    /** Description of Record Retrieval audit operations. */
+    private static final String TYPE_RECORD_RETRIEVAL = "RecordRetrieval";
 
     /** Utility for formatting CSV file entries, including escaping and quoting. */
     private static final CSVFormat CSV_FORMAT = CSVFormat.RFC4180;
@@ -58,24 +64,46 @@ public final class CSVAuditLogger
     public void logQuickSearch(final IQuickSearchAuditEvent event)
     {
         final String detail =
-                "DataStores: " + event.getDataStores() +
-                ", Expression: " + event.getExpression() +
-                ", Filters: " + event.getFilters();
+            "DataStores: " + event.getDataStores() +
+            ", Expression: " + event.getExpression() +
+            ", Filters: " + event.getFilters();
         writeAuditLog(event, TYPE_QUICK_SEARCH, detail);
     }
 
     @Override
     public void logExpand(final IExpandAuditEvent event)
     {
-        final String detail = "Seeds: " + event.getSeeds();
+        final String detail = "Seeds: " + event.getSeedRecords();
         writeAuditLog(event, TYPE_EXPAND, detail);
+    }
+
+    @Override
+    public void logVisualQuery(final IVisualQueryAuditEvent event)
+    {
+        final String detail =
+            "DataStores: " + event.getDataStores() +
+            ", Query: " + event.getQuery();
+        writeAuditLog(event, TYPE_VISUAL_QUERY, detail);
+    }
+
+    @Override
+    public boolean isRecordRetrievalAuditEnabled()
+    {
+        return true;
+    }
+
+    @Override
+    public void logRecordRetrieval(final IRecordRetrievalAuditEvent event)
+    {
+        final String detail = "Records: " + event.getRecords();
+        writeAuditLog(event, TYPE_RECORD_RETRIEVAL, detail);
     }
 
     /**
      * Write a CSV record in the audit log for the supplied audit event,
      * including additional information specific to the sub-type of the audit
      * event.
-     * 
+     *
      * @param event an audit event.
      * @param type specific type of the audit event.
      * @param detail information specific to this audit event type.
@@ -83,14 +111,15 @@ public final class CSVAuditLogger
     private void writeAuditLog(final IAuditEvent event, final String type, final String detail)
     {
         final String logEntry = CSV_FORMAT.format(
-                event.getTimestamp(),
-                event.getUser(),
-                type,
-                event.getUserSecurityGroups().stream()
-                    .collect(Collectors.joining(", ")),
-                event.getClientIPAddress(),
-                event.getClientUserAgent(),
-                detail);
+            event.getTimestamp(),
+            event.getUser(),
+            type,
+            event.getUserSecurityGroups().stream()
+                .collect(Collectors.joining(", ")),
+            event.getClientIPAddress(),
+            event.getClientUserAgent(),
+            detail);
         mLogWriter.writeAuditLog(logEntry);
     }
+
 }
