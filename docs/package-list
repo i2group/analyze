@@ -14,6 +14,8 @@ com.i2group.apollo.client.handlers
 com.i2group.apollo.commandservice
 com.i2group.apollo.commandservice.transport
 com.i2group.apollo.commandservice.transport.factory
+com.i2group.apollo.common
+com.i2group.apollo.common.tracing
 com.i2group.apollo.cqrs
 com.i2group.apollo.documentstore
 com.i2group.apollo.events.transport
@@ -52,13 +54,16 @@ com.i2group.apollo.networksearchservice
 com.i2group.apollo.networksearchservice.transport
 com.i2group.apollo.purgeservice
 com.i2group.apollo.searchservice
+com.i2group.apollo.searchservice.common.model
 com.i2group.apollo.searchservice.transport
 com.i2group.apollo.security
 com.i2group.apollo.securityapi
+com.i2group.apollo.service.common
 com.i2group.apollo.service.loggingapi
 com.i2group.apollo.useractivitylogger
 com.i2group.disco.audit
 com.i2group.disco.audit.spi
+com.i2group.disco.infostore.importer
 com.i2group.disco.user
 com.i2group.disco.user.spi
 com.i2group.tracing
