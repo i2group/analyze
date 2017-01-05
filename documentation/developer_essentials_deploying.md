@@ -62,37 +62,37 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 2.  Click **Downloads** and then **Download Liberty in Eclipse** to open the tools download page. Follow the instructions to install the WebSphere Developer Tools by dragging the **Install** icon. Accept all of the default settings.
 3.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
 4.  If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
-    a.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
-    b.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy-dev\java`.
-    c.  Select the check box that makes IBM Java the default JRE in Eclipse.
+    1.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
+    2.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy-dev\java`.
+    3.  Select the check box that makes IBM Java the default JRE in Eclipse.
 
 5.  Create the server runtime environments in which the i2 Analyze applications will run:
-    a.  In the Preferences window, click **Server** &gt; **Runtime Environments** &gt; **Add** to open the New Server Runtime Environment window.
-    b.  In the New Server Runtime Environment window, click **IBM** &gt; **WebSphere Application Server Liberty**, and then click **Next**.
-    c.  Set the **Path** of the new server runtime environment to `C:\IBM\i2analyze\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.
+    1.  In the Preferences window, click **Server** &gt; **Runtime Environments** &gt; **Add** to open the New Server Runtime Environment window.
+    2.  In the New Server Runtime Environment window, click **IBM** &gt; **WebSphere Application Server Liberty**, and then click **Next**.
+    3.  Set the **Path** of the new server runtime environment to `C:\IBM\i2analyze\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.
 
 6.  Click **OK** to close the Preferences window.
 7.  Create a server in Eclipse that represents the `i2analyze` application:
-    a.  In the Eclipse application window, click the **Servers** tab.
+    1.  In the Eclipse application window, click the **Servers** tab.
 
         Note: If the **Servers** tab is not visible, click **Window** &gt; **Show View** &gt; **Servers** to open it.
 
-    b.  Right-click inside the tab, and then click **New** &gt; **Server** to open the New Server window.
-    c.  In the New Server window, click **IBM** &gt; **WebSphere Application Server Liberty** to select the server type.
-    d.  Change the **Server name** to `i2analyze`, and then click **Next**.
-    e.  From the **Liberty server** list, select **i2analyze**, and then click **Finish**.
+    2.  Right-click inside the tab, and then click **New** &gt; **Server** to open the New Server window.
+    3.  In the New Server window, click **IBM** &gt; **WebSphere Application Server Liberty** to select the server type.
+    4.  Change the **Server name** to `i2analyze`, and then click **Next**.
+    5.  From the **Liberty server** list, select **i2analyze**, and then click **Finish**.
 
 8.  Create a server in Eclipse that represents the `awc` application by repeating the steps above, and creating a server named `awc`.
 9.  Start the development version of the `i2analyze` application:
-    a.  Inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
-    b.  Modify the settings in the **i2analyze** tab:
+    1.  Inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
+    2.  Modify the settings in the **i2analyze** tab:
         -   Clear the **Run applications directly from the workspace** check box
         -   Click **Publishing** &gt; **Never publish automatically**
         -   Press Ctrl+S to save the settings
 
         Note: These settings mean that in order for any changes that you make to become apparent, you must manually publish your changes before you restart the server.
 
-    c.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
+    3.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
 
 10. Repeat the previous step to start the development version of the `awc` application.
     Note: When you start the `awc` application, the **Console** tab displays error messages about problems with `SLF4J`. These errors are benign, and you can safely ignore them here.

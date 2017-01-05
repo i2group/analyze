@@ -67,8 +67,8 @@ This error implies that the application cannot access the shared Java libraries.
 
 1.  In a text editor, open the `topology.xml` file.
 2.  If the file contains multiple entries for the same Data Acquisition endpoint:
-    a.  Remove the duplicate entries, leaving only the original entry in place.
-    b.  Run `build` again for your i2 Analyze deployment.
+    1.  Remove the duplicate entries, leaving only the original entry in place.
+    2.  Run `build` again for your i2 Analyze deployment.
 
 If multiple endpoint definitions are not the issue, then references to the shared libraries are faulty, which is a symptom of two slightly different problems:
 
@@ -158,9 +158,9 @@ If you see HTTP error 404 instead of a basic HTML page, then the application is 
 
 3.  In the **Servers** tab, double-click the **i2analyze** server to open the **i2analyze** tab in the top part of the Eclipse application window.
 4.  Make certain of the **Run applications directly from the workspace** setting:
-    a.  If the check box is cleared, select it, and then save the settings.
-    b.  Clear the check box, and then save the settings again.
-    c.  Clean the server. The directory, rather than the file, is added to the project.
+    1.  If the check box is cleared, select it, and then save the settings.
+    2.  Clear the check box, and then save the settings again.
+    3.  Clean the server. The directory, rather than the file, is added to the project.
 
 If you see a basic HTML page, then the application is deployed but you have an HTTP server problem. When a simple restart does not work, you must check the server configuration:
 
