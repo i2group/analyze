@@ -54,6 +54,7 @@ com.i2group.apollo.networksearchservice
 com.i2group.apollo.networksearchservice.transport
 com.i2group.apollo.purgeservice
 com.i2group.apollo.searchservice
+com.i2group.apollo.searchservice.common.model
 com.i2group.apollo.searchservice.transport
 com.i2group.apollo.security
 com.i2group.apollo.securityapi
