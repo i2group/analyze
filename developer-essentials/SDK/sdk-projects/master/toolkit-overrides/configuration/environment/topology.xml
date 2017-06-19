@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014, 2016 IBM Corp.
+Copyright (c) 2014, 2017 IBM Corp.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -31,16 +31,16 @@ Contributors:
   <databases>
     <!-- The instance-name must be set according to your DB2 configuration.
          For example, this defaults to DB2 on Windows and db2inst1 on Linux. -->
-    <database max-pool-size="5" database-type="WriteStore" dialect="db2" instance-name="DB2" database-name="WriteSto" xa="true" id="write1" host-name="localhost" port-number="50000"/>
+    <database max-pool-size="5" database-type="WriteStore" dialect="db2" instance-name="DB2" database-name="WriteSto" xa="false" id="write1" host-name="localhost" port-number="50000"/>
     <database database-type="InfoStore" dialect="db2" database-name="ISTORE" instance-name="DB2" edition="" xa="false" host-name="localhost" id="infostore" port-number="50000" version=""/>
   </databases>
   <applications>
-    <application http-server-host="true" name="i2analyze" host-name="localhost">
+    <application http-server-host="true" name="onyx-server" host-name="localhost">
       <lucene-indexes>
         <lucene-index main-index-location="C:/IBM/i2analyze/data-dev/ar/main_index" id="ar" alternatives-location="C:/IBM/i2analyze/data-dev/ar/alternatives"/>
       </lucene-indexes>
       <wars>
-        <war context-root="apollo" name="core" i2-data-source-id="ar-id" target="core">
+        <war context-root="apollo" name="onyx-services-ar" i2-data-source-id="ar-id" target="onyx-services-ar">
           <data-sources>
             <data-source database-id="write1" create-database="true"/>
           </data-sources>
@@ -49,23 +49,23 @@ Contributors:
           </lucene-index-ids>
           <fragments>
             <fragment name="common"/>
-            <fragment name="core"/>
+            <fragment name="onyx-services-ar"/>
           </fragments>
         </war>
       </wars>
     </application>
-    <application http-server-host="false" name="awc" host-name="localhost">
+    <application http-server-host="false" name="opal-server" host-name="localhost">
       <wars>
-        <war context-root="awc" name="awc" i2-data-source-id="infostore" target="awc">
+        <war context-root="opal" name="opal-services-is" i2-data-source-id="infostore" target="opal-services-is">
           <data-sources>
             <data-source database-id="infostore" create-database="true"/>
           </data-sources>
           <file-store-ids>
-            <file-store-id value="awc-job-store"/>
-            <file-store-id value="awc-recordgroup-store"/>
+            <file-store-id value="job-store"/>
+            <file-store-id value="recordgroup-store"/>
           </file-store-ids>
           <fragments>
-            <fragment name="awc"/>
+            <fragment name="opal-services-is"/>
             <fragment name="common"/>
             <fragment name="default-user-profile-provider"/>
           </fragments>
@@ -75,8 +75,8 @@ Contributors:
         </war>
       </wars>
       <file-stores>
-        <file-store location="C:/IBM/i2analyze/data-dev/job/main" id="awc-job-store" type="job-store"/>
-        <file-store location="C:/IBM/i2analyze/data-dev/recordgroup/main" id="awc-recordgroup-store" type="recordgroup-store"/>
+        <file-store location="C:/IBM/i2analyze/data-dev/job/main" id="job-store" type="job-store"/>
+        <file-store location="C:/IBM/i2analyze/data-dev/recordgroup/main" id="recordgroup-store" type="recordgroup-store"/>
       </file-stores>
     </application>
   </applications>

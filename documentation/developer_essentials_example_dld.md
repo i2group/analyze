@@ -1,14 +1,14 @@
 Configuring the "data load direct" example project
 ==================================================
 
-The "data load direct" approach to data acquisition in i2 Analyze involves importing external data into the Analysis Repository. In Developer Essentials, IBM provides the `da-arload-filesystem-example` example, in which the external data source is an XML file.
+The "data load direct" approach to data acquisition in i2 Analyze involves importing external data into the Analysis Repository. In Developer Essentials, IBM provides the `onyx-da-arload-filesystem-example` example, in which the external data source is an XML file.
 
 Before you begin
 ----------------
 
 The data load direct example project requires the development version of i2 Analyze, prepared according to the Developer Essentials deployment instructions. However, the example has no additional requirements.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into items in the Analysis Repository. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into items in the Analysis Repository. These artifacts are in the `SDK\sdk-projects\onyx-da-example-common` directory, to which all of the data acquisition examples have access.
 
 About this task
 ---------------
@@ -35,7 +35,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
 
-2.  Repeat steps 1d to 1g to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` into Eclipse.
+2.  Repeat steps 1d to 1g to import `C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-example-common` into Eclipse.
 
 Next, all data acquisition projects that you create with Developer Essentials require a Java library that maps from platform-compatible XML to Analysis Repository items. The library is specific to a particular i2 Analyze schema. You can generate the library by running a command against the schema in question.
 
@@ -45,19 +45,19 @@ Next, all data acquisition projects that you create with Developer Essentials re
     ``` pre
     build -t generateMappingJar 
     -x C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\examples\schemas\en_US\law-enforcement-schema.xml
-    -o C:\IBM\i2analyze\SDK\sdk-projects\da-arload-filesystem-example\schema-mapping-jar\schema.jar
+    -o C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-arload-filesystem-example\schema-mapping-jar\schema.jar
     ```
 
     Note: This command assumes that your target deployment of i2 Analyze uses the law enforcement schema, which is the default setting for the development version. If the target uses a different schema, then you must change the command and the project configuration to match.
 
-    When the command runs successfully, it creates the library in the `schema-mapping-jar` directory, which is on the build path for the `da-arload-filesystem-example` project.
+    When the command runs successfully, it creates the library in the `schema-mapping-jar` directory, which is on the build path for the `onyx-da-arload-filesystem-example` project.
 
 The Java library is the only change that you must make to the example project. You can now import the example project to Eclipse, and run it to add items from the supplied XML file to the Analysis Repository.
 
-1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2Analyze\SDK\sdk-projects\da-arload-filesystem-example` directory to Eclipse.
-2.  If the development version of the `i2analyze` server is not already running, then start it from within Eclipse.
+1.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2Analyze\SDK\sdk-projects\onyx-da-arload-filesystem-example` directory to Eclipse.
+2.  If the development version of the `onyx-server` is not already running, then start it from within Eclipse.
 3.  Attempt to run the example.
-    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **da-arload-filesystem-example** &gt; **src** &gt; **main** &gt; **java** &gt; **com** &gt; **example**.
+    1.  In the Eclipse workspace, select `ExampleDataLoaderMain.java`. In the Enterprise Explorer pane, `ExampleDataLoaderMain.java` is in **onyx-da-arload-filesystem-example** &gt; **src** &gt; **main** &gt; **java** &gt; **com** &gt; **example**.
     2.  Click **Run** &gt; **Run As** &gt; **Java Application**.
 
     If you have not run the example before, this step fails because the application requires a command-line argument. However, attempting to run the example initializes the configuration setting that you must make to run the example successfully.
@@ -74,6 +74,6 @@ The Java library is the only change that you must make to the example project. Y
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2016.
+© Copyright IBM Corporation 2014, 2017.
 
 

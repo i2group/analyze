@@ -1,14 +1,14 @@
 Configuring the "data access on-demand" example project
 =======================================================
 
-The "data access on-demand" approach to data acquisition in i2 Analyze involves querying external data through a new service. In Developer Essentials, IBM provides the `da-subset-filesystem-example` example, in which the external data source is an XML file.
+The "data access on-demand" approach to data acquisition in i2 Analyze involves querying external data through a new service. In Developer Essentials, IBM provides the `onyx-da-subset-filesystem-example` example, in which the external data source is an XML file.
 
 Before you begin
 ----------------
 
 The data access on-demand example project requires the development version of i2 Analyze, prepared according to the Developer Essentials deployment instructions. However, the example has no additional requirements.
 
-Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into items in the Analysis Repository. These artifacts are in the `SDK\sdk-projects\da-example-common` directory, to which all of the data acquisition examples have access.
+Note: All the data acquisition example projects in Developer Essentials use the same XML data, and the same code for transforming and converting that data into items in the Analysis Repository. These artifacts are in the `SDK\sdk-projects\onyx-da-example-common` directory, to which all of the data acquisition examples have access.
 
 About this task
 ---------------
@@ -35,7 +35,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
 
-2.  Repeat steps 1d to 1g to import `C:\IBM\i2analyze\SDK\sdk-projects\da-example-common` into Eclipse.
+2.  Repeat steps 1d to 1g to import `C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-example-common` into Eclipse.
 
 By its nature, the data access on-demand example requires you to modify your deployment of the platform. The scripts in the deployment toolkit can change `topology.xml` automatically. You must then redeploy the platform by hand.
 
@@ -44,7 +44,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 3.  Run the following command:
 
     ``` pre
-    build -pr da-subset-filesystem-example -t addDaodDataSource
+    build -pr onyx-da-subset-filesystem-example -t addDaodDataSource
     ```
 
     Important: For successful integration with Eclipse, the value that you provide to the `-pr` option must match the name of the example project.
@@ -65,7 +65,7 @@ By its nature, the data access on-demand example requires you to modify your dep
                    SesPresent="true" EdrsPresent="false"
                    >
           <Shape>DAOD</Shape>
-          <Name>da-subset-filesystem-example</Name>
+          <Name>onyx-da-subset-filesystem-example</Name>
        </DataSource>
     </i2-data-source>
     ```
@@ -75,7 +75,7 @@ By its nature, the data access on-demand example requires you to modify your dep
 6.  To redeploy i2 Analyze, run the following command:
 
     ``` pre
-    build -t deploy
+    build -t deploy -s onyx-server
     ```
 
 7.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server. Do not attempt to start the application server yet.
@@ -83,20 +83,20 @@ By its nature, the data access on-demand example requires you to modify your dep
 The commands so far deployed the example project application from the deployment toolkit. To enable easy debugging of your code, the next steps are all about replacing the application that you deployed from the toolkit with code from Eclipse.
 
 1.  Refresh the Eclipse user interface to ensure that it reflects the current state of the project.
-2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty/servers/i2analyze/apps` folder, and delete the `da-subset-filesystem-example.war` application.
-3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\da-subset-filesystem-example` directory to Eclipse.
-4.  Ensure that the JAR file from `da-example-common` is loaded correctly into the deployment assembly for the `da-subset-filesystem-example` project:
-    1.  In Package Explorer, right-click **da-subset-filesystem-example**, and select **Properties** to display the Properties window.
-    2.  Click **Deployment Assembly**, and look for any error messages about `da-example-common`.
-    3.  If there are error messages, remove `da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
+2.  In your Eclipse workspace, open the `WebSphere Application Server Liberty/servers/onyx-server/apps` folder, and delete the `onyx-da-subset-filesystem-example.war` application.
+3.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-subset-filesystem-example` directory to Eclipse.
+4.  Ensure that the JAR file from `onyx-da-example-common` is loaded correctly into the deployment assembly for the `onyx-da-subset-filesystem-example` project:
+    1.  In Package Explorer, right-click **onyx-da-subset-filesystem-example**, and select **Properties** to display the Properties window.
+    2.  Click **Deployment Assembly**, and look for any error messages about `onyx-da-example-common`.
+    3.  If there are error messages, remove `onyx-da-example-common` from the packaging structure, and then use **Add** &gt; **Project** to add it again.
 
-5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **i2analyze** server and select **Add and Remove**.
-6.  In the Add and Remove window, move **da-subset-filesystem-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
+5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click **onyx-server** and select **Add and Remove**.
+6.  In the Add and Remove window, move **onyx-da-subset-filesystem-example** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
 
 At this stage, deployment of the data access on-demand example is complete. You can start i2 Analyze, and connect to it through the Intelligence Portal.
 
-1.  In Eclipse, start the `i2analyze` server.
-2.  In a web browser, load or refresh your view of the Intelligence Portal. Browse the **da-subset-filesystem-example** data source to see that the items to which it provides access are available to the user.
+1.  In Eclipse, start the `onyx-server` server.
+2.  In a web browser, load or refresh your view of the Intelligence Portal. Browse the **onyx-da-subset-filesystem-example** data source to see that the items to which it provides access are available to the user.
 
 After you develop and test a data access on-demand solution for i2 Analyze, the next step is to publish it to a live deployment.
 
@@ -107,7 +107,7 @@ These instructions assume that you have access to two instances of i2 Analyze:
 
 1.  Copy `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration` from the development version into the production version of the deployment toolkit.
 2.  Edit the following files to ensure that the default settings match your environment:
-    -   `configuration\environment\i2analyze\environment.properties`
+    -   `configuration\environment\onyx-server\environment.properties`
     -   `configuration\environment\http-server.properties`
     -   `configuration\environment\credentials.properties`
     -   `configuration\environment\topology.xml`
@@ -116,7 +116,7 @@ These instructions assume that you have access to two instances of i2 Analyze:
 4.  To redeploy the platform, run the following command:
 
     ``` pre
-    setup -t deploy
+    setup -t deploy -s onyx-server
     ```
 
 5.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
@@ -125,6 +125,6 @@ These instructions assume that you have access to two instances of i2 Analyze:
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2016.
+© Copyright IBM Corporation 2014, 2017.
 
 

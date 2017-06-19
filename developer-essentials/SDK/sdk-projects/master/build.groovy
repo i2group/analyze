@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2016 IBM Corp.
+ * Copyright (c) 2014, 2017 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,13 +77,13 @@ ${printOption(cli, 'd')}
 ${printOption(cli, 'stacktrace')}
 
 The following projects are available:
-${printTask('da-arload-filesystem-example', 'Demonstrates loading data into the analysis repository')}
-${printTask('da-subset-filesystem-example', 'Demonstrates a data access on-demand subset')}
-${printTask('da-subset-documents-example', 'Demonstrates a data access on-demand subset - including linked documents')}
-${printTask('da-subset-rest-example', 'Demonstrates a two-phase data access on-demand subset')}
-${printTask('awc-audit-csv-example', 'Demonstrates infostore auditing in machine-readable form to a CSV file')}
-${printTask('awc-audit-database-example', 'Demonstrates infostore auditing in machine-readable form to a database')}
-${printTask('awc-audit-file-example', 'Demonstrates infostore auditing in human-readable form to a file')}
+${printTask('onyx-da-arload-filesystem-example', 'Demonstrates loading data into the analysis repository')}
+${printTask('onyx-da-subset-filesystem-example', 'Demonstrates a data access on-demand subset')}
+${printTask('onyx-da-subset-documents-example', 'Demonstrates a data access on-demand subset - including linked documents')}
+${printTask('onyx-da-subset-rest-example', 'Demonstrates a two-phase data access on-demand subset')}
+${printTask('opal-audit-csv-example', 'Demonstrates infostore auditing in machine-readable form to a CSV file')}
+${printTask('opal-audit-database-example', 'Demonstrates infostore auditing in machine-readable form to a database')}
+${printTask('opal-audit-file-example', 'Demonstrates infostore auditing in human-readable form to a file')}
 
 The following tasks are available:
 ${printTask('generateMappingJar', 'Creates mapping classes and XSD files for the specified schema')}
@@ -95,10 +95,10 @@ ${printTask('deploy', "Builds the sdk-projects and their dependencies into appro
 You may also run any toolkit commands specified in the setup script against this script. Those not mentioned in the list above will be called on the toolkit directly, with no intervention.
 
 Examples of use:
-build -pr da-arload-filesystem-example -t generateMappingJar -x C:\\IBM\\i2analyze\\SDK\\sdk-projects\\master\\build\\toolkit\\configuration\\examples\\schemas\\en_US\\law-enforcement-schema.xml -o C:\\IBM\\i2analyze\\SDK\\sdk-projects\\da-arload-filesystem-example\\schema-mapping-jar\\schema.jar
-build -pr da-subset-documents-example -t addDaodDataSource
-build -pr da-subset-rest-example -t unpackXap
-build -pr da-subset-rest-example -t packXap
+build -pr onyx-da-arload-filesystem-example -t generateMappingJar -x C:\\IBM\\i2analyze\\SDK\\sdk-projects\\master\\build\\toolkit\\configuration\\examples\\schemas\\en_US\\law-enforcement-schema.xml -o C:\\IBM\\i2analyze\\SDK\\sdk-projects\\onyx-da-arload-filesystem-example\\schema-mapping-jar\\schema.jar
+build -pr onyx-da-subset-documents-example -t addDaodDataSource
+build -pr onyx-da-subset-rest-example -t unpackXap
+build -pr onyx-da-subset-rest-example -t packXap
 build  -t deploy
 build -t startLiberty
 

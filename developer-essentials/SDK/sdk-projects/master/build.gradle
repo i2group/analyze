@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2016 IBM Corp.
+ * Copyright (c) 2014, 2017 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,19 +18,21 @@ import groovy.xml.XmlUtil
 ext {
     
     // Example project names
-    daExampleCommon             = 'da-example-common'
-    daArloadFilesystemExample   = 'da-arload-filesystem-example'
-    daSubsetRestExample         = 'da-subset-rest-example'
+    daExampleCommon             = 'onyx-da-example-common'
+    daArloadFilesystemExample   = 'onyx-da-arload-filesystem-example'
+    daSubsetRestExample         = 'onyx-da-subset-rest-example'
+    daSubsetDocumentsExample    = 'onyx-da-subset-documents-example'
+    daSubsetFilesystemExample   = 'onyx-da-subset-filesystem-example'
 
-    auditExampleCommon          = 'awc-audit-example-common'
-    auditCsvExample             = 'awc-audit-csv-example'
-    auditDatabaseExample        = 'awc-audit-database-example'
-    auditFileExample            = 'awc-audit-file-example'
+    auditExampleCommon          = 'opal-audit-example-common'
+    auditCsvExample             = 'opal-audit-csv-example'
+    auditDatabaseExample        = 'opal-audit-database-example'
+    auditFileExample            = 'opal-audit-file-example'
 
     // Client projects that do not need to be deployed on the server
     clientProjects              = [daArloadFilesystemExample]
 
-    server                      = project.hasProperty('server') ? "$server" : 'i2analyze'
+    server                      = project.hasProperty('server') ? "$server" : 'onyx-server'
     sdkProjectsDir              = "$rootDir/.."
     sdkDir                      = "$sdkProjectsDir/.."
     i2analyzeDir                = "$sdkDir/.."
@@ -94,22 +96,23 @@ allprojects {
 subprojects {
     dependencies {
         compile fileTree(dir: "$stagedToolkitDir/application/shared/lib", includes: ['**/*.jar']),
-                fileTree(dir: "$stagedToolkitDir/application/targets/awc/WEB-INF/lib", includes: ['**/disco-api*.jar']),
-                zipTree("$stagedToolkitDir/bin/wlp/wlp.zip").matching { it.include(['wlp/dev/api/**/*.jar']) }
+                fileTree(dir: "$stagedToolkitDir/application/targets/opal-services-is/WEB-INF/lib", includes: ['**/disco-api*.jar']),
+                zipTree("$stagedToolkitDir/bin/wlp/wlp.zip").matching { it.include(['wlp/dev/api/**/*.jar']) },
+                fileTree(dir: "$project.projectDir/fragment/WEB-INF/lib", includes: ['**/*.jar'])
     }
 
     task stageToolkitAndCommonOverrides {
         // Intentionally running in configuration phase to ensure the toolkit is in place before the dependencies within are required
         if (!file(stagedToolkitDir).exists()) {
-            // Excluding DataSourceDaod.properties to avoid conflict with the generated version of the same file
+            // Excluding DataSource.properties to avoid conflict with the generated version of the same file
             copy {
                 from "$i2analyzeDir/toolkit"
-                exclude '**/application/targets/daod/WEB-INF/classes/DataSourceDaod.properties',
+                exclude '**/application/targets/onyx-services-daod/WEB-INF/classes/DataSource.properties',
                     '/configuration/**'
                 into stagedToolkitDir
             }
             copy {
-                from "$i2analyzeDir/toolkit/examples/analysis-repository/configuration"
+                from "$i2analyzeDir/toolkit/examples/configurations/analysis-repository/configuration"
                 into "$stagedToolkitDir/configuration"
             }
             copy {
@@ -169,7 +172,7 @@ subprojects {
             // Add required projects as fragments to DAOD WAR in topology.xml now, before deployment
             GPathResult topology = new XmlSlurper().parse(topologyFile)
             GPathResult application = topology.applications.application.find { it.@name == server }
-            GPathResult daodWar = application.wars.war.find { it.@target == 'daod' && it.@name == project.name }
+            GPathResult daodWar = application.wars.war.find { it.@target == 'onyx-services-daod' && it.@name == project.name }
             deleteNodeIfPresent(daodWar.fragments.fragment.find { it.@name == project.name })
             String fragmentsXml = ''
 
@@ -196,7 +199,7 @@ subprojects {
         description 'Unpacks the XAP into the UI extensibility-sample extractedxap folder so the contents can be referenced by the sample projects.'
 
         onlyIf {
-            uiEnvironmentProperties = getProperties(new Properties(), file("$project.projectDir/ui-project.properties"))
+            uiEnvironmentProperties = getProperties(new Properties(), file("$project.projectDir/onyx-ui-project.properties"))
             uiEnvironmentProperties.'ui.project.dir'
         }
 
@@ -207,7 +210,7 @@ subprojects {
             extractedxapDir.mkdirs()
 
             copy {
-                from zipTree("$stagedToolkitDir/application/targets/core/Apollo.xap")
+                from zipTree("$stagedToolkitDir/application/targets/onyx-services-ar/Apollo.xap")
                 into uiProjectExtractedxapDir
             }
         }
@@ -215,7 +218,7 @@ subprojects {
 
     task packXap(type: Exec) {
         onlyIf {
-            uiEnvironmentProperties = getProperties(new Properties(), file("$project.projectDir/ui-project.properties"))
+            uiEnvironmentProperties = getProperties(new Properties(), file("$project.projectDir/onyx-ui-project.properties"))
             uiEnvironmentProperties.'ui.project.dir'
         }
 
@@ -226,10 +229,10 @@ subprojects {
                 into "$stagedToolkitDir/configuration/fragments/xap-supplement"
             }
 
-            // Copy the contents of the UI extensibility-sample webcontent folder to the core fragment for inclusion in the WAR.
+            // Copy the contents of the UI extensibility-sample webcontent folder to the onyx-services-ar fragment for inclusion in the WAR.
             copy {
                 from "${uiEnvironmentProperties.'ui.project.dir'}/webcontent"
-                into "$stagedToolkitDir/configuration/fragments/core"
+                into "$stagedToolkitDir/configuration/fragments/onyx-services-ar"
             }
         }
 
@@ -245,13 +248,13 @@ project(":$daArloadFilesystemExample") {
     }
 }
 
-project(':da-subset-documents-example') {
+project(":$daSubsetDocumentsExample") {
     dependencies {
         compile project(":$daExampleCommon")
     }
 }
 
-project(':da-subset-filesystem-example') {
+project(":$daSubsetFilesystemExample") {
     dependencies {
         compile project(":$daExampleCommon")
     }
@@ -289,8 +292,8 @@ boolean isFinalSubProject(String projectName) {
 
 def getAuditDSDir(){
     def serverDir = getServerHomeDir()
-    def awcWarDir = "$serverDir/apps/awc.war"
-    return "$awcWarDir/audit-ds" //[DRAFT] dir name ok?
+    def opalWarDir = "$serverDir/apps/opal-services-is.war"
+    return "$opalWarDir/audit-ds"
 }
 
 def getServerHomeDir(){
@@ -299,7 +302,7 @@ def getServerHomeDir(){
 }
 
 def getWlpHomeDir(){
-    def i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/i2analyze/environment.properties"))
+    def i2analyzeEnvironmentProperties = getProperties(new Properties(), file("$stagedToolkitDir/configuration/environment/onyx-server/environment.properties"))
     return i2analyzeEnvironmentProperties.'wlp.home.dir'
 }
 
@@ -328,7 +331,7 @@ void copyAutogeneratedFiles() {
             }
             copy {
                 from "$projectWebInfDir/classes"
-                include 'DataSourceCore.properties', 'DataSourceDaod.properties', 'log4j.properties', 'SearchIndexLocation.properties', 'SearchLocalization.properties'
+                include 'DataSource.properties', 'log4j.properties', 'SearchIndexLocation.properties', 'SearchLocalization.properties'
                 into "$autogenFragmentsWebInfDir/classes"
             }
             delete {
@@ -339,11 +342,11 @@ void copyAutogeneratedFiles() {
 }
 
 void copyServerAutogeneratedFiles() {
-    // Copying awc autogen files
+    // Copying opal-server autogen files
     String sourceWarName
     def serverDir = getServerHomeDir()
-    String projectWebInfDir = "$wlpHomeDir/usr/servers/awc/apps/awc.war/WEB-INF"
-    String autogenFragmentsWebInfDir = "$stagedToolkitDir/scripts/gradle/build/autogenFragments/awc/WEB-INF"
+    String projectWebInfDir = "$wlpHomeDir/usr/servers/opal-server/apps/opal-services-is.war/WEB-INF"
+    String autogenFragmentsWebInfDir = "$stagedToolkitDir/scripts/gradle/build/autogenFragments/opal-services-is/WEB-INF"
 
     copy {
         from projectWebInfDir
@@ -353,7 +356,7 @@ void copyServerAutogeneratedFiles() {
     copy {
         from "$projectWebInfDir/classes"
         include 'AwcServerSettingsLocation.properties',
-                'DataSourceAwc.properties',
+                'DataSource.properties',
                 'DiscoFileStoreLocation.properties',
                 'DiscoSolrConfiguration.properties',
                 'log4j.properties'

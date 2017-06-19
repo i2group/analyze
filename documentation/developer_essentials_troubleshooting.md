@@ -33,7 +33,7 @@ Server starts without error but in only a few seconds
 
 If the application server starts in an unusually short time, it is likely that an i2 Analyze application is not deployed correctly.
 
-1.  In Eclipse, inside the **Servers** tab, double-click the **i2analyze** server. A new **i2analyze** tab opens in the top part of the Eclipse application window.
+1.  In Eclipse, inside the **Servers** tab, double-click the **onyx-server**. A new **onyx-server** tab opens in the top part of the Eclipse application window.
 2.  In the new tab, ensure that the **Run applications directly from the workspace** check box is cleared, and then press Ctrl+S to save the settings.
 
 Important: This setting can cause various other problems. For i2 Analyze to behave correctly in the Eclipse IDE, you must keep these check boxes clear.
@@ -222,6 +222,6 @@ If the previous procedure does not resolve the problem, or the GUIDs appear to b
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2016.
+© Copyright IBM Corporation 2014, 2017.
 
 

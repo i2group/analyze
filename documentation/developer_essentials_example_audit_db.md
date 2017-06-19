@@ -1,7 +1,7 @@
 Configuring the "audit logging to database" example project
 ===========================================================
 
-In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, IBM provides the `awc-audit-database-example` example, which writes audit logging information to a relational database.
+In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, IBM provides the `opal-audit-database-example` example, which writes audit logging information to a relational database.
 
 Before you begin
 ----------------
@@ -35,32 +35,32 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     6.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
     7.  Click **Finish** to complete the import process.
 
-Developing and testing implementations of `IAuditLogger` requires a development version of the `awc` server. Developer Essentials includes a project that you can import into to Eclipse and configure to be that server.
+Developing and testing implementations of `IAuditLogger` requires a development version of the `opal-server`. Developer Essentials includes a project that you can import into to Eclipse and configure to be that server.
 
-1.  If you did not already add the `awc` directory to your Eclipse workspace while you worked with one of the other audit logging examples, add it now.
+1.  If you did not already add the `opal-services-is` directory to your Eclipse workspace while you worked with one of the other audit logging examples, add it now.
     1.  In your Eclipse workspace, stop any running servers.
-    2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\awc\apps` directory. Delete the `awc.war` subdirectory, which contains the `awc` application.
+    2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
     3.  Back in Eclipse, refresh your view of the Enterprise Explorer tab.
-    4.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\awc` directory to Eclipse.
-    5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click the **awc** server and select **Add and Remove**.
-    6.  In the Add and Remove window, move **awc** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
-    7.  Still in the **Servers** tab, right-click the **awc** server and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
+    4.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\opal-services-is` directory to Eclipse.
+    5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click **opal-server** and select **Add and Remove**.
+    6.  In the Add and Remove window, move **opal-services-is** from the **Available** list to the **Configured** list, and then click **Finish** to close the window.
+    7.  Still in the **Servers** tab, right-click **opal-server** and select **Publish** to ensure that the server and its representation in Eclipse are synchronized.
     8.  Verify that you can still start both servers without seeing any new errors in the Console tab in Eclipse.
-        Note: If you restart the **awc** server while a client is connected to it, you might see an error in the **Console** tab that reports an unavailable server. If the server then initializes normally, you can safely disregard this report.
+        Note: If you restart the **opal-server** server while a client is connected to it, you might see an error in the **Console** tab that reports an unavailable server. If the server then initializes normally, you can safely disregard this report.
         If you see error messages about the Solr indexing service, run the following command at your command prompt to ensure that the service is running:
 
         ``` pre
-        build -t startSolr -s awc
+        build -t startSolrAndZk -s opal-server
         ```
 
-The audit logging examples in Developer Essentials all require the contents of the `awc-audit-example-common` project.
+The audit logging examples in Developer Essentials all require the contents of the `opal-audit-example-common` project.
 
-1.  If you have not already done so, repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\awc-audit-example-common` directory to Eclipse.
+1.  If you have not already done so, repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\opal-audit-example-common` directory to Eclipse.
 
-Additionally, the audit logging to database example requires the `awc-audit-database-example` project, which contains the source code that is specific to this example.
+Additionally, the audit logging to database example requires the `opal-audit-database-example` project, which contains the source code that is specific to this example.
 
-1.  Repeat the instructions again to import `C:\IBM\i2analyze\SDK\sdk-projects\awc-audit-database-example` into Eclipse.
-2.  In the `awc` project directory, navigate to `fragment\WEB-INF\classes\DiscoServerSettingsMandatory.properties`. Uncomment the class for the `IAuditLogger` implementation in this example project, and comment out the other settings.
+1.  Repeat the instructions again to import `C:\IBM\i2analyze\SDK\sdk-projects\opal-audit-database-example` into Eclipse.
+2.  In the `opal-services-is` project directory, navigate to `fragment\WEB-INF\classes\ApolloServerSettingsMandatory.properties`. Uncomment the class for the `IAuditLogger` implementation in this example project, and comment out the other settings.
 
     ``` pre
     #AuditLogger=com.example.audit.CSVAuditLogger
@@ -69,10 +69,10 @@ Additionally, the audit logging to database example requires the `awc-audit-data
     #AuditLogger=com.i2group.disco.audit.NoOpAuditLogger
     ```
 
-3.  Add the JAR files that the common and specific projects generate to the deployment assembly for the `awc` project.
-    1.  In Enterprise Explorer, right-click **awc**, and select **Properties** to display the Properties window.
+3.  Add the JAR files that the common and specific projects generate to the deployment assembly for the `opal-services-is` project.
+    1.  In Enterprise Explorer, right-click **opal-services-is**, and select **Properties** to display the Properties window.
     2.  Click **Deployment Assembly**, and then **Add**. In the New Assembly Directive window, select **Project**, and then click **Next**.
-    3.  Select both **awc-audit-example-common** and **awc-audit-database-example**, and then click **Finish**.
+    3.  Select both **opal-audit-example-common** and **opal-audit-database-example**, and then click **Finish**.
 
 Before you can run the audit logging to database example, you must create and then configure the database that the example uses to record the logged information.
 
@@ -88,7 +88,7 @@ Before you can run the audit logging to database example, you must create and th
     db2 -stvf create-audit-database.sql
     ```
 
-5.  In Enterprise Explorer, open the **WebSphere Application Server Liberty** folder, and open the file at `servers\awc\server.datasources.xml` in an XML editor.
+5.  In Enterprise Explorer, open the **WebSphere Application Server Liberty** folder, and open the file at `servers\opal-server\server.datasources.xml` in an XML editor.
 6.  Add the following `<dataSource>` element alongside the existing one that configures the Information Store:
 
     ``` pre
@@ -103,10 +103,10 @@ Before you can run the audit logging to database example, you must create and th
 
 At this point, the database is configured, and you can start the server to test that audit logging takes place correctly.
 
-1.  In the **Servers** tab, right-click the **awc** server, and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
-2.  Still in the **Servers** tab, right-click the **awc** server, and then click **Start** (or **Restart**).
+1.  In the **Servers** tab, right-click the **opal-server** server, and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
+2.  Still in the **Servers** tab, right-click the **opal-server** server, and then click **Start** (or **Restart**).
 
-    This action starts the server with audit logging to database enabled. The logging behavior is governed by the settings file at `awc-audit-database-example\fragment\WEB-INF\classes\DatabaseAudit.properties`, which specifies the names of the database schema and the tables that store the information. Typical data looks like this:
+    This action starts the server with audit logging to database enabled. The logging behavior is governed by the settings file at `opal-audit-database-example\fragment\WEB-INF\classes\DatabaseAudit.properties`, which specifies the names of the database schema and the tables that store the information. Typical data looks like this:
 
     |                             |                                                                                                                      |
     |-----------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -121,7 +121,7 @@ At this point, the database is configured, and you can start the server to test 
     | `FILTERS`                   | `[]`                                                                                                                 |
     | `DATASTORES`                | `InfoStore`                                                                                                          |
 
-    The supplied version of `DatabaseAudit.properties` specifies the `I2AUDIT` schema as the target for audit logging data. The tables are named `QUICK_SEARCH` and `EXPAND`.
+    The supplied version of `\` specifies the `I2AUDIT` schema as the target for audit logging data. The tables are named `QUICK_SEARCH` and `EXPAND`.
 
 After you develop and test an audit logging solution for i2 Analyze, the next step is to publish it to a live deployment. These instructions assume that you have access to two instances of i2 Analyze:
 
@@ -130,26 +130,26 @@ After you develop and test an audit logging solution for i2 Analyze, the next st
 
 To prepare your development version of i2 Analyze for production, you must edit the `topology.xml` file again, and then use the deployment toolkit to redeploy the platform.
 
-1.  If the development version of the **awc** server is running, stop the server from Eclipse.
-2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\awc\apps` directory. Delete the `awc.war` subdirectory, which contains the `awc` application.
+1.  If the development version of the **opal-server** is running, stop the server from Eclipse.
+2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
 3.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
-4.  Edit the `<war>` element that defines the contents of the `awc` web application to include the common and specific fragments for the audit logging to database example.
+4.  Edit the `<war>` element that defines the contents of the `opal-services-is` application to include the common and specific fragments for the audit logging to database example.
 
     ``` pre
-    <war context-root="awc" i2-data-source-id="infostore" name="awc" target="awc">
+    <war context-root="opal" i2-data-source-id="infostore" name="opal-services-is" target="opal-services-is">
        <data-sources>
           <data-source database-id="infostore" create-database="true"/>
        </data-sources>
        <file-store-ids>
-          <file-store-id value="awc-job-store"/>
-          <file-store-id value="awc-recordgroup-store"/>
+          <file-store-id value="job-store"/>
+          <file-store-id value="recordgroup-store"/>
        </file-store-ids>
        <fragments>
-          <fragment name="awc"/>
+          <fragment name="opal-services-is"/>
           <fragment name="common"/>
           <fragment name="default-user-profile-provider"/>
-          <fragment name="awc-audit-example-common"/>
-          <fragment name="awc-audit-database-example"/>
+          <fragment name="opal-audit-example-common"/>
+          <fragment name="opal-audit-database-example"/>
        </fragments>
        <solr-collection-ids>
           <solr-collection-id collection-id="main_index"
@@ -160,30 +160,30 @@ To prepare your development version of i2 Analyze for production, you must edit 
     ```
 
 5.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
-6.  Run the following command to redeploy the `awc` application with all the changes that you made:
+6.  Run the following command to redeploy the `opal-server` application with all the changes that you made:
 
     ``` pre
-    build -t deploy -s awc
+    build -t deploy -s opal-server
     ```
 
 Before you publish the audit logging functionality to a live deployment of i2 Analyze, test that your changes to the topology file are behaving correctly.
 
-1.  Back in the Servers tab in your Eclipse environment, ensure that the `awc` application is marked as **Synchronized**. Right click and **Publish** if it is not.
-2.  Start the **awc** server, connect to the application through a client, and verify that the audit logging behavior is unchanged from the version that you deployed with Eclipse.
-3.  Stop the **awc** server again.
+1.  Back in the Servers tab in your Eclipse environment, ensure that the `opal-server` application is marked as **Synchronized**. Right click and **Publish** if it is not.
+2.  Start the **opal-server**, connect to the application through a client, and verify that the audit logging behavior is unchanged from the version that you deployed with Eclipse.
+3.  Stop the **opal-server** again.
 
 At this stage, you are ready to copy the changes that you made to your development deployment to a production deployment of i2 Analyze.
 
 1.  Copy `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration` from the development version into the production version of the deployment toolkit.
 2.  Edit the following files to ensure that the settings match the production environment:
-    -   `configuration\environment\awc\environment.properties`
-    -   `configuration\environment\i2analyze\environment.properties`
+    -   `configuration\environment\opal-server\environment.properties`
+    -   `configuration\environment\onyx-server\environment.properties`
     -   `configuration\environment\http-server.properties`
     -   `configuration\environment\credentials.properties`
     -   `configuration\environment\topology.xml`
 
 3.  You also need to provide the production environment with information about the logging database. To use the same one that you used during development:
-    1.  In your production deployment of WebSphere Application Server Liberty, open the configuration file at `\wlp\usr\servers\awc\server.datasources.xml`.
+    1.  In your production deployment of WebSphere Application Server Liberty, open the configuration file at `\wlp\usr\servers\opal-server\server.datasources.xml`.
     2.  Add the same `<dataSource>` element that you added to the development version of the web server earlier in this procedure.
 
     To use a different database server in the production environment, you must use the SQL script to create the audit logging database in the new location. You must also modify the contents of the `<dataSource>` element accordingly.
@@ -191,7 +191,7 @@ At this stage, you are ready to copy the changes that you made to your developme
 5.  To redeploy the platform, run the following command:
 
     ``` pre
-    setup -t deploy -s awc
+    setup -t deploy -s opal-server
     ```
 
 6.  Use the Services application in Windows (`services.msc`) to restart IBM HTTP Server.
@@ -207,16 +207,16 @@ What to do next
 It is likely that after you use the deployment toolkit to deploy the example, you want to return to developing and deploying it in Eclipse. That process involves just a handful of steps:
 
 1.  In your Eclipse workspace, stop any running servers.
-2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\awc\apps` directory. Delete the `awc.war` subdirectory, which contains the `awc` application.
+2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
 3.  Back in Eclipse, refresh your view of the Enterprise Explorer tab.
-4.  In the **Servers** tab, right-click the **awc** server, and click **Clean**.
+4.  In the **Servers** tab, right-click the **opal-server** server, and click **Clean**.
 
-This operation restores Eclipse to its state when you first added the `awc` project to the **awc** server. You can change the `awc-audit-database-example` project and see the effects on the development version of the platform exactly as before.
+This operation restores Eclipse to its state when you first added the `opal-services-is` project to the **opal-server**. You can change the `opal-audit-database-example` project and see the effects on the development version of the platform exactly as before.
 
 **Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2016.
+© Copyright IBM Corporation 2014, 2017.
 
 
