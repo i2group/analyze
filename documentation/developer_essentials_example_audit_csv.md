@@ -37,7 +37,7 @@ Developing and testing implementations of `IAuditLogger` requires a development 
 
 1.  If you did not already add the `opal-services-is` directory to your Eclipse workspace while you worked with one of the other audit logging examples, add it now.
     1.  In your Eclipse workspace, stop any running servers.
-    2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-services-is\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
+    2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
     3.  Back in Eclipse, refresh your view of the Enterprise Explorer tab.
     4.  Repeat the instructions that you followed when you added the `master` directory to your Eclipse workspace. This time, add the `C:\IBM\i2analyze\SDK\sdk-projects\opal-services-is` directory to Eclipse.
     5.  In the **Servers** tab at the bottom of the Eclipse application window, right-click **opal-server** and select **Add and Remove**.
@@ -86,7 +86,7 @@ Additionally, the audit logging to CSV example requires the `opal-audit-csv-exam
     "DataStores: [InfoStore], Expression: brown, Filters: []"
     ```
 
-    The supplied version of `CSVAudit.properties` specifies the `wlp\usr\servers\opal-services-is\logs\opal-services-is` directory as the target for audit CSV files. The files are named `auditn.csv`, where n is an integer that increments with each new file.
+    The supplied version of `CSVAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services-is` directory as the target for audit CSV files. The files are named `auditn.csv`, where n is an integer that increments with each new file.
 
 After you develop and test an audit logging solution for i2 Analyze, the next step is to publish it to a live deployment. These instructions assume that you have access to two instances of i2 Analyze:
 

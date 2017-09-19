@@ -8,7 +8,7 @@ Before you begin
 
 IBM i2 Analyze Developer Essentials has a longer set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 -   IBM Installation Manager 1.8
--   IBM i2 Analyze 4.1.4
+-   IBM i2 Analyze 4.1.5
 -   IBM DB2® 10.5 Express® Edition (or Express-C Edition) with spatial extender support.
 -   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5.4 or above
 -   IBM HTTP Server 8.5.5.4 or above
@@ -17,14 +17,14 @@ IBM i2 Analyze Developer Essentials has a longer set of requirements than the pl
 About this task
 ---------------
 
-The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/designing_your_system.html" class="xref">Deploying IBM i2 Analyze</a> documentation open as you read the steps in this document.
+The deployment process for i2 Analyze Developer Essentials follows the same sequence as the deployment process for i2 Analyze. As a result, it is helpful to keep the <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.deploy.example.doc/c_deploy_intro.html" class="xref">Deployment patterns and examples</a> documentation open as you read the steps in this document.
 
 Procedure
 ---------
 
 In the first part of the procedure, you use Developer Essentials to create a custom version of the deployment toolkit. The libraries and settings that you add enable development for i2 Analyze on a single computer.
 
-1.  Install IBM i2 Analyze 4.1.4 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
+1.  Install IBM i2 Analyze 4.1.5 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
 2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.eia.install.doc/software_prerequisites.html" class="xref">Software prerequisites</a> to install all the other prerequisite software.
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
@@ -69,7 +69,12 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 5.  Create the server runtime environments in which the i2 Analyze applications will run:
     1.  In the Preferences window, click **Server** &gt; **Runtime Environments** &gt; **Add** to open the New Server Runtime Environment window.
     2.  In the New Server Runtime Environment window, click **IBM** &gt; **WebSphere Application Server Liberty**, and then click **Next**.
-    3.  Set the **Path** of the new server runtime environment to `C:\IBM\i2analyze\deploy-dev\wlp`, instruct it to use the default JRE, and then click **Finish**.
+    3.  Set up the server runtime environment:
+        -   Set the **Name** to WebSphere Application Server Liberty Profile
+        -   Set the **Path** to `C:\IBM\i2analyze\deploy-dev\wlp`
+        -   Use the default JRE
+
+    4.  Click **Finish**.
 
 6.  Click **OK** to close the Preferences window.
 7.  Create a server in Eclipse that represents the `onyx-services-ar` application:

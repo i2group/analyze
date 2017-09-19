@@ -69,6 +69,11 @@ public final class ExampleItemEditor implements IExternalDataItemEditor
             createdTimestamp = createTimestamp(timeStamps.get(0));
             modifiedTimestamp = createTimestamp(timeStamps.get(1));
         }
+    	else
+        {
+            createdTimestamp = createTimestamp(Calendar.getInstance());
+            modifiedTimestamp = createTimestamp(Calendar.getInstance());
+        }
 
         item.setCreatedTimestamp(createdTimestamp);
         item.setModifiedTimestamp(modifiedTimestamp);
