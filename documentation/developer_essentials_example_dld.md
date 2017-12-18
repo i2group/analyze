@@ -24,7 +24,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
     2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
-
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
@@ -41,7 +40,6 @@ Next, all data acquisition projects that you create with Developer Essentials re
 
 1.  Open a command prompt, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
-
     ``` pre
     build -t generateMappingJar 
     -x C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\examples\schemas\en_US\law-enforcement-schema.xml
@@ -61,10 +59,12 @@ The Java library is the only change that you must make to the example project. Y
     2.  Click **Run** &gt; **Run As** &gt; **Java Application**.
 
     If you have not run the example before, this step fails because the application requires a command-line argument. However, attempting to run the example initializes the configuration setting that you must make to run the example successfully.
+
 4.  Click **Run** &gt; **Run Configurations** to open the Run Configurations window.
 5.  In the left pane of the window, select **Java Application** &gt; **ExampleDataLoaderMain**.
 6.  In the right pane of the window, select the **Arguments** tab, and then type `-load` in the "**Program arguments**" box.
-7.  Click **Run** to close the window and run the example application. The example adds a handful of items from the supplied XML file to the Analysis Repository.
+7.  Click **Run** to close the window and run the example application.
+    The example adds a handful of items from the supplied XML file to the Analysis Repository.
 
     Note: Running the example with the `-load` argument for a second time fails. The example uses a simple mechanism to create identifiers for generated items, and the command service rejects requests to create an item with the same identifier as an existing item. The `-sync` and `-purge` arguments remain available.
 

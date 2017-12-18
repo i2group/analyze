@@ -24,7 +24,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
     2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
-
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
@@ -61,7 +60,6 @@ Additionally, the audit logging to database example requires the `opal-audit-dat
 
 1.  Repeat the instructions again to import `C:\IBM\i2analyze\SDK\sdk-projects\opal-audit-database-example` into Eclipse.
 2.  In the `opal-services-is` project directory, navigate to `fragment\WEB-INF\classes\ApolloServerSettingsMandatory.properties`. Uncomment the class for the `IAuditLogger` implementation in this example project, and comment out the other settings.
-
     ``` pre
     #AuditLogger=com.example.audit.CSVAuditLogger
     AuditLogger=com.example.audit.DatabaseAuditLogger
@@ -77,20 +75,17 @@ Additionally, the audit logging to database example requires the `opal-audit-dat
 Before you can run the audit logging to database example, you must create and then configure the database that the example uses to record the logged information.
 
 1.  In the `master` project directory, open the file at `toolkit-overrides\scripts\database\db2\AuditExample\create-audit-database.sql`.
-
     This file contains the definition of the database that receives audit logging information from the example. The code assumes that a database user named `db2user` exists, and creates the database schema and the tables in that context.
 
 2.  If your DB2 database does not have an account named `db2user`, edit the SQL file accordingly. The name appears in two locations, and you must change it to the name of a user in your system. The name of the account that you use for the Information Store in `credentials.properties` is a reasonable choice.
 3.  Open a DB2 command window as administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master\toolkit-overrides\scripts\database\db2\AuditExample` directory.
 4.  Run the following command to create the database:
-
     ``` pre
     db2 -stvf create-audit-database.sql
     ```
 
 5.  In Enterprise Explorer, open the **WebSphere Application Server Liberty** folder, and open the file at `servers\opal-server\server.datasources.xml` in an XML editor.
 6.  Add the following `<dataSource>` element alongside the existing one that configures the Information Store:
-
     ``` pre
     <dataSource id="Audit" jndiName="jdbc/audit" jdbcDriverRef="db2_db2jcc4_jar">
         <properties.db2.jcc databaseName="AUDIT"
@@ -105,7 +100,6 @@ At this point, the database is configured, and you can start the server to test 
 
 1.  In the **Servers** tab, right-click the **opal-server** server, and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
 2.  Still in the **Servers** tab, right-click the **opal-server** server, and then click **Start** (or **Restart**).
-
     This action starts the server with audit logging to database enabled. The logging behavior is governed by the settings file at `opal-audit-database-example\fragment\WEB-INF\classes\DatabaseAudit.properties`, which specifies the names of the database schema and the tables that store the information. Typical data looks like this:
 
     |                             |                                                                                                                      |
@@ -132,9 +126,10 @@ To prepare your development version of i2 Analyze for production, you must edit 
 
 1.  If the development version of the **opal-server** is running, stop the server from Eclipse.
 2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
-3.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
-4.  Edit the `<war>` element that defines the contents of the `opal-services-is` application to include the common and specific fragments for the audit logging to database example.
+3.  Open the topology file that represents your deployment of i2 Analyze in an XML editor.
+    By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
 
+4.  Edit the `<war>` element that defines the contents of the `opal-services-is` application to include the common and specific fragments for the audit logging to database example.
     ``` pre
     <war context-root="opal" i2-data-source-id="infostore" name="opal-services-is" target="opal-services-is">
        <data-sources>
@@ -161,7 +156,6 @@ To prepare your development version of i2 Analyze for production, you must edit 
 
 5.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 6.  Run the following command to redeploy the `opal-server` application with all the changes that you made:
-
     ``` pre
     build -t deploy -s opal-server
     ```
@@ -187,9 +181,9 @@ At this stage, you are ready to copy the changes that you made to your developme
     2.  Add the same `<dataSource>` element that you added to the development version of the web server earlier in this procedure.
 
     To use a different database server in the production environment, you must use the SQL script to create the audit logging database in the new location. You must also modify the contents of the `<dataSource>` element accordingly.
+
 4.  On the production version of the platform, open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 5.  To redeploy the platform, run the following command:
-
     ``` pre
     setup -t deploy -s opal-server
     ```

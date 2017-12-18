@@ -8,7 +8,7 @@ Before you begin
 
 IBM i2 Analyze Developer Essentials has a longer set of requirements than the platform itself. Before you begin, you must have access to all of the following software:
 -   IBM Installation Manager 1.8
--   IBM i2 Analyze 4.1.5
+-   IBM i2 Analyze 4.1.6
 -   IBM DB2® 10.5 Express® Edition (or Express-C Edition) with spatial extender support.
 -   Web Server Plug-ins for IBM WebSphere® Application Server 8.5.5.4 or above
 -   IBM HTTP Server 8.5.5.4 or above
@@ -24,7 +24,9 @@ Procedure
 
 In the first part of the procedure, you use Developer Essentials to create a custom version of the deployment toolkit. The libraries and settings that you add enable development for i2 Analyze on a single computer.
 
-1.  Install IBM i2 Analyze 4.1.5 according to the instructions in the release notes. If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
+1.  Install IBM i2 Analyze 4.1.6 according to the instructions in the release notes.
+    If you accept all of the default settings, the deployment toolkit is installed to `C:\IBM\i2analyze`.
+
 2.  Follow the instructions in <a href="http://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.eia.install.doc/software_prerequisites.html" class="xref">Software prerequisites</a> to install all the other prerequisite software.
     Note: Developer Essentials uses IBM DB2 Express Edition, which does not create Windows groups when you install it. Record the details of the `db2admin` user that DB2 creates; you need them later in this procedure.
 
@@ -44,7 +46,6 @@ At this stage, configuration of the development version of i2 Analyze is complet
 
 1.  Open a command prompt as Administrator, and navigate to the `SDK\sdk-projects\master` directory.
 2.  Run the following command:
-
     ``` pre
     build -t deployExample
     ```
@@ -58,7 +59,9 @@ At this stage, configuration of the development version of i2 Analyze is complet
 
 Now, the development version of i2 Analyze is ready for use. The remaining steps configure the Eclipse development environment to interact with it.
 
-1.  Start Eclipse, and then open a web browser and navigate to <a href="https://developer.ibm.com/wasdev" class="uri" class="xref">https://developer.ibm.com/wasdev</a>. This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
+1.  Start Eclipse, and then open a web browser and navigate to <a href="https://developer.ibm.com/wasdev" class="uri" class="xref">https://developer.ibm.com/wasdev</a>.
+    This website contains tools and information for developing web applications for WebSphere Application Server Liberty Profile.
+
 2.  Click **Downloads** and then **Download Liberty in Eclipse** to open the tools download page. Follow the instructions to install the WebSphere Developer Tools by dragging the **Install** icon. Accept all of the default settings.
 3.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
 4.  If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE in Eclipse.
@@ -89,7 +92,9 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 
 8.  Create a server in Eclipse that represents the `opal-services-is` application by repeating the steps above, and creating a server named `opal-server`.
 9.  Start the development version of the `onyx-services-ar` application:
-    1.  Inside the **Servers** tab, double-click the **onyx-server** server. A new **onyx-server** tab opens in the top part of the Eclipse application window.
+    1.  Inside the **Servers** tab, double-click the **onyx-server** server.
+        A new **onyx-server** tab opens in the top part of the Eclipse application window.
+
     2.  Modify the settings in the **onyx-server** tab:
         -   Clear the **Run applications directly from the workspace** check box
         -   Click **Publishing** &gt; **Never publish automatically**
@@ -97,7 +102,8 @@ Now, the development version of i2 Analyze is ready for use. The remaining steps
 
         Note: These settings mean that in order for any changes that you make to become apparent, you must manually publish your changes before you restart the server.
 
-    3.  Back inside the **Servers** tab, start the server. When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
+    3.  Back inside the **Servers** tab, start the server.
+        When the startup process completes, you have a running instance of i2 Analyze that you can control through Eclipse.
 
 10. Repeat the previous step to start the development version of the `opal-services-is` application.
     Note: When you start the `opal-services-is` application, the **Console** tab displays error messages about problems with `SLF4J`. These errors are benign, and you can safely ignore them here.

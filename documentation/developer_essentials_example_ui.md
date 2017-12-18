@@ -27,11 +27,10 @@ Note: The user interface extension example is one part of a two-part project tha
 Procedure
 ---------
 
-The two-part project is structured so that the `onyx-da-subset-rest-example` project, which implements the custom functionality, refers to the `onyx-ui-subset-example` project. To demonstrate the custom user interface in isolation, you need to configure both projects.
+The two-part project is structured so that the `onyx-da-subset-rest-example` project, which implements the custom functionality, refers to the `onyx-ui-subset-example` project. To demonstrate the custom user interface, you need to configure both projects.
 
 1.  Open the configuration file for user interface extensions for the `onyx-da-subset-rest-example` project in a text editor: `C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-subset-rest-example\onyx-ui-project.properties`.
 2.  Ensure that the properties are set for your environment. If you followed the deployment instructions for Developer Essentials, the correct values look like this example:
-
     ``` pre
     ui.project.dir=C:/IBM/i2analyze/SDK/sdk-projects/onyx-ui-subset-example
     msbuild.exe.path=C:/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
@@ -41,27 +40,27 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 
 1.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 2.  Run the following command:
-
     ``` pre
     build -pr onyx-da-subset-rest-example -t unpackXap
     ```
 
     This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example` project.
 
-3.  In Visual Studio, click **Open Project** and open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\src\PortalExtensibilityExample.sln`. The Visual Studio solution contains two projects:
+3.  In Visual Studio, click **Open Project** and open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\src\PortalExtensibilityExample.sln`.
+    The Visual Studio solution contains two projects:
     -   `SubsettingExample` demonstrates how to add a custom HTML page and display it inside a custom tab.
     -   `CommandExtensibilityExample` demonstrates how to add and modify commands in the pop-up menus for items, and in the actions toolbar.
 
-4.  Build the solution. Visual Studio puts the DLL files that it generates in the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\build` directory.
-5.  Return to the command prompt, and run the following command to compile the new XAP file.
+4.  Build the solution.
+    Visual Studio puts the DLL files that it generates in the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\build` directory.
 
+5.  Return to the command prompt, and run the following command to compile the new XAP file.
     ``` pre
     build -pr onyx-da-subset-rest-example -t packXap
     ```
 
 6.  In Eclipse, ensure that the `onyx-server` is stopped.
 7.  At the command prompt, run the following command to redeploy the server:
-
     ``` pre
     build -t deploy -s onyx-server
     ```

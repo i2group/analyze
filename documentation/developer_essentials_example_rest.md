@@ -30,7 +30,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
     2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
-
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
@@ -45,7 +44,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 3.  If the development version of the `onyx-server` is running, stop the server from Eclipse.
 4.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 5.  Run the following command:
-
     ``` pre
     build -pr onyx-da-subset-rest-example -t addDaodDataSource
     ```
@@ -54,9 +52,10 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 
     When the command runs successfully, it modifies the topology file in your development version of i2 Analyze to add information about a new data source. By default, the data source gets the same name as the value that you provide to the `-pr` option.
 
-6.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
-7.  Edit the `<i2-data-source>` element that defines the new data access on-demand data source so that its attributes reflect the functionality of the example:
+6.  Open the topology file that represents your deployment of i2 Analyze in an XML editor.
+    By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
 
+7.  Edit the `<i2-data-source>` element that defines the new data access on-demand data source so that its attributes reflect the functionality of the example:
     ``` pre
     <i2-data-source id="daod1" ar="false">
        <DataSource ScsSearchSupported="false" EdrsGetContextSupported="false"
@@ -76,18 +75,15 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     For this data source, all of the attributes must be set to `false`, apart from `SesPresent`. This data source supports only a subset exploration service.
 
 8.  To redeploy i2 Analyze, run the following command:
-
     ``` pre
     build -t deploy -s onyx-server
     ```
 
 9.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\dsid` directory.
-
     The `dsid` directory is populated and maintained by the deployment scripts. This directory contains settings files for each of the data sources that `topology.xml` defines.
 
 10. Open the `dsid.<id>.properties` file for your data source in a text editor, where `<id>` is the value of the `id` attribute in the `<i2-data-source>` element for this data source in the topology file. Record the value of the `DataSourceId` property, which was generated when you redeployed i2 Analyze.
 11. Open `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\fragments\onyx-services-ar\ApolloClientSettings.xml` in a text editor. Add these lines to the end of the file, just before the `</settings>` closing tag:
-
     ``` pre
     <SubsettingExampleGenerationUILocation>
     http://localhost:9081/<DataSourceId>/SubsettingHtml.html</SubsettingExampleGenerationUILocation>
@@ -99,7 +95,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
 
 12. Replace `<DataSourceId>` in both values with the identifier that you copied from the `dsid.<id>.properties` file. Save and close `ApolloClientSettings.xml`.
 13. Redeploy i2 Analyze again by running the command that you used to deploy the platform originally:
-
     ``` pre
     build -t deploy -s onyx-server
     ```
@@ -141,7 +136,6 @@ These instructions assume that you have access to two instances of i2 Analyze:
 
 3.  On the production version of the platform, open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 4.  To redeploy the platform, run the following command:
-
     ``` pre
     setup -t deploy -s onyx-server
     ```

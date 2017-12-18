@@ -35,9 +35,14 @@ public final class FileAuditLogger
     }
 
     @Override
+    public boolean isRecordUploadAuditEnabled()
+    {
+        return true;
+    }
+
+    @Override
     public void logDefault(final IAuditEvent event)
     {
         mLogWriter.writeAuditLog(event.toString());
     }
-
 }

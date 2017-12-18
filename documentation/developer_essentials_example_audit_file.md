@@ -22,7 +22,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
     2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
-
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
@@ -59,7 +58,6 @@ Additionally, the audit logging to file example requires the `opal-audit-file-ex
 
 1.  Repeat the instructions again to import `C:\IBM\i2analyze\SDK\sdk-projects\opal-audit-file-example` into Eclipse.
 2.  In the `opal-services-is` project directory, navigate to `fragment\WEB-INF\classes\ApolloServerSettingsMandatory.properties`. Uncomment the class for the `IAuditLogger` implementation in this example project, and comment out the other settings.
-
     ``` pre
     #AuditLogger=com.example.audit.CSVAuditLogger
     #AuditLogger=com.example.audit.DatabaseAuditLogger
@@ -74,7 +72,6 @@ Additionally, the audit logging to file example requires the `opal-audit-file-ex
 
 4.  In the **Servers** tab, right-click **opal-server** and select **Clean** to ensure that the server and its representation in Eclipse are synchronized.
 5.  Still in the **Servers** tab, right-click the **opal-server**, and then click **Start** (or **Restart**).
-
     This action starts the server with audit logging to file enabled. The logging behavior is governed by the settings file at `opal-audit-file-example\fragment\WEB-INF\classes\FileAudit.properties`, which controls where the log files are saved, and how large they can be. Typical messages look like this one:
 
     ``` pre
@@ -95,9 +92,10 @@ To prepare your development version of i2 Analyze for production, you must edit 
 
 1.  If the development version of the `opal-server` is running, stop the server from Eclipse.
 2.  In Windows Explorer, navigate to the `C:\IBM\i2analyze\deploy-dev\wlp\usr\servers\opal-server\apps` directory. Delete the `opal-services-is.war` subdirectory, which contains the `opal-services-is` application.
-3.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
-4.  Edit the `<war>` element that defines the contents of the `opal-services-is` web application to include the common and specific fragments for the audit logging to file example.
+3.  Open the topology file that represents your deployment of i2 Analyze in an XML editor.
+    By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
 
+4.  Edit the `<war>` element that defines the contents of the `opal-services-is` web application to include the common and specific fragments for the audit logging to file example.
     ``` pre
     <war context-root="opal" i2-data-source-id="infostore" name="opal-services-is" target="opal-services-is">
        <data-sources>
@@ -124,7 +122,6 @@ To prepare your development version of i2 Analyze for production, you must edit 
 
 5.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 6.  Run the following command to redeploy the `opal-server` with all the changes that you made:
-
     ``` pre
     build -t deploy -s opal-server
     ```
@@ -147,7 +144,6 @@ At this stage, you are ready to copy the changes that you made to your developme
 
 3.  On the production version of the platform, open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 4.  To redeploy the platform, run the following command:
-
     ``` pre
     setup -t deploy -s opal-server
     ```

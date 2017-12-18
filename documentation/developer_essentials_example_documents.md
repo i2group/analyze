@@ -30,7 +30,6 @@ The examples in Developer Essentials require links to the i2 Analyze libraries, 
     1.  In Eclipse, click **Window** &gt; **Preferences** to open the Preferences window.
     2.  In the Preferences window, select **General** &gt; **Workspace** &gt; **Linked Resources**.
     3.  Add an entry to the **Defined path variables** list:
-
         -   Name: `TOOLKIT_ROOT`
         -   Location: `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit`
 
@@ -48,7 +47,6 @@ By its nature, the binary documents access example requires you to modify your d
 1.  If the development version of the `onyx-server` is running, stop the server from Eclipse.
 2.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
 3.  Run the following command:
-
     ``` pre
     build -pr onyx-da-subset-documents-example -t addDaodDataSource
     ```
@@ -59,9 +57,10 @@ By its nature, the binary documents access example requires you to modify your d
 
     The command also creates a Java library that maps from platform-compatible XML to Analysis Repository items. Unlike in the "data load direct" project, the `addDaodDataSource` target of the `build` command automatically determines what schema the deployed platform is using, and performs the necessary configuration.
 
-4.  Open the topology file that represents your deployment of i2 Analyze in an XML editor. By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
-5.  Edit the `<i2-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:
+4.  Open the topology file that represents your deployment of i2 Analyze in an XML editor.
+    By default, this file is at `C:\IBM\i2analyze\SDK\sdk-projects\master\build\toolkit\configuration\environment\topology.xml`.
 
+5.  Edit the `<i2-data-source>` element that defines the data access on-demand data source so that its attributes reflect the functionality of the example:
     ``` pre
     <i2-data-source id="daod1" ar="false">
        <DataSource ScsSearchSupported="true" EdrsGetContextSupported="false" 
@@ -79,7 +78,6 @@ By its nature, the binary documents access example requires you to modify your d
     Note: The first data access on-demand data source that you add to the topology file gets the identifier `daod1`. Later additions receive different identifiers.
 
 6.  To redeploy i2 Analyze, run the following command:
-
     ``` pre
     build -t deploy -s onyx-server
     ```
@@ -104,15 +102,14 @@ At this stage, the data access on-demand aspect of the example is complete. The 
     2.  Navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-da-subset-documents-example\fragment\documents` directory and copy the four `.jpg` files to the `C:\IBM\HTTPServer\htdocs\ImageStore` directory.
 
 2.  Navigate to the `C:\IBM\HTTPServer\conf` directory and open the `httpd.conf` configuration file in a text editor.
-3.  Comment out any lines in the file that begin with `Win32DisableAcceptEx`, and then save and close the file. For example:
-
+3.  Comment out any lines in the file that begin with `Win32DisableAcceptEx`, and then save and close the file.
+    For example:
     ``` pre
     # Win32DisableAcceptEx
     ```
 
 4.  Navigate to the `SDK\sdk-projects\master\build\toolkit\configuration\environment\proxy` directory, and open the `http-custom-rewrite-rules.txt` file in a text editor.
 5.  Add the following code between the `!Start_After_Rules!` and `!End_After_Rules!` lines:
-
     ``` pre
     RewriteCond %{QUERY_STRING} ^documentId=DA-documents/([^&]+)
     RewriteRule ^/apollo/services/download /ImageStore/%1? [PT]
@@ -127,7 +124,6 @@ At this stage, the data access on-demand aspect of the example is complete. The 
     Note: In the second `RewriteRule`, `onyx-da-subset-documents-example` is the name of the WAR file for this example. In the topology file, this name corresponds to the value of the `name` attribute of the `<war>` element in which the value of the `i2-data-source` attribute matches the name of the data source.
 
 6.  To redeploy i2 Analyze, run the following command:
-
     ``` pre
     build -t deploy -s onyx-server
     ```
@@ -155,7 +151,6 @@ These instructions assume that you have access to two instances of i2 Analyze:
 
 3.  On the production version of the platform, open a command prompt as Administrator, and navigate to the `toolkit\scripts` directory.
 4.  To redeploy the platform, run the following command:
-
     ``` pre
     setup -t deploy -s onyx-server
     ```

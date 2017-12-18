@@ -18,6 +18,7 @@ import com.i2group.disco.audit.IAuditEvent;
 import com.i2group.disco.audit.IExpandAuditEvent;
 import com.i2group.disco.audit.IQuickSearchAuditEvent;
 import com.i2group.disco.audit.IRecordRetrievalAuditEvent;
+import com.i2group.disco.audit.IRecordUploadAuditEvent;
 import com.i2group.disco.audit.IVisualQueryAuditEvent;
 import com.i2group.disco.audit.spi.IAuditLogger;
 
@@ -48,6 +49,8 @@ public final class CSVAuditLogger
     private static final String TYPE_VISUAL_QUERY = "VisualQuery";
     /** Description of Record Retrieval audit operations. */
     private static final String TYPE_RECORD_RETRIEVAL = "RecordRetrieval";
+    /** Description of Record Upload audit operations. */
+    private static final String TYPE_RECORD_UPLOAD = "RecordUpload";
 
     /** Utility for formatting CSV file entries, including escaping and quoting. */
     private static final CSVFormat CSV_FORMAT = CSVFormat.RFC4180;
@@ -97,6 +100,21 @@ public final class CSVAuditLogger
     {
         final String detail = "Records: " + event.getRecords();
         writeAuditLog(event, TYPE_RECORD_RETRIEVAL, detail);
+    }
+
+    @Override
+    public boolean isRecordUploadAuditEnabled() 
+    {
+        return true;
+    }
+
+    @Override
+    public void logRecordUpload(IRecordUploadAuditEvent event) 
+    {
+        final String detail = 
+                "Created Records: " + event.getCreatedRecords() + 
+                ", Modified Records: " + event.getModifiedRecords();
+        writeAuditLog(event, TYPE_RECORD_UPLOAD, detail);
     }
 
     /**

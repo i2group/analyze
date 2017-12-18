@@ -130,7 +130,7 @@ Second, it is possible that event replay is still in progress. In the console, c
 2014-03-19 17:32:30,041 - Replay complete.
 ```
 
-To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name/apps/logs/war-name/IBM_i2_Analysis_Repository.log`.
+To understand any other problem, you must look in the log. Refresh Eclipse, and examine the log file at `servers/server-name`/apps/logs/<span class="keyword parmname">war-name</span>/IBM\_i2\_Analysis\_Repository.log.
 
 Note: i2 Analyze error messages contain contributions from several parts of the system. Usually, the first and last sections of a message are the most useful.
 -   If the top-level error contains "`SystemResourceRuntimeException`", check the message for an explanation of the problem.
@@ -145,16 +145,16 @@ If a restart does not fix the problem, "Server Not Found" errors have three poss
 
 To determine whether an application failed, check the console log for the server, and the application log for the application that you were trying to use. If there is an exception, you must resolve the problem that caused it.
 
-To determine whether there is a problem with HTTP server configuration or application deployment, attempt to view the application directly in your web browser. For example, navigate to http://localhost:9082/*datasource-guid*. A correct deployment displays a basic HTML page.
+To determine whether there is a problem with HTTP server configuration or application deployment, attempt to view the application directly in your web browser. For example, navigate to http://localhost:9082/<span class="keyword parmname">datasource-guid</span>. A correct deployment displays a basic HTML page.
 
-Note: You can obtain *datasource-guid* by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
+Note: You can obtain <span class="keyword parmname">datasource-guid</span> by opening `server.xml`. In the `<webApplication>` element, the `war-name` attribute is human-readable, while the `context-root` attribute contains the GUID that you need.
 
 If you see HTTP error 404 instead of a basic HTML page, then the application is not deployed. In most cases, you can resolve the problem by following the procedure for clearing the **Run applications directly from the workspace** check box. However, you might have to intervene more forcefully:
 
 1.  In Eclipse, refresh the project that represents WebSphere Application Server Liberty Profile.
 2.  In that project, expand the `servers/i2analyze/apps` directory.
 
-    If the directory contains a `project-name.war.xml` file instead of a `project-name.war` subdirectory, then the application is not deployed.
+    If the directory contains a `project-name`.war.xml file instead of a `project-name`.war subdirectory, then the application is not deployed.
 
 3.  In the **Servers** tab, double-click the **i2analyze** server to open the **i2analyze** tab in the top part of the Eclipse application window.
 4.  Make certain of the **Run applications directly from the workspace** setting:
@@ -164,7 +164,7 @@ If you see HTTP error 404 instead of a basic HTML page, then the application is 
 
 If you see a basic HTML page, then the application is deployed but you have an HTTP server problem. When a simple restart does not work, you must check the server configuration:
 
-1.  In a text editor, open the file at `http-server-dir/Plugins/i2analyze/config/plugin-cfg.xml`.
+1.  In a text editor, open the file at `http-server-dir`/Plugins/i2analyze/config/plugin-cfg.xml.
 2.  Find the `<UriGroup Name="core_URIs">` element. Depending on the topology of your deployment, the contents look like this example:
 
     ``` pre
