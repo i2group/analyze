@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014, 2017 IBM Corp.
+Copyright (c) 2014, 2018 IBM Corp.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -9,7 +9,6 @@ http://www.eclipse.org/legal/epl-v10.html
 Contributors:
    IBM Corp - initial API and implementation and initial documentation
 -->
-
 <projectDescription>
 	<name>onyx-da-subset-filesystem-example</name>
 	<comment></comment>
@@ -33,31 +32,4 @@ Contributors:
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>autogen</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/scripts/gradle/build/autogenFragments/onyx-da-subset-filesystem-example</locationURI>
-		</link>
-		<link>
-			<name>common-fragment</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/common/WEB-INF</locationURI>
-		</link>
-		<link>
-			<name>modified-fragments</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/modified-fragments/onyx-da-subset-filesystem-example</locationURI>
-		</link>
-		<link>
-			<name>onyx-services-daod-target</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/targets/onyx-services-daod</locationURI>
-		</link>
-		<link>
-			<name>schema</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/onyx-da-subset-filesystem-example/WEB-INF/lib</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

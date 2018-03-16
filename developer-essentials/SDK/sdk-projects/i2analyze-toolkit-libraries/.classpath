@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2018 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/aopalliance.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/CoreToolkit.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-Core-3.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="shared-lib/apollo-data-acquisition-delps-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="shared-lib/apollo-data-acquisition-delps-service-jaxws-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="shared-lib/apollo-data-acquisition-delps-service-jaxws-autogen-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="shared-lib/apollo-data-acquisition-delps-service-sdk-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="shared-lib/apollo-data-acquisition-delps-web-services-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-event-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-adapter-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-common-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-connector-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-document-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-exceptions-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-loader-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-retrieval-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-retrieval-service-jaxws-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-retrieval-service-jaxws-autogen-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-retrieval-service-sdk-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-service-jaxb-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-services-common-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-services-web-services-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-source-initializer-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-creation-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-creation-service-jaxws-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-creation-service-jaxws-autogen-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-exploration-service-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-exploration-service-jaxws-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-exploration-service-jaxws-autogen-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-exploration-service-sdk-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-subset-locator-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-type-conversion-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-data-acquisition-external-data-xsd-creator-1.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-Read_Common-3.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/apollo-Search-3.1.18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="opal-services-is-lib/disco-api-9.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="client-bin/apollo-client-4.1.7.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/i2analyze-toolkit-libraries/javadoc/apollo-3.1.18.0-docs-sdk.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-collections-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-csv-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-exec-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-fileupload-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-io-2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-lang-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-logging-1.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/commons-validator-1.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/derby.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/groovy-2.4.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/groovy-json-2.4.13.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guava.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-assistedinject.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-grapher.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-jmx.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-jndi.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-multibindings.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-persist.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-spring.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-struts2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice-throwingproviders.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/guice.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/i2Utils.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/i2Tracing.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/icu4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/ilel-newton-2.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/javax.inject.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/kryo-2.24.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/log4j-1.2.17.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/mapdb-1.0.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/minlog-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/objenesis-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/reflectasm-1.09-shaded.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/tika-app-1.5-fixed.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/wink-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/wink-client-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/wink-common-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-analyzers-common-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-analyzers-icu-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-core-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-highlighter-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-join-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-memory-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-misc-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-queries-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-queryparser-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/lucene-suggest-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/solr-core-4.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="onyx-services-daod-lib/solr-solrj-4.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

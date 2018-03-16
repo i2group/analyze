@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014, 2017 IBM Corp.
+Copyright (c) 2014, 2018 IBM Corp.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -47,24 +47,9 @@ Contributors:
 	</natures>
 	<linkedResources>
 		<link>
-			<name>autogen</name>
+			<name>LibertyRuntimeDevApiSpec</name>
 			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/scripts/gradle/build/autogenFragments/onyx-da-subset-rest-example</locationURI>
-		</link>
-		<link>
-			<name>common-fragment</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/common/WEB-INF</locationURI>
-		</link>
-		<link>
-			<name>onyx-services-daod-target</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/targets/onyx-services-daod</locationURI>
-		</link>
-		<link>
-			<name>schema</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/configuration/fragments/onyx-da-subset-rest-example/WEB-INF/lib</locationURI>
+			<locationURI>WLP_HOME_DIR/dev/api/spec</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

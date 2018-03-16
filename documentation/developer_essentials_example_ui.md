@@ -6,7 +6,8 @@ i2 Analyze supports extensions that enable users to interact with external data 
 Before you begin
 ----------------
 
-The user interface extension example project requires the development version of i2 Analyze, prepared according to the Developer Essentials deployment instructions. The example also has some additional prerequisites:
+You must have a development deployment of i2 Analyze and a configured development environment. For more information, see <a href="developer_essentials_deploying.md" class="xref" title="IBM i2 Analyze Developer Essentials is a set of files and example projects that build on a standard i2 Analyze deployment. Preparing to use Developer Essentials involves installing and configuring it to work in a dedicated test environment.">Preparing to use IBM i2 Analyze Developer Essentials</a>.
+The example also has some additional prerequisites:
 -   Microsoft Visual Studio Express 2015 for Web
 -   Microsoft Silverlight 5 SDK
 -   Microsoft Silverlight 5 Developer Runtime
@@ -38,14 +39,8 @@ The two-part project is structured so that the `onyx-da-subset-rest-example` pro
 
 The procedure for extending the Intelligence Portal starts with extracting the files from the standard web application, which is the `Apollo.xap` file. Then, you add your custom functionality to the standard content before you recompile and redeploy a new version of the XAP file.
 
-1.  Open a command prompt as Administrator, and navigate to the `C:\IBM\i2analyze\SDK\sdk-projects\master` directory.
-2.  Run the following command:
-    ``` pre
-    build -pr onyx-da-subset-rest-example -t unpackXap
-    ```
-
-    This command extracts the assemblies from the existing `Apollo.xap` file to the `extractedxap` directory of the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example` project.
-
+1.  In the `SDK\sdk-projects\onyx-ui-subset-example` directory, create a directory named `extractedxap`.
+2.  Extract the contents of the `toolkit\application\targets\onyx-services-ar\Apollo.xap` file into the `extractedxap` directory that you created.
 3.  In Visual Studio, click **Open Project** and open the solution file at `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\src\PortalExtensibilityExample.sln`.
     The Visual Studio solution contains two projects:
     -   `SubsettingExample` demonstrates how to add a custom HTML page and display it inside a custom tab.
@@ -54,19 +49,30 @@ The procedure for extending the Intelligence Portal starts with extracting the f
 4.  Build the solution.
     Visual Studio puts the DLL files that it generates in the `C:\IBM\i2analyze\SDK\sdk-projects\onyx-ui-subset-example\build` directory.
 
-5.  Return to the command prompt, and run the following command to compile the new XAP file.
+5.  In the `toolkit\configuration\fragments` directory, create the `xap-supplement` directory.
+6.  Copy the contents of the `SDK\sdk-projects\onyx-ui-subset-example\build` directory to the `toolkit\configuration\fragments\xap-supplement` directory.
+7.  Navigate to the `toolkit\scripts` directory and run the following command to compile the new XAP file.
     ``` pre
-    build -pr onyx-da-subset-rest-example -t packXap
+    setup -t packXap -s onyx-server
     ```
 
-6.  In Eclipse, ensure that the `onyx-server` is stopped.
-7.  At the command prompt, run the following command to redeploy the server:
+8.  At the command prompt, run the following command to stop the server:
     ``` pre
-    build -t deploy -s onyx-server
+    setup -t stop -s onyx-server
     ```
 
-8.  Back in Eclipse, in the **Servers** tab, start the `onyx-server` server.
-9.  To test the platform, open a web browser and navigate to `http://localhost/apollo`. You can log in to the Intelligence Portal with any of the default users.
+9.  At the command prompt, run the following command to redeploy the server:
+    ``` pre
+    setup -t deploy -s onyx-server
+    ```
+
+10. Run the following command to start the i2 Analyze server:
+    ``` pre
+    setup -t start -s onyx-server
+    ```
+
+11. Use the Services application in Windows ( `services.msc` ) to restart IBM HTTP Server.
+12. To test the platform, open a web browser and navigate to `http://localhost/apollo`. You can log in to the Intelligence Portal with any of the default users.
 
 Results
 -------
@@ -75,7 +81,7 @@ The user interface extension example adds a **Subsetting** menu to the top of th
 
 Elsewhere in the user interface, the example adds commands that are named **Example command 1**, **Example command 2**, and **Example inserted command**. Depending on the current state of the application, the Intelligence Portal displays or hides these commands in different locations.
 
-**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze.">IBM i2 Analyze Developer Essentials</a>
+**Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze. Developer Essentials also includes API documentation and guides to deploying the software and the example projects.">IBM i2 Analyze Developer Essentials</a>
 
 ------------------------------------------------------------------------
 

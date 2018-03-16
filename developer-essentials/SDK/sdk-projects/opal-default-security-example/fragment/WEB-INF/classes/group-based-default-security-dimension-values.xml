@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright (c) 2014, 2018 IBM Corp.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   IBM Corp - initial API and implementation and initial documentation
+-->
+<!-- 
+    This is an example config file for the example implementation of 
+    com.i2group.disco.user.spi.IDefaultSecurityDimensionValuesProvider 
+    com.example.security.GroupBasedDefaultSecurityDimensionValuesProvider
+
+    An authenticated user's groups are compared to those configured here and
+    a unique set of default dimension values for each dimension are calculated.
+
+    A GroupPermissions with attribute UserGroup="*" applies to all users. 
+-->
+<GroupBasedDefaultSecurityDimensions>
+    <GroupPermissions UserGroup="Analyst">
+        <Permissions Dimension="SD-SC">
+            <Permission DimensionValue="OSI"/>
+            <Permission DimensionValue="HI"/>
+        </Permissions>
+        <Permissions Dimension="SD-SL">
+            <Permission DimensionValue="CON"/>
+        </Permissions>
+    </GroupPermissions>
+
+    <GroupPermissions UserGroup="Clerk">
+        <Permissions Dimension="SD-SC">
+            <Permission DimensionValue="OSI"/>
+        </Permissions>
+        <Permissions Dimension="SD-SL">
+            <Permission DimensionValue="UC"/>
+        </Permissions>
+    </GroupPermissions>
+
+    <GroupPermissions UserGroup="Controlled">
+        <Permissions Dimension="SD-SL">
+            <Permission DimensionValue="CON"/>
+        </Permissions>
+    </GroupPermissions>
+
+    <GroupPermissions UserGroup="Unclassified">
+        <Permissions Dimension="SD-SL">
+            <Permission DimensionValue="UC"/>
+        </Permissions>
+    </GroupPermissions>
+
+    <GroupPermissions UserGroup="Security Controller">
+        <Permissions Dimension="SD-GA">
+            <Permission DimensionValue="SC"/>
+        </Permissions>
+    </GroupPermissions>
+
+    <GroupPermissions UserGroup="*">
+        <Permissions Dimension="SD-SC">
+            <Permission DimensionValue="OSI"/>
+        </Permissions>
+        <Permissions Dimension="SD-SL">
+            <Permission DimensionValue="UC"/>
+        </Permissions>
+    </GroupPermissions>
+</GroupBasedDefaultSecurityDimensions>
