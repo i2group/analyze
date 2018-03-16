@@ -64,6 +64,7 @@ com.i2group.apollo.useractivitylogger
 com.i2group.disco.audit
 com.i2group.disco.audit.spi
 com.i2group.disco.infostore.importer
+com.i2group.disco.model
 com.i2group.disco.user
 com.i2group.disco.user.spi
 com.i2group.tracing
