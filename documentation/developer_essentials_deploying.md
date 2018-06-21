@@ -45,6 +45,6 @@ If IBM Java is not the default JRE on your computer, then you must configure it 
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2017.
+© Copyright IBM Corporation 2014, 2018.
 
 

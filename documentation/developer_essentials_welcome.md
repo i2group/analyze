@@ -38,6 +38,6 @@ Important: When you develop a custom extension, use it in a test deployment of i
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2017.
+© Copyright IBM Corporation 2014, 2018.
 
 

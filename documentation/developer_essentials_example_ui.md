@@ -85,6 +85,6 @@ Elsewhere in the user interface, the example adds commands that are named **Exam
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2017.
+© Copyright IBM Corporation 2014, 2018.
 
 

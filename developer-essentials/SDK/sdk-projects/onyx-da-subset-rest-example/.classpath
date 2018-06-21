@@ -15,7 +15,7 @@ Contributors:
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/onyx-da-example-common"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/i2analyze-toolkit-libraries"/>
-	<classpathentry kind="lib" path="LibertyRuntimeDevApiSpec/com.ibm.websphere.javaee.jaxrs.2.0_1.0.19.jar"/>
-	<classpathentry kind="lib" path="LibertyRuntimeDevApiSpec/com.ibm.websphere.javaee.servlet.3.1_1.0.19.jar"/>
+	<classpathentry kind="lib" path="LibertyRuntimeDevApiSpec/com.ibm.websphere.javaee.jaxrs.2.0_1.0.20.jar"/>
+	<classpathentry kind="lib" path="LibertyRuntimeDevApiSpec/com.ibm.websphere.javaee.servlet.3.1_1.0.20.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
