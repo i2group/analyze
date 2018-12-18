@@ -38,7 +38,7 @@ create table i2Audit.Expand (
     User_Security_Permissions VARCHAR(32672) NOT NULL,
     Client_User_Agent VARCHAR(1000) NOT NULL,
     Client_IP_Address VARCHAR(100) NOT NULL,
-    Seeds VARCHAR(32672) NOT NULL
+    Seeds CLOB(2147483647) NOT NULL
   )
   in Audit_TS;
 
@@ -63,7 +63,7 @@ create table i2Audit.Record_Retrieval (
     User_Security_Permissions VARCHAR(32672) NOT NULL,
     Client_User_Agent VARCHAR(1000) NOT NULL,
     Client_IP_Address VARCHAR(100) NOT NULL,
-    Records VARCHAR(32672) NOT NULL
+    Records CLOB(2147483647) NOT NULL
   )
   in Audit_TS;
 

@@ -11,14 +11,14 @@ You must have a deployment of i2 Analyze that you can use to develop and test th
 About this task
 ---------------
 
-The following procedure explains how to link the examples in Developer Essentials to the i2 Analyze libraries, how to modify the i2 Analyze user registry and a path variable, and how to set up IBM Java.
+The following procedure explains how to link the examples in Developer Essentials to the i2 Analyze libraries, how to modify the i2 Analyze user registry and a path variable, and how to set up Java.
 
 Procedure
 ---------
 
 1.  Extract i2 Analyze Developer Essentials, and copy the `SDK` directory into the `C:\IBM\i2analyze\` directory of your development deployment.
 2.  Copy the contents of the `SDK\wlp-overrides` directory to the `i2analyze\deploy\wlp` directory and accept any overwrites.
-    This action copies a modified user registry into the `wlp` directory for i2 Analyze to use. The registry contains additional users and groups that help to demonstrate the functionality of some of the examples.
+    This action copies a modified user registry into the `wlp` directory for i2 Analyze to use. The registry contains more users and groups that help to demonstrate the functions of some of the examples.
 
 To access the i2 Analyze libraries, the example projects rely on the presence of a variable named `TOOLKIT_ROOT` on the class path of your development environment. You can configure this in Eclipse by completing the following instructions.
 
@@ -35,11 +35,11 @@ The examples in Developer Essentials require links to the i2 Analyze libraries a
 3.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\i2analyze-toolkit-libraries` directory.
 4.  Click **Finish** to complete the import process.
 
-If IBM Java is not the default JRE on your computer, then you must configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
+The i2 Analyze application uses Oracle Java 8, and the Oracle JRE is installed by the i2 Analyze deployment toolkit. If the JRE that is installed by the toolkit is not the default JRE in your environment, then you can configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
 
 1.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
-2.  Use the Add JRE window to add a **Standard VM** named **IBM Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy\java`.
-3.  Select the check box that makes IBM Java the default JRE in Eclipse.
+2.  Use the Add JRE window to add a **Standard VM** named **Toolkit Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy\java`.
+3.  Select the check box that makes **Toolkit Java** the default JRE in Eclipse.
 
 **Parent topic:** <a href="developer_essentials_welcome.md" class="link" title="IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that enable development and deployment of custom extensions to i2 Analyze. Developer Essentials also includes API documentation and guides to deploying the software and the example projects.">IBM i2 Analyze Developer Essentials</a>
 
