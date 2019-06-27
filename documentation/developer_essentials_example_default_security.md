@@ -86,11 +86,13 @@ In this implementation, if a user is a member of more than one group, records re
               <data-source database-id="infostore" create-database="true"/>
            </data-sources>
            <file-store-ids>
+              <file-store-id value="chart-store"/>
               <file-store-id value="job-store"/>
               <file-store-id value="recordgroup-store"/>
            </file-store-ids>
            <fragments>
               <fragment name="opal-services-is"/>
+              <fragment name="opal-services"/>
               <fragment name="common"/>
               <fragment name="default-user-profile-provider"/>
               <fragment name="opal-default-security-example"/>
@@ -140,6 +142,6 @@ The result of following all of these steps is that your development and producti
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2018.
+© Copyright IBM Corporation 2014, 2019.
 
 

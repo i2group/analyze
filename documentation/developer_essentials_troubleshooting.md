@@ -44,6 +44,6 @@ To resolve this issue, ensure that the `WLP_HOME_DIR` is set to `C:\IBM\i2analyz
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2018.
+© Copyright IBM Corporation 2014, 2019.
 
 

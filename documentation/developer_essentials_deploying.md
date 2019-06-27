@@ -45,6 +45,6 @@ The i2 Analyze application uses Oracle Java 8, and the Oracle JRE is installed b
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2018.
+© Copyright IBM Corporation 2014, 2019.
 
 
