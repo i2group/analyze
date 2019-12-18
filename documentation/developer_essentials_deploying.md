@@ -35,7 +35,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries a
 3.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\i2analyze-toolkit-libraries` directory.
 4.  Click **Finish** to complete the import process.
 
-The i2 Analyze application uses Oracle Java 8, and the Oracle JRE is installed by the i2 Analyze deployment toolkit. If the JRE that is installed by the toolkit is not the default JRE in your environment, then you can configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
+The i2 Analyze application uses OpenJDK, and the OpenJDK is installed by the i2 Analyze deployment toolkit. If the JRE that is installed by the toolkit is not the default JRE in your environment, then you can configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
 
 1.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
 2.  Use the Add JRE window to add a **Standard VM** named **Toolkit Java**. The home directory for this JRE is `C:\IBM\i2analyze\deploy\java`.
