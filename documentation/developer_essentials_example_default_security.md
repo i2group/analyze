@@ -142,6 +142,6 @@ The result of following all of these steps is that your development and producti
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2019.
+© Copyright IBM Corporation 2014, 2020.
 
 

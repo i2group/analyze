@@ -133,6 +133,6 @@ After you develop and test a data access on-demand solution for i2 Analyze, the 
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2019.
+© Copyright IBM Corporation 2014, 2020.
 
 
