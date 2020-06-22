@@ -62,6 +62,7 @@ com.i2group.apollo.service.loggingapi
 com.i2group.apollo.useractivitylogger
 com.i2group.disco.audit
 com.i2group.disco.audit.spi
+com.i2group.disco.daod.spi
 com.i2group.disco.infostore.importer
 com.i2group.disco.model
 com.i2group.disco.user
