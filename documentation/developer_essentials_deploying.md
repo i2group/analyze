@@ -45,6 +45,6 @@ The i2 Analyze application uses OpenJDK, and the OpenJDK is installed by the i2 
 
 ------------------------------------------------------------------------
 
-© Copyright IBM Corporation 2014, 2019.
+© Copyright IBM Corporation 2014, 2020.
 
 
