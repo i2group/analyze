@@ -1,0 +1,254 @@
+html, body, blockquote {
+  font-family: 'IBM Plex Sans', Tahoma, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+blockquote {
+  border: none;
+  padding: 0px;
+  margin: 0px 0px 10px 15px;
+}
+code, kbd, pre, samp {
+  color: inherit;
+  font-family: 'IBM Plex Mono', Monaco, Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  word-break: normal;
+}
+code, kbd {
+  background-color: inherit;
+  padding: 0px 0px 0px 0px;
+}
+pre {
+  background-color: white;
+}
+
+/* General layout changes - anchor the left edge */
+.container, .container-fluid {
+  margin-left: 0px;
+  width: 100% !important;
+}
+.body-content {
+  padding-left: 0px;
+}
+.row {
+  margin-right: 0px;
+}
+.sideaffix {
+  bottom: auto;
+}
+.article {
+  margin-top: 60px;
+  margin-bottom: 105px;
+}
+.text-break {
+  word-break: normal;
+}
+
+/* Fix the relocated breadcrumbs */
+.article .navbar {
+  border: none;
+  background-color: inherit;
+}
+#breadcrumb {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.breadcrumb {
+  padding-bottom: 9px;
+}
+
+/* Carbon sizes and styles for headings */
+h1, .h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+h2, .h2 {
+  font-size: 24px;
+}
+h3, .h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  margin-top: 14px;
+}
+body {
+  color: white;
+}
+div {
+  color: black;
+}
+article h4 {
+  font-weight: 600;
+  margin-top: 20px;
+}
+b, optgroup, strong, strong code {
+  font-weight: 600;
+}
+h5 > strong {
+  font-weight: 400;
+}
+
+/* Carbonize tables, and apply some formatting fixes */
+th {
+  font-weight: 600;
+  background-color: #e0e0e0;
+}
+td {
+  min-width: 130px;
+}
+.table pre {
+  margin-top: 10px;
+  background-color: inherit;
+}
+.table-responsive {
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+  border: none;
+}
+.table-bordered {
+  margin-bottom: 0px;
+}
+.table-striped > tbody > tr {
+  background-color: #f4f4f4;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+  background-color: white;
+}
+
+/* Change link colors to match carbon */
+.toc .nav > li > a, .affix > ul > li > a, .affix > ul > li > a::before {
+  color: #393939;
+}
+.toc .nav > li > a:hover, .toc .nav > li > a:focus,
+.affix > ul > li > a:hover, .affix > ul > li > a:focus {
+  color: #4c4c4c;
+}
+button, a, .toc .nav > li.active > a, a code,
+.affix > ul > li.active > a, .affix > ul > li.active > a::before {
+  color: #0f62fe;
+  background-color: transparent;
+}
+button:hover, button:focus, a:hover, a:focus, a code:hover, a code:focus,
+.toc .nav > li.active > a:hover,
+.toc .nav > li.active > a:focus {
+  color: #0353e9;
+}
+button:hover, button:focus, a:hover, a:focus, a code:hover, a code:focus {
+  text-decoration: underline;
+}
+.affix > ul > li.active > a, .affix > ul > li.active > a::before {
+  font-weight: 600;
+}
+.sideaffix > div.contribution > ul > li > a.contribution-link {
+  color: white;
+  background-color: #0f62fe;
+  font-weight: 400;
+  width: 114px;
+}
+.sideaffix > div.contribution > ul > li > a.contribution-link:hover,
+.sideaffix > div.contribution > ul > li > a.contribution-link:focus {
+  background-color: #0353e9;
+}
+
+/* Carbon colors for notes */
+.alert-info {
+  color: black;
+  border-color: #0043ce;
+  background-color: #edf5ff;
+  border-radius: 0px;
+  border-width: 0px 0px 0px 4px;
+}
+.alert-info h5 {
+  font-weight: 600;
+  text-transform: none;
+}
+.alert-info h5::before {
+  color: #0043ce;
+}
+
+/* Fix the styling of the product name */
+.navbar-brand {
+  padding-top: 16px;
+  font-size: 17px;
+  color: white !important;
+}
+.nav.level1.navbar-nav {
+  display: none;
+}
+
+/* A change from the default "twistie" characters */
+.toc .nav > li.active > .expand-stub::before,
+.toc .nav > li.in > .expand-stub::before,
+.toc .nav > li.in.active > .expand-stub::before,
+.toc .nav > li.filtered > .expand-stub::before {
+  content: "\25BE";
+}
+.toc .nav > li > .expand-stub::before,
+.toc .nav > li.active > .expand-stub::before {
+  content: "\25B8";
+}
+
+/* Improve the appearance of the TOC */
+.toc ul.nav {
+  margin: 2px 0px 0px 13px;
+}
+.toc ul.nav.level1 {
+  margin-top: 0px;
+  margin-left: 3px;
+}
+.toc ul.nav > li {
+  margin-bottom: 2px;
+}
+.toc ul.nav.level1 > li {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+body .toc, .sidefilter, .sidetoc {
+  background-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+.sidefilter {
+  top: 50px;
+}
+#toc_filter_input {
+  padding-top: 0px;
+}
+.sidetoc {
+  top: 110px;
+}
+.sidetoc.shiftup {
+  bottom: 50px;
+}
+
+/* Even out topic subheadings */
+.decalaration, .fieldValue, .parameters, .returns {
+  color: black;
+}
+#fields, #properties, #methods, #extensionmethods, #events, #seealso {
+  font-weight: 400;
+  margin-top: 14px;
+}
+.affix h5 {
+  font-weight: 600;
+}
+
+/* Improve printed output so that content is legible */
+@media print {
+  .sidenav, a[href]::after {
+    display: none;
+  }
+}

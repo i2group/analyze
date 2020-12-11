@@ -1,0 +1,27 @@
+﻿- name: IBM i2 Analyze Developer Essentials
+  href: ../index.md
+  items:
+  - name: Preparing to use IBM i2 Analyze Developer Essentials
+    href: ../Preparing-to-use-IBM-i2-Analyze-Developer-Essentials.md
+  - name: Configuring the 'group-based default security dimension values' example project
+    href: ../Configuring-the-group-based-default-security-dimension-values-example-project.md
+  - name: Configuring the 'audit logging to file' example project
+    href: ../Configuring-the-audit-logging-to-file-example-project.md
+  - name: Configuring the 'audit logging to CSV' example project
+    href: ../Configuring-the-audit-logging-to-CSV-example-project.md
+  - name: Configuring the 'audit logging to database' example project
+    href: ../Configuring-the-audit-logging-to-database-example-project.md
+  - name: Configuring the 'data load direct' example project
+    href: ../Configuring-the-data-load-direct-example-project.md
+  - name: Configuring the 'data access on-demand' example project
+    href: ../Configuring-the-data-access-on-demand-example-project.md
+  - name: Configuring the 'binary documents access' example project
+    href: ../Configuring-the-binary-documents-access-example-project.md
+  - name: Configuring the 'user interface extension' example project
+    href: ../Configuring-the-user-interface-extension-example-project.md
+  - name: Configuring the 'two-phase data retrieval' example project
+    href: ../Configuring-the-two-phase-data-retrieval-example-project.md
+  - name: Debugging Developer Essentials
+    href: ../Debugging-Developer-Essentials.md
+  - name: Troubleshooting the example projects
+    href: ../Troubleshooting-the-example-projects.md
