@@ -1,0 +1,14 @@
+com.i2group.apollo.common.tracing
+com.i2group.apollo.model.data.transport
+com.i2group.apollo.model.security.dynamic.transport
+com.i2group.disco.audit
+com.i2group.disco.audit.spi
+com.i2group.disco.daod.spi
+com.i2group.disco.infostore.importer
+com.i2group.disco.model
+com.i2group.disco.schema
+com.i2group.disco.security
+com.i2group.disco.security.spi
+com.i2group.disco.user
+com.i2group.disco.user.spi
+com.i2group.tracing
