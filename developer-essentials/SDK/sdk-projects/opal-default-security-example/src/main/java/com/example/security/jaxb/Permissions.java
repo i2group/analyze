@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,16 +12,16 @@ package com.example.security.jaxb;
 
 import java.util.Collection;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * The default security dimension and {@link Permission}s.
  */
 @XmlType(name = "Permissions")
-public class Permissions
+public final class Permissions
 {
     @XmlAttribute(name = "Dimension", required = true)
     private String mDimension;
@@ -29,22 +29,36 @@ public class Permissions
     @XmlElement(name = "Permission", required = false)
     private Collection<Permission> mValues;
 
+    /**
+     * Default constructor.
+     */
     public Permissions()
     {
     }
 
-    public Permissions(String dimension, Collection<Permission> values)
+    /**
+     * Permission constructor.
+     * @param dimension The dimension.
+     * @param values The values.
+     */
+    public Permissions(final String dimension, final Collection<Permission> values)
     {
         mDimension = dimension;
         mValues = values;
     }
 
+    /**
+     * @return The dimensions.
+     */
     @XmlTransient
     public String getDimension()
     {
         return mDimension;
     }
 
+    /**
+     * @return The permissions.
+     */
     @XmlTransient
     public Collection<Permission> getPermissions()
     {

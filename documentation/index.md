@@ -4,7 +4,7 @@ IBM i2 Analyze Developer Essentials contains tools, libraries, and examples that
 
 The example projects extend deployments of i2 Analyze. The names of the example projects indicate which deployment type they apply to.
 
-The Developer Essentials examples are supplied in the form of Eclipse projects. You can use other editors to interact with the examples, but the instructions here assume that you are using Eclipse Neon (Eclipse IDE for Java™ EE Developers).
+The Developer Essentials examples are supplied in the form of Eclipse projects. You can use other editors to interact with the examples, but the instructions here assume that you are using a version of Eclipse IDE for Java™ EE Developers that supports Java 11.
 
 Most of the examples culminate in building a JAR file and copying it to the `toolkit` directory of an i2 Analyze deployment. After you modify the configuration, you redeploy i2 Analyze to add the example to the system. Other examples run separately from i2 Analyze as clients.
 

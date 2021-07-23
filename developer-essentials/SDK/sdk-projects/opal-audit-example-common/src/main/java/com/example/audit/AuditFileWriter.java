@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import java.util.logging.LogRecord;
  * This implementation provides a thin wrapper around {@link FileHandler} to do
  * the writing to file.
  */
-final class AuditFileWriter
+public final class AuditFileWriter
 {
     private final FileHandler mHandler;
 

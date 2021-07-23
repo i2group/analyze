@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 
 import com.example.security.jaxb.Permissions;
 import com.example.security.jaxb.GroupPermissions;
@@ -39,7 +39,7 @@ import com.i2group.utils.ResourceHelper;
  * on the current user group membership and the configuration supplied in an XML
  * file.
  */
-public final class GroupBasedDefaultSecurityDimensionValuesProvider implements IDefaultSecurityDimensionValuesProvider 
+public final class GroupBasedDefaultSecurityDimensionValuesProvider implements IDefaultSecurityDimensionValuesProvider
 {
     private static final String CONFIG_XML = "group-based-default-security-dimension-values.xml";
 
@@ -49,13 +49,13 @@ public final class GroupBasedDefaultSecurityDimensionValuesProvider implements I
     /**
      * Constructs a new {@link GroupBasedDefaultSecurityDimensionValuesProvider}.
      */
-    public GroupBasedDefaultSecurityDimensionValuesProvider() 
+    public GroupBasedDefaultSecurityDimensionValuesProvider()
     {
         // Extracts the group-based-default-security-dimension-values from the xml file into java instances.
         try
         {
             /*
-             * JAXBContext is only constructed once as the implementation of the 
+             * JAXBContext is only constructed once as the implementation of the
              * IDefaultSecurityDimensionValuesProvider is only constructed once.
              */
             mJAXBContext = JAXBContext.newInstance(GroupBasedDefaultSecurityDimensions.class);
@@ -69,14 +69,14 @@ public final class GroupBasedDefaultSecurityDimensionValuesProvider implements I
 
     @Override
     public Collection<com.i2group.disco.user.spi.DefaultSecurityDimension> getDefaultSecurityDimensions(
-            Principal principal, Set<String> userGroupsSet, SecuritySchema securitySchema) 
+            final Principal principal, final Set<String> userGroupsSet, final SecuritySchema securitySchema)
     {
         // Multimap which where key = dimensionId, value = set of valueIds.
         final Multimap<String, String> dimensionValueIdsByDimensionId = HashMultimap.create();
 
         // userGroups parsed in will contain the user groups that the user is associated with according to the schema.
         // Use the user groups to map which the dimensionValueIdsByDimensionId
-        final Collection<GroupPermissions> groupPermissionsCollection = 
+        final Collection<GroupPermissions> groupPermissionsCollection =
                 mGroupBasedDefaultSecurityDimensions.getGroupPermissions();
 
         for (GroupPermissions groupPermissions : groupPermissionsCollection)
@@ -96,13 +96,13 @@ public final class GroupBasedDefaultSecurityDimensionValuesProvider implements I
             }
         }
 
-        final Collection<com.i2group.disco.user.spi.DefaultSecurityDimension> defaultSecurityDimensions = 
+        Collection<com.i2group.disco.user.spi.DefaultSecurityDimension> defaultSecurityDimensions =
                 createOrderedDefaultSecurityDimension(securitySchema, dimensionValueIdsByDimensionId);
         return defaultSecurityDimensions;
     }
 
-    private void addDefaultValueIds(Multimap<String, String> dimensionValueIdsByDimensionId,
-        GroupPermissions groupPermissions)
+    private void addDefaultValueIds(final Multimap<String, String> dimensionValueIdsByDimensionId,
+        final GroupPermissions groupPermissions)
     {
         for (Permissions permissions : groupPermissions.getAllGroupPermissions())
         {
@@ -117,7 +117,7 @@ public final class GroupBasedDefaultSecurityDimensionValuesProvider implements I
      * Order {@link com.i2group.disco.user.spi.DefaultSecurityDimension}s and default dimension value ids in schema order.
      */
     private Collection<com.i2group.disco.user.spi.DefaultSecurityDimension> createOrderedDefaultSecurityDimension(
-            SecuritySchema securitySchema, Multimap<String, String> dimensionValueIdsByDimensionId)
+            final SecuritySchema securitySchema, final Multimap<String, String> dimensionValueIdsByDimensionId)
     {
         final Collection<Dimension> schemaDimensions = securitySchema.getSecurityDimensions().getAccessSecurityPermissions();
         final Collection<com.i2group.disco.user.spi.DefaultSecurityDimension> result = new ArrayList<>();
@@ -139,13 +139,13 @@ public final class GroupBasedDefaultSecurityDimensionValuesProvider implements I
                         orderedValueIds.add(schemaDimensionValueId);
                     }
                     // Only include 1 ordered dimension value id.
-                    if (isOrdered == true && !orderedValueIds.isEmpty())
+                    if (isOrdered && !orderedValueIds.isEmpty())
                     {
                         break;
                     }
                 }
 
-                final com.i2group.disco.user.spi.DefaultSecurityDimension defaultSecurityDimension = 
+                final com.i2group.disco.user.spi.DefaultSecurityDimension defaultSecurityDimension =
                         new com.i2group.disco.user.spi.DefaultSecurityDimension(dimensionId, orderedValueIds);
                 result.add(defaultSecurityDimension);
             }

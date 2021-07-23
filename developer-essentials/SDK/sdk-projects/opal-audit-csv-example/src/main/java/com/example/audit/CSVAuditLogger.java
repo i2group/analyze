@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import com.i2group.disco.audit.spi.IAuditLogger;
  * The fields within each CSV record are:
  * <ol>
  * <li>Timestamp</li>
- * <li>User ID</ul>
+ * <li>User ID</li>
  * <li>Audit operation</li>
  * <li>User security groups</li>
  * <li>Client IP address</li>
@@ -67,9 +67,9 @@ public final class CSVAuditLogger
     public void logQuickSearch(final IQuickSearchAuditEvent event)
     {
         final String detail =
-            "DataStores: " + event.getDataStores() +
-            ", Expression: " + event.getExpression() +
-            ", Filters: " + event.getFilters();
+            "DataStores: " + event.getDataStores()
+            + ", Expression: " + event.getExpression()
+            + ", Filters: " + event.getFilters();
         writeAuditLog(event, TYPE_QUICK_SEARCH, detail);
     }
 
@@ -84,8 +84,8 @@ public final class CSVAuditLogger
     public void logVisualQuery(final IVisualQueryAuditEvent event)
     {
         final String detail =
-            "DataStores: " + event.getDataStores() +
-            ", Query: " + event.getQuery();
+            "DataStores: " + event.getDataStores()
+            + ", Query: " + event.getQuery();
         writeAuditLog(event, TYPE_VISUAL_QUERY, detail);
     }
 
@@ -103,17 +103,16 @@ public final class CSVAuditLogger
     }
 
     @Override
-    public boolean isRecordCUDAuditEnabled() 
+    public boolean isRecordCUDAuditEnabled()
     {
         return true;
     }
 
     @Override
-    public void logRecordUpload(IRecordUploadAuditEvent event) 
+    public void logRecordUpload(final IRecordUploadAuditEvent event)
     {
-        final String detail = 
-                "Created Records: " + event.getCreatedRecords() + 
-                ", Modified Records: " + event.getModifiedRecords();
+        final String detail = "Created Records: " + event.getCreatedRecords()
+                + ", Modified Records: " + event.getModifiedRecords();
         writeAuditLog(event, TYPE_RECORD_UPLOAD, detail);
     }
 

@@ -77,11 +77,11 @@ After you add the project to your development environment, you can inspect the b
 
 5.  Navigate to the `toolkit\scripts` directory and run the following command to redeploy i2 Analyze with all the changes that you made:
 
-        setup -t deploy -s opal-server
+        setup -t deploy
 
 6.  Run the following command to start the i2 Analyze server:
 
-        setup -t start -s opal-server
+        setup -t start
 
     This action starts the server with audit logging to file enabled. The logging behavior is governed by the settings file at `opal-audit-file-example\fragment\WEB-INF\classes\FileAudit.properties`, which controls where the log files are saved and how large they can be. Typical messages look like this one:
 
@@ -90,7 +90,7 @@ After you add the project to your development environment, you can inspect the b
         Chrome/53.0.2785.116 Safari/537.36, Groups: [Analyst, Security Controller, Controlled],
         Operation: QuickSearch, DataStores: [InfoStore], Expression: green, Filters: []
 
-    The supplied version of `FileAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services-is` directory as the target for audit log files. The files are named `auditn.log`, where n is an integer that increments with each new file.
+    The supplied version of `FileAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services` directory as the target for audit log files. The files are named `auditn.log`, where n is an integer that increments with each new file.
 
 7.  Debug the `opal-audit-file-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
 

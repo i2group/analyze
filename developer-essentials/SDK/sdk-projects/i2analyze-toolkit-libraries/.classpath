@@ -13,20 +13,19 @@
     <classpathentry exported="true" kind="lib" path="shared-lib/commons-lang-2.6.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/commons-validator-1.4.1.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/cron4j-2.2.5.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/groovy-all-2.4.12-indy.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guava-19.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guice-assistedinject-4.1.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guice-multibindings-4.1.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guice-servlet-4.1.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guava-25.1-jre.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guice-assistedinject-4.2.2.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guice-multibindings-4.2.2.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guice-servlet-4.2.2.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/guice-throwing-providers-2.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guice-4.1.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guice-4.2.2.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/icu4j-61.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.6.3.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.6.3.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.6.3.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.6.3.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.6.3.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.6.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.12.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.12.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.12.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.12.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.12.3.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.12.3.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/javax.inject-1.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/kryo-3.0.0.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/mapdb-1.0.7.jar"/>
@@ -34,8 +33,9 @@
     <classpathentry exported="true" kind="lib" path="shared-lib/objenesis-2.1.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/reflectasm-1.10.0.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/slf4j-api-1.7.24.jar"/>
-    <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/solr-core-8.7.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/solr-solrj-8.7.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jakarta.xml.bind-api-3.0.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/solr-core-8.8.2.jar"/>
+    <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/solr-solrj-8.8.2.jar"/>
     <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/Daod.jar"/>
     <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/httpclient-4.5.12.jar"/>
     <classpathentry exported="true" kind="lib" path="opal-services-daod-lib/httpcore-4.4.13.jar"/>

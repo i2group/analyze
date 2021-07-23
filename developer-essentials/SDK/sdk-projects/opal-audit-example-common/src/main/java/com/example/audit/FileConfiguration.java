@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import java.util.Properties;
 /**
  * Provides access to the configuration for auditing to a file.
  */
-final class FileConfiguration
+public final class FileConfiguration
 {
     /** Property specifying the log file name. */
     private static final String PROP_FILE_NAME = "fileName";
@@ -41,7 +41,7 @@ final class FileConfiguration
 
     /**
      * Constructor. Reads configuration for file writing from the specified properties file.
-     * @param configFileName
+     * @param configFileName The configuration filename.
      * @throws RuntimeException
      *             if the configuration file is not found or required properties
      *             are not defined.

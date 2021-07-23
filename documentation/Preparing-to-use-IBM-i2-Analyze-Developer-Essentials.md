@@ -4,7 +4,7 @@ IBM® i2® Analyze Developer Essentials is a set of files and example projects t
 
 ## Before you begin
 
-You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use. For more information about creating a deployment, see <a href="https://www.ibm.com/support/knowledgecenter/SSXVXZ/com.ibm.i2.landing.doc/eia_deployment.html" class="xref" title="(Opens in a new tab or window)">Installing and deploying IBM i2 Enterprise Insight Analysis</a>.
+You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use. For more information about creating a deployment, see <a href="https://www.ibm.com/docs/en/i2-analyze/latest?topic=deploying" class="xref" title="(Opens in a new tab or window)">Deploying i2 Analyze</a>.
 
 ## About this task
 

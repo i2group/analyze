@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ final class ConfigurationLoader
      * @throws UncheckedIOException
      *             on error reading from the configuration file.
      */
-    public static final Properties loadWithRequiredProperties(final String configFileName, final Collection<String> requiredProperties)
+    public static Properties loadWithRequiredProperties(final String configFileName, final Collection<String> requiredProperties)
     {
         final ConfigurationLoader loader = new ConfigurationLoader(configFileName);
         loader.assertRequiredPropertiesPresent(requiredProperties);
@@ -62,7 +62,7 @@ final class ConfigurationLoader
 
     private Properties readPropertiesFromFile()
     {
-        try (final InputStream config = Thread.currentThread().getContextClassLoader().getResourceAsStream(mConfigFileName))
+        try (InputStream config = Thread.currentThread().getContextClassLoader().getResourceAsStream(mConfigFileName))
         {
             return readPropertiesFromStream(config);
         }

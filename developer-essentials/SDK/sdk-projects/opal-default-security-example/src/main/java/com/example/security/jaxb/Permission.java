@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,30 +10,41 @@
  */
 package com.example.security.jaxb;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * The default dimension value.
  */
 @XmlType(name = "Permission")
-public class Permission
+public final class Permission
 {
     @XmlAttribute(name = "DimensionValue", required = true)
     private String mDimensionValue;
 
+    /**
+     * Default constructor.
+     */
     public Permission()
     {
     }
 
-    public Permission(String dimensionValue)
+    /**
+     * Permission constructor.
+     * @param dimensionValue The dimension value.
+     */
+    public Permission(final String dimensionValue)
     {
         mDimensionValue = dimensionValue;
     }
 
+    /**
+     * @return The dimension value.
+     */
     @XmlTransient
-    public String getDimensionValue(){
+    public String getDimensionValue()
+    {
         return mDimensionValue;
     }
 }

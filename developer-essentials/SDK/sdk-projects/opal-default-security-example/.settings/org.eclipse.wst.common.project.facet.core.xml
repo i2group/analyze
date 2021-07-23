@@ -13,6 +13,6 @@ Contributors:
 <faceted-project>
   <fixed facet="java"/>
   <fixed facet="jst.utility"/>
-  <installed facet="java" version="1.8"/>
+  <installed facet="java" version="11"/>
   <installed facet="jst.utility" version="1.0"/>
 </faceted-project>

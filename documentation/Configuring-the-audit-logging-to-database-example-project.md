@@ -106,11 +106,11 @@ After you add the project to your development environment, you can inspect the b
 
 5.  Navigate to the `toolkit\scripts` directory and run the following command to redeploy i2 Analyze with all the changes that you made:
 
-        setup -t deploy -s opal-server
+        setup -t deploy
 
 6.  Run the following command to start the i2 Analyze server:
 
-        setup -t start -s opal-server
+        setup -t start
 
     This action starts the server with audit logging to database enabled. The logging behavior is governed by the settings file at `opal-audit-database-example\fragment\WEB-INF\classes\DatabaseAudit.properties`, which specifies the names of the database schema and the tables that store the information. Typical data looks like this:
 

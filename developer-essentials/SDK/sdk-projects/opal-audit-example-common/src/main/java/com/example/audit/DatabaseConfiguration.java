@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2020 IBM Corp.
+ * Copyright (c) 2014, 2021 IBM Corp.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import java.util.Properties;
 /**
  * Provides access to the configuration for auditing to a database.
  */
-final class DatabaseConfiguration
+public final class DatabaseConfiguration
 {
     /** Property specifying the JNDI name of the data source to use for writing audit. */
     private static final String PROP_DATA_SOURCE_NAME = "dataSource";
@@ -33,7 +33,7 @@ final class DatabaseConfiguration
     private static final String PROP_VISUAL_QUERY_TABLE = "visualQueryTable";
     /** Property specifying the table used to store record retrieval events. */
     private static final String PROP_RECORD_RETIEVAL_TABLE = "recordRetrievalTable";
-    
+
     private static final Collection<String> REQUIRED_PROPERTIES = Collections.unmodifiableCollection(Arrays.asList(
         PROP_DATA_SOURCE_NAME,
         PROP_SCHEMA_NAME,
@@ -42,14 +42,14 @@ final class DatabaseConfiguration
         PROP_VISUAL_QUERY_TABLE,
         PROP_RECORD_RETIEVAL_TABLE
         ));
-    
+
     private final String mDataSourceName;
     private final String mSchemaName;
     private final String mQuickSearchTableName;
     private final String mExpandTableName;
     private final String mVisualQueryTableName;
     private final String mRecordRetrievalTableName;
-    
+
     /**
      * Constructor. Loads configuration from the specified properties file.
      * @param configFileName properties file name.
@@ -62,7 +62,7 @@ final class DatabaseConfiguration
     public DatabaseConfiguration(final String configFileName)
     {
         final Properties configProps = ConfigurationLoader.loadWithRequiredProperties(configFileName, REQUIRED_PROPERTIES);
-        
+
         // Get property values
         mDataSourceName = configProps.getProperty(PROP_DATA_SOURCE_NAME);
         mSchemaName = configProps.getProperty(PROP_SCHEMA_NAME);
@@ -80,7 +80,7 @@ final class DatabaseConfiguration
     {
         return mDataSourceName;
     }
-    
+
     /**
      * Get the database schema where are audit tables are written.
      * @return schema name.
@@ -125,5 +125,5 @@ final class DatabaseConfiguration
     {
         return mRecordRetrievalTableName;
     }
-    
+
 }

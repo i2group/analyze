@@ -115,11 +115,11 @@ In this implementation, if a user is a member of more than one group, records re
 
 5.  Navigate to the `toolkit\scripts` directory and run the following command to redeploy i2 Analyze with all the changes that you made:
 
-        setup -t deploy -s opal-server
+        setup -t deploy
 
 6.  Run the following command to start the i2 Analyze server:
 
-        setup -t start -s opal-server
+        setup -t start
 
     When i2 Analyze is started, connect to the Information Store using Analyst's Notebook Premium. Log in and create items as different users, and observe the default security dimension values that the records receive.
 

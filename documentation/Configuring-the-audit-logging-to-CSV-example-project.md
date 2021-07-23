@@ -78,11 +78,11 @@ After you add the project to your development environment, you can inspect the b
 
 5.  Navigate to the `toolkit\scripts` directory and run the following command to redeploy i2 Analyze with all the changes that you made:
 
-        setup -t deploy -s opal-server
+        setup -t deploy
 
 6.  Run the following command to start the i2 Analyze server:
 
-        setup -t start -s opal-server
+        setup -t start
 
     This action starts the server with audit logging to CSV enabled. The logging behavior is governed by the settings file at `opal-audit-csv-example\fragment\WEB-INF\classes\CSVAudit.properties`, which controls where the CSV files are saved, and how large they can be. Typical messages look like this one:
 
