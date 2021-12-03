@@ -26,8 +26,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":8,"i1":4,"i2":4,"i3":1,"i4":1,"i5":2,"i6":4,"i7":4,"i8":32,"i9":32,"i10":32,"i11":16,"i12":16,"i13":8};
-var tabs = {65535:["t0","All Packages"],1:["t1","Auditing"],2:["t2","External search"],4:["t4","Helper classes"],8:["t8","Tracing and debugging"],16:["t16","User management"],32:["t32","Item type security"]};
+var data = {"i0":8,"i1":4,"i2":4,"i3":64,"i4":1,"i5":1,"i6":2,"i7":4,"i8":4,"i9":32,"i10":32,"i11":32,"i12":64,"i13":16,"i14":16,"i15":8};
+var tabs = {65535:["t0","All Packages"],1:["t1","Auditing"],2:["t2","External search"],4:["t4","Helper classes"],8:["t8","Tracing and debugging"],16:["t16","User management"],32:["t32","Item type security"],64:["t64","Other Packages"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -106,7 +106,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <table class="overviewSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Packages</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Auditing</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">External search</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(4);">Helper classes</a></span><span class="tabEnd">&nbsp;</span></span><span id="t8" class="tableTab"><span><a href="javascript:show(8);">Tracing and debugging</a></span><span class="tabEnd">&nbsp;</span></span><span id="t16" class="tableTab"><span><a href="javascript:show(16);">User management</a></span><span class="tabEnd">&nbsp;</span></span><span id="t32" class="tableTab"><span><a href="javascript:show(32);">Item type security</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Packages</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Auditing</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">External search</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(4);">Helper classes</a></span><span class="tabEnd">&nbsp;</span></span><span id="t8" class="tableTab"><span><a href="javascript:show(8);">Tracing and debugging</a></span><span class="tabEnd">&nbsp;</span></span><span id="t16" class="tableTab"><span><a href="javascript:show(16);">User management</a></span><span class="tabEnd">&nbsp;</span></span><span id="t32" class="tableTab"><span><a href="javascript:show(32);">Item type security</a></span><span class="tabEnd">&nbsp;</span></span><span id="t64" class="tableTab"><span><a href="javascript:show(64);">Other Packages</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Package</th>
 <th class="colLast" scope="col">Description</th>
@@ -132,46 +132,52 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor" id="i3">
+<th class="colFirst" scope="row"><a href="com/i2group/disco/alerts/package-summary.html">com.i2group.disco.alerts</a></th>
+<td class="colLast">
+<div class="block">Contains interfaces for creating alerts that can be sent to i2 Analyze users.</div>
+</td>
+</tr>
+<tr class="altColor" id="i4">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></th>
 <td class="colLast">
 <div class="block">Contains interfaces for retrieving information about operations performed against the Information
  Store, and the users who performed them.</div>
 </td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="rowColor" id="i5">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/audit/spi/package-summary.html">com.i2group.disco.audit.spi</a></th>
 <td class="colLast">
 <div class="block">Contains a custom extension point relating to the provision of audit logging for operations
  against the Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/daod/spi/package-summary.html">com.i2group.disco.daod.spi</a></th>
 <td class="colLast">
 <div class="block">Contains a custom extension point for investigating and amending the contents of client requests
  to connectors through the i2 Connect gateway.</div>
 </td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="rowColor" id="i7">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/infostore/importer/package-summary.html">com.i2group.disco.infostore.importer</a></th>
 <td class="colLast">
 <div class="block">Contains utility classes that generate well-formed origin and provenance values for use during
  Information Store and Solr index ingestion.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="altColor" id="i8">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/model/package-summary.html">com.i2group.disco.model</a></th>
 <td class="colLast">
 <div class="block">Contains a class that represents an i2 Analyze origin identifier.</div>
 </td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="rowColor" id="i9">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/schema/package-summary.html">com.i2group.disco.schema</a></th>
 <td class="colLast">
 <div class="block">Contains interfaces for retrieving information about the types in the i2 Analyze schema.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="altColor" id="i10">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/security/package-summary.html">com.i2group.disco.security</a></th>
 <td class="colLast">
 <div class="block">Contains interfaces that allow implementations of <a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a>
@@ -179,28 +185,34 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  i2 Analyze security schema.</div>
 </td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="rowColor" id="i11">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/security/spi/package-summary.html">com.i2group.disco.security.spi</a></th>
 <td class="colLast">
 <div class="block">Contains a custom extension point that clients can use to provide their own implementations of
  <a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i11">
+<tr class="altColor" id="i12">
+<th class="colFirst" scope="row"><a href="com/i2group/disco/task/spi/package-summary.html">com.i2group.disco.task.spi</a></th>
+<td class="colLast">
+<div class="block">Contains a custom extension point for creating tasks that an i2 Analyze server can execute on a schedule.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i13">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/user/package-summary.html">com.i2group.disco.user</a></th>
 <td class="colLast">
 <div class="block">Contains an implementation of a user groups provider that retrieves the necessary information
  from WebSphere.</div>
 </td>
 </tr>
-<tr class="altColor" id="i12">
+<tr class="altColor" id="i14">
 <th class="colFirst" scope="row"><a href="com/i2group/disco/user/spi/package-summary.html">com.i2group.disco.user.spi</a></th>
 <td class="colLast">
 <div class="block">Contains custom extension points relating to user group provision, and the per-user allocation of
  default security dimension values for user-created records.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i13">
+<tr class="rowColor" id="i15">
 <th class="colFirst" scope="row"><a href="com/i2group/tracing/package-summary.html">com.i2group.tracing</a></th>
 <td class="colLast">
 <div class="block">Contains an interface that provides access to log4j tracing functionality.</div>

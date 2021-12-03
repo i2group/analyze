@@ -98,6 +98,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="com/i2group/apollo/common/tracing/package-tree.html">com.i2group.apollo.common.tracing</a>, </li>
 <li><a href="com/i2group/apollo/model/data/transport/package-tree.html">com.i2group.apollo.model.data.transport</a>, </li>
 <li><a href="com/i2group/apollo/model/security/dynamic/transport/package-tree.html">com.i2group.apollo.model.security.dynamic.transport</a>, </li>
+<li><a href="com/i2group/disco/alerts/package-tree.html">com.i2group.disco.alerts</a>, </li>
 <li><a href="com/i2group/disco/audit/package-tree.html">com.i2group.disco.audit</a>, </li>
 <li><a href="com/i2group/disco/audit/spi/package-tree.html">com.i2group.disco.audit.spi</a>, </li>
 <li><a href="com/i2group/disco/daod/spi/package-tree.html">com.i2group.disco.daod.spi</a>, </li>
@@ -106,6 +107,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="com/i2group/disco/schema/package-tree.html">com.i2group.disco.schema</a>, </li>
 <li><a href="com/i2group/disco/security/package-tree.html">com.i2group.disco.security</a>, </li>
 <li><a href="com/i2group/disco/security/spi/package-tree.html">com.i2group.disco.security.spi</a>, </li>
+<li><a href="com/i2group/disco/task/spi/package-tree.html">com.i2group.disco.task.spi</a>, </li>
 <li><a href="com/i2group/disco/user/package-tree.html">com.i2group.disco.user</a>, </li>
 <li><a href="com/i2group/disco/user/spi/package-tree.html">com.i2group.disco.user.spi</a>, </li>
 <li><a href="com/i2group/tracing/package-tree.html">com.i2group.tracing</a></li>
@@ -125,8 +127,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">com.i2group.apollo.model.security.dynamic.transport.<a href="com/i2group/apollo/model/security/dynamic/transport/Permission.html" title="class in com.i2group.apollo.model.security.dynamic.transport"><span class="typeNameLink">Permission</span></a></li>
 <li class="circle">com.i2group.apollo.model.security.dynamic.transport.<a href="com/i2group/apollo/model/security/dynamic/transport/Permissions.html" title="class in com.i2group.apollo.model.security.dynamic.transport"><span class="typeNameLink">Permissions</span></a></li>
 <li class="circle">com.i2group.disco.user.<a href="com/i2group/disco/user/PropertyBasedDefaultSecurityDimensionValuesProvider.html" title="class in com.i2group.disco.user"><span class="typeNameLink">PropertyBasedDefaultSecurityDimensionValuesProvider</span></a> (implements com.i2group.disco.user.spi.<a href="com/i2group/disco/user/spi/IDefaultSecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.user.spi">IDefaultSecurityDimensionValuesProvider</a>)</li>
+<li class="circle">com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/SendTo.html" title="class in com.i2group.disco.alerts"><span class="typeNameLink">SendTo</span></a> (implements com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a>)</li>
 <li class="circle">com.i2group.disco.infostore.importer.<a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.html" title="class in com.i2group.disco.infostore.importer"><span class="typeNameLink">TemplateReferenceExtractor</span></a></li>
 <li class="circle">com.i2group.disco.infostore.importer.<a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.ColumnReferenceOrConstantValue.html" title="class in com.i2group.disco.infostore.importer"><span class="typeNameLink">TemplateReferenceExtractor.ColumnReferenceOrConstantValue</span></a></li>
+<li class="circle">java.lang.Throwable (implements java.io.Serializable)
+<ul>
+<li class="circle">java.lang.Exception
+<ul>
+<li class="circle">java.lang.RuntimeException
+<ul>
+<li class="circle">com.i2group.disco.task.spi.<a href="com/i2group/disco/task/spi/CustomTaskFailedException.html" title="class in com.i2group.disco.task.spi"><span class="typeNameLink">CustomTaskFailedException</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="circle">com.i2group.disco.user.<a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user"><span class="typeNameLink">WebSphereUserGroupsProvider</span></a> (implements com.i2group.disco.user.spi.<a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi">IUserGroupsProvider</a>)</li>
 </ul>
 </li>
@@ -135,6 +151,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <section role="region">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li class="circle">java.lang.AutoCloseable
+<ul>
+<li class="circle">java.io.Closeable
+<ul>
+<li class="circle">com.i2group.disco.task.spi.<a href="com/i2group/disco/task/spi/IScheduledTask.html" title="interface in com.i2group.disco.task.spi"><span class="typeNameLink">IScheduledTask</span></a> (also extends java.lang.Runnable)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="circle">com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/IAlertManager.html" title="interface in com.i2group.disco.alerts"><span class="typeNameLink">IAlertManager</span></a></li>
+<li class="circle">com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/IAlertManager.IAlertCreationResult.html" title="interface in com.i2group.disco.alerts"><span class="typeNameLink">IAlertManager.IAlertCreationResult</span></a></li>
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/IAuditEvent.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">IAuditEvent</span></a>
 <ul>
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartCreateAuditEvent.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">IChartCreateAuditEvent</span></a></li>
@@ -177,6 +204,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/IUploadRecordInfo.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">IUploadRecordInfo</span></a></li>
 </ul>
 </li>
+<li class="circle">com.i2group.disco.task.spi.<a href="com/i2group/disco/task/spi/IScheduledTask.IScheduledTaskObjects.html" title="interface in com.i2group.disco.task.spi"><span class="typeNameLink">IScheduledTask.IScheduledTaskObjects</span></a></li>
+<li class="circle">com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/ISendTo.html" title="interface in com.i2group.disco.alerts"><span class="typeNameLink">ISendTo</span></a></li>
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/ISourceReference.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">ISourceReference</span></a>
 <ul>
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/ISourceReferenceAddition.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">ISourceReferenceAddition</span></a></li>
@@ -190,6 +219,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="circle">com.i2group.disco.security.<a href="com/i2group/disco/security/IUserInformation.html" title="interface in com.i2group.disco.security"><span class="typeNameLink">IUserInformation</span></a></li>
 <li class="circle">com.i2group.disco.security.spi.<a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.html" title="interface in com.i2group.disco.security.spi"><span class="typeNameLink">IUserItemTypeAccessResolverProvider</span></a></li>
 <li class="circle">com.i2group.disco.security.spi.<a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><span class="typeNameLink">IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</span></a></li>
+<li class="circle">java.lang.Runnable
+<ul>
+<li class="circle">com.i2group.disco.task.spi.<a href="com/i2group/disco/task/spi/IScheduledTask.html" title="interface in com.i2group.disco.task.spi"><span class="typeNameLink">IScheduledTask</span></a> (also extends java.io.Closeable)</li>
+</ul>
+</li>
 </ul>
 </section>
 <section role="region">
@@ -199,6 +233,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
 <ul>
+<li class="circle">com.i2group.disco.alerts.<a href="com/i2group/disco/alerts/AlertIcon.html" title="enum in com.i2group.disco.alerts"><span class="typeNameLink">AlertIcon</span></a></li>
 <li class="circle">com.i2group.disco.audit.<a href="com/i2group/disco/audit/DownloadType.html" title="enum in com.i2group.disco.audit"><span class="typeNameLink">DownloadType</span></a></li>
 <li class="circle">com.i2group.apollo.model.data.transport.<a href="com/i2group/apollo/model/data/transport/SecurityAccessLevel.html" title="enum in com.i2group.apollo.model.data.transport"><span class="typeNameLink">SecurityAccessLevel</span></a></li>
 <li class="circle">com.i2group.disco.security.<a href="com/i2group/disco/security/TypeAccess.html" title="enum in com.i2group.disco.security"><span class="typeNameLink">TypeAccess</span></a></li>
