@@ -1,0 +1,17 @@
+*.class
+*/out
+*\out
+*/temp
+*\temp
+*.bom
+*.dsh
+*.opt
+*.out
+*.pdf
+*.summary
+*.tmlist
+*.tminfo
+*.log*
+*.project
+/bin
+/obj
