@@ -4,6 +4,7 @@ com.i2group.apollo.model.security.dynamic.transport
 com.i2group.disco.alerts
 com.i2group.disco.audit
 com.i2group.disco.audit.spi
+com.i2group.disco.chartstore
 com.i2group.disco.daod.spi
 com.i2group.disco.infostore.importer
 com.i2group.disco.model
