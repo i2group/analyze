@@ -4,7 +4,7 @@ i2 Analyze Developer Essentials is a set of files and example projects that buil
 
 ## Before you begin
 
-You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use. For more information about creating a deployment, see <a href="https://docs.i2group.com/analyze/latest?topic=deploying" class="xref" title="(Opens in a new tab or window)">Deploying i2 Analyze</a>.
+You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use. For more information about creating a deployment, see <a href="https://docs.i2group.com/analyze/analyze_deployment.html" class="xref" title="(Opens in a new tab or window)">Deploying i2 Analyze</a>.
 
 ## About this task
 
