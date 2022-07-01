@@ -1,10 +1,10 @@
 # Configuring the 'audit logging to file' example project
 
-In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, IBM provides the `opal-audit-file-example` example, which writes audit logging information to a log file.
+In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, i2 provides the `opal-audit-file-example` example, which writes audit logging information to a log file.
 
 ## Before you begin
 
-You must have a development deployment of i2 Analyze and a configured development environment. For more information, see [Preparing to use IBM i2 Analyze Developer Essentials](Preparing-to-use-IBM-i2-Analyze-Developer-Essentials.md).
+You must have a development deployment of i2 Analyze and a configured development environment. For more information, see [Preparing to use i2 Analyze Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
 
 ## About this task
 
@@ -18,7 +18,7 @@ The audit logging examples in Developer Essentials require the contents of the `
 
 2.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
 
-3.  Click **Browse** at the top of the window, and then select the `C:\IBM\i2analyze\SDK\sdk-projects\opal-audit-example-common` directory.
+3.  Click **Browse** at the top of the window, and then select the `C:\i2\i2analyze\SDK\sdk-projects\opal-audit-example-common` directory.
 
 4.  Click **Finish** to complete the import process.
 
@@ -64,7 +64,7 @@ After you add the project to your development environment, you can inspect the b
                </fragments>
                <solr-collection-ids>
                   <solr-collection-id collection-id="main_index"
-                                      data-dir="C:/IBM/i2analyze/data/solr"
+                                      data-dir="C:/i2/i2analyze/data/solr"
                                       cluster-id="is_cluster"/>
                </solr-collection-ids>
             </war>
