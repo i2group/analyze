@@ -1,0 +1,43 @@
+plugins {
+  id "org.openapi.generator" version "6.0.1"
+  id "de.undercouch.download" version "5.1.0"
+}
+
+ext {
+  productVersion = "4.4.0"
+  generatedProjectDir = "${project.projectDir}/../generated-projects"
+  
+  openApiSpecFile = "${buildDir}/openapi.json"
+}
+
+task downloadSpec(type: Download) {
+    src "https://docs.i2group.com/analyze/${productVersion}/openapi.json"
+    dest openApiSpecFile
+}
+
+// run `gradlew openApiGenerators` to get a list of all the languages the generator plugin supports, or see https://openapi-generator.tech/docs/generators
+
+task createJavaClientProject(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask,
+                             dependsOn: downloadSpec){
+
+    // see https://openapi-generator.tech/docs/generators/java for other java library options
+    def javaLib = "apache-httpclient"
+    def javaBasePackage = "com.example.generated"
+
+    generatorName = "java"
+    def out = "${generatedProjectDir}/java-client"
+
+    library = javaLib
+    inputSpec = openApiSpecFile.toString()
+    outputDir = out.toString()
+
+    generateApiTests = false
+    generateModelTests = false
+
+    apiPackage = "${javaBasePackage}.api"
+    invokerPackage = "${javaBasePackage}.invoker"
+    modelPackage = "${javaBasePackage}.model"
+    configOptions = [
+      dateLibrary: "java8"
+    ]
+}
