@@ -128,8 +128,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="rowColor">
 <th class="colFirst" scope="row"><a href="WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user">WebSphereUserGroupsProvider</a></th>
 <td class="colLast">
-<div class="block">An implementation of <a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that uses the WebSphere user registry as the
- source for user group information.</div>
+<div class="block">An implementation of <a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that uses <code>Subject.getPublicCredentials()</code> as the source of user group information, and
+ is compatible with OpenID Connect (OIDC).</div>
 </td>
 </tr>
 </tbody>

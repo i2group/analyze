@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -380,19 +380,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#trace(java.lang.String)">trace</a></span>&#8203;(java.lang.String&nbsp;message)</code></th>
+<td class="colLast">
+<div class="block">Logs a message if the ITracer is set to Trace level or higher.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#trace(java.lang.Throwable)">trace</a></span>&#8203;(java.lang.Throwable&nbsp;ex)</code></th>
 <td class="colLast">
 <div class="block">Logs an exception if the ITracer is set to Trace level or higher.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#warn(java.lang.String)">warn</a></span>&#8203;(java.lang.String&nbsp;message)</code></th>
 <td class="colLast">
 <div class="block">Logs a message if the ITracer is set to Warn level or higher.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#warn(java.lang.String,java.lang.Object...)">warn</a></span>&#8203;(java.lang.String&nbsp;format,
     java.lang.Object...&nbsp;args)</code></th>
@@ -400,7 +407,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Logs a message if the ITracer is set to Warn level or higher.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#warn(java.lang.String,java.lang.Throwable)">warn</a></span>&#8203;(java.lang.String&nbsp;message,
     java.lang.Throwable&nbsp;ex)</code></th>
@@ -408,7 +415,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Logs a message with an exception if the ITracer is set to Warn level or higher.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#warn(java.lang.Throwable)">warn</a></span>&#8203;(java.lang.Throwable&nbsp;ex)</code></th>
 <td class="colLast">
@@ -474,6 +481,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ex</code> - The exception to log.</dd>
+</dl>
+</li>
+</ul>
+<a id="trace(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trace</h4>
+<pre class="methodSignature">void&nbsp;trace&#8203;(java.lang.String&nbsp;message)</pre>
+<div class="block">Logs a message if the ITracer is set to Trace level or higher.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>message</code> - The message to log.</dd>
 </dl>
 </li>
 </ul>
@@ -616,7 +637,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>switchName</code> - The name of the switch to test.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if enable, false otherwise</dd>
+<dd>true if enabled, false otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -779,7 +800,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  context message provides a distinctive stamp to the tracing message.
 
  <p>There are some rules to using contexts: 1. The context implementation must be managed on a
- per thread basis 2. Contexts can be nested 3. When entering a context call <a href="#pushContext(java.lang.String)"><code>pushContext(String)</code></a> 4. When leaving a context call <a href="#popContext()"><code>popContext()</code></a></div>
+ per-thread basis 2. Contexts can be nested 3. When entering a context call <a href="#pushContext(java.lang.String)"><code>pushContext(String)</code></a> 4. When leaving a context call <a href="#popContext()"><code>popContext()</code></a></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The last context popped off the stack.</dd>
@@ -800,7 +821,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  context message provides a distinctive stamp to the tracing message.
 
  <p>There are some rules to using contexts: 1. The context implementation must be managed on a
- per thread basis 2. Contexts can be nested 3. When entering a context call <a href="#pushContext(java.lang.String)"><code>pushContext(String)</code></a> 4. When leaving a context call <a href="#popContext()"><code>popContext()</code></a></div>
+ per-thread basis 2. Contexts can be nested 3. When entering a context call <a href="#pushContext(java.lang.String)"><code>pushContext(String)</code></a> 4. When leaving a context call <a href="#popContext()"><code>popContext()</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>context</code> - the context</dd>

@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":50,"i7":18,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18,"i14":18,"i15":18,"i16":18,"i17":18,"i18":18,"i19":18,"i20":18,"i21":18,"i22":18,"i23":18,"i24":18,"i25":18,"i26":18,"i27":18};
+var data = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":50,"i7":18,"i8":18,"i9":18,"i10":18,"i11":18,"i12":18,"i13":18,"i14":18,"i15":18,"i16":18,"i17":18,"i18":18,"i19":18,"i20":18,"i21":18,"i22":18,"i23":18,"i24":18,"i25":18,"i26":18,"i27":18,"i28":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],16:["t5","Default Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -185,7 +185,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>default boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDAODAuditEnabled()">isDAODAuditEnabled</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Indicates whether audit logging of "data acquisition" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "data acquisition" operations, including deleting the result
+ sets from those operations, is enabled.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -278,90 +279,97 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)">logDAODResultSetsDeleteEvent</a></span>&#8203;(<a href="../IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODResultSetsDeleteAuditEvent</a>&nbsp;auditEvent)</code></th>
+<td class="colLast">
+<div class="block">Logs information about the deletion of result sets from "data acquisition" operations.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logDefault(com.i2group.disco.audit.IAuditEvent)">logDefault</a></span>&#8203;(<a href="../IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about an operation when auditing is enabled and a more specific method has not
  been overridden.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logExpand(com.i2group.disco.audit.IExpandAuditEvent)">logExpand</a></span>&#8203;(<a href="../IExpandAuditEvent.html" title="interface in com.i2group.disco.audit">IExpandAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about an "expand" operation.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logFindPath(com.i2group.disco.audit.IFindPathAuditEvent)">logFindPath</a></span>&#8203;(<a href="../IFindPathAuditEvent.html" title="interface in com.i2group.disco.audit">IFindPathAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "find path" operation.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logGeospatialSearch(com.i2group.disco.audit.IGeospatialSearchAuditEvent)">logGeospatialSearch</a></span>&#8203;(<a href="../IGeospatialSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IGeospatialSearchAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "geospatial search" operation.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logHighlightQuery(com.i2group.disco.audit.IHighlightQueryShowMoreAuditEvent)">logHighlightQuery</a></span>&#8203;(<a href="../IHighlightQueryShowMoreAuditEvent.html" title="interface in com.i2group.disco.audit">IHighlightQueryShowMoreAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "highlight query show more" operation.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logLoginEvent(com.i2group.disco.audit.ILoginAuditEvent)">logLoginEvent</a></span>&#8203;(<a href="../ILoginAuditEvent.html" title="interface in com.i2group.disco.audit">ILoginAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "login" operation.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logLogoutEvent(com.i2group.disco.audit.ILogoutAuditEvent)">logLogoutEvent</a></span>&#8203;(<a href="../ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit">ILogoutAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "logout" operation.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logPrivacyAgreementEvent(com.i2group.disco.audit.IPrivacyAgreementAuditEvent)">logPrivacyAgreementEvent</a></span>&#8203;(<a href="../IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit">IPrivacyAgreementAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about user acceptance of a privacy agreement.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logQuickSearch(com.i2group.disco.audit.IQuickSearchAuditEvent)">logQuickSearch</a></span>&#8203;(<a href="../IQuickSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IQuickSearchAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "quick search" operation.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logRecordDelete(com.i2group.disco.audit.IRecordDeleteAuditEvent)">logRecordDelete</a></span>&#8203;(<a href="../IRecordDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordDeleteAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "record delete" operation.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)">logRecordRetrieval</a></span>&#8203;(<a href="../IRecordRetrievalAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordRetrievalAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "record retrieval" operation.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logRecordUpload(com.i2group.disco.audit.IRecordUploadAuditEvent)">logRecordUpload</a></span>&#8203;(<a href="../IRecordUploadAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordUploadAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Logs information about a "record create" or "record update" operation.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logVisualQuery(com.i2group.disco.audit.IVisualQueryAuditEvent)">logVisualQuery</a></span>&#8203;(<a href="../IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a>&nbsp;auditEvent)</code></th>
 <td class="colLast">
@@ -477,7 +485,8 @@ default&nbsp;boolean&nbsp;isRecordUploadAuditEnabled()</pre>
 <li class="blockList">
 <h4>isDAODAuditEnabled</h4>
 <pre class="methodSignature">default&nbsp;boolean&nbsp;isDAODAuditEnabled()</pre>
-<div class="block">Indicates whether audit logging of "data acquisition" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "data acquisition" operations, including deleting the result
+ sets from those operations, is enabled.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if audit logging is enabled; <code>false</code> otherwise.</dd>
@@ -837,7 +846,7 @@ default&nbsp;boolean&nbsp;isRecordUploadAuditEnabled()</pre>
 <li class="blockList">
 <h4>logLoginEvent</h4>
 <pre class="methodSignature">default&nbsp;void&nbsp;logLoginEvent&#8203;(<a href="../ILoginAuditEvent.html" title="interface in com.i2group.disco.audit">ILoginAuditEvent</a>&nbsp;auditEvent)</pre>
-<div class="block">Logs information about a "login" operation. i2 Analyze calls this method only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a>} returns <code>true</code>.</div>
+<div class="block">Logs information about a "login" operation. i2 Analyze calls this method only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a> returns <code>true</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>auditEvent</code> - An <a href="../ILoginAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILoginAuditEvent</code></a> that contains information about a "login"
@@ -854,7 +863,7 @@ default&nbsp;boolean&nbsp;isRecordUploadAuditEnabled()</pre>
 <li class="blockList">
 <h4>logLogoutEvent</h4>
 <pre class="methodSignature">default&nbsp;void&nbsp;logLogoutEvent&#8203;(<a href="../ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit">ILogoutAuditEvent</a>&nbsp;auditEvent)</pre>
-<div class="block">Logs information about a "logout" operation. i2 Analyze calls this method only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a>} returns <code>true</code>.</div>
+<div class="block">Logs information about a "logout" operation. i2 Analyze calls this method only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a> returns <code>true</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>auditEvent</code> - An <a href="../ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILogoutAuditEvent</code></a> that contains information about a "logout"
@@ -872,13 +881,31 @@ default&nbsp;boolean&nbsp;isRecordUploadAuditEnabled()</pre>
 <h4>logPrivacyAgreementEvent</h4>
 <pre class="methodSignature">default&nbsp;void&nbsp;logPrivacyAgreementEvent&#8203;(<a href="../IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit">IPrivacyAgreementAuditEvent</a>&nbsp;auditEvent)</pre>
 <div class="block">Logs information about user acceptance of a privacy agreement. i2 Analyze calls this method
- only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a>} returns <code>true</code>.</div>
+ only if <a href="#isAuthenticationAuditEnabled()"><code>isAuthenticationAuditEnabled()</code></a> returns <code>true</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>auditEvent</code> - An <a href="../IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IPrivacyAgreementAuditEvent</code></a> that contains information about user
      acceptance of a privacy agreement.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>13.0</dd>
+</dl>
+</li>
+</ul>
+<a id="logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logDAODResultSetsDeleteEvent</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;logDAODResultSetsDeleteEvent&#8203;(<a href="../IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODResultSetsDeleteAuditEvent</a>&nbsp;auditEvent)</pre>
+<div class="block">Logs information about the deletion of result sets from "data acquisition" operations. i2
+ Analyze calls this method only if <a href="#isDAODAuditEnabled()"><code>isDAODAuditEnabled()</code></a> returns <code>true</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>auditEvent</code> - An <a href="../IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IDAODResultSetsDeleteAuditEvent</code></a> that contains information about
+     the deletion of the result sets.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>13.1</dd>
 </dl>
 </li>
 </ul>

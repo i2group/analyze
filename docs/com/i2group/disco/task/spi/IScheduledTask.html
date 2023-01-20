@@ -142,9 +142,9 @@ extends java.lang.Runnable, java.io.Closeable</pre>
  CustomTaskScheduler.<i>TaskName</i>.Expression=<i>* * * * *</i>
  </pre>
 
- <p>Here, <i>TaskName</i> is a name that uniquely identifies an instance of a task,
- <i>com.example.ScheduledTask</i> is the fully qualified name of the task class, and <i>* * * *
- *</i> is a cron expression that defines the schedule to run the task on.
+ <p>Here, <code>TaskName</code> is a name that uniquely identifies an instance of a task, <code>
+ com.example.ScheduledTask</code> is the fully qualified name of the task class, and <code>
+ * * * * *</code> is a cron expression that defines the schedule to run the task on.
 
  <p><b>Note:</b> You can create multiple tasks from the same implementation class, provided that
  they all have different names.</div>
@@ -245,14 +245,16 @@ extends java.lang.Runnable, java.io.Closeable</pre>
   throws <a href="CustomTaskFailedException.html" title="class in com.i2group.disco.task.spi">CustomTaskFailedException</a></pre>
 <div class="block">Executes the task.
 
- <p>The server calls this method on the schedule defined by the cron expression in the
- properties file.
+ <p>The server calls this method to perform the custom action, based on the schedule defined by
+ the cron expression in the properties file.
 
  <p>If this method encounters a problem, it must throw a <a href="CustomTaskFailedException.html" title="class in com.i2group.disco.task.spi"><code>CustomTaskFailedException</code></a> that
- tells the server what to do next.
+ tells the server what to do next. Depending on how the exception is constructed, the server
+ might re-run the task immediately, or when it is next scheduled, or never.
 
- <p>If this method throws an exception other than <a href="CustomTaskFailedException.html" title="class in com.i2group.disco.task.spi"><code>CustomTaskFailedException</code></a>, then the
- server will not execute the task again.</div>
+ <p>If this method throws an exception other than <a href="CustomTaskFailedException.html" title="class in com.i2group.disco.task.spi"><code>CustomTaskFailedException</code></a>, the custom
+ task is canceled and will not run again until the scheduler is reinitialized through a server
+ restart.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>run</code>&nbsp;in interface&nbsp;<code>java.lang.Runnable</code></dd>
@@ -272,7 +274,8 @@ extends java.lang.Runnable, java.io.Closeable</pre>
 
  <p>The server calls this method during startup, to give the task the opportunity to make itself
  ready to run. The task can also get access to other server APIs through the <code>
- scheduledTaskObjects</code> parameter.</div>
+ scheduledTaskObjects</code> parameter. Implementing this method is optional; by default it does
+ nothing.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scheduledTaskObjects</code> - A set of methods that the task can call to retrieve API objects.</dd>
@@ -289,7 +292,7 @@ extends java.lang.Runnable, java.io.Closeable</pre>
 <div class="block">Performs teardown or finalization on resources that the task required.
 
  <p>The server calls this method during shutdown, to give the task the opportunity to release
- any resources that it used.</div>
+ any resources that it used. Implementing this method is optional; by default it does nothing.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>close</code>&nbsp;in interface&nbsp;<code>java.lang.AutoCloseable</code></dd>

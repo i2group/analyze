@@ -982,6 +982,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">An event that was generated during the processing of an operation against an external data
  source.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit"><span class="typeNameLink">IDAODResultSetsDeleteAuditEvent</span></a> - Interface in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
+<dd>
+<div class="block">An event that was generated when result sets from operations against external data sources were
+ deleted.</div>
+</dd>
 <dt><a href="com/i2group/disco/user/spi/IDefaultSecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.user.spi"><span class="typeNameLink">IDefaultSecurityDimensionValuesProvider</span></a> - Interface in <a href="com/i2group/disco/user/spi/package-summary.html">com.i2group.disco.user.spi</a></dt>
 <dd>
 <div class="block">A provider of security dimension values that are applied by default to the i2 Analyze records
@@ -1130,7 +1135,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isDAODAuditEnabled()">isDAODAuditEnabled()</a></span> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
-<div class="block">Indicates whether audit logging of "data acquisition" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "data acquisition" operations, including deleting the result
+ sets from those operations, is enabled.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/i2group/tracing/ITracer.html#isDebugEnabled()">isDebugEnabled()</a></span> - Method in interface com.i2group.tracing.<a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing">ITracer</a></dt>
 <dd>
@@ -1294,6 +1300,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logDAODEvent(com.i2group.disco.audit.IDAODAuditEvent)">logDAODEvent(IDAODAuditEvent)</a></span> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Logs information about a "data acquisition" operation.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)">logDAODResultSetsDeleteEvent(IDAODResultSetsDeleteAuditEvent)</a></span> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Logs information about the deletion of result sets from "data acquisition" operations.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logDefault(com.i2group.disco.audit.IAuditEvent)">logDefault(IAuditEvent)</a></span> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
@@ -1565,6 +1575,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/i2group/disco/model/OriginIdentifier.html#toString()">toString()</a></span> - Method in class com.i2group.disco.model.<a href="com/i2group/disco/model/OriginIdentifier.html" title="class in com.i2group.disco.model">OriginIdentifier</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/i2group/tracing/ITracer.html#trace(java.lang.String)">trace(String)</a></span> - Method in interface com.i2group.tracing.<a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing">ITracer</a></dt>
+<dd>
+<div class="block">Logs a message if the ITracer is set to Trace level or higher.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/i2group/tracing/ITracer.html#trace(java.lang.Throwable)">trace(Throwable)</a></span> - Method in interface com.i2group.tracing.<a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing">ITracer</a></dt>
 <dd>
 <div class="block">Logs an exception if the ITracer is set to Trace level or higher.</div>
@@ -1664,8 +1678,8 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user"><span class="typeNameLink">WebSphereUserGroupsProvider</span></a> - Class in <a href="com/i2group/disco/user/package-summary.html">com.i2group.disco.user</a></dt>
 <dd>
-<div class="block">An implementation of <a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that uses the WebSphere user registry as the
- source for user group information.</div>
+<div class="block">An implementation of <a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that uses <code>Subject.getPublicCredentials()</code> as the source of user group information, and
+ is compatible with OpenID Connect (OIDC).</div>
 </dd>
 </dl>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a></div>
