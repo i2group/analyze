@@ -24,21 +24,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>opal-services-daod-lib</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/targets/opal-services-is-daod/WEB-INF/lib</locationURI>
-		</link>
-		<link>
-			<name>opal-services-is-lib</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/application/targets/opal-services-is/WEB-INF/lib</locationURI>
-		</link>
-		<link>
-			<name>scripts-bin</name>
-			<type>2</type>
-			<locationURI>TOOLKIT_ROOT/scripts-bin</locationURI>
-		</link>
-		<link>
 			<name>shared-lib</name>
 			<type>2</type>
 			<locationURI>TOOLKIT_ROOT/application/shared/lib</locationURI>

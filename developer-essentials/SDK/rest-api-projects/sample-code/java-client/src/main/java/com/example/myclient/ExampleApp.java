@@ -248,39 +248,43 @@ public class ExampleApp {
     }
 
     private RuntimeException exceptionHandler(ApiException e) {
-        final List<String> contentTypes = e.getResponseHeaders().get("Content-Type");
-        if (contentTypes.contains("application/problem+json")) {
-            try {
-                final ObjectMapper objectMapper = apiClient.getObjectMapper();
-                final I2RFC7807ProblemDetails problemDetails = objectMapper.readValue(e.getResponseBody(), I2RFC7807ProblemDetails.class);
+        if (e.getResponseHeaders() != null) {
+            final List<String> contentTypes = e.getResponseHeaders().get("Content-Type");
+            if (contentTypes.contains("application/problem+json")) {
+                try {
+                    final ObjectMapper objectMapper = apiClient.getObjectMapper();
+                    final I2RFC7807ProblemDetails problemDetails = objectMapper.readValue(e.getResponseBody(),
+                            I2RFC7807ProblemDetails.class);
 
-                final String type = problemDetails.getType().toString();
-                final boolean isUserProblem = type.equals("tag:i2group.com,2022:user-problem-details");
+                    final String type = problemDetails.getType().toString();
+                    final boolean isUserProblem = type.equals("tag:i2group.com,2022:user-problem-details");
 
-                final String summary;
-                if (isUserProblem) {
-                    summary = "Bad user input";
-                } else if (problemDetails.getStatus() >= 400 && problemDetails.getStatus() < 500) {
-                    summary = "Bad API request";
-                } else {
-                    summary = "Server error";
-                }
-
-                String errorMessage = summary;
-                if (problemDetails.getErrors() != null && !problemDetails.getErrors().isEmpty()) {
-                    String reason = problemDetails.getErrors().stream().map(RFC7807ErrorDescription::getMessage).filter(Objects::nonNull).collect(Collectors.joining(", "));
-                    if (reason.isEmpty()) {
-                        reason = problemDetails.getDetail();
+                    final String summary;
+                    if (isUserProblem) {
+                        summary = "Bad user input";
+                    } else if (problemDetails.getStatus() >= 400 && problemDetails.getStatus() < 500) {
+                        summary = "Bad API request";
+                    } else {
+                        summary = "Server error";
                     }
-                    if (reason.isEmpty()) {
-                        reason = problemDetails.getTitle();
-                    }
-                    errorMessage = errorMessage.concat(": ").concat(reason);
-                }
 
-                throw new RuntimeException(errorMessage, e);
-            } catch (JsonProcessingException e2) {
-                throw new RuntimeException(e2);
+                    String errorMessage = summary;
+                    if (problemDetails.getErrors() != null && !problemDetails.getErrors().isEmpty()) {
+                        String reason = problemDetails.getErrors().stream().map(RFC7807ErrorDescription::getMessage)
+                                .filter(Objects::nonNull).collect(Collectors.joining(", "));
+                        if (reason.isEmpty()) {
+                            reason = problemDetails.getDetail();
+                        }
+                        if (reason.isEmpty()) {
+                            reason = problemDetails.getTitle();
+                        }
+                        errorMessage = errorMessage.concat(": ").concat(reason);
+                    }
+
+                    throw new RuntimeException(errorMessage, e);
+                } catch (JsonProcessingException e2) {
+                    throw new RuntimeException(e2);
+                }
             }
         }
         return new RuntimeException("Error - status: " + e.getCode(), e);
