@@ -56,13 +56,14 @@ public final class ExampleTask implements IScheduledTask
     private DataSource dataSource;
     private ITracer tracer;
     private boolean isDbDialectDb2;
+    private boolean isDbDialectPostgres;
 
     @Override
     public void onStartup(final IScheduledTaskObjects objects)
     {
         tracer = objects.getTracerFactory().getTracer(getClass());
         dataSource = lookupDataSource();
-        isDbDialectDb2 = determineDbDialect();
+        determineDbDialect();
     }
 
     @Override
@@ -79,7 +80,7 @@ public final class ExampleTask implements IScheduledTask
                 boolean purgeRequired = false;
                 while (resultSet.next())
                 {
-                    final String itemId = resultSet.getString(ITEM_ID);
+                    final long itemId = resultSet.getLong(ITEM_ID);
 
                     softDeleteChart(connection, itemId);
                     purgeRequired = true;
@@ -91,6 +92,11 @@ public final class ExampleTask implements IScheduledTask
                     {
                         connection.createStatement()
                                 .execute(String.format("CALL %s", purgeSoftDeletedRecordsProcedure));
+                    }
+                    else if (isDbDialectPostgres)
+                    {
+                        connection.createStatement()
+                                .execute(String.format("SELECT %s()", purgeSoftDeletedRecordsProcedure));
                     }
                     else
                     {
@@ -113,15 +119,19 @@ public final class ExampleTask implements IScheduledTask
         {
             return String.format("CURRENT TIMESTAMP -%s %s", MAX_CHART_AGE, UNITS);
         }
+        else if (isDbDialectPostgres)
+        {
+            return String.format("CURRENT_TIMESTAMP - INTERVAL '%s %s'", MAX_CHART_AGE, UNITS);
+        }
         return String.format("DATEADD(%s,-%s,GETDATE())", UNITS, MAX_CHART_AGE);
     }
 
-    private void softDeleteChart(final Connection connection, final String itemId) throws SQLException
+    private void softDeleteChart(final Connection connection, final long itemId) throws SQLException
     {
         try (PreparedStatement delete = connection
                 .prepareStatement("UPDATE IS_PUBLIC.E_ANALYST_S_NOTEBOOK_CH_DV SET deleted = 'Y' where ITEM_ID = ?"))
         {
-            delete.setString(1, itemId);
+            delete.setLong(1, itemId);
             delete.execute();
         }
     }
@@ -142,12 +152,13 @@ public final class ExampleTask implements IScheduledTask
         }
     }
 
-    private boolean determineDbDialect()
+    private void determineDbDialect()
     {
         try (Connection connection = dataSource.getConnection())
         {
-            final String productName = connection.getMetaData().getDatabaseProductName();
-            return productName.toLowerCase().contains("db2");
+            final String productName = connection.getMetaData().getDatabaseProductName().toLowerCase();
+            isDbDialectDb2 = productName.contains("db2");
+            isDbDialectPostgres = productName.contains("postgres");
         }
         catch (SQLException ex)
         {

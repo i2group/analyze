@@ -64,13 +64,14 @@ public final class ExampleAlertingTask implements IScheduledTask {
     private DataSource dataSource;
     private ITracer tracer;
     private boolean isDbDialectDb2;
+    private boolean isDbDialectPostgres;
 
     @Override
     public void onStartup(final IScheduledTaskObjects objects) {
         scheduledTaskObjects = objects;
         tracer = objects.getTracerFactory().getTracer(getClass());
         dataSource = lookupDataSource();
-        isDbDialectDb2 = determineDbDialect();
+        determineDbDialect();
         alertManager = scheduledTaskObjects.getAlertManager();
 
         // Create an alert with a hyperlink
@@ -95,7 +96,7 @@ public final class ExampleAlertingTask implements IScheduledTask {
                 final ResultSet resultSet = statement.executeQuery();
                 boolean purgeRequired = false;
                 while (resultSet.next()) {
-                    final String itemId = resultSet.getString(ITEM_ID);
+                    final long itemId = resultSet.getLong(ITEM_ID);
                     final String chartName = resultSet.getString(P_NAME);
                     final List<String> uploadedBy = getUsersForChart(connection, itemId);
 
@@ -109,10 +110,18 @@ public final class ExampleAlertingTask implements IScheduledTask {
                 }
                 if (purgeRequired) {
                     final String purgeSoftDeletedRecordsProcedure = "IS_PUBLIC.PURGE_SOFT_DELETED_RECORDS";
-                    if (isDbDialectDb2) {
+                    if (isDbDialectDb2)
+                    {
                         connection.createStatement()
                                 .execute(String.format("CALL %s", purgeSoftDeletedRecordsProcedure));
-                    } else {
+                    }
+                    else if (isDbDialectPostgres)
+                    {
+                        connection.createStatement()
+                                .execute(String.format("SELECT %s()", purgeSoftDeletedRecordsProcedure));
+                    }
+                    else
+                    {
                         connection.createStatement()
                                 .execute(String.format("EXEC %s", purgeSoftDeletedRecordsProcedure));
                     }
@@ -124,25 +133,32 @@ public final class ExampleAlertingTask implements IScheduledTask {
         }
     }
 
-    private String timeSinceAccess() {
-        if (isDbDialectDb2) {
+    private String timeSinceAccess()
+    {
+        if (isDbDialectDb2)
+        {
             return String.format("CURRENT TIMESTAMP -%s %s", MAX_CHART_AGE, UNITS);
+        }
+        else if (isDbDialectPostgres)
+        {
+            return String.format("CURRENT_TIMESTAMP - INTERVAL '%s %s'", MAX_CHART_AGE, UNITS);
         }
         return String.format("DATEADD(%s,-%s,GETDATE())", UNITS, MAX_CHART_AGE);
     }
 
-    private void softDeleteChart(final Connection connection, final String itemId) throws SQLException {
+
+    private void softDeleteChart(final Connection connection, final long itemId) throws SQLException {
         try (PreparedStatement delete = connection
                 .prepareStatement("UPDATE IS_PUBLIC.E_ANALYST_S_NOTEBOOK_CH_DV SET deleted = 'Y' where ITEM_ID = ?")) {
-            delete.setString(1, itemId);
+            delete.setLong(1, itemId);
             delete.execute();
         }
     }
 
-    private List<String> getUsersForChart(final Connection connection, final String itemId) throws SQLException {
+    private List<String> getUsersForChart(final Connection connection, final long itemId) throws SQLException {
         try (PreparedStatement prepStatement = connection.prepareStatement(
                 "select USER_PRINCIPAL_NAME from IS_PUBLIC.E_ANALYST_S_NOTEBOOK_CH_UPLOAD_USERS where ITEM_ID = ?")) {
-            prepStatement.setString(1, itemId);
+            prepStatement.setLong(1, itemId);
             final ResultSet resultSet = prepStatement.executeQuery();
             final List<String> users = new ArrayList<>();
             while (resultSet.next()) {
@@ -164,10 +180,11 @@ public final class ExampleAlertingTask implements IScheduledTask {
         }
     }
 
-    private boolean determineDbDialect() {
+    private void determineDbDialect() {
         try (Connection connection = dataSource.getConnection()) {
-            final String productName = connection.getMetaData().getDatabaseProductName();
-            return productName.toLowerCase().contains("db2");
+            final String productName = connection.getMetaData().getDatabaseProductName().toLowerCase();
+            isDbDialectDb2 = productName.contains("db2");
+            isDbDialectPostgres = productName.contains("postgres");
         } catch (SQLException ex) {
             throw CustomTaskFailedException.cancel("Failed to determine database dialect.");
         }
