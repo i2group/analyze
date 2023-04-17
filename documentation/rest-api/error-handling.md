@@ -75,9 +75,11 @@ To achieve this, follow the steps below:
    In the `ExampleApp.exceptionHandler()` method, add the following code before the `return` statement:
 
    ```java
-       final List<String> contentTypes = e.getResponseHeaders().get("Content-Type");
-       if (contentTypes.contains("application/problem+json")) {
-           // Handle RFC 7807 error
+       if (e.getResponseHeaders() != null) {
+         final List<String> contentTypes = e.getResponseHeaders().get("Content-Type");
+         if (contentTypes.contains("application/problem+json")) {
+             // Handle RFC 7807 error
+         }
        }
    ```
 

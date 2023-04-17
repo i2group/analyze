@@ -10,7 +10,7 @@ When you use the i2 Analyze server-hosted documentation viewer, you can also mak
 
 The latest version of the i2 Analyze REST API documentation is available on the i2 Product Documentation website, as part of the documentation for the version of i2 Analyze that supports it.
 
-For example, the documentation for version 1.0 of the REST API is available at [https://docs.i2group.com/analyze/4.4.0/public-rest-api.html](https://docs.i2group.com/analyze/4.4.0/public-rest-api.html).
+For example, the documentation for version 1.1 of the REST API is available at [https://docs.i2group.com/analyze/4.4.1/public-rest-api.html](https://docs.i2group.com/analyze/4.4.1/public-rest-api.html).
 
 Documentation for future versions of the REST API will be hosted in a location that corresponds to the version of i2 Analyze that the API was released with.
 
@@ -29,13 +29,15 @@ You can then use the interactive features of the viewer to execute requests agai
 New versions of the REST API are always released as part of new i2 Analyze releases.
 Documentation for a particular version of the API is always available alongside the associated i2 Analyze documentation.
 
-| i2 Analyze version | Supported API versions                                              |
-|--------------------|---------------------------------------------------------------------|
-| 4.4.0              | [1.0](https://docs.i2group.com/analyze/4.4.0/public-rest-api.html)  |
+| API version 🡆 <br/> i2 Analyze version 🡇 | [1.0](https://docs.i2group.com/analyze/4.4.0/public-rest-api.html) | [1.1](https://docs.i2group.com/analyze/4.4.1/public-rest-api.html) |
+| :-----------------------:|:--:|:--:|
+| 4.4.0                    | ✔️ | ❌ |
+| 4.4.1                    | ✔️ | ✔️ |
 
 ### API changelog
 
  - [1.0 changes](api-versions/1.0/changes.md)
+ - [1.1 changes](api-versions/1.1/changes.md)
 
 ## Developing for the REST API
 
