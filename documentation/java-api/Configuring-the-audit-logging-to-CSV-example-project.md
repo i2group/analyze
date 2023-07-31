@@ -93,7 +93,7 @@ After you add the project to your development environment, you can inspect the b
          Safari/537.36",
         "DataStores: [InfoStore], Expression: brown, Filters: []"
 
-    The supplied version of `CSVAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services-is` directory as the target for audit CSV files. The files are named `auditn.csv`, where n is an integer that increments with each new file.
+    The supplied version of `CSVAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services` directory as the target for audit CSV files. The files are named `auditn.csv`, where n is an integer that increments with each new file.
 
 7.  Debug the `opal-audit-csv-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
 

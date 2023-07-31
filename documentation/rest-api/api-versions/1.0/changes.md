@@ -15,11 +15,11 @@ The following endpoints are new and fully supported at this version of the i2 An
 
 - A range of administrative endpoints:
 
-   - For managing the behavior of privacy agreements
-   - For reloading the server configuration after a change
-   - For enabling and disabling server metrics
-   - For retrieving highlight query configuration information
-   - For determining the status of the Solr indexes
+  - For managing the behavior of privacy agreements
+  - For reloading the server configuration after a change
+  - For enabling and disabling server metrics
+  - For retrieving highlight query configuration information
+  - For determining the status of the Solr indexes
 
 - An endpoint for reloading configuration settings for the i2 Connect gateway and any connectors
 

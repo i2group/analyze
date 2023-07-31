@@ -1,12 +1,12 @@
 # Configuring the 'audit logging to database' example project
 
-In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, i2provides the `opal-audit-database-example` example, which writes audit logging information to a relational database.
+In i2 Analyze, you can use audit logging to record information about user activity in the Information Store. To do so, you must write and configure an implementation of the `IAuditLogger` interface. In Developer Essentials, i2 provides the `opal-audit-database-example` example, which writes audit logging information to a relational database.
 
 ## Before you begin
 
 You must have a development deployment of i2 Analyze and a configured development environment. For more information, see [Preparing to use i2 Analyze Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
 
-For its relational database, the example uses the same instance of DB2 as i2 Analyze, and as a result it has no additional requirements.
+For its relational database, the example uses the same instance as i2 Analyze, and as a result it has no additional requirements.
 
 ## About this task
 
@@ -18,7 +18,31 @@ Because this example involves writing information to a database, you must create
 
 Before you can run the audit logging to database example, you must create and then configure the database that the example uses to record the logged information.
 
-1.  Open a DB2 command window as administrator, and navigate to the `SDK\java-api-projects\opal-audit-database-example\scripts\database\db2` directory.
+### If you have deployed the Information Store on PostgreSQL
+
+1.  Open a command window as administrator, and navigate to the `SDK\java-api-projects\opal-audit-database-example\scripts\database\postgres` directory.
+
+2.  Run the following command to create the database:
+
+        psql -f create-audit-database.sql
+
+    This file contains the definition of the database that receives audit logging information from the example. The code assumes that a database user named `pguser` exists, and creates the database schema and the tables in that context.
+
+    If your PostgreSQL database does not have an account named `pguser`, edit the SQL file accordingly. The name appears in two locations, and you must change it to the name of a user in your system. The name of the account that you use for the Information Store in `credentials.properties` is a reasonable choice.
+
+3.  In an XML editor, open the `i2analyze\deploy\wlp\usr\servers\opal-server\server.datasources.xml` file.
+
+4.  Add the following `<dataSource>` element alongside the existing one that configures the Information Store:
+
+        <dataSource id="Audit" jdbcDriverRef="postgres_postgresql-*_*_*_jar" jndiName="jdbc/audit" isolationLevel="TRANSACTION_READ_COMMITTED" type="javax.sql.ConnectionPoolDataSource">
+            <properties serverName="localhost" portNumber="5432" databaseName="audit" user="UserName" password="Password" ssl="false" sslrootcert=""/>
+        </dataSource>
+
+    In the `<properties>` element, set UserName and Password to match the database user that you specified in the `create-audit-database.sql` file.
+
+### If you have deployed the Information Store on Db2
+
+1.  Open a Db2 command window as administrator, and navigate to the `SDK\java-api-projects\opal-audit-database-example\scripts\database\db2` directory.
 
 2.  Run the following command to create the database:
 
@@ -26,7 +50,7 @@ Before you can run the audit logging to database example, you must create and th
 
     This file contains the definition of the database that receives audit logging information from the example. The code assumes that a database user named `db2user` exists, and creates the database schema and the tables in that context.
 
-    If your DB2 database does not have an account named `db2user`, edit the SQL file accordingly. The name appears in two locations, and you must change it to the name of a user in your system. The name of the account that you use for the Information Store in `credentials.properties` is a reasonable choice.
+    If your Db2 database does not have an account named `db2user`, edit the SQL file accordingly. The name appears in two locations, and you must change it to the name of a user in your system. The name of the account that you use for the Information Store in `credentials.properties` is a reasonable choice.
 
 3.  In an XML editor, open the `i2analyze\deploy\wlp\usr\servers\opal-server\server.datasources.xml` file.
 
@@ -127,7 +151,7 @@ After you add the project to your development environment, you can inspect the b
     | `FILTERS`                   | `[]`                                                                                                                 |
     | `DATASTORES`                | `InfoStore`                                                                                                          |
 
-    The supplied version of `DatabaseAudit.properties` specifies the `I2AUDIT` schema as the target for audit logging data. The tables are named `QUICK_SEARCH` and `EXPAND`.
+    The supplied version of `DatabaseAudit.properties` specifies the `I2AUDIT` schema as the target for audit logging data. The tables are named `QUICK_SEARCH`, `EXPAND`, `VISUAL_QUERY` and `RECORD_RETRIEVAL`.
 
 7.  Debug the `opal-audit-database-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
 
@@ -137,7 +161,7 @@ After you develop and test an audit logging solution for i2 Analyze, the next st
 
 2.  Update the `topology.xml`, `server.datasources.xml`, and `ApolloServerSettingsMandatory.properties` files with the same changes that you made to your development environment.
 
-    > [!NOTE]
+    > **Note:**
     > To use a different database server in a live deployment, modify the `create-audit-database.sql` script and the `server.datasources.xml` file accordingly.
 
 3.  Ensure that the settings in the `DatabaseAudit.properties` file are suitable for your live deployment.

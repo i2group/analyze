@@ -18,38 +18,51 @@ You can use other editors to interact with the examples, but the instructions he
 
   In i2 Analyze, you can specify the security dimension values that records in the Information Store receive when users create them in Analyst's Notebook Premium.
   By default, every record is given the same security dimension values.
+  
   In Developer Essentials, i2 provides the `opal-default-security-example` example, which gives records different security dimension values depending on the user groups that their creator is a member of.
 
 - **[Configuring the 'audit logging to file' example project](Configuring-the-audit-logging-to-file-example-project.md)**
 
   In i2 Analyze, you can use audit logging to record information about user activity in the Information Store.
   To do so, you must write and configure an implementation of the `IAuditLogger` interface.
+  
   In Developer Essentials, i2 provides the `opal-audit-file-example` example, which writes audit logging information to a log file.
 
 - **[Configuring the 'audit logging to CSV' example project](Configuring-the-audit-logging-to-CSV-example-project.md)**
 
   In i2 Analyze, you can use audit logging to record information about user activity in the Information Store.
   To do so, you must write and configure an implementation of the `IAuditLogger` interface.
+  
   In Developer Essentials, i2 provides the `opal-audit-csv-example` example, which writes audit logging information to a CSV file.
 
 - **[Configuring the 'audit logging to database' example project](Configuring-the-audit-logging-to-database-example-project.md)**
 
   In i2 Analyze, you can use audit logging to record information about user activity in the Information Store.
   To do so, you must write and configure an implementation of the `IAuditLogger` interface.
+  
   In Developer Essentials, i2 provides the `opal-audit-database-example` example, which writes audit logging information to a relational database.
 
 - **[Configuring the 'scheduled task' example project](Configuring-the-scheduled-task-example-project.md)**
 
   In i2 Analyze, you can develop [custom 'tasks'](https://docs.i2group.com/analyze/custom-tasks.html) that the server executes on a user-defined schedule.
   A task is simply a Java class that implements a specific interface and performs a custom action when invoked.
-  In Developer Essentials, i2 provides the `opal-scheduled-task-example` example, 
-  which runs a task every five minutes to delete charts that have not recently been accessed.
+  
+  In Developer Essentials, i2 provides the `opal-scheduled-task-example` example, which runs a task every five minutes to delete charts that have not recently been accessed.
 
 - **[Configuring the 'alerting' example project](Configuring-the-alerting-example-project.md)**
 
   In i2 Analyze, you can send alerts to groups of users that you define.
   For example, you might send the same message to all users, or tell a particular set of users about changes to a set of records.
+  
   In Developer Essentials, i2 provides the `opal-alerting-example` example, which builds on the scheduled task example to alert users when charts that they created are automatically deleted.
+
+- **[Configuring the 'dynamic security' example project](Configuring-the-dynamic-security-example-project.md)**
+
+  In i2 Analyze, you can develop 'providers' that dynamically augment the deployed security schema file with extra dimension values and permissions.
+  For example, you might define a security dimension whose values and permissions are determined by an external system.
+  At runtime, the provider implementations would access the external system and supply the relevant values to i2 Analyze.
+  
+  In Developer Essentials, i2 provides the `opal-dynamic-security-example` example, which retrieves values for the Security Compartment dimension from a JSON file, and provides the permissions that contain those values for each user on request.
 
 - **[Debugging Developer Essentials](Debugging-Developer-Essentials.md)**
 

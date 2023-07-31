@@ -21,7 +21,7 @@ The following endpoints were modified at this version of the i2 Analyze REST API
   To allow these changes to be made without affecting existing clients, a new `capabilities` query parameter has been added to allow clients to opt in to receiving those new entries in the response. Omitting the parameter causes the response to contain only the services that are supported by API 1.0, providing backwards compatibility by default.
   
   In this release, the parameter can be set to `SEMANTIC_SEARCH` to include new services that support semantic property type constraints.
- 
+  
   **Note:** A limitation of the i2 Analyze 4.4.1 server is that it accepts _only_ `SEMANTIC_SEARCH` as the capabilities parameter. Any other value results in a `404` response code instead of a limited response. This limitation will be corrected in subsequent releases.
 
 - [`infostore/schema`](https://docs.i2group.com/analyze/4.4.1/public-rest-api.html#get-/api/v1/infostore/schema)
