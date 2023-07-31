@@ -6,15 +6,16 @@
 <title>NoOpAuditLogger (i2 Analyze API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../script.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -44,7 +45,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -54,12 +55,8 @@ loadScripts(document, 'script');</script>
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/audit/NoOpAuditLogger.html" target="_top">Frames</a></li>
-<li><a href="NoOpAuditLogger.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <ul class="navListSearch">
 <li><label for="search">SEARCH:</label>
@@ -148,7 +145,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 <ul class="blockList">
 <li class="blockList">
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.summary">
 <!--   -->
@@ -169,7 +166,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 </ul>
 </section>
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
@@ -187,7 +184,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;com.i2group.disco.audit.spi.<a href="spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></h3>
-<code><a href="spi/IAuditLogger.html#isAuthenticationAuditEnabled()">isAuthenticationAuditEnabled</a>, <a href="spi/IAuditLogger.html#isChartCRUDAuditEnabled()">isChartCRUDAuditEnabled</a>, <a href="spi/IAuditLogger.html#isDAODAuditEnabled()">isDAODAuditEnabled</a>, <a href="spi/IAuditLogger.html#isQueryAuditEnabled()">isQueryAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordCUDAuditEnabled()">isRecordCUDAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordRetrievalAuditEnabled()">isRecordRetrievalAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordUploadAuditEnabled()">isRecordUploadAuditEnabled</a>, <a href="spi/IAuditLogger.html#logChartCreate(com.i2group.disco.audit.IChartCreateAuditEvent)">logChartCreate</a>, <a href="spi/IAuditLogger.html#logChartDelete(com.i2group.disco.audit.IChartDeleteAuditEvent)">logChartDelete</a>, <a href="spi/IAuditLogger.html#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)">logChartRead</a>, <a href="spi/IAuditLogger.html#logChartUndoDelete(com.i2group.disco.audit.IChartUndoDeleteAuditEvent)">logChartUndoDelete</a>, <a href="spi/IAuditLogger.html#logChartUpdate(com.i2group.disco.audit.IChartUpdateAuditEvent)">logChartUpdate</a>, <a href="spi/IAuditLogger.html#logChartVersionDelete(com.i2group.disco.audit.IChartVersionDeleteAuditEvent)">logChartVersionDelete</a>, <a href="spi/IAuditLogger.html#logChartVersionRead(com.i2group.disco.audit.IChartVersionReadAuditEvent)">logChartVersionRead</a>, <a href="spi/IAuditLogger.html#logDAODEvent(com.i2group.disco.audit.IDAODAuditEvent)">logDAODEvent</a>, <a href="spi/IAuditLogger.html#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)">logDAODResultSetsDeleteEvent</a>, <a href="spi/IAuditLogger.html#logDefault(com.i2group.disco.audit.IAuditEvent)">logDefault</a>, <a href="spi/IAuditLogger.html#logExpand(com.i2group.disco.audit.IExpandAuditEvent)">logExpand</a>, <a href="spi/IAuditLogger.html#logFindPath(com.i2group.disco.audit.IFindPathAuditEvent)">logFindPath</a>, <a href="spi/IAuditLogger.html#logGeospatialSearch(com.i2group.disco.audit.IGeospatialSearchAuditEvent)">logGeospatialSearch</a>, <a href="spi/IAuditLogger.html#logHighlightQuery(com.i2group.disco.audit.IHighlightQueryShowMoreAuditEvent)">logHighlightQuery</a>, <a href="spi/IAuditLogger.html#logLoginEvent(com.i2group.disco.audit.ILoginAuditEvent)">logLoginEvent</a>, <a href="spi/IAuditLogger.html#logLogoutEvent(com.i2group.disco.audit.ILogoutAuditEvent)">logLogoutEvent</a>, <a href="spi/IAuditLogger.html#logPrivacyAgreementEvent(com.i2group.disco.audit.IPrivacyAgreementAuditEvent)">logPrivacyAgreementEvent</a>, <a href="spi/IAuditLogger.html#logQuickSearch(com.i2group.disco.audit.IQuickSearchAuditEvent)">logQuickSearch</a>, <a href="spi/IAuditLogger.html#logRecordDelete(com.i2group.disco.audit.IRecordDeleteAuditEvent)">logRecordDelete</a>, <a href="spi/IAuditLogger.html#logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)">logRecordRetrieval</a>, <a href="spi/IAuditLogger.html#logRecordUpload(com.i2group.disco.audit.IRecordUploadAuditEvent)">logRecordUpload</a>, <a href="spi/IAuditLogger.html#logVisualQuery(com.i2group.disco.audit.IVisualQueryAuditEvent)">logVisualQuery</a></code></li>
+<code><a href="spi/IAuditLogger.html#isAuthenticationAuditEnabled()">isAuthenticationAuditEnabled</a>, <a href="spi/IAuditLogger.html#isChartCRUDAuditEnabled()">isChartCRUDAuditEnabled</a>, <a href="spi/IAuditLogger.html#isChartletAuditEnabled()">isChartletAuditEnabled</a>, <a href="spi/IAuditLogger.html#isDAODAuditEnabled()">isDAODAuditEnabled</a>, <a href="spi/IAuditLogger.html#isQueryAuditEnabled()">isQueryAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordCUDAuditEnabled()">isRecordCUDAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordRetrievalAuditEnabled()">isRecordRetrievalAuditEnabled</a>, <a href="spi/IAuditLogger.html#isRecordUploadAuditEnabled()">isRecordUploadAuditEnabled</a>, <a href="spi/IAuditLogger.html#logChartCreate(com.i2group.disco.audit.IChartCreateAuditEvent)">logChartCreate</a>, <a href="spi/IAuditLogger.html#logChartDelete(com.i2group.disco.audit.IChartDeleteAuditEvent)">logChartDelete</a>, <a href="spi/IAuditLogger.html#logChartletCreate(com.i2group.disco.audit.IChartletAuditEvent)">logChartletCreate</a>, <a href="spi/IAuditLogger.html#logChartletRead(com.i2group.disco.audit.IChartletAuditEvent)">logChartletRead</a>, <a href="spi/IAuditLogger.html#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)">logChartRead</a>, <a href="spi/IAuditLogger.html#logChartUndoDelete(com.i2group.disco.audit.IChartUndoDeleteAuditEvent)">logChartUndoDelete</a>, <a href="spi/IAuditLogger.html#logChartUpdate(com.i2group.disco.audit.IChartUpdateAuditEvent)">logChartUpdate</a>, <a href="spi/IAuditLogger.html#logChartVersionDelete(com.i2group.disco.audit.IChartVersionDeleteAuditEvent)">logChartVersionDelete</a>, <a href="spi/IAuditLogger.html#logChartVersionRead(com.i2group.disco.audit.IChartVersionReadAuditEvent)">logChartVersionRead</a>, <a href="spi/IAuditLogger.html#logDAODEvent(com.i2group.disco.audit.IDAODAuditEvent)">logDAODEvent</a>, <a href="spi/IAuditLogger.html#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)">logDAODResultSetsDeleteEvent</a>, <a href="spi/IAuditLogger.html#logDefault(com.i2group.disco.audit.IAuditEvent)">logDefault</a>, <a href="spi/IAuditLogger.html#logExpand(com.i2group.disco.audit.IExpandAuditEvent)">logExpand</a>, <a href="spi/IAuditLogger.html#logFindPath(com.i2group.disco.audit.IFindPathAuditEvent)">logFindPath</a>, <a href="spi/IAuditLogger.html#logGeospatialSearch(com.i2group.disco.audit.IGeospatialSearchAuditEvent)">logGeospatialSearch</a>, <a href="spi/IAuditLogger.html#logHighlightQuery(com.i2group.disco.audit.IHighlightQueryShowMoreAuditEvent)">logHighlightQuery</a>, <a href="spi/IAuditLogger.html#logLoginEvent(com.i2group.disco.audit.ILoginAuditEvent)">logLoginEvent</a>, <a href="spi/IAuditLogger.html#logLogoutEvent(com.i2group.disco.audit.ILogoutAuditEvent)">logLogoutEvent</a>, <a href="spi/IAuditLogger.html#logPrivacyAgreementEvent(com.i2group.disco.audit.IPrivacyAgreementAuditEvent)">logPrivacyAgreementEvent</a>, <a href="spi/IAuditLogger.html#logQuickSearch(com.i2group.disco.audit.IQuickSearchAuditEvent)">logQuickSearch</a>, <a href="spi/IAuditLogger.html#logRecordDelete(com.i2group.disco.audit.IRecordDeleteAuditEvent)">logRecordDelete</a>, <a href="spi/IAuditLogger.html#logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)">logRecordRetrieval</a>, <a href="spi/IAuditLogger.html#logRecordUpload(com.i2group.disco.audit.IRecordUploadAuditEvent)">logRecordUpload</a>, <a href="spi/IAuditLogger.html#logVisualQuery(com.i2group.disco.audit.IVisualQueryAuditEvent)">logVisualQuery</a></code></li>
 </ul>
 </li>
 </ul>
@@ -199,7 +196,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 <ul class="blockList">
 <li class="blockList">
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.detail">
 <!--   -->
@@ -234,7 +231,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -244,12 +241,8 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/audit/NoOpAuditLogger.html" target="_top">Frames</a></li>
-<li><a href="NoOpAuditLogger.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--
@@ -286,7 +279,7 @@ implements <a href="spi/IAuditLogger.html" title="interface in com.i2group.disco
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2022.</small></p>
+<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
 </footer>
 </body>
 </html>

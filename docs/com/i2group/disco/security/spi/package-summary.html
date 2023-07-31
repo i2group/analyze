@@ -6,15 +6,16 @@
 <title>com.i2group.disco.security.spi (i2 Analyze API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -44,7 +45,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../../index.html">Overview</a></li>
 <li class="navBarCell1Rev">Package</li>
 <li>Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -54,12 +55,8 @@ loadScripts(document, 'script');</script>
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../index.html?com/i2group/disco/security/spi/package-summary.html" target="_top">Frames</a></li>
-<li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <ul class="navListSearch">
 <li><label for="search">SEARCH:</label>
@@ -99,13 +96,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h1 title="Package" class="title">Package&nbsp;com.i2group.disco.security.spi</h1>
 </div>
 <div class="contentContainer">
-<section role="region"><a id="package.description">
+<section><a id="package.description">
 <!--   -->
 </a>
-<div class="block">Contains a custom extension point that clients can use to provide their own implementations of
- <a href="IUserItemTypeAccessResolverProvider.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider</code></a>. i2 Analyze uses
- <a href="IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a>
- to retrieve the item type access permissions of a specific user.</div>
+<div class="block">Contains the following extension points for customizing the security of i2 Analyze records:
+
+ <ul>
+   <li><a href="IUserItemTypeAccessResolverProvider.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider</code></a>, which you can
+       implement to change users' permissions to access records with particular item types. i2
+       Analyze uses <a href="IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a>
+       to retrieve the item type access permissions of a specific user.
+   <li><a href="ISecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.security.spi"><code>ISecurityDimensionValuesProvider</code></a>, which you can
+       implement to add or modify the values in security dimensions dynamically.
+   <li><a href="ISecurityPermissionsProvider.html" title="interface in com.i2group.disco.security.spi"><code>ISecurityPermissionsProvider</code></a>, which you can
+       implement to create permissions that use dynamically provided dimension values, or to give
+       permissions to users through a different mechanism from the default one.
+ </ul></div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>11.5</dd>
@@ -121,17 +127,90 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="IDimension.html" title="interface in com.i2group.disco.security.spi">IDimension</a></th>
+<td class="colLast">
+<div class="block">A security dimension.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="IDimensionValue.html" title="interface in com.i2group.disco.security.spi">IDimensionValue</a></th>
+<td class="colLast">
+<div class="block">A security dimension value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="IPermission.html" title="interface in com.i2group.disco.security.spi">IPermission</a></th>
+<td class="colLast">
+<div class="block">A security permission, which relates a particular access level to a particular security dimension
+ value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="ISecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityDimensionValuesProvider</a></th>
+<td class="colLast">
+<div class="block">A provider of security dimension values that add to or modify the values in a particular
+ dimension.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="ISecurityPermissionsProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityPermissionsProvider</a></th>
+<td class="colLast">
+<div class="block">A provider of security permissions for use instead of or as well as the mechanism that the
+ security schema provides.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IUserItemTypeAccessResolverProvider.html" title="interface in com.i2group.disco.security.spi">IUserItemTypeAccessResolverProvider</a></th>
 <td class="colLast">
 <div class="block">A provider of per-user <a href="IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a> objects that can determine a user's
  right (that is, "allowed" or "not allowed") to access different types of data in i2 Analyze.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi">IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</a></th>
 <td class="colLast">
 <div class="block">A provider of methods that i2 Analyze calls to determine whether the user for whom it was
  generated has access to data with a particular type.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="DimensionValue.html" title="class in com.i2group.disco.security.spi">DimensionValue</a></th>
+<td class="colLast">
+<div class="block">An implementation of <a href="IDimensionValue.html" title="interface in com.i2group.disco.security.spi"><code>IDimensionValue</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="Permission.html" title="class in com.i2group.disco.security.spi">Permission</a></th>
+<td class="colLast">
+<div class="block">An implementation of <a href="IPermission.html" title="interface in com.i2group.disco.security.spi"><code>IPermission</code></a>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="IPermission.AccessLevel.html" title="enum in com.i2group.disco.security.spi">IPermission.AccessLevel</a></th>
+<td class="colLast">
+<div class="block">The level of access that an individual user or a member of a user group has to some data.</div>
 </td>
 </tr>
 </tbody>
@@ -151,7 +230,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../../index.html">Overview</a></li>
 <li class="navBarCell1Rev">Package</li>
 <li>Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -161,12 +240,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../index.html?com/i2group/disco/security/spi/package-summary.html" target="_top">Frames</a></li>
-<li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--
@@ -188,7 +263,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2022.</small></p>
+<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
 </footer>
 </body>
 </html>

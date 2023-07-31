@@ -6,15 +6,16 @@
 <title>com.i2group.disco.audit (i2 Analyze API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../script.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -44,7 +45,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li class="navBarCell1Rev">Package</li>
 <li>Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -54,12 +55,8 @@ loadScripts(document, 'script');</script>
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/audit/package-summary.html" target="_top">Frames</a></li>
-<li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <ul class="navListSearch">
 <li><label for="search">SEARCH:</label>
@@ -99,7 +96,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h1 title="Package" class="title">Package&nbsp;com.i2group.disco.audit</h1>
 </div>
 <div class="contentContainer">
-<section role="region"><a id="package.description">
+<section><a id="package.description">
 <!--   -->
 </a>
 <div class="block">Contains interfaces for retrieving information about operations performed against the Information
@@ -145,211 +142,218 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a></th>
+<td class="colLast">
+<div class="block">An event that was generated during the processing of a "chartlet create" or "chartlet read"
+ operation, which occur when a user shares or navigates to shared records.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "chart read" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IChartUndoDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUndoDeleteAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "chart undo delete" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IChartUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUpdateAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "chart update" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IChartVersionDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionDeleteAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "chart version delete" operation against
  the Information Store.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IChartVersionReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionReadAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "chart version read" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IDAODAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of an operation against an external data
  source.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODResultSetsDeleteAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated when result sets from operations against external data sources were
  deleted.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IEntityTypeFilter.html" title="interface in com.i2group.disco.audit">IEntityTypeFilter</a></th>
 <td class="colLast">
 <div class="block">The name and identifier of an entity type that acted as a filter in an "expand" operation, plus
  any link type filters that apply to the entity type filter.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IExpandAuditEvent.html" title="interface in com.i2group.disco.audit">IExpandAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of an "expand" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IFindPathAuditEvent.html" title="interface in com.i2group.disco.audit">IFindPathAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "find path" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IGeospatialSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IGeospatialSearchAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "geospatial search" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IHighlightQueryShowMoreAuditEvent.html" title="interface in com.i2group.disco.audit">IHighlightQueryShowMoreAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "highlight query show more" operation
  against the Information Store.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ILinkTypeFilter.html" title="interface in com.i2group.disco.audit">ILinkTypeFilter</a></th>
 <td class="colLast">
 <div class="block">The name and identifier of a link type that acted as a filter in an "expand" operation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ILoginAuditEvent.html" title="interface in com.i2group.disco.audit">ILoginAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated when a user logged in to i2 Analyze.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit">ILogoutAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated when a user logged out of i2 Analyze.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="INoteAddition.html" title="interface in com.i2group.disco.audit">INoteAddition</a></th>
 <td class="colLast">
 <div class="block">Information about a new note on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="INoteChangeset.html" title="interface in com.i2group.disco.audit">INoteChangeset</a></th>
 <td class="colLast">
 <div class="block">A collection of changes to the notes on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="INoteModification.html" title="interface in com.i2group.disco.audit">INoteModification</a></th>
 <td class="colLast">
 <div class="block">Information about a modification to a note on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit">IPrivacyAgreementAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated when a user accepted or rejected a privacy agreement.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IQuickSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IQuickSearchAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "quick search" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IRecordDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordDeleteAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "record delete" operation against the
  Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IRecordIdentifierInfo.html" title="interface in com.i2group.disco.audit">IRecordIdentifierInfo</a></th>
 <td class="colLast">
 <div class="block">Information about the identifiers of a record that is involved in a "record delete" operation
  that is under audit.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IRecordInfo.html" title="interface in com.i2group.disco.audit">IRecordInfo</a></th>
 <td class="colLast">
 <div class="block">Information about a record that is involved in an operation that is under audit.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IRecordRetrievalAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordRetrievalAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "record retrieval" operation against the
  Information Store, such as when a user looks at the detail of a search result.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IRecordUploadAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordUploadAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "record create" or "record update"
  operation against the Information Store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ISourceReference.html" title="interface in com.i2group.disco.audit">ISourceReference</a></th>
 <td class="colLast">
 <div class="block">Information about a source that contains or contributed data for an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ISourceReferenceAddition.html" title="interface in com.i2group.disco.audit">ISourceReferenceAddition</a></th>
 <td class="colLast">
 <div class="block">Information about a new source reference on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="ISourceReferenceChangeset.html" title="interface in com.i2group.disco.audit">ISourceReferenceChangeset</a></th>
 <td class="colLast">
 <div class="block">A collection of changes to the source references on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="ISourceReferenceModification.html" title="interface in com.i2group.disco.audit">ISourceReferenceModification</a></th>
 <td class="colLast">
 <div class="block">Information about a modification to a source reference on an i2 Analyze record.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IUploadChartInfo.html" title="interface in com.i2group.disco.audit">IUploadChartInfo</a></th>
 <td class="colLast">
 <div class="block">Information about a chart that is involved in a "create" or "update" operation that is under
  audit.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="IUploadRecordInfo.html" title="interface in com.i2group.disco.audit">IUploadRecordInfo</a></th>
 <td class="colLast">
 <div class="block">Information about a record that is involved in a "record create" or "record update" operation
  that is under audit.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a></th>
 <td class="colLast">
 <div class="block">An event that was generated during the processing of a "visual query" operation against the
@@ -407,7 +411,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li class="navBarCell1Rev">Package</li>
 <li>Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -417,12 +421,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/audit/package-summary.html" target="_top">Frames</a></li>
-<li><a href="package-summary.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--
@@ -444,7 +444,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2022.</small></p>
+<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
 </footer>
 </body>
 </html>

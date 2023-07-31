@@ -6,15 +6,16 @@
 <title>WebSphereUserGroupsProvider (i2 Analyze API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../script.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -50,7 +51,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -60,12 +61,8 @@ loadScripts(document, 'script');</script>
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/user/WebSphereUserGroupsProvider.html" target="_top">Frames</a></li>
-<li><a href="WebSphereUserGroupsProvider.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <ul class="navListSearch">
 <li><label for="search">SEARCH:</label>
@@ -93,13 +90,13 @@ loadScripts(document, 'script');</script>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -141,8 +138,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public final class <span class="typeNameLabel">WebSphereUserGroupsProvider</span>
 extends java.lang.Object
 implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi">IUserGroupsProvider</a></pre>
-<div class="block">An implementation of <a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that uses <code>Subject.getPublicCredentials()</code> as the source of user group information, and
- is compatible with OpenID Connect (OIDC).</div>
+<div class="block">An implementation of <a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that works with the Liberty user registry.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>8.0</dd>
@@ -153,8 +149,29 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Constructor</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">WebSphereUserGroupsProvider</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
@@ -183,6 +200,13 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.i2group.disco.user.spi.IUserGroupsProvider">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.i2group.disco.user.spi.<a href="spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi">IUserGroupsProvider</a></h3>
+<code><a href="spi/IUserGroupsProvider.html#getGroupsForUser(java.lang.String)">getGroupsForUser</a></code></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -192,8 +216,27 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a id="&lt;init&gt;()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>WebSphereUserGroupsProvider</h4>
+<pre>public&nbsp;WebSphereUserGroupsProvider()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ============ METHOD DETAIL ========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.detail">
 <!--   -->
@@ -205,7 +248,7 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getGroupsForUser</h4>
-<pre class="methodSignature">public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getGroupsForUser&#8203;(java.lang.String&nbsp;principalName)</pre>
+<pre class="methodSignature">public final&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getGroupsForUser&#8203;(java.lang.String&nbsp;principalName)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="spi/IUserGroupsProvider.html#getGroupsForUser(java.lang.String)">IUserGroupsProvider</a></code></span></div>
 <div class="block">Gets <code>String</code>s that contain the names of the user groups that the specified user belongs
  to.</div>
@@ -240,7 +283,7 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -250,12 +293,8 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 </ul>
 </div>
 <div class="subNav">
-<ul class="navList">
-<li><a href="../../../../index.html?com/i2group/disco/user/WebSphereUserGroupsProvider.html" target="_top">Frames</a></li>
-<li><a href="WebSphereUserGroupsProvider.html" target="_top">No&nbsp;Frames</a></li>
-</ul>
 <ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../allclasses-noframe.html">All&nbsp;Classes</a></li>
+<li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
 </ul>
 <div>
 <script type="text/javascript"><!--
@@ -277,13 +316,13 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -292,7 +331,7 @@ implements <a href="spi/IUserGroupsProvider.html" title="interface in com.i2grou
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2022.</small></p>
+<p class="legalCopy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
 </footer>
 </body>
 </html>
