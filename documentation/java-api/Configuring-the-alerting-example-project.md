@@ -43,7 +43,7 @@ The alerts appear in the upper right corner of Analyst's Notebook Premium, under
 
    1. In Eclipse, double-click the `project.jardesc` file in the `opal-alerting-example` project to open the Export window with default settings for the project already applied.
 
-   1. In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-alerting-example\WEB-INF\lib\opal-alerting-example.jar`.
+   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-alerting-example\WEB-INF\lib\opal-alerting-example.jar`.
 
       If the directory does not exist, a message is displayed.
       If you click **Yes**, the directory structure is created for you.

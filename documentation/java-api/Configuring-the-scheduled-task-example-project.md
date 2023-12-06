@@ -30,7 +30,7 @@ The example task deletes charts that have not been accessed in the last five min
 
    1. In Eclipse, double-click the `project.jardesc` file in the `opal-scheduled-task-example` project to open the Export window with default settings for the project already applied.
 
-   1. In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib\opal-scheduled-task-example.jar`.
+   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib\opal-scheduled-task-example.jar`.
 
       If the directory does not exist, a message is displayed. If you click **Yes**, the directory structure is created for you.
 

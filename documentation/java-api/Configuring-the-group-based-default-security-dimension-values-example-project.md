@@ -68,7 +68,7 @@ If a user is a member of more than one group, records receive all of the dimensi
 
    1. In Eclipse, double-click the `project.jardesc` file in the `opal-default-security-example` project to open the Export window with default settings for the project applied.
 
-   1. In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-default-security-example\WEB-INF\lib\opal-default-security-example.jar`.
+   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-default-security-example\WEB-INF\lib\opal-default-security-example.jar`.
 
       If the directory does not exist, a message is displayed. If you click **Yes**, the directory structure is created for you.
 

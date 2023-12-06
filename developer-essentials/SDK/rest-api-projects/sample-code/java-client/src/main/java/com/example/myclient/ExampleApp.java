@@ -3,6 +3,7 @@ package com.example.myclient;
 import com.example.generated.api.*;
 import com.example.generated.invoker.*;
 import com.example.generated.model.*;
+import com.example.generated.model.Record;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

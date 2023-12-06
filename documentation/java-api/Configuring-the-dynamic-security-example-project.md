@@ -72,7 +72,7 @@ Next, to be able to test the implementation, you must build a JAR file of the pr
 
 1. In Eclipse, double-click the `project.jardesc` file in the `opal-dynamic-security-example` project to open the Export window with default settings for the project applied.
 
-1. In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-dynamic-security-example\WEB-INF\lib\opal-dynamic-security-example.jar`.
+1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-dynamic-security-example\WEB-INF\lib\opal-dynamic-security-example.jar`.
 
    If the directory does not exist, a message is displayed. If you click **Yes**, the directory structure is created for you.
 

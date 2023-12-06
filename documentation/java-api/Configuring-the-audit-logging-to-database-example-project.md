@@ -4,9 +4,9 @@ In i2 Analyze, you can use audit logging to record information about user activi
 
 ## Before you begin
 
-You must have a development deployment of i2 Analyze and a configured development environment. For more information, see [Preparing to use i2 Analyze Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
+You must have a development deployment of i2 Analyze that uses PostgreSQL or Db2 as its relational database, and a configured development environment. For more information, see [Preparing to use i2 Analyze Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
 
-For its relational database, the example uses the same instance as i2 Analyze, and as a result it has no additional requirements.
+For its database, the example uses the same instance as i2 Analyze, and as a result it has no additional requirements.
 
 ## About this task
 
@@ -98,7 +98,7 @@ After you add the project to your development environment, you can inspect the b
 
    1. In Eclipse, double-click the `project.jardesc` file in the `opal-audit-database-example` project to open the Export window with default settings for the project applied.
 
-   1. In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-audit-database-example\WEB-INF\lib\opal-audit-database-example.jar`.
+   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-audit-database-example\WEB-INF\lib\opal-audit-database-example.jar`.
 
    1. Click **Finish** to export the JAR file to the specified destination.
 

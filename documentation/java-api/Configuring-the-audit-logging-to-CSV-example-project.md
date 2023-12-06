@@ -30,7 +30,7 @@ After you add the project to your development environment, you can inspect the b
 
     1.  In Eclipse, double-click the `project.jardesc` file in the `opal-audit-csv-example` project to open the Export window with default settings for the project applied.
 
-    2.  In the Export window, change the **Export destination** to `toolkit\configuration\fragments\opal-audit-csv-example\WEB-INF\lib\opal-audit-csv-example.jar`.
+    2.  In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-audit-csv-example\WEB-INF\lib\opal-audit-csv-example.jar`.
 
     3.  Click **Finish** to export the JAR file to the specified destination.
 
