@@ -85,6 +85,15 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">The type of data that is involved in a "chart read" operation against the Information Store.</div>
 </div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IAccessControl.html" title="interface in com.i2group.disco.audit">IAccessControl</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An association between a subject (a user or a group) and an access level, for a saved artifact
+ involved in an operation that is under audit.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/IAccessControl.AccessLevel.html" title="enum class in com.i2group.disco.audit">IAccessControl.AccessLevel</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The level of access that a user or a group has to a saved artifact.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/alerts/IAlertManager.html" title="interface in com.i2group.disco.alerts">IAlertManager</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A set of methods for creating and reporting on alerts that you can send to specified users of an
@@ -206,6 +215,30 @@ loadScripts(document, 'script');</script>
 <div class="block">An event that was generated during the processing of a "geospatial search" operation against the
  Information Store.</div>
 </div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IGroupAddAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupAddAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of an "add group" provisioning operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IGroupInfo.html" title="interface in com.i2group.disco.audit">IGroupInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Information about a group that is involved in an operation that is under audit.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/IGroupInfo.Source.html" title="enum class in com.i2group.disco.audit">IGroupInfo.Source</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The provisioning source of a group.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IGroupRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRemoveAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "remove group" provisioning operation.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IGroupRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRestoreAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "restore group" provisioning operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IGroupUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupUpdateAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of an "update group" provisioning operation.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IHighlightQueryShowMoreAuditEvent.html" title="interface in com.i2group.disco.audit">IHighlightQueryShowMoreAuditEvent</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "highlight query show more" operation
@@ -281,66 +314,108 @@ loadScripts(document, 'script');</script>
 <div class="block">An event that was generated during the processing of a "record create" or "record update"
  operation against the Information Store.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/task/spi/IScheduledTask.html" title="interface in com.i2group.disco.task.spi">IScheduledTask</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactCreateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactCreateAuditEvent</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "saved artifact create" operation.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactDeleteAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "saved artifact delete" operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactInfo.html" title="interface in com.i2group.disco.audit">ISavedArtifactInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Information about a saved artifact that is involved in a create, read, or update operation that
+ is under audit.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/ISavedArtifactInfo.ArtifactType.html" title="enum class in com.i2group.disco.audit">ISavedArtifactInfo.ArtifactType</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The type of saved artifact.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactReadAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactReadAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "saved artifact read" operation.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactUpdateAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "saved artifact update" operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISavedArtifactUserInfo.html" title="interface in com.i2group.disco.audit">ISavedArtifactUserInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Information about a user who has created, read, updated, or deleted a saved artifact.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/task/spi/IScheduledTask.html" title="interface in com.i2group.disco.task.spi">IScheduledTask</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A task to be executed by the i2 Analyze server, on a schedule.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/task/spi/IScheduledTask.IScheduledTaskObjects.html" title="interface in com.i2group.disco.task.spi">IScheduledTask.IScheduledTaskObjects</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/task/spi/IScheduledTask.IScheduledTaskObjects.html" title="interface in com.i2group.disco.task.spi">IScheduledTask.IScheduledTaskObjects</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A set of methods that provide access to other server APIs that you can use from inside a <a href="com/i2group/disco/task/spi/IScheduledTask.html" title="interface in com.i2group.disco.task.spi"><code>IScheduledTask</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/security/spi/ISecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityDimensionValuesProvider</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/security/spi/ISecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityDimensionValuesProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A provider of security dimension values that add to or modify the values in a particular
  dimension.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/security/spi/ISecurityPermissionsProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityPermissionsProvider</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/security/spi/ISecurityPermissionsProvider.html" title="interface in com.i2group.disco.security.spi">ISecurityPermissionsProvider</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A provider of security permissions for use instead of or as well as the mechanism that the
  security schema provides.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/alerts/ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/alerts/ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A set of criteria that determine the list of users to whom an alert is sent.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReference.html" title="interface in com.i2group.disco.audit">ISourceReference</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReference.html" title="interface in com.i2group.disco.audit">ISourceReference</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a source that contains or contributed data for an i2 Analyze record.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceAddition.html" title="interface in com.i2group.disco.audit">ISourceReferenceAddition</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceAddition.html" title="interface in com.i2group.disco.audit">ISourceReferenceAddition</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a new source reference on an i2 Analyze record.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceChangeset.html" title="interface in com.i2group.disco.audit">ISourceReferenceChangeset</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceChangeset.html" title="interface in com.i2group.disco.audit">ISourceReferenceChangeset</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A collection of changes to the source references on an i2 Analyze record.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceModification.html" title="interface in com.i2group.disco.audit">ISourceReferenceModification</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/ISourceReferenceModification.html" title="interface in com.i2group.disco.audit">ISourceReferenceModification</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a modification to a source reference on an i2 Analyze record.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing">ITracer</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing">ITracer</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Represents a generic tracer object capable of reporting debugging/tracing information.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/apollo/common/tracing/ITracerFactory.html" title="interface in com.i2group.apollo.common.tracing">ITracerFactory</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/apollo/common/tracing/ITracerFactory.html" title="interface in com.i2group.apollo.common.tracing">ITracerFactory</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A factory for creating tracer objects, which allow configuring and logging of any tracing
  information that an i2 Analyze web service generates.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUploadChartInfo.html" title="interface in com.i2group.disco.audit">IUploadChartInfo</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUploadChartInfo.html" title="interface in com.i2group.disco.audit">IUploadChartInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a chart that is involved in a "create" or "update" operation that is under
  audit.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUploadRecordInfo.html" title="interface in com.i2group.disco.audit">IUploadRecordInfo</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUploadRecordInfo.html" title="interface in com.i2group.disco.audit">IUploadRecordInfo</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a record that is involved in a "record create" or "record update" operation
  that is under audit.</div>
 </div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUserAddAuditEvent.html" title="interface in com.i2group.disco.audit">IUserAddAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of an "add user" provisioning operation.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi">IUserGroupsProvider</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block">A provider of information about user group membership to i2 Analyze.</div>
+<div class="block">A provider of information about user membership of system groups, when i2 Analyze is in
+ just-in-time provisioning mode.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUserInfo.html" title="interface in com.i2group.disco.audit">IUserInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Information about a user that is involved in an operation that is under audit.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/IUserInfo.Source.html" title="enum class in com.i2group.disco.audit">IUserInfo.Source</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The provisioning source of a user.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/security/IUserInformation.html" title="interface in com.i2group.disco.security">IUserInformation</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
@@ -356,9 +431,26 @@ loadScripts(document, 'script');</script>
 <div class="block">A provider of methods that i2 Analyze calls to determine whether the user for whom it was
  generated has access to data with a particular type.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUserRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRemoveAuditEvent</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block">An event that was generated during the processing of a "visual query" operation against the
+<div class="block">An event that was generated during the processing of a "remove user" provisioning operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUserRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRestoreAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of a "restore user" provisioning operation.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IUserUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IUserUpdateAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the processing of an "update user" provisioning operation.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated before the processing of a "visual query" operation against the
+ Information Store.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IVisualQueryCompletedAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryCompletedAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated after the completion of a "visual query" operation against the
  Information Store.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/audit/NoOpAuditLogger.html" title="class in com.i2group.disco.audit">NoOpAuditLogger</a></div>
@@ -393,31 +485,35 @@ loadScripts(document, 'script');</script>
 <div class="block">An implementation of <a href="com/i2group/disco/user/spi/IDefaultSecurityDimensionValuesProvider.html" title="interface in com.i2group.disco.user.spi"><code>IDefaultSecurityDimensionValuesProvider</code></a> that returns the same <a href="com/i2group/disco/user/spi/DefaultSecurityDimension.html" title="class in com.i2group.disco.user.spi"><code>DefaultSecurityDimension</code></a>s for all users, based on the contents of an element in the security
  schema named <code>DefaultSecurityDimensionValues</code>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/apollo/model/data/transport/SecurityAccessLevel.html" title="enum class in com.i2group.apollo.model.data.transport">SecurityAccessLevel</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/ProvisioningType.html" title="enum class in com.i2group.disco.audit">ProvisioningType</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The type of provisioning that is involved in one of the provisioning operations.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/apollo/model/data/transport/SecurityAccessLevel.html" title="enum class in com.i2group.apollo.model.data.transport">SecurityAccessLevel</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Indicates the level of access that a user has to some data.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/alerts/SendTo.html" title="class in com.i2group.disco.alerts">SendTo</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/alerts/SendTo.html" title="class in com.i2group.disco.alerts">SendTo</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Implements <a href="com/i2group/disco/alerts/ISendTo.html" title="interface in com.i2group.disco.alerts"><code>ISendTo</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.html" title="class in com.i2group.disco.infostore.importer">TemplateReferenceExtractor</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.html" title="class in com.i2group.disco.infostore.importer">TemplateReferenceExtractor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A utility class for determining whether strings in templates are references to values in columns
  (specified by <code>$(COLUMN_NAME)</code>) or constant values.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.ColumnReferenceOrConstantValue.html" title="class in com.i2group.disco.infostore.importer">TemplateReferenceExtractor.ColumnReferenceOrConstantValue</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/infostore/importer/TemplateReferenceExtractor.ColumnReferenceOrConstantValue.html" title="class in com.i2group.disco.infostore.importer">TemplateReferenceExtractor.ColumnReferenceOrConstantValue</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A descriptor of whether a string in a template is a constant value (in which case it requires
  no further processing), or a reference to a value in a column (in which case it should be
  substituted for the value).</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/security/TypeAccess.html" title="enum class in com.i2group.disco.security">TypeAccess</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/security/TypeAccess.html" title="enum class in com.i2group.disco.security">TypeAccess</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">The access level that a user has to i2 Analyze data with a particular item or property type.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user">WebSphereUserGroupsProvider</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user">WebSphereUserGroupsProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">An implementation of <a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that works with the Liberty user registry.</div>
 </div>
 </div>
@@ -426,7 +522,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
 </footer>
 </div>
 </div>

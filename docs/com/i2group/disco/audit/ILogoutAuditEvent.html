@@ -105,8 +105,14 @@ loadScripts(document, 'script');</script>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the name of the user whose logout generated this <a href="ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILogoutAuditEvent</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getUserId()" class="member-name-link">getUserId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the unique identifier of the user whose logout generated
+ this <a href="ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILogoutAuditEvent</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> representation of this <a href="ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILogoutAuditEvent</code></a>.</div>
 </div>
 </div>
@@ -131,6 +137,21 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>See above.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserId()">
+<h3>getUserId</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getUserId</span>()</div>
+<div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the unique identifier of the user whose logout generated
+ this <a href="ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit"><code>ILogoutAuditEvent</code></a>. A user who was not authorized to use the application can still
+ generate a logout event. In that case, the method returns an empty string.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>See above.</dd>
+<dt>Since:</dt>
+<dd>13.3</dd>
 </dl>
 </section>
 </li>
@@ -167,7 +188,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
 </footer>
 </div>
 </div>

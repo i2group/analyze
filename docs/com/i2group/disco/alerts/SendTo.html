@@ -123,7 +123,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithGroups(java.lang.String...)" class="member-name-link">createWithGroups</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;groups)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Create an <a href="ISendTo.html" title="interface in com.i2group.disco.alerts"><code>ISendTo</code></a> that will match the specified user groups.</div>
+<div class="block">Create an <a href="ISendTo.html" title="interface in com.i2group.disco.alerts"><code>ISendTo</code></a> that will match the specified system user groups.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createWithUsers(java.lang.String...)" class="member-name-link">createWithUsers</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;users)</code></div>
@@ -138,7 +138,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGroups()" class="member-name-link">getGroups</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the names of specific groups of users to receive the alert.</div>
+<div class="block">Gets the names of specific system user groups to receive the alert.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsers()" class="member-name-link">getUsers</a>()</code></div>
@@ -182,7 +182,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>users</code> - The user principal names. May be <code>null</code>.</dd>
-<dd><code>groups</code> - The user groups. May be <code>null</code>.</dd>
+<dd><code>groups</code> - The system user groups. May be <code>null</code>.</dd>
 <dd><code>commandPermissions</code> - The command access control permissions. May be <code>null</code>.</dd>
 </dl>
 </section>
@@ -212,7 +212,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 <section class="detail" id="createWithGroups(java.lang.String...)">
 <h3>createWithGroups</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></span>&nbsp;<span class="element-name">createWithGroups</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;groups)</span></div>
-<div class="block">Create an <a href="ISendTo.html" title="interface in com.i2group.disco.alerts"><code>ISendTo</code></a> that will match the specified user groups.</div>
+<div class="block">Create an <a href="ISendTo.html" title="interface in com.i2group.disco.alerts"><code>ISendTo</code></a> that will match the specified system user groups.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>groups</code> - See above.</dd>
@@ -264,7 +264,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 <h3>getGroups</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getGroups</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="ISendTo.html#getGroups()">ISendTo</a></code></span></div>
-<div class="block">Gets the names of specific groups of users to receive the alert.</div>
+<div class="block">Gets the names of specific system user groups to receive the alert.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ISendTo.html#getGroups()">getGroups</a></code>&nbsp;in interface&nbsp;<code><a href="ISendTo.html" title="interface in com.i2group.disco.alerts">ISendTo</a></code></dd>
@@ -311,7 +311,7 @@ implements <a href="ISendTo.html" title="interface in com.i2group.disco.alerts">
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
 </footer>
 </div>
 </div>

@@ -76,10 +76,14 @@ loadScripts(document, 'script');</script>
 <dt>All Superinterfaces:</dt>
 <dd><code><a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a></code></dd>
 </dl>
+<dl class="notes">
+<dt>All Known Subinterfaces:</dt>
+<dd><code><a href="IVisualQueryCompletedAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryCompletedAuditEvent</a></code></dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">IVisualQueryAuditEvent</span><span class="extends-implements">
 extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a></span></div>
-<div class="block">An event that was generated during the processing of a "visual query" operation against the
+<div class="block">An event that was generated before the processing of a "visual query" operation against the
  Information Store. <a href="IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IVisualQueryAuditEvent</code></a> makes information about the operation available
  to the audit logging mechanism.</div>
 <dl class="notes">
@@ -103,12 +107,17 @@ extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDataStores()" class="member-name-link">getDataStores</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Gets <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>s that contain the names of the data stores that were the targets of the
+<div class="block">Gets <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>s that contain the names of the data stores that are the targets of the
  "visual query" operation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getQuery()" class="member-name-link">getQuery</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOperationId()" class="member-name-link">getOperationId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the unique identifier of the "visual query" operation.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getQuery()" class="member-name-link">getQuery</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> whose contents represent the structure that was passed to the "visual
  query" operation.</div>
 </div>
@@ -117,7 +126,7 @@ extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.i2group.disco.audit.IAuditEvent">Methods inherited from interface&nbsp;com.i2group.disco.audit.<a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a></h3>
-<code><a href="IAuditEvent.html#getClientIPAddress()">getClientIPAddress</a>, <a href="IAuditEvent.html#getClientUserAgent()">getClientUserAgent</a>, <a href="IAuditEvent.html#getTimestamp()">getTimestamp</a>, <a href="IAuditEvent.html#getUser()">getUser</a>, <a href="IAuditEvent.html#getUserSecurityGroups()">getUserSecurityGroups</a>, <a href="IAuditEvent.html#getUserSecurityPermissions()">getUserSecurityPermissions</a>, <a href="IAuditEvent.html#toString()">toString</a></code></div>
+<code><a href="IAuditEvent.html#getClientIPAddress()">getClientIPAddress</a>, <a href="IAuditEvent.html#getClientUserAgent()">getClientUserAgent</a>, <a href="IAuditEvent.html#getTimestamp()">getTimestamp</a>, <a href="IAuditEvent.html#getUser()">getUser</a>, <a href="IAuditEvent.html#getUserId()">getUserId</a>, <a href="IAuditEvent.html#getUserSecurityGroups()">getUserSecurityGroups</a>, <a href="IAuditEvent.html#getUserSecurityPermissions()">getUserSecurityPermissions</a>, <a href="IAuditEvent.html#toString()">toString</a></code></div>
 </section>
 </li>
 </ul>
@@ -133,7 +142,7 @@ extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">
 <section class="detail" id="getDataStores()">
 <h3>getDataStores</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getDataStores</span>()</div>
-<div class="block">Gets <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>s that contain the names of the data stores that were the targets of the
+<div class="block">Gets <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>s that contain the names of the data stores that are the targets of the
  "visual query" operation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -153,6 +162,17 @@ extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">
 </dl>
 </section>
 </li>
+<li>
+<section class="detail" id="getOperationId()">
+<h3>getOperationId</h3>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getOperationId</span>()</div>
+<div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the unique identifier of the "visual query" operation.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>See above.</dd>
+</dl>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -162,7 +182,7 @@ extends <a href="IAuditEvent.html" title="interface in com.i2group.disco.audit">
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2023.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
 </footer>
 </div>
 </div>
