@@ -90,7 +90,7 @@ After you add the project to your development environment, you can inspect the b
         Chrome/53.0.2785.116 Safari/537.36, Groups: [Analyst, Security Controller, Controlled],
         Operation: QuickSearch, DataStores: [InfoStore], Expression: green, Filters: []
 
-    The supplied version of `FileAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services` directory as the target for audit log files. The files are named `auditn.log`, where n is an integer that increments with each new file.
+    The supplied version of `FileAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services` directory as the target for audit log files. If you are using analyze-deployment-tooling for your deployment of i2 Analyze, update the path to `/logs`. The files are named `auditn.log`, where n is an integer that increments with each new file.
 
 7.  Debug the `opal-audit-file-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
 

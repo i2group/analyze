@@ -137,7 +137,7 @@ Even if you can succesfully access the i2 Analyze server from Analyst's Notebook
 Java provides a default trust store for CA certificates named `cacerts` that you can add certificates to.
 
 1. Locate the CA certificate for your server.
-   In the i2 Analyze Containers deployment, it is in [`analyze-containers/dev-environment-secrets/generated-secrets/certificates/externalCA/CA.cer`](https://i2group.github.io/analyze-containers/content/deploy_config_dev.html#installing-the-certificate)
+   In the i2 Analyze Containers deployment, it is in [`analyze-deployment-tooling/environment-secrets/generated-secrets/certificates/externalCA/CA.cer`](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#installing-the-certificate)
 
 1. Add your server's CA certificate to the `cacerts` store by running the following command, replacing `<PATH_CA_CERT>` with the path to your certificate.
    The command requires elevated privileges:

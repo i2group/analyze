@@ -10,11 +10,11 @@ To make full use of the i2 Analyze REST API, you need a deployment of i2 Analyze
 
 **Note:** You can use a different deployment, but you might need to change some parts of the example code if you do. You might also get different results from the requests that you make.
 
-1. Deploy i2 Analyze by following the [i2 Analyze Containers documentation](https://i2group.github.io/analyze-containers/content/deploy_config_dev.html), which explains how to create an i2 Analyze server instance that runs in a Docker container.
+1. Deploy i2 Analyze by following the [i2 Analyze Containers documentation](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html), which explains how to create an i2 Analyze server instance that runs in a Docker container.
 
-   **Important:** In [Creating a config](https://i2group.github.io/analyze-containers/content/deploy_config_dev.html#creating-a-config), choose a deployment pattern that includes the Information Store as part of the i2 Analyze deployment, such as `i2c_istore`. In [Specifying the schema and charting schemes files](https://i2group.github.io/analyze-containers/content/deploy_config_dev.html#specifying-the-schema-and-charting-schemes-files), choose the Law Enforcement schema.
+   **Important:** In [Creating a config](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#creating-a-config), choose a deployment pattern that includes the Information Store as part of the i2 Analyze deployment, such as `i2c_istore`. In [Specifying the schema and charting schemes files](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#specifying-the-schema-and-charting-schemes-files), choose the Law Enforcement schema.
 
-1. Ingest the sample data as explained in the [Example ingestion process](https://i2group.github.io/analyze-containers/content/ingest_config_dev.html#example-ingestion-process), so that you can retrieve this data from the example code.   
+1. Ingest the sample data as explained in the [Example ingestion process](https://i2group.github.io/analyze-deployment-tooling/content/ingest_config_dev.html#example-ingestion-process), so that you can retrieve this data from the example code.   
 
 1. Edit the `command-access-control.xml` file to give the `i2:AlertsCreate` permission to members of the Administrator group, so that they can run the example code:
 
@@ -25,7 +25,7 @@ To make full use of the i2 Analyze REST API, you need a deployment of i2 Analyze
    </CommandAccessPermissions>
    ```
 
-   After you edit this file, you must redeploy i2 Analyze, as described in [Deploying your config in the environment](https://i2group.github.io/analyze-containers/content/deploy_config_dev.html#deploying-your-config-in-the-environment).
+   After you edit this file, you must redeploy i2 Analyze, as described in [Deploying your config in the environment](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#deploying-your-config-in-the-environment).
 
 ## Installing Java
 

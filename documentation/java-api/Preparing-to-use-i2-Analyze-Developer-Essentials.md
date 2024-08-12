@@ -4,7 +4,10 @@ i2 Analyze Developer Essentials provides a set of files and example projects tha
 
 ## Before you begin
 
-You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use. For more information about creating a deployment, see <a href="https://docs.i2group.com/analyze/analyze_deployment.html" class="xref" title="(Opens in a new tab or window)">Deploying i2 Analyze</a>.
+You must have a deployment of i2 Analyze that you can use to develop and test the example projects. If you do not already have a deployment of i2 Analyze, you can create a deployment to use.
+
+- You can use the containerized version of i2 Analyze by using the documentation and scripts in [analyze-deployment-tooling](https://i2group.github.io/analyze-deployment-tooling/). After you have created the deployment, follow the instructions in [Developing and deploying extensions](https://i2group.github.io/analyze-deployment-tooling/content/develop_extensions.html). You do not need to complete the rest of the instructions on this page.
+- You can use a non-containerised version of i2 Analyze using the deployment toolkit. For more information about creating a deployment, see <a href="https://docs.i2group.com/analyze/analyze_deployment.html" class="xref" title="(Opens in a new tab or window)">Deploying i2 Analyze</a>.
 
 ## About this task
 
