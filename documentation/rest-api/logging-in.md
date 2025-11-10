@@ -196,6 +196,7 @@ We can also take a look at the response that is being returned from the `user` e
        commandPermissions: [i2:RecordsUpload, i2:RecordsDelete, i2:Connectors, i2:RecordsExport, i2:ChartsDelete, i2:ChartsUpload, i2:Administrator, i2:ChartsRead, i2:Notebook, i2:Notes, i2:Connectors:example-connector]
        displayName: Jenny
        principalName: Jenny
+       id: 48d0a868-6bcb-4856-88db-a11dbae2712f
    }
    ```
 

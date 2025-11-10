@@ -2,7 +2,7 @@
 
 All deployments of i2 Analyze contain a [security schema file](https://docs.i2group.com/analyze/iap_security_schema_definitions.html) that defines the security dimensions for that deployment. The XML file can also define some or all of the values in those security dimensions, as well as the permissions that associate those values with the access levels that users receive.
 
-It is also possible to _provide_ security dimension values and security permissions to the security schema programmatically. In Developer Essentials, i2 provides the `opal-dynamic-security-example` example, which demonstrates adding values to the Security Compartment dimension, add adding user-specific permissions when the i2 Analyze server requests them.
+It is also possible to _provide_ security dimension values and security permissions to the security schema programmatically. In Developer Essentials, i2 provides the `opal-dynamic-security-example` example, which demonstrates adding values to the Security Compartment dimension, and adding user-specific permissions when the i2 Analyze server requests them.
 
 ## Before you begin
 

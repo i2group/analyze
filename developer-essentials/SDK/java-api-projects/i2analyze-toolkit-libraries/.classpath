@@ -5,14 +5,14 @@
     <classpathentry exported="true" kind="lib" path="shared-lib/DiscoUtils.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/ApolloLegacy.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/disco-api-9.2.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/commons-csv-1.9.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/guava-32.0.1-jre.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.14.1.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jakarta.xml.bind-api-3.0.1.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/commons-csv-1.14.1.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/guava-33.5.0-jre.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.20.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jakarta.xml.bind-api.jar"/>
     <classpathentry kind="output" path="bin"/>
 </classpath>

@@ -10,7 +10,7 @@ This part of the walkthrough demonstrates how to establish a secure connection t
 The generated client includes a class named `ApiClient` that contains generic code for interacting with a server that supports the API in the specification.
 To interact with our particular i2 Analyze server, you can extend that class to customize its functionality.
 
-1. Create a directory named `myclient` at the same level as the `generated` directory in `src/main/java`. (`src/main/java/com/example/myclient`).
+1. Create a directory named `myclient` at the same level as the `generated` directory in `src/main/java` (`src/main/java/com/example/myclient`).
 
 1. Inside the `myclient` directory, create a file named `MyApiClient.java`, and populate it with this code:
 

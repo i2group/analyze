@@ -10,7 +10,7 @@ To make full use of the i2 Analyze REST API, you need a deployment of i2 Analyze
 
 **Note:** You can use a different deployment, but you might need to change some parts of the example code if you do. You might also get different results from the requests that you make.
 
-1. Deploy i2 Analyze by following the [i2 Analyze Containers documentation](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html), which explains how to create an i2 Analyze server instance that runs in a Docker container.
+1. Deploy i2 Analyze by following the [i2 Analyze containerized deployment documentation](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html), which explains how to create an i2 Analyze server instance that runs in a Docker container.
 
    **Important:** In [Creating a config](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#creating-a-config), choose a deployment pattern that includes the Information Store as part of the i2 Analyze deployment, such as `i2c_istore`. In [Specifying the schema and charting schemes files](https://i2group.github.io/analyze-deployment-tooling/content/deploy_config_dev.html#specifying-the-schema-and-charting-schemes-files), choose the Law Enforcement schema.
 
