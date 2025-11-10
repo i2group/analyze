@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="deprecated-list-page">
@@ -73,6 +73,21 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="com/i2group/disco/audit/spi/IAuditLogger.html#isRecordCUDAuditEnabled()"><code>IAuditLogger.isRecordCUDAuditEnabled()</code></a> instead.</div>
 </div>
+<div class="col-summary-item-name odd-row-color"><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)">com.i2group.disco.audit.spi.IAuditLogger.logChartRead<wbr>(IChartReadAuditEvent)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">Use <a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>IAuditLogger.logChartBinaryRead(IChartReadAuditEvent)</code></a> to log information about
+     "chart binary read" operations and <a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>IAuditLogger.logChartImageRead(IChartReadAuditEvent)</code></a> to log
+     information about "chart image read" operations.</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State)">com.i2group.disco.daod.spi.IConnectorRequestModifier.modifyAsynchronousRequest<wbr>(HttpUriRequest, IConnectorRequestModifier.State)</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">since 13.4. Implement <a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>IConnectorRequestModifier.modifyAsynchronousRequest(HttpUriRequest, State, IRequestContext)</code></a> instead.</div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyRequest(org.apache.http.client.methods.HttpUriRequest)">com.i2group.disco.daod.spi.IConnectorRequestModifier.modifyRequest<wbr>(HttpUriRequest)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">since 13.4. Implement <a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>IConnectorRequestModifier.modifyRequest(HttpUriRequest, IRequestContext)</code></a>
+     instead, and provide a no-op implementation for this method.</div>
+</div>
 </div>
 </div>
 </li>
@@ -80,7 +95,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>

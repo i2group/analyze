@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="index-page">
@@ -145,9 +145,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/i2group/disco/security/package-summary.html">com.i2group.disco.security</a> - package com.i2group.disco.security</dt>
 <dd>
-<div class="block">Contains interfaces that allow implementations of <a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a>
- to retrieve user information, including information about their security access levels from the
- i2 Analyze security schema.</div>
+<div class="block">Provides extension points for customizing the i2 Analyze security model, including item type
+ security, security dimension values and security permissions.</div>
 </dd>
 <dt><a href="com/i2group/disco/security/spi/package-summary.html">com.i2group.disco.security.spi</a> - package com.i2group.disco.security.spi</dt>
 <dd>
@@ -289,6 +288,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">An implementation of <a href="com/i2group/disco/security/spi/IDimensionValue.html" title="interface in com.i2group.disco.security.spi"><code>IDimensionValue</code></a>.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html#DOWNLOAD" class="member-name-link">DOWNLOAD</a> - Enum constant in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></dt>
+<dd>
+<div class="block">The binary transfer is a download of a chart session.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/DownloadType.html" class="type-name-link" title="enum class in com.i2group.disco.audit">DownloadType</a> - Enum Class in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
 <dd>
 <div class="block">The type of data that is involved in a "chart read" operation against the Information Store.</div>
@@ -384,6 +387,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains a representation of the contents of the saved artifact.</div>
 </dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html#getAuthConfigId()" class="member-name-link">getAuthConfigId()</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></dt>
+<dd>
+<div class="block">Gets the identifier of the authentication configuration, if this is a login request.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/IChartCreateAuditEvent.html#getChart()" class="member-name-link">getChart()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartCreateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartCreateAuditEvent</a></dt>
 <dd>
 <div class="block">Gets an <a href="com/i2group/disco/audit/IUploadChartInfo.html" title="interface in com.i2group.disco.audit"><code>IUploadChartInfo</code></a> that contains information about the chart that was created
@@ -459,6 +466,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the identifier of the connector to the external data
  source.</div>
+</dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html#getConnectorId()" class="member-name-link">getConnectorId()</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></dt>
+<dd>
+<div class="block">Gets the identifier of the connector that the request is being sent to.</div>
+</dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html#getConnectorName()" class="member-name-link">getConnectorName()</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></dt>
+<dd>
+<div class="block">Gets the name of the connector that the request is being sent to.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/IDAODAuditEvent.html#getConnectorServiceId()" class="member-name-link">getConnectorServiceId()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IDAODAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODAuditEvent</a></dt>
 <dd>
@@ -877,6 +892,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> whose contents represent the structure that was passed to the "visual
  query" operation.</div>
 </dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html#getQueryId()" class="member-name-link">getQueryId()</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></dt>
+<dd>
+<div class="block">Gets the identifier of the query, if this is an asynchronous request.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/IRecordIdentifierInfo.html#getRecordId()" class="member-name-link">getRecordId()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IRecordIdentifierInfo.html" title="interface in com.i2group.disco.audit">IRecordIdentifierInfo</a></dt>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the record identifier that this <a href="com/i2group/disco/audit/IRecordIdentifierInfo.html" title="interface in com.i2group.disco.audit"><code>IRecordIdentifierInfo</code></a> represents.</div>
@@ -949,6 +968,15 @@ loadScripts(document, 'script');</script>
 <div class="block">Gets a count of the users that the alert was sent to, which you can use to assess whether it
  reached its intended audience.</div>
 </dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html#getServiceId()" class="member-name-link">getServiceId()</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></dt>
+<dd>
+<div class="block">Gets the identifier of the service that the request is being sent to.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html#getSessionId()" class="member-name-link">getSessionId()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a></dt>
+<dd>
+<div class="block">Gets the identifier of the web chart session that was transferred during a "chart binary
+ transfer" operation.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/ISavedArtifactInfo.html#getSharingUser()" class="member-name-link">getSharingUser()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/ISavedArtifactInfo.html" title="interface in com.i2group.disco.audit">ISavedArtifactInfo</a></dt>
 <dd>
 <div class="block">Gets identity information about the user who created, read, updated, or deleted the saved
@@ -997,6 +1025,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Gets an <a href="com/i2group/apollo/common/tracing/ITracerFactory.html" title="interface in com.i2group.apollo.common.tracing"><code>ITracerFactory</code></a> that you can use to create an <a href="com/i2group/tracing/ITracer.html" title="interface in com.i2group.tracing"><code>ITracer</code></a> object for
  logging from a particular class.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html#getTransferType()" class="member-name-link">getTransferType()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a></dt>
+<dd>
+<div class="block">Gets a <a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit"><code>TransferType</code></a> that indicates the type of binary transfer (upload or download)
+ that this <a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IChartBinaryTransferAuditEvent</code></a> represents.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/DownloadType.html#getType()" class="member-name-link">getType()</a> - Method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/DownloadType.html" title="enum class in com.i2group.disco.audit">DownloadType</a></dt>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains a human-readable version of the download type.</div>
@@ -1013,6 +1046,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/i2group/disco/audit/ISourceReference.html#getType()" class="member-name-link">getType()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/ISourceReference.html" title="interface in com.i2group.disco.audit">ISourceReference</a></dt>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the type of the source being referenced.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html#getType()" class="member-name-link">getType()</a> - Method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></dt>
+<dd>
+<div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains a human-readable version of the binary transfer type.</div>
 </dd>
 <dt><a href="com/i2group/disco/model/OriginIdentifier.html#getType()" class="member-name-link">getType()</a> - Method in class com.i2group.disco.model.<a href="com/i2group/disco/model/OriginIdentifier.html" title="class in com.i2group.disco.model">OriginIdentifier</a></dt>
 <dd>
@@ -1115,6 +1152,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A provider of audit logging functionality to i2 Analyze and the Information Store.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html" class="type-name-link" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a> - Interface in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
+<dd>
+<div class="block">An event that was generated during the upload or download of web chart data during a "chart
+ binary transfer" operation from the Web Client.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/IChartCreateAuditEvent.html" class="type-name-link" title="interface in com.i2group.disco.audit">IChartCreateAuditEvent</a> - Interface in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
 <dd>
 <div class="block">An event that was generated during the processing of a "chart create" operation against the
@@ -1162,6 +1204,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" class="type-name-link" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a> - Interface in <a href="com/i2group/disco/daod/spi/package-summary.html">com.i2group.disco.daod.spi</a></dt>
 <dd>
 <div class="block">A reader and modifier of HTTP requests en route to connectors to external data sources.</div>
+</dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" class="type-name-link" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a> - Interface in <a href="com/i2group/disco/daod/spi/package-summary.html">com.i2group.disco.daod.spi</a></dt>
+<dd>
+<div class="block">Extra information about the request to be modified.</div>
 </dd>
 <dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.State.html" class="type-name-link" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a> - Class in <a href="com/i2group/disco/daod/spi/package-summary.html">com.i2group.disco.daod.spi</a></dt>
 <dd>
@@ -1392,6 +1438,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Information about a user who has created, read, updated, or deleted a saved artifact.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isChartBinaryTransferAuditEnabled()" class="member-name-link">isChartBinaryTransferAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Indicates whether audit logging of "chart binary transfer" operations on web charts is enabled.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isChartCRUDAuditEnabled()" class="member-name-link">isChartCRUDAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Indicates whether audit logging of "chart create", "chart read", "chart update", "chart delete"
@@ -1487,6 +1537,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Indicates whether audit logging of "quick search", "expand", "find path", "geospatial search",
  "visual query", and "highlight query" operations is enabled.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isQueryResultRecordRetrievalAuditEnabled()" class="member-name-link">isQueryResultRecordRetrievalAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view the
+ results of "quick search" or "visual query" operations.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isRecordCUDAuditEnabled()" class="member-name-link">isRecordCUDAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Indicates whether audit logging of "record create", "record update", and "record delete"
@@ -1494,7 +1549,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isRecordRetrievalAuditEnabled()" class="member-name-link">isRecordRetrievalAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
-<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view
+ records in any context apart from search results.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isRecordUploadAuditEnabled()" class="member-name-link">isRecordUploadAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
@@ -1629,6 +1685,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Loads the type access configuration.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartBinaryRead(IChartReadAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Logs information about a "chart binary read" operation.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartBinaryTransfer(com.i2group.disco.audit.IChartBinaryTransferAuditEvent)" class="member-name-link">logChartBinaryTransfer(IChartBinaryTransferAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Logs information about a "chart binary transfer" operation.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartCreate(com.i2group.disco.audit.IChartCreateAuditEvent)" class="member-name-link">logChartCreate(IChartCreateAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Logs information about a "chart create" operation.</div>
@@ -1636,6 +1700,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartDelete(com.i2group.disco.audit.IChartDeleteAuditEvent)" class="member-name-link">logChartDelete(IChartDeleteAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Logs information about a "chart delete" operation.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartImageRead(IChartReadAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Logs information about a "chart image read" operation.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartletCreate(com.i2group.disco.audit.IChartletAuditEvent)" class="member-name-link">logChartletCreate(IChartletAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
@@ -1647,7 +1715,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartRead(IChartReadAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
-<div class="block">Logs information about a "chart read" operation.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>IAuditLogger.logChartBinaryRead(IChartReadAuditEvent)</code></a> to log information about
+     "chart binary read" operations and <a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>IAuditLogger.logChartImageRead(IChartReadAuditEvent)</code></a> to log
+     information about "chart image read" operations.</div>
+</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartUndoDelete(com.i2group.disco.audit.IChartUndoDeleteAuditEvent)" class="member-name-link">logChartUndoDelete(IChartUndoDeleteAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
@@ -1793,10 +1865,23 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State)" class="member-name-link">modifyAsynchronousRequest(HttpUriRequest, IConnectorRequestModifier.State)</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></dt>
 <dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4. Implement <a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>IConnectorRequestModifier.modifyAsynchronousRequest(HttpUriRequest, State, IRequestContext)</code></a> instead.</div>
+</div>
+</dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)" class="member-name-link">modifyAsynchronousRequest(HttpUriRequest, IConnectorRequestModifier.State, IConnectorRequestModifier.IRequestContext)</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></dt>
+<dd>
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform an <i>asynchronous</i> request.</div>
 </dd>
 <dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyRequest(org.apache.http.client.methods.HttpUriRequest)" class="member-name-link">modifyRequest(HttpUriRequest)</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></dt>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4. Implement <a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>IConnectorRequestModifier.modifyRequest(HttpUriRequest, IRequestContext)</code></a>
+     instead, and provide a no-op implementation for this method.</div>
+</div>
+</dd>
+<dt><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html#modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)" class="member-name-link">modifyRequest(HttpUriRequest, IConnectorRequestModifier.IRequestContext)</a> - Method in interface com.i2group.disco.daod.spi.<a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></dt>
 <dd>
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform a (synchronous) request.</div>
@@ -2020,6 +2105,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Logs an exception if the ITracer is set to Trace level or higher.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html" class="type-name-link" title="enum class in com.i2group.disco.audit">TransferType</a> - Enum Class in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
+<dd>
+<div class="block">The type of binary transfer that is involved in the "chart binary transfer" of a web chart.</div>
+</dd>
 <dt><a href="com/i2group/disco/security/TypeAccess.html" class="type-name-link" title="enum class in com.i2group.disco.security">TypeAccess</a> - Enum Class in <a href="com/i2group/disco/security/package-summary.html">com.i2group.disco.security</a></dt>
 <dd>
 <div class="block">The access level that a user has to i2 Analyze data with a particular item or property type.</div>
@@ -2034,6 +2123,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/i2group/disco/security/spi/IPermission.AccessLevel.html#UPDATE" class="member-name-link">UPDATE</a> - Enum constant in enum class com.i2group.disco.security.spi.<a href="com/i2group/disco/security/spi/IPermission.AccessLevel.html" title="enum class in com.i2group.disco.security.spi">IPermission.AccessLevel</a></dt>
 <dd>
 <div class="block">The user can read, modify, and delete the data.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html#UPLOAD" class="member-name-link">UPLOAD</a> - Enum constant in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></dt>
+<dd>
+<div class="block">The binary transfer is an upload of an external file.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/IGroupInfo.Source.html#USER_CREATED" class="member-name-link">USER_CREATED</a> - Enum constant in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/IGroupInfo.Source.html" title="enum class in com.i2group.disco.audit">IGroupInfo.Source</a></dt>
 <dd>
@@ -2079,6 +2172,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/ProvisioningType.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/ProvisioningType.html" title="enum class in com.i2group.disco.audit">ProvisioningType</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
@@ -2130,6 +2227,11 @@ the order they are declared.</div>
 the order they are declared.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/ProvisioningType.html#values()" class="member-name-link">values()</a> - Static method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/ProvisioningType.html" title="enum class in com.i2group.disco.audit">ProvisioningType</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/TransferType.html#values()" class="member-name-link">values()</a> - Static method in enum class com.i2group.disco.audit.<a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
@@ -2192,7 +2294,7 @@ the order they are declared.</div>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialized&nbsp;Form</a></main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>

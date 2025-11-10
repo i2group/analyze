@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -91,9 +91,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Interface</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="IConnectorRequestModifier.State.html" class="type-name-link" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></code></div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="IConnectorRequestModifier.IRequestContext.html" class="type-name-link" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Extra information about the request to be modified.</div>
+</div>
+<div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="IConnectorRequestModifier.State.html" class="type-name-link" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">A store for request state that must be available to all calls to the same asynchronous query on
  an i2 Connect connector.</div>
 </div>
@@ -105,22 +110,39 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State)" class="member-name-link">modifyAsynchronousRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State)" class="member-name-link">modifyAsynchronousRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
  <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4.</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)" class="member-name-link">modifyAsynchronousRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+ <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a>&nbsp;state,
+ <a href="IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a>&nbsp;requestContext)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform an <i>asynchronous</i> request.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#modifyRequest(org.apache.http.client.methods.HttpUriRequest)" class="member-name-link">modifyRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#modifyRequest(org.apache.http.client.methods.HttpUriRequest)" class="member-name-link">modifyRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4.</div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)" class="member-name-link">modifyRequest</a><wbr>(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+ <a href="IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a>&nbsp;requestContext)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform a (synchronous) request.</div>
 </div>
@@ -141,7 +163,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="modifyRequest(org.apache.http.client.methods.HttpUriRequest)">
 <h3>modifyRequest</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">modifyRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request)</span></div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="return-type">void</span>&nbsp;<span class="element-name">modifyRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4. Implement <a href="#modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>modifyRequest(HttpUriRequest, IRequestContext)</code></a>
+     instead, and provide a no-op implementation for this method.</div>
+</div>
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform a (synchronous) request.</div>
 <dl class="notes">
@@ -151,10 +178,30 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="modifyRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)">
+<h3>modifyRequest</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modifyRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+ <a href="IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a>&nbsp;requestContext)</span></div>
+<div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
+ connector to perform a (synchronous) request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>request</code> - The outgoing HTTP request.</dd>
+<dd><code>requestContext</code> - Extra information about the request, including its intended recipient.</dd>
+<dt>Since:</dt>
+<dd>13.4</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State)">
 <h3>modifyAsynchronousRequest</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></span>&nbsp;<span class="element-name">modifyAsynchronousRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></span>&nbsp;<span class="element-name">modifyAsynchronousRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
  <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a>&nbsp;state)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">since 13.4. Implement <a href="#modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)"><code>modifyAsynchronousRequest(HttpUriRequest, State, IRequestContext)</code></a> instead.</div>
+</div>
 <div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
  connector to perform an <i>asynchronous</i> request.
 
@@ -182,6 +229,41 @@ loadScripts(document, 'script');</script>
 </dl>
 </section>
 </li>
+<li>
+<section class="detail" id="modifyAsynchronousRequest(org.apache.http.client.methods.HttpUriRequest,com.i2group.disco.daod.spi.IConnectorRequestModifier.State,com.i2group.disco.daod.spi.IConnectorRequestModifier.IRequestContext)">
+<h3>modifyAsynchronousRequest</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></span>&nbsp;<span class="element-name">modifyAsynchronousRequest</span><wbr><span class="parameters">(org.apache.http.client.methods.HttpUriRequest&nbsp;request,
+ <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a>&nbsp;state,
+ <a href="IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a>&nbsp;requestContext)</span></div>
+<div class="block">Modifies a request from a client immediately before the i2 Connect gateway passes it to a
+ connector to perform an <i>asynchronous</i> request.
+
+ <p>The first call to the connector is made on a thread that has access to the incoming request,
+ some extra information about the request, and its state. Subsequent calls are made from
+ background threads in the application server, which <i>do not</i> have access to the state of
+ the request.
+
+ <p>The <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi"><code>IConnectorRequestModifier.State</code></a> class can store information from the first call to the connector so that
+ subsequent calls from background threads can use it. On that first call, an implementation of
+ this method can place information in an instance of the class and return it to the caller. The
+ caller then includes the same <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi"><code>IConnectorRequestModifier.State</code></a> instance in all subsequent calls for the same
+ asynchronous query.
+
+ <p>Any recorded state persists across application server restarts, but it is automatically
+ deleted when the asynchronous query is no longer active.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>request</code> - The outgoing HTTP request.</dd>
+<dd><code>state</code> - The <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi"><code>IConnectorRequestModifier.State</code></a> created by previous calls to this method for a specific
+     asynchronous query.</dd>
+<dd><code>requestContext</code> - Extra information about the request, including its intended recipient.</dd>
+<dt>Returns:</dt>
+<dd>The <a href="IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi"><code>IConnectorRequestModifier.State</code></a> to use in future requests for the same asynchronous query.</dd>
+<dt>Since:</dt>
+<dd>13.4</dd>
+</dl>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -191,7 +273,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="package-index-page">
@@ -56,8 +56,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div id="all-packages-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-packages-table-tab0" role="tab" aria-selected="true" aria-controls="all-packages-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table', 2)" class="active-table-tab">All Packages</button><button id="all-packages-table-tab1" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab1', 2)" class="table-tab">Auditing</button><button id="all-packages-table-tab2" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab2', 2)" class="table-tab">External search</button><button id="all-packages-table-tab3" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab3', 2)" class="table-tab">Helper classes</button><button id="all-packages-table-tab4" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab4', 2)" class="table-tab">Tracing and debugging</button><button id="all-packages-table-tab5" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab5', 2)" class="table-tab">User management</button><button id="all-packages-table-tab6" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab6', 2)" class="table-tab">Item type security</button><button id="all-packages-table-tab7" role="tab" aria-selected="false" aria-controls="all-packages-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-packages-table', 'all-packages-table-tab7', 2)" class="table-tab">Other Packages</button></div>
-<div id="all-packages-table.tabpanel" role="tabpanel">
-<div class="summary-table two-column-summary" aria-labelledby="all-packages-table-tab0">
+<div id="all-packages-table.tabpanel" role="tabpanel" aria-labelledby="all-packages-table-tab0">
+<div class="summary-table two-column-summary">
 <div class="table-header col-first">Package</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color all-packages-table all-packages-table-tab4"><a href="com/i2group/apollo/common/tracing/package-summary.html">com.i2group.apollo.common.tracing</a></div>
@@ -109,9 +109,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color all-packages-table all-packages-table-tab6"><a href="com/i2group/disco/security/package-summary.html">com.i2group.disco.security</a></div>
 <div class="col-last odd-row-color all-packages-table all-packages-table-tab6">
-<div class="block">Contains interfaces that allow implementations of <a href="com/i2group/disco/security/spi/IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver.html" title="interface in com.i2group.disco.security.spi"><code>IUserItemTypeAccessResolverProvider.IUserItemTypeAccessResolver</code></a>
- to retrieve user information, including information about their security access levels from the
- i2 Analyze security schema.</div>
+<div class="block">Provides extension points for customizing the i2 Analyze security model, including item type
+ security, security dimension values and security permissions.</div>
 </div>
 <div class="col-first even-row-color all-packages-table all-packages-table-tab6"><a href="com/i2group/disco/security/spi/package-summary.html">com.i2group.disco.security.spi</a></div>
 <div class="col-last even-row-color all-packages-table all-packages-table-tab6">
@@ -146,7 +145,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>

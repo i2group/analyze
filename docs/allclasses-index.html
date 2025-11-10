@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="all-classes-index-page">
@@ -56,8 +56,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div id="all-classes-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button><button id="all-classes-table-tab5" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab5', 2)" class="table-tab">Exceptions</button></div>
-<div id="all-classes-table.tabpanel" role="tabpanel">
-<div class="summary-table two-column-summary" aria-labelledby="all-classes-table-tab0">
+<div id="all-classes-table.tabpanel" role="tabpanel" aria-labelledby="all-classes-table-tab0">
+<div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/alerts/AlertIcon.html" title="enum class in com.i2group.disco.alerts">AlertIcon</a></div>
@@ -111,53 +111,62 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A provider of audit logging functionality to i2 Analyze and the Information Store.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartCreateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartCreateAuditEvent</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An event that was generated during the upload or download of web chart data during a "chart
+ binary transfer" operation from the Web Client.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartCreateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartCreateAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart create" operation against the
  Information Store.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartDeleteAuditEvent</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartDeleteAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart delete" operation against the
  Information Store.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartInfo.html" title="interface in com.i2group.disco.audit">IChartInfo</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartInfo.html" title="interface in com.i2group.disco.audit">IChartInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Information about a chart that is involved in an operation that is under audit.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chartlet create" or "chartlet read"
  operation, which occur when a user shares or navigates to shared records.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart read" operation against the
  Information Store.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartUndoDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUndoDeleteAuditEvent</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartUndoDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUndoDeleteAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart undo delete" operation against the
  Information Store.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUpdateAuditEvent</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUpdateAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart update" operation against the
  Information Store.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartVersionDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionDeleteAuditEvent</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartVersionDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionDeleteAuditEvent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart version delete" operation against
  the Information Store.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartVersionReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionReadAuditEvent</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/audit/IChartVersionReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionReadAuditEvent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An event that was generated during the processing of a "chart version read" operation against the
  Information Store.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A reader and modifier of HTTP requests en route to connectors to external data sources.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.IRequestContext.html" title="interface in com.i2group.disco.daod.spi">IConnectorRequestModifier.IRequestContext</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Extra information about the request to be modified.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/daod/spi/IConnectorRequestModifier.State.html" title="class in com.i2group.disco.daod.spi">IConnectorRequestModifier.State</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
@@ -508,12 +517,16 @@ loadScripts(document, 'script');</script>
  no further processing), or a reference to a value in a column (in which case it should be
  substituted for the value).</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/security/TypeAccess.html" title="enum class in com.i2group.disco.security">TypeAccess</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/audit/TransferType.html" title="enum class in com.i2group.disco.audit">TransferType</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="block">The type of binary transfer that is involved in the "chart binary transfer" of a web chart.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/i2group/disco/security/TypeAccess.html" title="enum class in com.i2group.disco.security">TypeAccess</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">The access level that a user has to i2 Analyze data with a particular item or property type.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user">WebSphereUserGroupsProvider</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/i2group/disco/user/WebSphereUserGroupsProvider.html" title="class in com.i2group.disco.user">WebSphereUserGroupsProvider</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">An implementation of <a href="com/i2group/disco/user/spi/IUserGroupsProvider.html" title="interface in com.i2group.disco.user.spi"><code>IUserGroupsProvider</code></a> that works with the Liberty user registry.</div>
 </div>
 </div>
@@ -522,7 +535,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>

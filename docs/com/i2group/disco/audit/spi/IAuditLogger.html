@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -101,8 +101,8 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
@@ -113,32 +113,43 @@ loadScripts(document, 'script');</script>
  privacy agreements, is enabled.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isChartCRUDAuditEnabled()" class="member-name-link">isChartCRUDAuditEnabled</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isChartBinaryTransferAuditEnabled()" class="member-name-link">isChartBinaryTransferAuditEnabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Indicates whether audit logging of "chart binary transfer" operations on web charts is enabled.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isChartCRUDAuditEnabled()" class="member-name-link">isChartCRUDAuditEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Indicates whether audit logging of "chart create", "chart read", "chart update", "chart delete"
  and "chart undo delete" operations is enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isChartletAuditEnabled()" class="member-name-link">isChartletAuditEnabled</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isChartletAuditEnabled()" class="member-name-link">isChartletAuditEnabled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Indicates whether audit logging of "chartlet create" and "chartlet read" operations is enabled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isDAODAuditEnabled()" class="member-name-link">isDAODAuditEnabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isDAODAuditEnabled()" class="member-name-link">isDAODAuditEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Indicates whether audit logging of "data acquisition" operations, including deleting the result
  sets from those operations, is enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isProvisioningAuditEnabled()" class="member-name-link">isProvisioningAuditEnabled</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isProvisioningAuditEnabled()" class="member-name-link">isProvisioningAuditEnabled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Indicates whether audit logging of "provisioning" operations for users and groups is enabled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isQueryAuditEnabled()" class="member-name-link">isQueryAuditEnabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isQueryAuditEnabled()" class="member-name-link">isQueryAuditEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Indicates whether audit logging of "quick search", "expand", "find path", "geospatial search",
  "visual query", and "highlight query" operations is enabled.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isQueryResultRecordRetrievalAuditEnabled()" class="member-name-link">isQueryResultRecordRetrievalAuditEnabled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view the
+ results of "quick search" or "visual query" operations.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isRecordCUDAuditEnabled()" class="member-name-link">isRecordCUDAuditEnabled</a>()</code></div>
@@ -149,7 +160,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isRecordRetrievalAuditEnabled()" class="member-name-link">isRecordRetrievalAuditEnabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view
+ records in any context apart from search results.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#isRecordUploadAuditEnabled()" class="member-name-link">isRecordUploadAuditEnabled</a>()</code></div>
@@ -170,6 +182,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Indicates whether audit logging of completed "visual query" operations is enabled.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartBinaryRead</a><wbr>(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Logs information about a "chart binary read" operation.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartBinaryTransfer(com.i2group.disco.audit.IChartBinaryTransferAuditEvent)" class="member-name-link">logChartBinaryTransfer</a><wbr>(<a href="../IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Logs information about a "chart binary transfer" operation.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartCreate(com.i2group.disco.audit.IChartCreateAuditEvent)" class="member-name-link">logChartCreate</a><wbr>(<a href="../IChartCreateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartCreateAuditEvent</a>&nbsp;auditEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chart create" operation.</div>
@@ -180,180 +202,189 @@ loadScripts(document, 'script');</script>
 <div class="block">Logs information about a "chart delete" operation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartletCreate(com.i2group.disco.audit.IChartletAuditEvent)" class="member-name-link">logChartletCreate</a><wbr>(<a href="../IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartImageRead</a><wbr>(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Logs information about a "chart image read" operation.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartletCreate(com.i2group.disco.audit.IChartletAuditEvent)" class="member-name-link">logChartletCreate</a><wbr>(<a href="../IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chartlet create" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartletRead(com.i2group.disco.audit.IChartletAuditEvent)" class="member-name-link">logChartletRead</a><wbr>(<a href="../IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartletRead(com.i2group.disco.audit.IChartletAuditEvent)" class="member-name-link">logChartletRead</a><wbr>(<a href="../IChartletAuditEvent.html" title="interface in com.i2group.disco.audit">IChartletAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chartlet read" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartRead</a><wbr>(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Logs information about a "chart read" operation.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartRead</a><wbr>(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>logChartBinaryRead(IChartReadAuditEvent)</code></a> to log information about
+     "chart binary read" operations and <a href="#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>logChartImageRead(IChartReadAuditEvent)</code></a> to log
+     information about "chart image read" operations.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartUndoDelete(com.i2group.disco.audit.IChartUndoDeleteAuditEvent)" class="member-name-link">logChartUndoDelete</a><wbr>(<a href="../IChartUndoDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUndoDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartUndoDelete(com.i2group.disco.audit.IChartUndoDeleteAuditEvent)" class="member-name-link">logChartUndoDelete</a><wbr>(<a href="../IChartUndoDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUndoDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chart undo delete" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartUpdate(com.i2group.disco.audit.IChartUpdateAuditEvent)" class="member-name-link">logChartUpdate</a><wbr>(<a href="../IChartUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartUpdate(com.i2group.disco.audit.IChartUpdateAuditEvent)" class="member-name-link">logChartUpdate</a><wbr>(<a href="../IChartUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chart update" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartVersionDelete(com.i2group.disco.audit.IChartVersionDeleteAuditEvent)" class="member-name-link">logChartVersionDelete</a><wbr>(<a href="../IChartVersionDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartVersionDelete(com.i2group.disco.audit.IChartVersionDeleteAuditEvent)" class="member-name-link">logChartVersionDelete</a><wbr>(<a href="../IChartVersionDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chart version delete" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartVersionRead(com.i2group.disco.audit.IChartVersionReadAuditEvent)" class="member-name-link">logChartVersionRead</a><wbr>(<a href="../IChartVersionReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionReadAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logChartVersionRead(com.i2group.disco.audit.IChartVersionReadAuditEvent)" class="member-name-link">logChartVersionRead</a><wbr>(<a href="../IChartVersionReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartVersionReadAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "chart version read" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDAODEvent(com.i2group.disco.audit.IDAODAuditEvent)" class="member-name-link">logDAODEvent</a><wbr>(<a href="../IDAODAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDAODEvent(com.i2group.disco.audit.IDAODAuditEvent)" class="member-name-link">logDAODEvent</a><wbr>(<a href="../IDAODAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "data acquisition" operation, which includes a visual query operation
  against an external source.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)" class="member-name-link">logDAODResultSetsDeleteEvent</a><wbr>(<a href="../IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODResultSetsDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDAODResultSetsDeleteEvent(com.i2group.disco.audit.IDAODResultSetsDeleteAuditEvent)" class="member-name-link">logDAODResultSetsDeleteEvent</a><wbr>(<a href="../IDAODResultSetsDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IDAODResultSetsDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about the deletion of result sets from "data acquisition" operations.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDefault(com.i2group.disco.audit.IAuditEvent)" class="member-name-link">logDefault</a><wbr>(<a href="../IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logDefault(com.i2group.disco.audit.IAuditEvent)" class="member-name-link">logDefault</a><wbr>(<a href="../IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an operation when auditing is enabled and a more specific method has not
  been overridden.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logExpand(com.i2group.disco.audit.IExpandAuditEvent)" class="member-name-link">logExpand</a><wbr>(<a href="../IExpandAuditEvent.html" title="interface in com.i2group.disco.audit">IExpandAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logExpand(com.i2group.disco.audit.IExpandAuditEvent)" class="member-name-link">logExpand</a><wbr>(<a href="../IExpandAuditEvent.html" title="interface in com.i2group.disco.audit">IExpandAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an "expand" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logFindPath(com.i2group.disco.audit.IFindPathAuditEvent)" class="member-name-link">logFindPath</a><wbr>(<a href="../IFindPathAuditEvent.html" title="interface in com.i2group.disco.audit">IFindPathAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logFindPath(com.i2group.disco.audit.IFindPathAuditEvent)" class="member-name-link">logFindPath</a><wbr>(<a href="../IFindPathAuditEvent.html" title="interface in com.i2group.disco.audit">IFindPathAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "find path" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logGeospatialSearch(com.i2group.disco.audit.IGeospatialSearchAuditEvent)" class="member-name-link">logGeospatialSearch</a><wbr>(<a href="../IGeospatialSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IGeospatialSearchAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logGeospatialSearch(com.i2group.disco.audit.IGeospatialSearchAuditEvent)" class="member-name-link">logGeospatialSearch</a><wbr>(<a href="../IGeospatialSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IGeospatialSearchAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "geospatial search" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logHighlightQuery(com.i2group.disco.audit.IHighlightQueryShowMoreAuditEvent)" class="member-name-link">logHighlightQuery</a><wbr>(<a href="../IHighlightQueryShowMoreAuditEvent.html" title="interface in com.i2group.disco.audit">IHighlightQueryShowMoreAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logHighlightQuery(com.i2group.disco.audit.IHighlightQueryShowMoreAuditEvent)" class="member-name-link">logHighlightQuery</a><wbr>(<a href="../IHighlightQueryShowMoreAuditEvent.html" title="interface in com.i2group.disco.audit">IHighlightQueryShowMoreAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "highlight query show more" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logLoginEvent(com.i2group.disco.audit.ILoginAuditEvent)" class="member-name-link">logLoginEvent</a><wbr>(<a href="../ILoginAuditEvent.html" title="interface in com.i2group.disco.audit">ILoginAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logLoginEvent(com.i2group.disco.audit.ILoginAuditEvent)" class="member-name-link">logLoginEvent</a><wbr>(<a href="../ILoginAuditEvent.html" title="interface in com.i2group.disco.audit">ILoginAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "login" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logLogoutEvent(com.i2group.disco.audit.ILogoutAuditEvent)" class="member-name-link">logLogoutEvent</a><wbr>(<a href="../ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit">ILogoutAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logLogoutEvent(com.i2group.disco.audit.ILogoutAuditEvent)" class="member-name-link">logLogoutEvent</a><wbr>(<a href="../ILogoutAuditEvent.html" title="interface in com.i2group.disco.audit">ILogoutAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "logout" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logPrivacyAgreementEvent(com.i2group.disco.audit.IPrivacyAgreementAuditEvent)" class="member-name-link">logPrivacyAgreementEvent</a><wbr>(<a href="../IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit">IPrivacyAgreementAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logPrivacyAgreementEvent(com.i2group.disco.audit.IPrivacyAgreementAuditEvent)" class="member-name-link">logPrivacyAgreementEvent</a><wbr>(<a href="../IPrivacyAgreementAuditEvent.html" title="interface in com.i2group.disco.audit">IPrivacyAgreementAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about user acceptance of a privacy agreement.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupAdd(com.i2group.disco.audit.IGroupAddAuditEvent)" class="member-name-link">logProvisioningGroupAdd</a><wbr>(<a href="../IGroupAddAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupAddAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupAdd(com.i2group.disco.audit.IGroupAddAuditEvent)" class="member-name-link">logProvisioningGroupAdd</a><wbr>(<a href="../IGroupAddAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupAddAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an "add group" provisioning operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupRemove(com.i2group.disco.audit.IGroupRemoveAuditEvent)" class="member-name-link">logProvisioningGroupRemove</a><wbr>(<a href="../IGroupRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRemoveAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupRemove(com.i2group.disco.audit.IGroupRemoveAuditEvent)" class="member-name-link">logProvisioningGroupRemove</a><wbr>(<a href="../IGroupRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRemoveAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "remove group" provisioning operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupRestore(com.i2group.disco.audit.IGroupRestoreAuditEvent)" class="member-name-link">logProvisioningGroupRestore</a><wbr>(<a href="../IGroupRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRestoreAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupRestore(com.i2group.disco.audit.IGroupRestoreAuditEvent)" class="member-name-link">logProvisioningGroupRestore</a><wbr>(<a href="../IGroupRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupRestoreAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "restore group" provisioning operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupUpdate(com.i2group.disco.audit.IGroupUpdateAuditEvent)" class="member-name-link">logProvisioningGroupUpdate</a><wbr>(<a href="../IGroupUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningGroupUpdate(com.i2group.disco.audit.IGroupUpdateAuditEvent)" class="member-name-link">logProvisioningGroupUpdate</a><wbr>(<a href="../IGroupUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IGroupUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an "update group" provisioning operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserAdd(com.i2group.disco.audit.IUserAddAuditEvent)" class="member-name-link">logProvisioningUserAdd</a><wbr>(<a href="../IUserAddAuditEvent.html" title="interface in com.i2group.disco.audit">IUserAddAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserAdd(com.i2group.disco.audit.IUserAddAuditEvent)" class="member-name-link">logProvisioningUserAdd</a><wbr>(<a href="../IUserAddAuditEvent.html" title="interface in com.i2group.disco.audit">IUserAddAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an "add user" provisioning operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserRemove(com.i2group.disco.audit.IUserRemoveAuditEvent)" class="member-name-link">logProvisioningUserRemove</a><wbr>(<a href="../IUserRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRemoveAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserRemove(com.i2group.disco.audit.IUserRemoveAuditEvent)" class="member-name-link">logProvisioningUserRemove</a><wbr>(<a href="../IUserRemoveAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRemoveAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "remove user" provisioning operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserRestore(com.i2group.disco.audit.IUserRestoreAuditEvent)" class="member-name-link">logProvisioningUserRestore</a><wbr>(<a href="../IUserRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRestoreAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserRestore(com.i2group.disco.audit.IUserRestoreAuditEvent)" class="member-name-link">logProvisioningUserRestore</a><wbr>(<a href="../IUserRestoreAuditEvent.html" title="interface in com.i2group.disco.audit">IUserRestoreAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "restore user" provisioning operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserUpdate(com.i2group.disco.audit.IUserUpdateAuditEvent)" class="member-name-link">logProvisioningUserUpdate</a><wbr>(<a href="../IUserUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IUserUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logProvisioningUserUpdate(com.i2group.disco.audit.IUserUpdateAuditEvent)" class="member-name-link">logProvisioningUserUpdate</a><wbr>(<a href="../IUserUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">IUserUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about an "update user" provisioning operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logQuickSearch(com.i2group.disco.audit.IQuickSearchAuditEvent)" class="member-name-link">logQuickSearch</a><wbr>(<a href="../IQuickSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IQuickSearchAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logQuickSearch(com.i2group.disco.audit.IQuickSearchAuditEvent)" class="member-name-link">logQuickSearch</a><wbr>(<a href="../IQuickSearchAuditEvent.html" title="interface in com.i2group.disco.audit">IQuickSearchAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "quick search" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordDelete(com.i2group.disco.audit.IRecordDeleteAuditEvent)" class="member-name-link">logRecordDelete</a><wbr>(<a href="../IRecordDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordDelete(com.i2group.disco.audit.IRecordDeleteAuditEvent)" class="member-name-link">logRecordDelete</a><wbr>(<a href="../IRecordDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "record delete" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)" class="member-name-link">logRecordRetrieval</a><wbr>(<a href="../IRecordRetrievalAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordRetrievalAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)" class="member-name-link">logRecordRetrieval</a><wbr>(<a href="../IRecordRetrievalAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordRetrievalAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "record retrieval" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordUpload(com.i2group.disco.audit.IRecordUploadAuditEvent)" class="member-name-link">logRecordUpload</a><wbr>(<a href="../IRecordUploadAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordUploadAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logRecordUpload(com.i2group.disco.audit.IRecordUploadAuditEvent)" class="member-name-link">logRecordUpload</a><wbr>(<a href="../IRecordUploadAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordUploadAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "record create" or "record update" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactCreate(com.i2group.disco.audit.ISavedArtifactCreateAuditEvent)" class="member-name-link">logSavedArtifactCreate</a><wbr>(<a href="../ISavedArtifactCreateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactCreateAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactCreate(com.i2group.disco.audit.ISavedArtifactCreateAuditEvent)" class="member-name-link">logSavedArtifactCreate</a><wbr>(<a href="../ISavedArtifactCreateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactCreateAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "saved artifact create" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactDelete(com.i2group.disco.audit.ISavedArtifactDeleteAuditEvent)" class="member-name-link">logSavedArtifactDelete</a><wbr>(<a href="../ISavedArtifactDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactDelete(com.i2group.disco.audit.ISavedArtifactDeleteAuditEvent)" class="member-name-link">logSavedArtifactDelete</a><wbr>(<a href="../ISavedArtifactDeleteAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactDeleteAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "saved artifact delete" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactRead(com.i2group.disco.audit.ISavedArtifactReadAuditEvent)" class="member-name-link">logSavedArtifactRead</a><wbr>(<a href="../ISavedArtifactReadAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactReadAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactRead(com.i2group.disco.audit.ISavedArtifactReadAuditEvent)" class="member-name-link">logSavedArtifactRead</a><wbr>(<a href="../ISavedArtifactReadAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactReadAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "saved artifact read" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactUpdate(com.i2group.disco.audit.ISavedArtifactUpdateAuditEvent)" class="member-name-link">logSavedArtifactUpdate</a><wbr>(<a href="../ISavedArtifactUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logSavedArtifactUpdate(com.i2group.disco.audit.ISavedArtifactUpdateAuditEvent)" class="member-name-link">logSavedArtifactUpdate</a><wbr>(<a href="../ISavedArtifactUpdateAuditEvent.html" title="interface in com.i2group.disco.audit">ISavedArtifactUpdateAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "saved artifact update" operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logVisualQuery(com.i2group.disco.audit.IVisualQueryAuditEvent)" class="member-name-link">logVisualQuery</a><wbr>(<a href="../IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logVisualQuery(com.i2group.disco.audit.IVisualQueryAuditEvent)" class="member-name-link">logVisualQuery</a><wbr>(<a href="../IVisualQueryAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a "visual query" operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logVisualQueryCompleted(com.i2group.disco.audit.IVisualQueryCompletedAuditEvent)" class="member-name-link">logVisualQueryCompleted</a><wbr>(<a href="../IVisualQueryCompletedAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryCompletedAuditEvent</a>&nbsp;auditEvent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#logVisualQueryCompleted(com.i2group.disco.audit.IVisualQueryCompletedAuditEvent)" class="member-name-link">logVisualQueryCompleted</a><wbr>(<a href="../IVisualQueryCompletedAuditEvent.html" title="interface in com.i2group.disco.audit">IVisualQueryCompletedAuditEvent</a>&nbsp;auditEvent)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Logs information about a completed "visual query" operation.</div>
 </div>
 </div>
@@ -401,12 +432,27 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isRecordRetrievalAuditEnabled()">
 <h3>isRecordRetrievalAuditEnabled</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRecordRetrievalAuditEnabled</span>()</div>
-<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled.</div>
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view
+ records in any context apart from search results.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd><code>true</code> if audit logging is enabled; <code>false</code> otherwise.</dd>
 <dt>Since:</dt>
 <dd>9.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isQueryResultRecordRetrievalAuditEnabled()">
+<h3>isQueryResultRecordRetrievalAuditEnabled</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isQueryResultRecordRetrievalAuditEnabled</span>()</div>
+<div class="block">Indicates whether audit logging of "record retrieval" operations is enabled when users view the
+ results of "quick search" or "visual query" operations.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if audit logging is enabled; <code>false</code> otherwise.</dd>
+<dt>Since:</dt>
+<dd>13.5</dd>
 </dl>
 </section>
 </li>
@@ -507,6 +553,19 @@ loadScripts(document, 'script');</script>
 <dd><code>true</code> if audit logging is enabled; <code>false</code> otherwise.</dd>
 <dt>Since:</dt>
 <dd>13.3</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isChartBinaryTransferAuditEnabled()">
+<h3>isChartBinaryTransferAuditEnabled</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isChartBinaryTransferAuditEnabled</span>()</div>
+<div class="block">Indicates whether audit logging of "chart binary transfer" operations on web charts is enabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if audit logging is enabled; <code>false</code> otherwise.</dd>
+<dt>Since:</dt>
+<dd>13.5</dd>
 </dl>
 </section>
 </li>
@@ -638,8 +697,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="logRecordRetrieval(com.i2group.disco.audit.IRecordRetrievalAuditEvent)">
 <h3>logRecordRetrieval</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logRecordRetrieval</span><wbr><span class="parameters">(<a href="../IRecordRetrievalAuditEvent.html" title="interface in com.i2group.disco.audit">IRecordRetrievalAuditEvent</a>&nbsp;auditEvent)</span></div>
-<div class="block">Logs information about a "record retrieval" operation. i2 Analyze calls this method only if
- <a href="#isRecordRetrievalAuditEnabled()"><code>isRecordRetrievalAuditEnabled()</code></a> returns <code>true</code>.
+<div class="block">Logs information about a "record retrieval" operation. i2 Analyze calls this method if <a href="#isRecordRetrievalAuditEnabled()"><code>isRecordRetrievalAuditEnabled()</code></a> or <a href="#isQueryResultRecordRetrievalAuditEnabled()"><code>isQueryResultRecordRetrievalAuditEnabled()</code></a>
+ returns <code>true</code>.
 
  <p><b>Note:</b> All implementations of this method must be thread safe.</div>
 <dl class="notes">
@@ -703,7 +762,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="logChartRead(com.i2group.disco.audit.IChartReadAuditEvent)">
 <h3>logChartRead</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logChartRead</span><wbr><span class="parameters">(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</span></div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logChartRead</span><wbr><span class="parameters">(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Use <a href="#logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>logChartBinaryRead(IChartReadAuditEvent)</code></a> to log information about
+     "chart binary read" operations and <a href="#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)"><code>logChartImageRead(IChartReadAuditEvent)</code></a> to log
+     information about "chart image read" operations.</div>
+</div>
 <div class="block">Logs information about a "chart read" operation. i2 Analyze calls this method only if <a href="#isChartCRUDAuditEnabled()"><code>isChartCRUDAuditEnabled()</code></a> returns <code>true</code>.
 
  <p><b>Note:</b> All implementations of this method must be thread safe.</div>
@@ -713,6 +778,40 @@ loadScripts(document, 'script');</script>
      read" operation against the Information Store.</dd>
 <dt>Since:</dt>
 <dd>11.2</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="logChartBinaryRead(com.i2group.disco.audit.IChartReadAuditEvent)">
+<h3>logChartBinaryRead</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logChartBinaryRead</span><wbr><span class="parameters">(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</span></div>
+<div class="block">Logs information about a "chart binary read" operation. i2 Analyze calls this method only if
+ <a href="#isChartCRUDAuditEnabled()"><code>isChartCRUDAuditEnabled()</code></a> returns <code>true</code>.
+
+ <p><b>Note:</b> All implementations of this method must be thread safe.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>auditEvent</code> - An <a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IChartReadAuditEvent</code></a> that contains information about a "chart
+     read" operation against the Information Store.</dd>
+<dt>Since:</dt>
+<dd>13.5</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)">
+<h3>logChartImageRead</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logChartImageRead</span><wbr><span class="parameters">(<a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit">IChartReadAuditEvent</a>&nbsp;auditEvent)</span></div>
+<div class="block">Logs information about a "chart image read" operation. i2 Analyze calls this method only if
+ <a href="#isChartCRUDAuditEnabled()"><code>isChartCRUDAuditEnabled()</code></a> returns <code>true</code>.
+
+ <p><b>Note:</b> All implementations of this method must be thread safe.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>auditEvent</code> - An <a href="../IChartReadAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IChartReadAuditEvent</code></a> that contains information about a "chart
+     read" operation against the Information Store.</dd>
+<dt>Since:</dt>
+<dd>13.5</dd>
 </dl>
 </section>
 </li>
@@ -1099,6 +1198,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="logChartBinaryTransfer(com.i2group.disco.audit.IChartBinaryTransferAuditEvent)">
+<h3>logChartBinaryTransfer</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logChartBinaryTransfer</span><wbr><span class="parameters">(<a href="../IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit">IChartBinaryTransferAuditEvent</a>&nbsp;auditEvent)</span></div>
+<div class="block">Logs information about a "chart binary transfer" operation. i2 Analyze calls this method only
+ if <a href="#isChartBinaryTransferAuditEnabled()"><code>isChartBinaryTransferAuditEnabled()</code></a> returns <code>true</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>auditEvent</code> - An <a href="../IChartBinaryTransferAuditEvent.html" title="interface in com.i2group.disco.audit"><code>IChartBinaryTransferAuditEvent</code></a> that contains information about a
+     "chart binary transfer" operation.</dd>
+<dt>Since:</dt>
+<dd>13.5</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="logDefault(com.i2group.disco.audit.IAuditEvent)">
 <h3>logDefault</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">logDefault</span><wbr><span class="parameters">(<a href="../IAuditEvent.html" title="interface in com.i2group.disco.audit">IAuditEvent</a>&nbsp;auditEvent)</span></div>
@@ -1125,7 +1239,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2024.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
 </footer>
 </div>
 </div>
