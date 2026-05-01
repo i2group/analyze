@@ -568,6 +568,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Gets the description of the security dimension value.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/IChartDuplicateAuditEvent.html#getDestinationChartId()" class="member-name-link">getDestinationChartId()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartDuplicateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartDuplicateAuditEvent</a></dt>
+<dd>
+<div class="block">Gets the identifier of the new duplicated chart.</div>
+</dd>
 <dt><a href="com/i2group/apollo/model/security/dynamic/transport/Permissions.html#getDimension()" class="member-name-link">getDimension()</a> - Method in class com.i2group.apollo.model.security.dynamic.transport.<a href="com/i2group/apollo/model/security/dynamic/transport/Permissions.html" title="class in com.i2group.apollo.model.security.dynamic.transport">Permissions</a></dt>
 <dd>
 <div class="block">Gets a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> that contains the identifier of the dimension that this <a href="com/i2group/apollo/model/security/dynamic/transport/Permissions.html" title="class in com.i2group.apollo.model.security.dynamic.transport"><code>Permissions</code></a> refers to.</div>
@@ -990,6 +994,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Gets the provisioning <a href="com/i2group/disco/audit/IUserInfo.Source.html" title="enum class in com.i2group.disco.audit"><code>IUserInfo.Source</code></a> of the user that this <a href="com/i2group/disco/audit/IUserInfo.html" title="interface in com.i2group.disco.audit"><code>IUserInfo</code></a> represents.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/IChartDuplicateAuditEvent.html#getSourceChartId()" class="member-name-link">getSourceChartId()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IChartDuplicateAuditEvent.html" title="interface in com.i2group.disco.audit">IChartDuplicateAuditEvent</a></dt>
+<dd>
+<div class="block">Gets the identifier of the chart that was duplicated.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/IUploadChartInfo.html#getSourceReferenceChanges()" class="member-name-link">getSourceReferenceChanges()</a> - Method in interface com.i2group.disco.audit.<a href="com/i2group/disco/audit/IUploadChartInfo.html" title="interface in com.i2group.disco.audit">IUploadChartInfo</a></dt>
 <dd>
 <div class="block">Gets the <a href="com/i2group/disco/audit/ISourceReferenceChangeset.html" title="interface in com.i2group.disco.audit"><code>ISourceReferenceChangeset</code></a> that contains information about changes to the
@@ -1166,6 +1174,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">An event that was generated during the processing of a "chart delete" operation against the
  Information Store.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/IChartDuplicateAuditEvent.html" class="type-name-link" title="interface in com.i2group.disco.audit">IChartDuplicateAuditEvent</a> - Interface in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
+<dd>
+<div class="block">An event that was generated when a chart is duplicated.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/IChartInfo.html" class="type-name-link" title="interface in com.i2group.disco.audit">IChartInfo</a> - Interface in <a href="com/i2group/disco/audit/package-summary.html">com.i2group.disco.audit</a></dt>
 <dd>
@@ -1447,6 +1459,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Indicates whether audit logging of "chart create", "chart read", "chart update", "chart delete"
  and "chart undo delete" operations is enabled.</div>
 </dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isChartDuplicateAuditEnabled()" class="member-name-link">isChartDuplicateAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Indicates whether audit logging of "chart duplicate" operations is enabled.</div>
+</dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#isChartletAuditEnabled()" class="member-name-link">isChartletAuditEnabled()</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Indicates whether audit logging of "chartlet create" and "chartlet read" operations is enabled.</div>
@@ -1700,6 +1716,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartDelete(com.i2group.disco.audit.IChartDeleteAuditEvent)" class="member-name-link">logChartDelete(IChartDeleteAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
 <div class="block">Logs information about a "chart delete" operation.</div>
+</dd>
+<dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartDuplicate(com.i2group.disco.audit.IChartDuplicateAuditEvent)" class="member-name-link">logChartDuplicate(IChartDuplicateAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
+<dd>
+<div class="block">Logs information about a "chart duplicate" operation.</div>
 </dd>
 <dt><a href="com/i2group/disco/audit/spi/IAuditLogger.html#logChartImageRead(com.i2group.disco.audit.IChartReadAuditEvent)" class="member-name-link">logChartImageRead(IChartReadAuditEvent)</a> - Method in interface com.i2group.disco.audit.spi.<a href="com/i2group/disco/audit/spi/IAuditLogger.html" title="interface in com.i2group.disco.audit.spi">IAuditLogger</a></dt>
 <dd>
@@ -2294,7 +2314,7 @@ the order they are declared.</div>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialized&nbsp;Form</a></main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2025.</small></p>
+<p class="legal-copy"><small><br style="font-size:2px">&copy; Copyright N. Harris Computer Corporation 2026.</small></p>
 </footer>
 </div>
 </div>
