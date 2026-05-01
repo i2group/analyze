@@ -7,12 +7,12 @@
     <classpathentry exported="true" kind="lib" path="shared-lib/disco-api-9.2.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/commons-csv-1.14.1.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/guava-33.5.0-jre.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.20.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.20.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.20.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.20.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.20.0.jar"/>
-    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.20.0.jar"/>
+    <classpathentry exported="true" kind="lib" path="shared-lib/jackson-annotations-2.21.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-core-2.21.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-databind-2.21.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-datatype-jsr310-2.21.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-base-2.21.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="shared-lib/jackson-jaxrs-json-provider-2.21.2.jar"/>
     <classpathentry exported="true" kind="lib" path="shared-lib/jakarta.xml.bind-api.jar"/>
     <classpathentry kind="output" path="bin"/>
 </classpath>

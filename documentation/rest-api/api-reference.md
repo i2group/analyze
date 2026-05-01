@@ -29,8 +29,9 @@ You can then use the interactive features of the viewer to execute requests agai
 New versions of the REST API are always released as part of new i2 Analyze releases.
 Documentation for a particular version of the API is always available alongside the associated i2 Analyze documentation.
 
-| API version 🡆 <br/> i2 Analyze version 🡇 | 1.0 | 1.1 | 1.2 | [1.3](https://docs.i2group.com/analyze/4.4.3/public-rest-api.html) | [1.4](https://docs.i2group.com/analyze/4.4.5/public-rest-api.html) | [1.5](https://docs.i2group.com/analyze/4.4.6/public-rest-api.html) |
+| API version 🡆 <br/> i2 Analyze version 🡇 | 1.0 | 1.1 | 1.2 | 1.3 | [1.4](https://docs.i2group.com/analyze/4.4.5/public-rest-api.html) | [1.5](https://docs.i2group.com/analyze/4.4.6/public-rest-api.html) |
 |:------------------------------------------:|:--:|:--:|:--:|:--:|:--:|------------------------------------------------------------|
+|                   4.4.7                    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 |                   4.4.6                    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 |                   4.4.5                    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ |
 |                   4.4.4                    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ |

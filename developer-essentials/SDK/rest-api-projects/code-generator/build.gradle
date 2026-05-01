@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-  productVersion = "4.4.6"
+  productVersion = "4.4.7"
   generatedProjectDir = "${project.projectDir}/../generated-projects"
   
   openApiSpecFile = "${buildDir}/openapi.json"
