@@ -1,43 +1,38 @@
+import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
+
 plugins {
-  id "org.openapi.generator" version "6.0.1"
-  id "de.undercouch.download" version "5.1.0"
+  id "org.openapi.generator" version "7.26.0"
 }
 
 ext {
-  productVersion = "4.4.7"
   generatedProjectDir = "${project.projectDir}/../generated-projects"
-  
-  openApiSpecFile = "${buildDir}/openapi.json"
-}
-
-task downloadSpec(type: Download) {
-    src "https://docs.i2group.com/analyze/${productVersion}/openapi.json"
-    dest openApiSpecFile
+  openApiSpecFile = "${projectDir}/openapi.json"
 }
 
 // run `gradlew openApiGenerators` to get a list of all the languages the generator plugin supports, or see https://openapi-generator.tech/docs/generators
 
-task createJavaClientProject(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask,
-                             dependsOn: downloadSpec){
+tasks.register("createJavaClientProject", GenerateTask) {
+  // see https://openapi-generator.tech/docs/generators/java for other java library options
+  def javaLib = "apache-httpclient"
+  def javaBasePackage = "com.example.generated"
 
-    // see https://openapi-generator.tech/docs/generators/java for other java library options
-    def javaLib = "apache-httpclient"
-    def javaBasePackage = "com.example.generated"
+  generatorName = "java"
+  def out = "${generatedProjectDir}/java-client"
 
-    generatorName = "java"
-    def out = "${generatedProjectDir}/java-client"
+  library = javaLib
+  inputSpec = file(openApiSpecFile)
+  outputDir = file(out)
 
-    library = javaLib
-    inputSpec = openApiSpecFile.toString()
-    outputDir = out.toString()
+  generateApiTests = false
+  generateModelTests = false
 
-    generateApiTests = false
-    generateModelTests = false
-
-    apiPackage = "${javaBasePackage}.api"
-    invokerPackage = "${javaBasePackage}.invoker"
-    modelPackage = "${javaBasePackage}.model"
-    configOptions = [
+  apiPackage = "${javaBasePackage}.api"
+  invokerPackage = "${javaBasePackage}.invoker"
+  modelPackage = "${javaBasePackage}.model"
+  configOptions = [
       dateLibrary: "java8"
-    ]
+  ]
+  importMappings = [
+      Schema: "${javaBasePackage}.model.Schema"
+  ]
 }

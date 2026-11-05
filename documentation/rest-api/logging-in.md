@@ -38,10 +38,10 @@ The procedure in this topic demonstrates what happens when you attempt to make a
 
    ```java
        @Override
-       public <T> T invokeAPI(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException {
+       public <T> T invokeAPI(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, String urlQueryDeepObject, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeReference<T> returnType) throws ApiException {
            // Ensure a 401 rather than a 302 if authentication is required
            queryParams.add(new Pair("redirectForAuthentication", "false"));
-           return super.invokeAPI(path, method, queryParams, collectionQueryParams, body, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+           return super.invokeAPI(path, method, queryParams, collectionQueryParams, urlQueryDeepObject, body, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
        }
    ```
 
@@ -79,7 +79,7 @@ We'll take this approach in `MyApiClient` and execute it from the constructor.
        formParams.put("j_username", username);
        formParams.put("j_password", password);
        try {
-           invokeAPI("/j_security_check", "POST", new ArrayList<>(), new ArrayList<>(), null, new HashMap<>(), new HashMap<>(), formParams, null, contentType, new String[0], null);
+           invokeAPI("/j_security_check", "POST", new ArrayList<>(), new ArrayList<>(), null, null, new HashMap<>(), new HashMap<>(), formParams, null, contentType, new String[0], null);
        } catch (ApiException ex) {
            if (ex.getCode() > 0) {
                throw new RuntimeException("formBasedAuthLogin status: " + ex.getCode() + " " + ex.getMessage(), ex);
@@ -96,25 +96,13 @@ We'll take this approach in `MyApiClient` and execute it from the constructor.
    ```
 
 1. Execute the `main()` method of `ExampleApp` again.
-   You'll see another, different error, this time from the `formBasedAuthLogin()` method call:
+   You'll still see an error from the call to `getUser()`:
 
    ```
-   Exception in thread "main" java.lang.RuntimeException: formBasedAuthLogin status: 302 
+   Exception in thread "main" java.lang.RuntimeException: getUser status: 401
    ```
-   
-   There are two reasons for this error:
 
-   - `/j_security_check` always sets a `302` status with a redirect, even when the request is successful.
-     Its behavior is not controlled by the `redirectForAuthentication` parameter that applies to other endpoints.
-
-   - The generated `ApiClient` throws an exception whenever the status code is not in the `2xx` range, even though `3xx` doesn't indicate an error as such.
-
-   However, the exception is not actually a problem for us, because we only need to look at the response headers rather than a response body.
-   The response headers are available on the generated `ApiException`s.
-
-   **Note:** You will also see a warning about cookies having an `Invalid 'expires' attribute`.
-   You can safely ignore this artifact of the code generation process, or you can correct it by modifying the generated `ApiClient` class.
-   In the `ApiClient`'s `invokeAPI()` method, replace `RequestConfig.custom()` with `RequestConfig.custom().setCookieSpec(org.apache.http.client.config.CookieSpecs.STANDARD)`.
+   The generated `ApiClient` creates a separate cookie store for each request, so the authentication cookie is not available to the call to `getUser()`.
 
 1. To capture the `LtpaToken2` cookie and supply it in requests, `MyApiClient` needs a `CookieStore`.
    Add this line above the constructor:
@@ -123,45 +111,47 @@ We'll take this approach in `MyApiClient` and execute it from the constructor.
    private final CookieStore cookieStore = new BasicCookieStore();
    ```
 
-1. Then, add these methods to process the `Set-Cookie` headers:
+1. In `formBasedAuthLogin()`, replace the lines before the `try` block with the following code to prepare the login request and supply our cookie store:
 
    ```java
-   private void setCookie(String setCookie) {
-       final int splitAt = setCookie.indexOf('=');
-       final String cookieName = setCookie.substring(0, splitAt);
-       final String cookieValue = setCookie.substring(splitAt + 1, setCookie.indexOf(";"));
-       cookieStore.addCookie(buildCookie(cookieName, cookieValue, getUri()));
-   }
-
-   private URI getUri() {
-       try {
-           return new URI(super.getBasePath());
-       } catch (URISyntaxException e) {
-           throw new RuntimeException(e);
-       }
-   }
+   final HttpPost request = new HttpPost(URI.create(getBasePath() + "/j_security_check"));
+   request.setEntity(new UrlEncodedFormEntity(Arrays.asList(
+           new BasicNameValuePair("j_username", username),
+           new BasicNameValuePair("j_password", password))));
+   final HttpClientContext context = HttpClientContext.create();
+   context.setCookieStore(cookieStore);
    ```
 
-   **Note:** You can find third-party libraries for managing operations like these, but these two methods are sufficient for this example.
-
-1. Change the `catch` block in the `formBasedAuthLogin()` method to process the `ApiException` by reading the cookie:
+1. Replace the `try` and `catch` blocks to send the request through the underlying HTTP client:
 
    ```java
-   } catch (ApiException ex) {
-       if (ex.getCode() == 302) {
-           final List<String> setCookies = ex.getResponseHeaders().get("Set-Cookie");
-           if (setCookies != null && !setCookies.isEmpty()) {
-               setCookies.forEach(this::setCookie);
-               return;
+   try {
+       getHttpClient().execute(request, context, response -> {
+           if (response.getCode() < 200 || response.getCode() >= 300) {
+               throw new RuntimeException("Authentication failed: HTTP " + response.getCode());
            }
-       }
+           return null;
+       });
+   } catch (IOException ex) {
        throw new RuntimeException("Authentication failed", ex);
    }
    ```
 
-   This code extracts any `Set-Cookie` headers from a `302` response and persists them in the `CookieStore`.
+   This code retains cookies from the login response, including any intermediate redirects, in the `CookieStore`.
+   The response handler lets the HTTP client release response resources automatically.
 
-1. Execute the `main()` method again, and see that the `formBasedAuthLogin status: 302` error message has reverted to `getUser status: 401`.
+1. After the `catch` block, add this check for the authentication cookie:
+
+   ```java
+   if (cookieStore.getCookies().stream().noneMatch(cookie -> "LtpaToken2".equals(cookie.getName()))) {
+       throw new RuntimeException("Authentication failed: no LtpaToken2 cookie received");
+   }
+   ```
+
+   Checking for the `LtpaToken2` cookie is important because a failed login can also redirect to an HTML page with a final `200` status.
+
+1. Execute the `main()` method again.
+   You'll still see `getUser status: 401`.
    We're retrieving the cookie, but we haven't yet set it on the call to `getUser()`.
 
 1. In the overridden `invokeAPI()` method, insert the following line before the call to `super.invokeAPI()`:
@@ -176,8 +166,10 @@ We'll take this approach in `MyApiClient` and execute it from the constructor.
    This time you'll see an error:
 
    ```
-   Exception in thread "main" java.lang.RuntimeException: Authentication failed
+   Exception in thread "main" java.lang.RuntimeException: Authentication failed: no LtpaToken2 cookie received
    ```
+
+   If the server instead returns a non-success status, the error includes that HTTP status.
 
    Revert the change to the password before continuing.
 

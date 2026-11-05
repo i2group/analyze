@@ -40,7 +40,7 @@ The examples in Developer Essentials require links to the i2 Analyze libraries a
 
 4.  Click **Finish** to complete the import process.
 
-The i2 Analyze application uses OpenJDK, and the OpenJDK is installed by the i2 Analyze deployment toolkit. If the JRE that is installed by the toolkit is not the default JRE in your environment, then you can configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
+From i2 Analyze version 4.4.8, Java 21 is required, both to run the examples and to compile them against the i2 Analyze libraries. The i2 Analyze application uses OpenJDK, and the deployment toolkit installs a Java 21 OpenJDK at `C:\i2\i2analyze\deploy\java`. If the JRE that is installed by the toolkit is not the default JRE in your environment, then you can configure it as the default JRE. If you are using Eclipse, configure the default JRE by completing the following instructions.
 
 1.  In the Preferences window, click **Java** &gt; **Installed JREs** &gt; **Add** to open the Add JRE window.
 

@@ -37,7 +37,7 @@ To generate the Java client code and the skeleton project that uses it, follow t
    The supplied `createJavaClientProject` task inherits from `org.openapitools.generator.gradle.plugin.tasks.GenerateTask`.
    (For more details, see the [OpenAPI Generator documentation](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin).)
 
-   The task first downloads the specification document, and then uses the `apache-httpclient` template creator to generate the Java client code.
+   The task uses the `apache-httpclient` template creator to generate the Java client code.
    If the command was successful, `Successfully generated code` is displayed on the command line, and the Java client project is generated in the `generated-projects` folder.
 
 1. Navigate to the `generated-projects/java-client` folder and check the contents are similar to this list:

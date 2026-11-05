@@ -110,7 +110,7 @@ public class ExampleApp {
 
         final GeospatialSearchRequest geospatialSearchRequest = new GeospatialSearchRequest();
         final FeatureCollection featureCollection = new FeatureCollection();
-        featureCollection.setType(FeatureCollection.TypeEnum.FEATURECOLLECTION);
+        featureCollection.setType(FeatureCollection.TypeEnum.FEATURE_COLLECTION);
         final Feature feature = new Feature();
         feature.setType(Feature.TypeEnum.FEATURE);
         final GeoJSONPolygon polygon = new GeoJSONPolygon();

@@ -19,11 +19,14 @@ To interact with our particular i2 Analyze server, you can extend that class to 
    
    import com.example.generated.invoker.*;
    import com.fasterxml.jackson.core.type.TypeReference;
-   import org.apache.http.client.CookieStore;
-   import org.apache.http.impl.client.*;
+   import org.apache.hc.client5.http.classic.methods.HttpPost;
+   import org.apache.hc.client5.http.cookie.*;
+   import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
+   import org.apache.hc.client5.http.protocol.*;
+   import org.apache.hc.core5.http.message.*;
    
+   import java.io.IOException;
    import java.net.URI;
-   import java.net.URISyntaxException;
    import java.util.*;
    
    public class MyApiClient extends ApiClient {

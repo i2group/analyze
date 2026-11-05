@@ -104,7 +104,7 @@ public final class ExampleAlertingTask implements IScheduledTask {
                     purgeRequired = true;
 
                     // Send an alert to the user that the chart has been deleted.
-                    final ISendTo sendTo = SendTo.createWithUsers(uploadedBy.toArray(new String[0]));
+                    final ISendTo sendTo = SendTo.createWithUserPrincipalNames(uploadedBy.toArray(new String[0]));
                     alertManager.createAlert(sendTo, String.format("Chart '%s' deleted", chartName), AlertIcon.MINUS,
                             null, null);
                 }

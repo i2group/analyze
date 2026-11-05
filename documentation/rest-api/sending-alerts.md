@@ -116,8 +116,8 @@ Let's take a look.
    Replace `sendTo.setAllUsers(true)` with the following code:
 
    ```java
-   final Set<String> users = Collections.singleton("Imogen");
-   sendTo.setUsers(users);
+   final Set<String> userPrincipalNames = Collections.singleton("Imogen");
+   sendTo.setUserPrincipalNames(userPrincipalNames);
    ```
 
 1. Run the `main()` method of the `ExampleApp` class again.
@@ -132,7 +132,7 @@ Let's take a look.
 
 1. Optionally, add users and groups to your i2 Analyze instance, and try different combinations of property values in the `AlertSendTo` object.
 
-   The API provides the ability to identify the recipients of an alert by specifying lists of users, groups, and command access control permissions.
+   The API provides the ability to identify the recipients of an alert by specifying lists of user principal names (or user IDs), groups, and command access control permissions.
    The criteria are ORed together inclusively, so only one criterion must be met in order for a user to receive an alert.
 
    As you experiment with these settings, pay close attention to the console output.

@@ -27,7 +27,7 @@ We'll explore a different approach later in the topic.
    
        final GeospatialSearchRequest geospatialSearchRequest = new GeospatialSearchRequest();
        final FeatureCollection featureCollection = new FeatureCollection();
-       featureCollection.setType(FeatureCollection.TypeEnum.FEATURECOLLECTION);
+       featureCollection.setType(FeatureCollection.TypeEnum.FEATURE_COLLECTION);
        final Feature feature = new Feature();
        feature.setType(Feature.TypeEnum.FEATURE);
        final GeoJSONPolygon polygon = new GeoJSONPolygon();
@@ -140,7 +140,7 @@ If you want to experiment more freely with the endpoint from Java, then instead 
 
    ```java
    final FeatureCollection featureCollection = new FeatureCollection();
-   featureCollection.setType(FeatureCollection.TypeEnum.FEATURECOLLECTION);
+   featureCollection.setType(FeatureCollection.TypeEnum.FEATURE_COLLECTION);
    final Feature feature = new Feature();
    feature.setType(Feature.TypeEnum.FEATURE);
    final GeoJSONPolygon polygon = new GeoJSONPolygon();
