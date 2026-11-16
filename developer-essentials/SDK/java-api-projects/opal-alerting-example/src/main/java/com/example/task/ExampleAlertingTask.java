@@ -104,7 +104,7 @@ public final class ExampleAlertingTask implements IScheduledTask {
                     purgeRequired = true;
 
                     // Send an alert to the user that the chart has been deleted.
-                    final ISendTo sendTo = SendTo.createWithUserPrincipalNames(uploadedBy.toArray(new String[0]));
+                    final ISendTo sendTo = SendTo.createWithUserIds(uploadedBy.toArray(new String[0]));
                     alertManager.createAlert(sendTo, String.format("Chart '%s' deleted", chartName), AlertIcon.MINUS,
                             null, null);
                 }
@@ -155,6 +155,8 @@ public final class ExampleAlertingTask implements IScheduledTask {
         }
     }
 
+    // Despite its name, the USER_PRINCIPAL_NAME column holds the user ID of each user who uploaded the
+    // chart. The ID is the same as the principal name only when UserIdentityCompatibilityMode is true.
     private List<String> getUsersForChart(final Connection connection, final long itemId) throws SQLException {
         try (PreparedStatement prepStatement = connection.prepareStatement(
                 "select USER_PRINCIPAL_NAME from IS_PUBLIC.E_ANALYST_S_NOTEBOOK_CH_UPLOAD_USERS where ITEM_ID = ?")) {
