@@ -1,0 +1,27 @@
+/*
+ * i2, i2 Group, the i2 Group logo, and i2group.com are trademarks of N.Harris Computer Corporation.
+ * © N.Harris Computer Corporation (2026)
+ */
+
+// Shared configuration for every i2 Analyze Developer Essentials example project.
+// gradle.ext.toolkitLibDir is set by the settings.gradle that includes the project, and points
+// at the directory that contains the i2 Analyze toolkit jars.
+apply plugin: 'java'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'fragment', 'scripts']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: gradle.ext.toolkitLibDir, include: '*.jar')
+}

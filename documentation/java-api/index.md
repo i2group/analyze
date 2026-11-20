@@ -6,8 +6,8 @@ To achieve these changes, you write Java classes that implement well-defined ser
 Most of the examples culminate in building a JAR file and copying it to the `toolkit` directory of an i2 Analyze deployment.
 After you modify the configuration, you redeploy i2 Analyze to add the example to the system.
 
-**Note:** The Developer Essentials examples are supplied in the form of Eclipse projects.
-You can use other editors to interact with the examples, but the instructions here assume that you are using a version of Eclipse IDE for Java™ EE Developers that supports Java 21, which i2 Analyze 4.4.8 and later require.
+**Note:** The Developer Essentials examples are supplied as Gradle projects.
+You can use any IDE that supports Gradle and Java 21, which i2 Analyze 4.4.8 and later require.
 
 - **[Preparing to use Developer Essentials to extend i2 Analyze](Preparing-to-use-i2-Analyze-Developer-Essentials.md)**
 

@@ -6,22 +6,16 @@ The example projects in i2 Analyze Developer Essentials are sensitive to changes
 
 For an unmodified example project, compilation errors usually occur when the `TOOLKIT_ROOT` variable is not set, or when it is set incorrectly.
 
-In Eclipse, to determine whether there is a problem with `TOOLKIT_ROOT`, expand one of the example project directories. Some of the directory icons inside the project have glyphs:
+To check `TOOLKIT_ROOT`, run `.\gradlew projects` in the `SDK\java-api-projects` directory.
 
--   An arrow on the lower-right corner of a directory icon indicates a link to an external directory. If you see the arrow, then the variable is set correctly.
+-   If Gradle stops with an error that `TOOLKIT_ROOT` is not set, set it as an environment variable or pass it with `-PTOOLKIT_ROOT=<path>`.
 
--   An exclamation point on the lower-right corner of a directory icon indicates a broken link. You are not able to expand an icon that is in this state.
+-   If Gradle runs but the source code cannot find i2 Analyze classes, `TOOLKIT_ROOT` is set to the wrong directory. Ensure that it is the path of the deployment toolkit directory, and that `application\shared\lib` inside it contains JAR files.
 
-If you have a project with broken links, there are two possibilities:
+-   If the command line works but your IDE reports errors, the IDE might not see the `TOOLKIT_ROOT` environment variable. Restart the IDE from a terminal where the variable is set, or set the property in the Gradle settings of your IDE, and then refresh the Gradle project.
 
-1.  If only some of the links are broken, then your `TOOLKIT_ROOT` variable is set correctly, but Developer Essentials was not extracted into the same location as the deployment toolkit.
+## Gradle reports that it cannot find a Java installation for languageVersion=21
 
-2.  If all of the links are broken, then your `TOOLKIT_ROOT` variable is set incorrectly. Ensure that the variable is set to the path of deployment toolkit directory.
+The example projects require Java 21. If Gradle runs on an older JDK and cannot find a Java 21 installation, it stops with an error that starts `Cannot find a Java installation on your machine` and mentions `languageVersion=21`.
 
-## There are Java Build Path Problems in your development environment after importing an example project
-
-For an unmodified example project, Java Build Path problems can occur when the `i2analyze-toolkit-libraries` project is not imported.
-
-In Eclipse, to indicate that there is a problem with the `i2analyze-toolkit-libraries`, the example projects have an exclamation point glyph on the directory glyph.
-
-To resolve this issue, import the `i2analyze-toolkit-libraries` project into your development environment.
+To resolve the error, point Gradle at the Java 21 OpenJDK that the deployment toolkit installs. Set the `JAVA_HOME` environment variable to `C:\i2\i2analyze\deploy\java`, or select that directory as the Gradle JVM in your IDE settings, and then run the command again.

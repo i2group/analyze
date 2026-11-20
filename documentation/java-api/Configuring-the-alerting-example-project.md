@@ -21,15 +21,7 @@ To enable the custom task, you must redeploy i2 Analyze to include the new JAR f
 
 The `opal-alerting-example` project contains the source code for this example. 
 You must add this project to your development environment.
-If you are using Eclipse, complete the following instructions to import the project.
-
-1. In Eclipse, click **File** &gt; **Import** to open the Import window.
-
-1. In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
-
-1. Click **Browse** at the top of the window, and then select the `SDK\java-api-projects\opal-alerting-example` directory.
-
-1. Click **Finish** to complete the import process.
+Import the `SDK\java-api-projects` directory into your IDE as a Gradle project, as described in [Preparing to use Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
 
 After you add the project to your development environment, you can inspect its behavior.
 
@@ -38,25 +30,19 @@ After that, it behaves in exactly the same way as the ['scheduled task' example]
 
 The alerts appear in the upper right corner of Analyst's Notebook Premium, under the notification list.
 
-1. To be able to test the implementation, you must build a JAR file of the project and export it into your i2 Analyze toolkit.
-   If you are using Eclipse, complete the following instructions.
+1. To be able to test the implementation, you must build a JAR file of the project and copy it into your i2 Analyze toolkit.
 
-   1. In Eclipse, double-click the `project.jardesc` file in the `opal-alerting-example` project to open the Export window with default settings for the project already applied.
+   1. In the `SDK\java-api-projects` directory, run `.\gradlew :opal-alerting-example:jar`.
+      Gradle creates `opal-alerting-example.jar` in the `opal-alerting-example\build\libs` directory.
 
-   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-alerting-example\WEB-INF\lib\opal-alerting-example.jar`.
+   1. Copy the JAR file to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-alerting-example\WEB-INF\lib\opal-alerting-example.jar`.
+      Create the directory structure if it does not exist.
 
-      If the directory does not exist, a message is displayed.
-      If you click **Yes**, the directory structure is created for you.
-
-   1. Click **Finish** to export the JAR file to the specified destination.
-
-   If you are not using Eclipse, you must build the JAR file according to your development environment.
-
-   The JAR file must comprise the contents of the `src/main/java` directories of the `opal-alerting-example` project.
+   The JAR file comprises the contents of the `src/main/java` directory of the `opal-alerting-example` project.
    It must be named `opal-alerting-example.jar`, and it must be in
    the `toolkit\configuration\fragments\opal-alerting-example\WEB-INF\lib` directory.
 
-1. For your deployment to use the exported `opal-alerting-example.jar` file, you must add a fragment to the `topology.xml` file.
+1. For your deployment to use the built `opal-alerting-example.jar` file, you must add a fragment to the `topology.xml` file.
 
    1. In an XML editor, open the `toolkit\configuration\environment\topology.xml` file.
 
@@ -140,8 +126,8 @@ See the [UNIX cron format documentation](https://www.ibm.com/docs/en/db2/11.1?to
 
    The attempt will fail.
 
-1. Debug the `opal-alerting-example` project by using Eclipse and your deployment of i2 Analyze.
-   For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
+1. Debug the `opal-alerting-example` project by using your IDE and your deployment of i2 Analyze.
+   For more information about debugging the example, see [Debugging Developer Essentials](Debugging-Developer-Essentials.md).
 
 After you develop and test an alerting solution for i2 Analyze, the next step is to publish it to a live deployment.
 Complete the following steps on your live deployment of i2 Analyze.

@@ -12,34 +12,19 @@ When you build the audit logging to file example, you create a JAR file that con
 
 ## Procedure
 
-The audit logging examples in Developer Essentials require the contents of the `opal-audit-example-common` project, which you must add to your development environment. You can import this project into Eclipse by completing the following instructions.
+The audit logging examples in Developer Essentials require the contents of the `opal-audit-example-common` project, which you must add to your development environment. The audit logging to file example also requires the `opal-audit-file-example` project, which contains the source code that is specific to this example. Import the `SDK\java-api-projects` directory into your IDE as a Gradle project, as described in [Preparing to use Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md). This adds both projects to your development environment.
 
-1.  In Eclipse, click **File** &gt; **Import** to open the Import window.
+After you add the projects to your development environment, you can inspect the behavior of the example.
 
-2.  In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
+1.  To be able to test the implementation, you must build a JAR file of the project and copy it into your i2 Analyze toolkit.
 
-3.  Click **Browse** at the top of the window, and then select the `C:\i2\i2analyze\SDK\java-api-projects\opal-audit-example-common` directory.
+    1.  In the `SDK\java-api-projects` directory, run `.\gradlew :opal-audit-file-example:jar`. Gradle creates `opal-audit-file-example.jar` in the `opal-audit-file-example\build\libs` directory. The JAR file includes the code from `opal-audit-example-common`.
 
-4.  Click **Finish** to complete the import process.
+    2.  Copy the JAR file to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-audit-file-example\WEB-INF\lib\opal-audit-file-example.jar`. Create the directory structure if it does not exist.
 
-5.  The audit logging to file example requires the `opal-audit-file-example` project, which contains the source code that is specific to this example. You must add this project to your development environment. If you are using Eclipse, you can repeat the previous steps to import the `SDK\java-api-projects\opal-audit-file-example` project.
+    The built JAR file comprises the contents of the `src/main/java` directories of the `opal-audit-file-example` and `opal-audit-example-common` projects. Your JAR file must be named `opal-audit-file-example.jar` and be in the `toolkit\configuration\fragments\opal-audit-file-example\WEB-INF\lib` directory.
 
-After you add the project to your development environment, you can inspect the behavior of the example.
-
-1.  To be able to test the implementation, you must build a JAR file of the project and export it into your i2 Analyze toolkit. If you are using Eclipse, complete the following instructions.
-
-    1.  In Eclipse, double-click the `project.jardesc` file in the `opal-audit-file-example` project to open the Export window with default settings for the project applied.
-
-    2.  In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-audit-file-example\WEB-INF\lib\opal-audit-file-example.jar`.
-    3.  Click **Finish** to export the JAR file to the specified destination.
-
-        If the directory that you specified does not exist, a message is displayed. If you click **Yes**, the directory structure is created for you.
-
-    If you are not using Eclipse, you must build the JAR file according to your development environment.
-
-    The built JAR file must comprise the contents of the `src/main/java` directories of the `opal-audit-file-example` and `opal-audit-example-common` projects. Your JAR file must be named `opal-audit-file-example.jar` and be in the `toolkit\configuration\fragments\opal-audit-file-example\WEB-INF\lib` directory.
-
-2.  For your deployment to use the exported `opal-audit-file-example.jar` file, you must add the `opal-audit-file-example` fragment to the `topology.xml` file.
+2.  For your deployment to use the built `opal-audit-file-example.jar` file, you must add the `opal-audit-file-example` fragment to the `topology.xml` file.
 
     1.  In an XML editor, open the `toolkit\configuration\environment\topology.xml` file.
 
@@ -92,7 +77,7 @@ After you add the project to your development environment, you can inspect the b
 
     The supplied version of `FileAudit.properties` specifies the `wlp\usr\servers\opal-server\logs\opal-services` directory as the target for audit log files. If you are using analyze-deployment-tooling for your deployment of i2 Analyze, update the path to `/logs`. The files are named `auditn.log`, where n is an integer that increments with each new file.
 
-7.  Debug the `opal-audit-file-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
+7.  Debug the `opal-audit-file-example` project by using your IDE and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials](Debugging-Developer-Essentials.md).
 
 After you develop and test an audit logging solution for i2 Analyze, the next step is to publish it to a live deployment. Complete the following steps on your live deployment of i2 Analyze.
 

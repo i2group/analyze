@@ -31,6 +31,7 @@ Documentation for a particular version of the API is always available alongside 
 
 | API version 🡆 <br/> i2 Analyze version 🡇 | 1.0 | 1.1 | 1.2 | 1.3 | [1.4](https://docs.i2group.com/analyze/4.4.5/public-rest-api.html) | [1.5](https://docs.i2group.com/analyze/4.4.6/public-rest-api.html) | [1.6](https://docs.i2group.com/analyze/4.4.8/public-rest-api.html) |
 |:------------------------------------------:|:---:|:---:|:---:|:---:|:--:|:--:|:--:|
+|                   4.4.9                    | ✔️  | ✔️  | ✔️  | ✔️  | ✔️ | ✔️ | ✔️ |
 |                   4.4.8                    | ✔️  | ✔️  | ✔️  | ✔️  | ✔️ | ✔️ | ✔️ |
 |                   4.4.7                    | ✔️  | ✔️  | ✔️  | ✔️  | ✔️ | ✔️ | ❌ |
 |                   4.4.6                    | ✔️  | ✔️  | ✔️  | ✔️  | ✔️ | ✔️ | ❌ |

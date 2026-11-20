@@ -1,0 +1,6 @@
+/*
+ * i2, i2 Group, the i2 Group logo, and i2group.com are trademarks of N.Harris Computer Corporation.
+ * © N.Harris Computer Corporation (2026)
+ */
+
+apply from: "$projectDir/../example-common.gradle"

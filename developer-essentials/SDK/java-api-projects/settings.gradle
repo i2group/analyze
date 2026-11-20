@@ -1,0 +1,21 @@
+/*
+ * i2, i2 Group, the i2 Group logo, and i2group.com are trademarks of N.Harris Computer Corporation.
+ * © N.Harris Computer Corporation (2026)
+ */
+
+// Standalone settings for importing the example projects into any IDE that supports Gradle.
+// Set the TOOLKIT_ROOT environment variable (or pass -PTOOLKIT_ROOT=<path>) to the root of the
+// i2 Analyze deployment toolkit.
+def toolkitRoot = settings.hasProperty('TOOLKIT_ROOT') ? settings.TOOLKIT_ROOT : System.getenv('TOOLKIT_ROOT')
+if (!toolkitRoot) {
+    throw new GradleException('TOOLKIT_ROOT is not set. Set the TOOLKIT_ROOT environment variable to the root of the i2 Analyze deployment toolkit.')
+}
+gradle.ext.toolkitLibDir = file("${toolkitRoot}/application/shared/lib")
+
+rootProject.name = 'java-api-projects'
+
+rootDir.eachDir { dir ->
+    if (new File(dir, 'build.gradle').exists()) {
+        include dir.name
+    }
+}

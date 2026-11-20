@@ -12,35 +12,21 @@ When you build the scheduled task example, you create a JAR file that contains a
 
 ## Procedure
 
-The `opal-scheduled-task-example` project contains the source code for this example. You must add this project to your development environment. If you are using Eclipse, complete the following instructions to import the project.
-
-1. In Eclipse, click **File** &gt; **Import** to open the Import window.
-
-1. In the Import window, click **General** &gt; **Existing Projects into Workspace**, and then click **Next**.
-
-1. Click **Browse** at the top of the window, and then select the `SDK\java-api-projects\opal-scheduled-task-example` directory.
-
-1. Click **Finish** to complete the import process.
+The `opal-scheduled-task-example` project contains the source code for this example. You must add this project to your development environment. Import the `SDK\java-api-projects` directory into your IDE as a Gradle project, as described in [Preparing to use Developer Essentials](Preparing-to-use-i2-Analyze-Developer-Essentials.md).
 
 After you add the project to your development environment, you can inspect its behavior.
 
 The example task deletes charts that have not been accessed in the last five minutes. (In this context, "accessed" means being uploaded or downloaded, or having its version history requested by a user.)
 
-1. To be able to test the implementation, you must build a JAR file of the project and export it into your i2 Analyze toolkit. If you are using Eclipse, complete the following instructions.
+1. To be able to test the implementation, you must build a JAR file of the project and copy it into your i2 Analyze toolkit.
 
-   1. In Eclipse, double-click the `project.jardesc` file in the `opal-scheduled-task-example` project to open the Export window with default settings for the project already applied.
+   1. In the `SDK\java-api-projects` directory, run `.\gradlew :opal-scheduled-task-example:jar`. Gradle creates `opal-scheduled-task-example.jar` in the `opal-scheduled-task-example\build\libs` directory.
 
-   1. In the Export window, change the **Export destination** to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib\opal-scheduled-task-example.jar`.
+   1. Copy the JAR file to `C:\i2\i2analyze\toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib\opal-scheduled-task-example.jar`. Create the directory structure if it does not exist.
 
-      If the directory does not exist, a message is displayed. If you click **Yes**, the directory structure is created for you.
+   The built JAR file comprises the contents of the `src/main/java` directory of the `opal-scheduled-task-example` project. It must be named `opal-scheduled-task-example.jar`, and it must be in the `toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib` directory.
 
-   1. Click **Finish** to export the JAR file to the specified destination.
-
-   If you are not using Eclipse, you must build the JAR file according to your development environment.
-
-   The built JAR file must comprise the contents of the `src/main/java` directories of the `opal-scheduled-task-example` project. It must be named `opal-scheduled-task-example.jar`, and it must be in the `toolkit\configuration\fragments\opal-scheduled-task-example\WEB-INF\lib` directory.
-
-1. For your deployment to use the exported `opal-scheduled-task-example.jar` file, you must add a fragment to the `topology.xml` file.
+1. For your deployment to use the built `opal-scheduled-task-example.jar` file, you must add a fragment to the `topology.xml` file.
 
    1. In an XML editor, open the `toolkit\configuration\environment\topology.xml` file.
 
@@ -115,7 +101,7 @@ For example, a cron expression of `*/5 * * * *` results in a task running every 
 
    The attempt will fail, because the scheduled task deleted the "unused" chart.
 
-1. Debug the `opal-scheduled-task-example` project by using Eclipse and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials in Eclipse](Debugging-Developer-Essentials.md).
+1. Debug the `opal-scheduled-task-example` project by using your IDE and your deployment of i2 Analyze. For more information about debugging the example, see [Debugging Developer Essentials](Debugging-Developer-Essentials.md).
 
 After you develop and test a scheduled task solution for i2 Analyze, the next step is to publish it to a live deployment. Complete the following steps on your live deployment of i2 Analyze.
 

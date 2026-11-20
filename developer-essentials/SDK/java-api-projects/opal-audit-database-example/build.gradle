@@ -1,0 +1,16 @@
+/*
+ * i2, i2 Group, the i2 Group logo, and i2group.com are trademarks of N.Harris Computer Corporation.
+ * © N.Harris Computer Corporation (2026)
+ */
+
+evaluationDependsOn(':opal-audit-example-common')
+
+apply from: "$projectDir/../example-common.gradle"
+
+dependencies {
+    implementation project(':opal-audit-example-common')
+}
+
+jar {
+    from project(':opal-audit-example-common').sourceSets.main.output
+}
